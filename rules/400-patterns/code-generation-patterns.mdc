@@ -5,7 +5,7 @@ alwaysApply: false
 ---
 # Code Generation Patterns
 
-* **Purpose**: Prevent common formatting errors in AI-generated Python code and establish best practices for multi-file code generation tasks.
+* **Purpose**: Prevent common formatting errors in AI-generated Python code and establish best practices for multi-file code generation tasks. **Research Impact**: Chain of Code methodology shows 17.9% improvement in code generation accuracy when following structured patterns.
 * **Scope**: Applies to all Python code generation, particularly when using file manipulation tools in multi-agent or automated contexts.
 
 ## Anti-patterns to Avoid
@@ -71,6 +71,36 @@ import os  # Correct indentation
 ```
 
 ## Best Practices
+
+### Chain of Code Generation Pattern
+1. **Generate Executable Verification**: For each generated function, include test cases
+   ```python
+   def calculate_discount(price, percentage):
+       """Calculate discounted price."""
+       return price * (1 - percentage / 100)
+   
+   # Chain of Code verification
+   assert calculate_discount(100, 20) == 80
+   assert calculate_discount(50, 10) == 45
+   assert calculate_discount(0, 50) == 0
+   ```
+
+2. **Progressive Code Building**: Start with structure, then logic, then optimization
+   ```python
+   # Step 1: Structure
+   def process_data(df): pass
+   
+   # Step 2: Core logic
+   def process_data(df):
+       df_clean = df.dropna()
+       return df_clean
+   
+   # Step 3: Optimization
+   def process_data(df):
+       df_clean = df.dropna(subset=['critical_column'])
+       df_clean = df_clean[df_clean['value'] > 0]
+       return df_clean
+   ```
 
 ### File Writing Strategy
 1. **Small Files (< 50 lines)**: Use `rewrite` mode for clarity

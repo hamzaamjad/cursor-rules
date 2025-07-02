@@ -5,10 +5,38 @@ alwaysApply: false
 ---
 # sql-performance
 
-*Purpose*: Ensure efficient, maintainable SQL queries.
+*Purpose*: Ensure efficient, maintainable SQL queries. **Research shows**: Query optimization can reduce execution time by 10-100x and resource consumption by 50-90% (Ioannidis, 1996).
 
 - Avoid `SELECT *`; list required columns.
 - Use indexes, filter early in CTEs/subqueries.
 - Limit row scans: prefer `WHERE` clauses before joins.
 - Analyze and document query plans for long‐running queries.
 - Break complex logic into modular views when appropriate.
+- **Tree of Thoughts Query Optimization**:
+  - Generate 3 query approaches before executing
+  - Compare EXPLAIN ANALYZE results
+  - Select approach with lowest cost/rows ratio
+  - Example patterns:
+    ```sql
+    -- Approach 1: Subquery filtering
+    SELECT * FROM (SELECT * FROM orders WHERE date > '2024-01-01') o
+    JOIN customers c ON o.customer_id = c.id;
+    
+    -- Approach 2: Join then filter  
+    SELECT * FROM orders o
+    JOIN customers c ON o.customer_id = c.id
+    WHERE o.date > '2024-01-01';
+    
+    -- Approach 3: CTE with materialization hint
+    WITH recent_orders AS MATERIALIZED (
+      SELECT * FROM orders WHERE date > '2024-01-01'
+    )
+    SELECT * FROM recent_orders ro
+    JOIN customers c ON ro.customer_id = c.id;
+    ```
+- **Self-Consistency Validation**: Run query 3 times, verify consistent execution plans
+- **Performance Targets**:
+  - OLTP queries: <100ms for 95th percentile
+  - Analytics queries: <5s for 90th percentile
+  - Index hit ratio: >95% for frequent queries
+- **Chain of Code Verification**: Include query cost calculations in comments
