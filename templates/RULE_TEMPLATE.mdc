@@ -1,0 +1,110 @@
+---
+description: [Brief description of what the rule does - under 100 chars]
+globs: ["**/*.ext"]  # File patterns this rule applies to, use [] if universal
+alwaysApply: false  # Set to true only if this rule should always be active
+dependencies: []  # List other rule IDs this depends on
+conflicts: []  # List rule IDs that conflict with this one
+tags: []  # Categories like "performance", "security", "readability"
+version: "1.0.0"  # Semantic version of this rule
+---
+
+# [Rule Name in Title Case]
+
+## Purpose
+
+[Clear explanation of why this rule exists and what problem it solves. Should be 2-4 sentences that explain the motivation and expected outcome.]
+
+## Requirements
+
+- [Specific requirement 1 - use imperative mood]
+- [Specific requirement 2 - be concrete and measurable]
+- [Specific requirement 3 - avoid ambiguity]
+- [Add more as needed, typically 3-7 requirements]
+
+## Validation
+
+- **Check**: [How to verify requirement 1 is met]
+- **Check**: [How to verify requirement 2 is met]
+- **Check**: [How to verify requirement 3 is met]
+- [One validation check per requirement]
+
+## Examples
+
+### Scenario: [Describe a common use case]
+
+**❌ Without rule**:
+```[language]
+# Example showing what NOT to do
+# This should demonstrate the problem this rule prevents
+```
+
+**✅ With rule**:
+```[language]
+# Example showing the correct approach
+# This should demonstrate the rule being followed
+```
+
+### Scenario: [Another use case if applicable]
+
+**❌ Without rule**:
+```[language]
+# Another example of incorrect usage
+```
+
+**✅ With rule**:
+```[language]
+# Another example of correct usage
+```
+
+## Scientific Basis (optional)
+
+[Include references to research, studies, or empirical evidence supporting this rule's effectiveness. Use proper citations.]
+
+Example:
+- Research by [Author et al., Year] showed [specific improvement metric]
+- Industry study found [percentage] improvement in [metric] when applying this pattern
+- Based on [Theoretical Framework Name] which demonstrates [benefit]
+
+## Trade-offs
+
+[Be honest about any downsides or situations where this rule might not apply]
+
+- **Pros**: [List 2-3 major benefits]
+- **Cons**: [List 1-2 potential drawbacks]
+- **When to skip**: [Describe exceptions where this rule should not be applied]
+
+## Implementation Notes
+
+[Technical details about how to implement this rule, gotchas to watch for, or platform-specific considerations]
+
+## Dependencies and Interactions
+
+- **Depends on**: [List rules that must be active for this to work]
+- **Enhances**: [List rules that work better when combined with this]
+- **Conflicts with**: [List rules that should not be used simultaneously]
+
+## Metrics
+
+[If applicable, specify how to measure the impact of this rule]
+
+- **Measurement**: [What to measure]
+- **Target**: [Specific goal or threshold]
+- **Method**: [How to measure it]
+
+## References
+
+- [Link to external documentation]
+- [Link to tool documentation]
+- [Link to research paper]
+
+## Changelog
+
+- **1.0.0** - Initial version
+- [Track significant changes to the rule here]
+
+---
+*Rule metadata:*
+- *Author*: [Your GitHub username]
+- *Created*: [YYYY-MM-DD]
+- *Last Updated*: [YYYY-MM-DD]
+- *Stability*: [experimental|beta|stable]
