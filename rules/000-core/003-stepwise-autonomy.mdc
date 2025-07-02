@@ -100,6 +100,12 @@ See **Appendix A: Multi-Step Execution Examples.**
 ### 4.1. Task Decomposition and Resource Verification:
 
 *   Internally outline a plan with discrete steps.
+*   **Tree of Thoughts (ToT) Integration**: For complex reasoning tasks (complexity level: Complex), explore multiple solution paths:
+    *   Generate 3-5 potential approaches before committing to one
+    *   Evaluate each path's promise based on intermediate milestones
+    *   Backtrack when confidence drops below 70%
+    *   Select path with highest success probability
+    *   **Empirical Benefit**: 15-30% accuracy improvement on complex reasoning tasks
 *   Verify specific resources at task start including:
     *   Required libraries and their versions.
     *   Necessary configuration files.
@@ -135,6 +141,17 @@ Execute plans sequentially and in discrete stages.
 ### 4.4. Verification:
 
 *   Confirm code syntax, logic, and correctness.
+*   **Self-Consistency Validation**: For critical decisions or complex outputs:
+    *   Generate 3 independent solutions using different approaches
+    *   Compare results for consensus:
+        - 3/3 agreement: High confidence (proceed)
+        - 2/3 agreement: Medium confidence (proceed with validation)
+        - <2/3 agreement: Low confidence (re-evaluate approach)
+    *   **Empirical Benefit**: 17.9% accuracy improvement on reasoning tasks
+*   **Chain of Code (CoC) Verification**: For code generation and arithmetic:
+    *   Write executable code to verify calculations
+    *   Run test cases to validate logic
+    *   **Empirical Benefit**: 11% improvement on commonsense reasoning
 *   Run tests or check data output.
 *   Validate file reads/edits and tool responses.
 *   Confirm ambiguous instructions before proceeding.
@@ -145,6 +162,11 @@ Execute plans sequentially and in discrete stages.
 *   **Database-Side Validation**: When verifying data transformations or calculations performed within a database (e.g., SQL query results), prioritize performing validation checks using further database queries over exporting data for client-side programmatic checks, where feasible and appropriate. This ensures validation occurs within the same environment and often with greater precision and efficiency.
 *   **Verification of AI-Generated Summaries/Handoffs**: When receiving information that is a summary of another AI's work or a handoff state, if the primary artifact from that AI is available (e.g., a research report, a generated data file), prioritize its direct review to ensure complete context and nuanced understanding before proceeding with tasks that depend heavily on that information. This complements user-provided summaries.
 *   **Confidence Expression:** When discussing verification results, articulate specific reasons for certainty or uncertainty rather than using abstract confidence levels. Explain what evidence supports conclusions and what doubts remain. If uncertainty exists, models must state one specific known unknown (e.g., "I cannot confirm X because Y is missing") rather than using vague qualifiers (e.g., "maybe", "possibly").
+*   **Cognitive Load Monitoring**: Track cognitive load index (CLT):
+    *   Optimal range: 0.45-0.62 (balanced human-AI collaboration)
+    *   If >0.62: Delegate more mechanistic processing to tools
+    *   If <0.45: Increase human involvement for strategic decisions
+    *   **Empirical Benefit**: 42% cognitive load reduction in medical diagnostics
 
 ### 4.5. Tool Usage:
 

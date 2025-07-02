@@ -13,7 +13,7 @@ alwaysApply: true
 <!-- Version: 1.0.0 — 2025-06-19 -->
 <!-- Based on cognitive load theory and technical communication best practices -->
 
-* **Purpose**: To optimize information density in all user-facing communications by eliminating verbosity, maximizing signal-to-noise ratio, and respecting cognitive load limits. This rule acts as a quality gate ensuring outputs are direct, clear, and immediately actionable while maintaining necessary precision.
+* **Purpose**: To optimize information density in all user-facing communications by eliminating verbosity, maximizing signal-to-noise ratio, and respecting cognitive load limits. This rule acts as a quality gate ensuring outputs are direct, clear, and immediately actionable while maintaining necessary precision. **Empirical Impact**: CCoT research shows 48.70% response reduction with maintained accuracy. Technical documentation following these principles shows 40-60% reading time reduction and 25-35% task completion improvement.
 
 * **Requirements**:
   * **Token Limits**: User-facing responses must not exceed 150 tokens for simple queries, 300 for complex explanations
@@ -21,9 +21,15 @@ alwaysApply: true
   * **Paragraph Length**: Maximum 3-5 sentences per paragraph, with clear topic focus
   * **Information Hierarchy**: Lead with conclusion/answer, then supporting details (inverted pyramid)
   * **The Tweet Test**: Core message must be expressible in 280 characters <!-- TODO: Implement automated tweet test validator -->
+  * **Miller's Law Application**: Present maximum 7±2 distinct concepts per response
   * **Progressive Disclosure**: Layer information - essential first, details on request
   * **Elimination Targets**: Remove filler words, redundant explanations, unnecessary context
   * **Structured Format**: Use bullets, numbered lists, or tables for multi-part information
+  * **Readability Metrics**:
+    - Flesch Reading Ease: Target 60-70 (plain English)
+    - Average sentence length: 15-20 words
+    - Passive voice: <10% of sentences
+    - Jargon density: <5% unless domain-specific context
   
 * **Validation**:
   * Check: Is the main point stated within the first sentence?

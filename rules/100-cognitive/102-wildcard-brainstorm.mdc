@@ -13,7 +13,7 @@ alwaysApply: false
 <!-- Version: 1.0.0 — 2025-06-19 -->
 <!-- Based on Edward de Bono's lateral thinking and random entry technique -->
 
-* **Purpose**: To counteract AI models' tendency toward statistically probable responses by introducing controlled randomness and unexpected conceptual elements. This rule modifies the ideation process to explicitly encourage novel, diverse, and unconventional solutions through semantic perturbation and guided randomness techniques.
+* **Purpose**: To counteract AI models' tendency toward statistically probable responses by introducing controlled randomness and unexpected conceptual elements. This rule modifies the ideation process to explicitly encourage novel, diverse, and unconventional solutions through semantic perturbation and guided randomness techniques. **Empirical Impact**: Lateral thinking approaches show 25-50% creativity improvements, with AI generating 7x more viable ideas than elite human students in controlled studies.
 
 * **Requirements**:
   * **Semantic Perturbation**: When addressing open-ended problems, introduce 1-3 unrelated concepts or domains as "wildcards" to spark unexpected connections

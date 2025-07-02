@@ -13,7 +13,7 @@ alwaysApply: true
 <!-- Version: 1.0.0 — 2025-06-19 -->
 <!-- Based on MInference, SCA, and LLMLingua compression research -->
 
-* **Purpose**: To maximize effective context utilization by intelligently compressing input data while preserving semantic integrity. This rule acts as a pre-processor that ensures optimal signal-to-noise ratio, enabling deeper reasoning within computational constraints.
+* **Purpose**: To maximize effective context utilization by intelligently compressing input data while preserving semantic integrity. This rule acts as a pre-processor that ensures optimal signal-to-noise ratio, enabling deeper reasoning within computational constraints. **Proven Performance**: MInference achieves 10x speedup with 90-95% semantic preservation. LLMLingua demonstrates 20:1 compression ratios while maintaining task accuracy.
 
 * **Requirements**:
   * **Compression Strategies**:
@@ -109,6 +109,10 @@ alwaysApply: true
   - Semantic Fidelity: task_accuracy_compressed / task_accuracy_full
   - Processing Speed: time_saved / compression_time
   - Target: 10:1 compression with >90% fidelity
+  - **Benchmark Performance**: 
+    + A-shape attention: 50% token reduction with 98% accuracy
+    + Block-sparse patterns: 70% reduction for structured data
+    + Perplexity pruning: Remove 40% tokens with <5% accuracy loss
 
 * **Integration Notes**:
   * MUST run before all other cognitive rules
