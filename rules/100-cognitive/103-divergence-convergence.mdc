@@ -1,0 +1,95 @@
+---
+description: Structure cognitive processes through explicit divergent exploration and convergent synthesis phases
+globs: 
+  - "**/*.py"
+  - "**/*.js"
+  - "**/*.ts"
+  - "**/*.md"
+alwaysApply: false
+---
+
+# divergence-convergence.mdc
+
+<!-- Version: 1.0.0 — 2025-06-19 -->
+<!-- Based on Double Diamond Framework and Guilford's Structure-of-Intellect Model -->
+
+* **Purpose**: To formalize a two-phase cognitive methodology that maximizes both creative exploration and practical synthesis. This meta-rule orchestrates the think stage to alternate between divergent thinking (expanding possibilities) and convergent thinking (synthesizing solutions), preventing both premature closure and analysis paralysis.
+
+* **Requirements**:
+  * **Phase Separation**: Explicitly declare and maintain DIVERGENCE vs CONVERGENCE states
+  * **Divergence Phase**:
+    - Generate minimum 5-10 distinct approaches/options
+    - Suspend judgment and feasibility concerns
+    - Welcome wild/unconventional ideas (invoke wildcard-brainstorm)
+    - Use prompts: "What are ALL the ways we could...", "What if we..."
+    - Duration: ~40% of total thinking time
+    - Store all options in internal_thought field
+  * **Convergence Phase**:
+    - Apply evaluation criteria (feasibility, impact, resources)
+    - Synthesize best elements from multiple options
+    - Make explicit trade-off decisions
+    - Use prompts: "Evaluating the options...", "The optimal synthesis is..."
+    - Duration: ~60% of total thinking time
+    - Produce single refined recommendation
+  * **Transition Markers**: Use clear signals like "Entering DIVERGENCE mode" / "Switching to CONVERGENCE"
+  * **Multi-Cycle Support**: Complex problems may require 2-3 diverge-converge cycles <!-- TODO: Define cycle count heuristics -->
+  
+* **Validation**:
+  * Check: Were both phases explicitly executed and labeled?
+  * Check: Did divergence generate 5+ meaningfully different options?
+  * Check: Did convergence evaluate options against stated criteria?
+  * Check: Is the final output a synthesis, not just selection?
+  * Check: Were phase durations approximately 40/60 split?
+  * Check: For complex tasks, were multiple cycles completed?
+
+* **Examples**:
+  * **Scenario**: Design API authentication system
+    - **DIVERGENCE Phase Output**: 
+      "Entering DIVERGENCE mode. Exploring all authentication approaches:
+      1. Traditional JWT with refresh tokens
+      2. OAuth2 with social providers  
+      3. Biometric + device binding (wildcard)
+      4. Blockchain-based identity (wildcard)
+      5. Time-based OTP with QR codes
+      6. Certificate-based mutual TLS
+      7. Magic links via email
+      8. WebAuthn/FIDO2 passwordless
+      9. Behavioral biometrics (wildcard)
+      10. Quantum key distribution (extreme wildcard)"
+    - **CONVERGENCE Phase Output**:
+      "Switching to CONVERGENCE mode. Evaluating against criteria (security, UX, implementation cost):
+      - Synthesis: Hybrid approach combining WebAuthn (primary) with Magic links (fallback)
+      - Rationale: WebAuthn provides strongest security with good UX on supported devices
+      - Magic links ensure universal access without passwords
+      - Implementation: 2-week sprint, leveraging existing email infrastructure"
+
+* **State Machine Implementation**:
+  ```
+  stateDiagram-v2
+    [*] --> DIVERGENCE: Problem Presented
+    DIVERGENCE --> CONVERGENCE: Options Generated
+    CONVERGENCE --> DIVERGENCE: Need More Options
+    CONVERGENCE --> [*]: Solution Synthesized
+  ```
+
+* **Integration Points**:
+  * Invokes wildcard-brainstorm during DIVERGENCE phase
+  * Feeds into risk-checkpoint during CONVERGENCE evaluation
+  * Output subject to concise-comms in final delivery
+  * Can trigger analogy-transfer for cross-domain options
+
+* **Anti-Patterns to Avoid**:
+  * Premature convergence (jumping to first solution)
+  * Endless divergence (analysis paralysis)
+  * Treating convergence as mere selection vs. synthesis
+  * Skipping explicit phase declaration
+  * AI fixation displacement (anchoring on AI suggestions) <!-- TODO: Add fixation detection heuristics -->
+
+* **Changes**: Initial implementation v1.0.0. Establishes formal divergence-convergence protocol based on research showing 35% more solutions generated and 50% higher quality scores.
+
+* **Source References**: 
+  - British Design Council Double Diamond (2005)
+  - Guilford's Structure-of-Intellect Model (1956)
+  - EEG studies on alpha-band synchronization during creativity
+  - Design fixation research (N=60 participant study)
+  - https://www.nngroup.com/articles/diverge-converge/

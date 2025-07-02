@@ -1,0 +1,68 @@
+---
+description: Safe, maintainable Bash scripts
+globs: ["**/*.sh"]
+alwaysApply: false
+---
+*   **Purpose**: To promote the creation of safe, robust, and maintainable Bash scripts by enforcing strict modes, safe variable handling, and dependency checks.
+*   **Requirements**:
+    *   Start all scripts with `set -euo pipefail`.
+        *   `set -e`: Exit immediately if a command exits with a non-zero status.
+        *   `set -u`: Treat unset variables as an error when substituting.
+        *   `set -o pipefail`: Return value of a pipeline is the exit status of the last command to exit with a non-zero status, or zero if no command exited with a non-zero status.
+    *   Always quote variable expansions (e.g., `"$VAR"`, `"${ARRAY[@]}"`) unless deliberate word splitting or globbing is intended and understood.
+    *   Prefer functions for reusable blocks of code over loose commands.
+    *   Explicitly check for the existence of required external commands before use (e.g., using `command -v`).
+    *   Use environment variables or dedicated config files for configuration/secrets; avoid hardcoding values.
+    *   Strive for idempotency where the script's purpose allows (can be run multiple times with the same initial state, yielding the same final state).
+    *   **Debugging/Modification**: When refactoring or adding complex conditional logic, test changes incrementally. If a script fails with a syntax error, carefully review the diff of the last change, paying close attention to quoting, parentheses, and block structures (`if/then/else/fi`, `do/done`).
+*   **Validation**:
+    *   Check (Static Analysis): Use `shellcheck` (available at [shellcheck.net](mdc:https:/www.shellcheck.net)) to automatically lint scripts. Configure CI to run `shellcheck` on all `.sh` files. Target `SC2086` (unquoted variables), `SC2154` (unset variables referenced with `set -u`), etc.
+    *   Check (Code Review): Verify `set -euo pipefail` is present. Review variable expansions for correct quoting. Ensure dependencies are checked. Look for hardcoded secrets/paths. Assess idempotency logic.
+*   **Examples**:
+    *   **Dependency Check**:
+        ```bash
+        #!/bin/bash
+        set -euo pipefail
+
+        REQUIRED_CMD="jq"
+        if ! command -v "$REQUIRED_CMD" &> /dev/null; then
+            echo "Error: Required command '$REQUIRED_CMD' not found." >&2
+            exit 1
+        fi
+
+        echo "Processing data..."
+        # Safely use jq after check
+        cat data.json | "$REQUIRED_CMD" '.items[] | .name'
+        ```
+    *   **Quoting**:
+        ```bash
+        # Bad: Fails if filename contains spaces
+        # FILE_PATH="my report.txt"
+        # ls $FILE_PATH
+
+        # Good: Handles spaces correctly
+        FILE_PATH="my report.txt"
+        ls "$FILE_PATH"
+
+        # Good: Iterating over array elements safely
+        FILES=("file one.txt" "file two.txt")
+        for f in "${FILES[@]}"; do
+            echo "Processing '$f'"
+            # Perform action on "$f"
+        done
+        ```
+*   **Changes**: Explained `set -euo pipefail`, specified validation via `shellcheck` and CI integration, provided more detailed examples for dependency checks and variable quoting (including array iteration).
+*   **Source References**: `.cursor/rules/bash-safety.mdc`; [ShellCheck Website](mdc:https:/www.shellcheck.net); [ShellCheck GitHub](mdc:https:/github.com/koalaman/shellcheck); [Bash scripting quirks & safety tips (jvns.ca)](mdc:https:/jvns.ca/blog/2017/03/26/bash-quirks)
+
+*Purpose*: Make shell scripts robust, debuggable, and secure.
+
+- Begin scripts with `set -euo pipefail`; use `IFS` safely.
+- Quote all variable expansions: `"$var"`.
+- Avoid `sudo` inside scripts; require explicit invocation.
+- Trap signals (`trap 'cleanup' EXIT`) for resource cleanup.
+- Validate required commands/files exist; exit with error if not.
+- Do not echo secrets; read sensitive data from secure stores or env vars.
+
+```markdown
+- Use `set -euo pipefail`
+```

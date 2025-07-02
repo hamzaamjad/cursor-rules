@@ -1,0 +1,28 @@
+---
+description: Always think Pareto (focus on high-impact 20 %)
+globs: 
+alwaysApply: true
+---
+
+# 80-20-prioritization.mdc
+
+*   **Purpose**: To guide AI assistants and developers in focusing efforts and recommendations on the most impactful elements, aligning with the Pareto principle (80/20 rule). Ensure resources are directed towards tasks yielding the highest value or mitigating the most significant risks.
+*   **Requirements**:
+    *   Identify and highlight the top 1-3 drivers or risks associated with a problem or proposal.
+    *   Rank recommendations explicitly based on estimated Return on Investment (ROI) or impact/effort ratio.
+    *   Clearly state the criteria or heuristics used for ranking (e.g., estimated time saved, revenue generated, risk reduction level, user impact).
+    *   Avoid detailed exploration or implementation of low-impact features or optimizations unless specifically requested.
+*   **Validation**:
+    *   Check: Does the output explicitly list top drivers/risks separately or at the beginning?
+    *   Check: Are recommendations presented in a ranked or prioritized list?
+    *   Check: Is the basis for ranking (ROI, impact/effort, etc.) mentioned?
+    *   Check: Does the depth of detail correspond to the priority of the item?
+*   **Examples**:
+    *   **Scenario**: Proposing database optimizations.
+        *   **Weak**: "We could optimize the `users` table index and rewrite the `orders` query."
+        *   **Improved**: "1. **Optimize `orders` query (High ROI)**: Addresses primary source of user-reported latency (est. 80% of slowdown). Effort: Medium. 2. **Optimize `users` table index (Low ROI)**: Minor performance gain for admin view. Effort: Low. Priority is the `orders` query."
+    *   **Scenario**: Analyzing technical debt.
+        *   **Weak**: "There's tech debt in auth and logging."
+        *   **Improved**: "**Top Risk**: Outdated auth library (High - Security Vulnerability). **Recommendation (Highest ROI)**: Upgrade auth library immediately (Effort: High). **Other Issue**: Inconsistent logging format (Medium - Hinders Debugging). **Recommendation (Medium ROI)**: Refactor logging module next quarter (Effort: Medium)."
+*   **Changes**: Added explicit requirements for stating ranking criteria, refined purpose, provided concrete validation checks, and added comparative examples for different scenarios.
+*   **Source References**: `.cursor/rules/80-20-prioritization.mdc`; [Stack Overflow: Estimating ROI for Tech Debt](mdc:https:/stackoverflow.com/questions/1790431/how-do-you-estimate-a-roi-for-clearing-technical-debt); [LinkedIn: Measure ROI of Refactoring](mdc:https:/www.linkedin.com/advice/0/how-can-you-measure-roi-refactoring-code-skills-system-development-zmdac)

@@ -1,0 +1,14 @@
+---
+description: SQL correctness & performance guard-rails
+globs: **/*.sql
+alwaysApply: false
+---
+# sql-performance
+
+*Purpose*: Ensure efficient, maintainable SQL queries.
+
+- Avoid `SELECT *`; list required columns.
+- Use indexes, filter early in CTEs/subqueries.
+- Limit row scans: prefer `WHERE` clauses before joins.
+- Analyze and document query plans for long‐running queries.
+- Break complex logic into modular views when appropriate.

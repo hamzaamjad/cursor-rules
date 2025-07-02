@@ -1,0 +1,13 @@
+---
+description: Enforce dbt model style, docs, and tests
+globs: **/models/**/*.sql,**/schemas/*.yml
+alwaysApply: false
+---
+# dbt-model-quality
+
+*Purpose*: Maintain high standards for dbt models.
+
+- Every model requires `description` in YAML and column-level docs.
+- Write `tests:` for uniqueness, non-null, relationships.
+- Use incremental vs. full-refresh appropriately; document rationale.
+- Optimize model SQL for performance (avoid cross-joins, excessive CTEs).

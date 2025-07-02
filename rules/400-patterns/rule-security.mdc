@@ -1,0 +1,43 @@
+---
+description: Security considerations and best practices for Cursor Rules (.mdc files).
+globs: .cursor/rules/**/*.mdc
+alwaysApply: false
+---
+# rule-security.mdc
+
+*   **Purpose**: To address security considerations specifically related to Cursor Rules (`.cursor/rules/*.mdc` files) and mitigate risks like the Rules File Backdoor exploit.
+*   **Requirements**:
+    1.  **Rule Review**: Changes to `.cursor/rules/*.mdc` files MUST undergo review, similar to code changes. Reviewers should check for:
+        *   Unexpected or obfuscated logic.
+        *   Inclusion of potentially harmful instructions or external calls.
+        *   Presence of non-standard characters, especially invisible Unicode characters ([Ref: Backdoor Exploit](mdc:https:/www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents)).
+    2.  **Sanitization/Linting**: Implement automated checks (e.g., pre-commit hook, CI step) to detect and optionally strip potentially harmful characters (e.g., invisible Unicode) from `.mdc` files.
+    3.  **Least Privilege**: Restrict write access to the `.cursor/rules/` directory to authorized personnel or maintainers.
+    4.  **Content Safety**: Avoid embedding sensitive information (API keys, secrets, PII) directly within rule definitions. Rules should guide the AI to retrieve secrets securely, referencing `backend-security.mdc` principles.
+    5.  **@Security References**: Consider using `@Security` references within rules to point the AI towards secure coding practices or relevant security rules when generating sensitive code (e.g., auth logic, file system access).
+*   **Validation**:
+    *   Check: Is there a documented review process for rule changes?
+    *   Check: Are automated checks for harmful characters implemented?
+    *   Check: Are permissions on the `.cursor/rules/` directory appropriately restricted?
+    *   Check: Do rules avoid embedding secrets?
+*   **Examples**:
+    *   **Pre-commit Hook (Conceptual)**:
+        ```yaml
+        # .pre-commit-config.yaml
+        repos:
+        -   repo: local
+            hooks:
+            -   id: strip-invisible-chars
+                name: Strip invisible chars from mdc
+                entry: python scripts/strip_invisible.py
+                language: system
+                files: \.mdc$
+        ```
+        *(Requires a `scripts/strip_invisible.py` script)*
+    *   **Using @Security Reference**:
+        ```markdown
+        # in some-rule.mdc
+        *   Requirement: When generating database connection logic, adhere to secure credential handling practices (@Security:backend-security.mdc#SecretsManagement).
+        ```
+*   **Changes**: Strengthened the review process and automated checks. Included recent security vulnerabilities and mitigation strategies.
+*   **Source References**: `.cursor/rules/rule-security.mdc`; Research ([18], [10], [13]); `backend-security.mdc`.

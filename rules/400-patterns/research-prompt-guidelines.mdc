@@ -1,0 +1,32 @@
+---
+description: Framework for creating effective prompts for research tasks.
+globs: 
+alwaysApply: false
+---
+# research-prompt-guidelines.mdc
+
+*   **Purpose**: To provide a framework for creating effective prompts for research tasks, incorporating best practices and lessons learned from previous research-oriented prompts.
+*   **Requirements**:
+    1.  Adhere to the structure and requirements outlined in `prompt-eval.mdc` when creating research-oriented prompts.
+    2.  Clearly define the research objective, scope, and expected outputs in the prompt's metadata and task sections.
+    3.  Provide a comprehensive background and context for the research task, including relevant supplemental knowledge and input data.
+    4.  Include diverse examples or case studies in the prompt to cover a wide range of scenarios and provide clear guidance for users.
+    5.  Outline a structured approach for conducting the research, including specific steps, considerations, and evaluation criteria.
+    6.  Emphasize the importance of a balanced and evidence-based analysis in the research output, avoiding unsupported claims or speculative statements.
+    7.  Include a comprehensive error handling section with specific instructions for addressing common challenges or edge cases in the research process.
+    8.  Encourage the use of relevant tools and resources, such as Perplexity for deep research or Context7 for library documentation, to enhance the research process.
+*   **Validation**:
+    *   Check (Adherence to `prompt-eval.mdc`): Ensure that the research-oriented prompt follows the structure and requirements outlined in `prompt-eval.mdc`.
+    *   Check (Objective Clarity): Verify that the research objective, scope, and expected outputs are clearly defined in the prompt's metadata and task sections.
+    *   Check (Context Comprehensiveness): Review the background and context provided in the prompt to ensure it is comprehensive and includes relevant supplemental knowledge and input data.
+    *   Check (Examples Diversity): Confirm that the prompt includes diverse examples or case studies to cover a wide range of scenarios and provide clear guidance for users.
+    *   Check (Structured Approach): Verify that the prompt outlines a structured approach for conducting the research, including specific steps, considerations, and evaluation criteria.
+    *   Check (Balanced Analysis): Ensure that the prompt emphasizes the importance of a balanced and evidence-based analysis in the research output, avoiding unsupported claims or speculative statements.
+    *   Check (Error Handling Specificity): Review the error handling section to ensure it includes specific instructions for addressing common challenges or edge cases in the research process.
+    *   Check (Tool Usage): Verify that the prompt encourages the use of relevant tools and resources, such as Perplexity for deep research or Context7 for library documentation, to enhance the research process.
+*   **Examples**:
+    *   **Scenario**: Creating a prompt for evaluating the performance impact of different database indexing strategies.
+        *   **Weak**: "Research database indexing strategies and their performance impact."
+        *   **Improved**: "Evaluate the performance impact of different database indexing strategies (e.g., B-tree, hash, bitmap) on query execution time and resource utilization. Provide a comprehensive background on indexing concepts and include specific examples of query patterns and data distributions. Outline a structured approach for conducting the research, including steps for setting up test environments, generating representative workloads, and measuring performance metrics. Emphasize the importance of a balanced analysis, considering trade-offs such as index creation time and storage overhead. Include error handling guidance for common issues, such as index fragmentation or suboptimal index usage. Encourage the use of database profiling tools and query analyzers to gather empirical evidence."
+*   **Changes**: Initial version of the research prompt guidelines rule, focusing on key requirements, validation checks, and best practices for creating effective research-oriented prompts.
+*   **Source References**: `.cursor/rules/research-prompt-guidelines.mdc`; `.cursor/rules/prompt-eval.mdc`; Lessons learned from creating prompts for generating a new rule for deep research with Perplexity and evaluating the benefits of configuring OpenRouter in Cursor.

@@ -1,0 +1,218 @@
+---
+description: Data pipeline verification procedures, extending stepwise-autonomy.
+globs: **/etl/**/*.py,**/pipelines/**/*.sql,data_processing/**/*.py
+alwaysApply: false
+---
+# stepwise-autonomy-data-pipeline.mdc
+
+*   **Purpose**: Extend the `stepwise-autonomy.mdc` rule with specific verification procedures for data pipelines to ensure reliability, performance, and correctness in data analytics workflows.
+
+*   **Requirements**:
+    1.  **Schema Validation**:
+        *   **Input Schema Verification**:
+            *   Verify all required columns are present with expected names
+            *   Check data types match expectations, especially for:
+                *   Date/time columns (proper datetime objects, not strings)
+                *   Numeric columns (appropriate precision)
+                *   Categorical columns (proper encoding)
+            *   Verify completeness (e.g., expected row count, null values in critical columns)
+            *   Example:
+                ```python
+                def verify_required_columns(df, required_cols):
+                    missing = [col for col in required_cols if col not in df.columns]
+                    if missing:
+                        raise ValueError(f"Missing required columns: {missing}")
+                    return True
+                ```
+
+        *   **Output Schema Verification**:
+            *   Verify output dimensions are as expected
+            *   Check for duplicate records if uniqueness is required
+            *   Verify calculated metrics are within expected ranges
+            *   Flag outliers for review
+            *   Example:
+                ```python
+                def validate_metric_ranges(df, metric_ranges):
+                    """
+                    Validate metrics are within expected ranges
+                    
+                    Args:
+                        df: DataFrame to check
+                        metric_ranges: Dict of {column_name: (min_val, max_val)}
+                    """
+                    issues = []
+                    
+                    for col, (min_val, max_val) in metric_ranges.items():
+                        if col not in df.columns:
+                            continue
+                            
+                        col_min = df[col].min()
+                        col_max = df[col].max()
+                        
+                        if col_min < min_val:
+                            issues.append(f"Column {col} has value {col_min} below minimum {min_val}")
+                            
+                        if col_max > max_val:
+                            issues.append(f"Column {col} has value {col_max} above maximum {max_val}")
+                            
+                    return issues
+                ```
+
+    2.  **Transformation Logic Verification**:
+        *   **Business Logic Validation**:
+            *   Verify aggregations match expected totals
+            *   Manually verify calculated fields for sample records
+            *   Test boundary cases and special values
+            *   Check null handling in calculations
+            
+        *   **Time-based Calculation Verification**:
+            *   Verify all datetime operations use consistent time zones
+            *   Check for daylight saving time handling
+            *   Verify period-over-period calculations correctly align dates
+            *   Example:
+                ```python
+                def verify_timezone_consistency(df, datetime_cols):
+                    """Verify timezone consistency across datetime columns"""
+                    for col in datetime_cols:
+                        if col not in df.columns:
+                            continue
+                            
+                        # Check if timezone info exists and is consistent
+                        tz_info = df[col].dt.tz
+                        if tz_info is None:
+                            logger.warning(f"Column {col} has no timezone information")
+                        
+                        # Check for mixed timezones
+                        sample_tzs = df.sample(min(100, len(df)))[col].apply(
+                            lambda x: x.tzinfo if not pd.isna(x) else None
+                        ).unique()
+                        
+                        if len(sample_tzs) > 1:
+                            logger.error(f"Column {col} has mixed timezone information: {sample_tzs}")
+                ```
+
+    3.  **Performance Verification**:
+        *   **Query Optimization**:
+            *   Review query execution plans for inefficiencies
+            *   Verify appropriate indexes are being used
+            *   Example check:
+                ```sql
+                EXPLAIN ANALYZE
+                SELECT * FROM fact_orders
+                JOIN dim_customers ON fact_orders.customer_id = dim_customers.id
+                WHERE order_date > '2024-01-01'
+                ```
+                
+        *   **Memory Utilization**:
+            *   Monitor memory usage during pipeline execution
+            *   Verify chunking implementation for large dataset operations
+            *   Example:
+                ```python
+                @contextmanager
+                def memory_usage_monitor():
+                    """Monitor memory usage during a code block"""
+                    process = psutil.Process(os.getpid())
+                    start_memory = process.memory_info().rss / 1024 / 1024  # MB
+                    
+                    yield
+                    
+                    end_memory = process.memory_info().rss / 1024 / 1024  # MB
+                    peak_memory = end_memory - start_memory
+                    
+                    logger.info(f"Peak memory usage: {peak_memory:.2f} MB")
+                
+                # Usage:
+                with memory_usage_monitor():
+                    result_df = transform_function(input_df)
+                ```
+                
+    4.  **Research Integration**:
+        *   **Documentation Alignment**:
+            *   Document how research findings influenced implementation
+            *   Example:
+                ```python
+                """
+                Revenue Forecasting Model
+                
+                This implementation is based on research findings from the
+                'Revenue Forecasting Comparison' Perplexity research (2024-04-28),
+                which identified Prophet as the optimal model for our use case,
+                balancing accuracy and implementation complexity.
+                
+                Key parameters (seasonality_mode, changepoint_prior_scale) were
+                selected based on hyperparameter testing documented in the research.
+                """
+                ```
+                
+        *   **Decision Point Transparency**:
+            *   Document decision points with clear rationale based on research
+            *   Example decision log:
+                ```
+                ## 2024-04-29: Selected xgboost for churn prediction
+                
+                Research from Perplexity (see perplexity-research-churn-models.md)
+                compared 5 algorithms for our customer churn use case. XGBoost was
+                selected because:
+                
+                1. Highest F1 score (0.82) on validation data
+                2. Good balance of precision (0.79) and recall (0.85)
+                3. Reasonable training time (3-5 minutes on full dataset)
+                4. Native feature importance output aligns with explainability requirements
+                
+                Runner-up was Random Forest (F1: 0.78) which will be kept as fallback.
+                ```
+                
+        *   **Validation Against Research**:
+            *   Verify implemented solution achieves metrics identified in research
+            *   Example:
+                ```python
+                def validate_against_research_metrics(model, test_data, expected_metrics):
+                    """
+                    Validate model performance against metrics identified in research
+                    
+                    Args:
+                        model: Trained model
+                        test_data: Test dataset
+                        expected_metrics: Dict of expected metric values from research
+                    """
+                    predictions = model.predict(test_data.features)
+                    
+                    # Calculate actual metrics
+                    actual_metrics = {
+                        'accuracy': accuracy_score(test_data.labels, predictions),
+                        'f1': f1_score(test_data.labels, predictions),
+                        'precision': precision_score(test_data.labels, predictions),
+                        'recall': recall_score(test_data.labels, predictions)
+                    }
+                    
+                    # Compare with expected metrics
+                    for metric, expected in expected_metrics.items():
+                        actual = actual_metrics[metric]
+                        
+                        # Allow slight variation from research results
+                        if abs(actual - expected) > 0.05:
+                            logger.warning(
+                                f"{metric} of {actual:.2f} differs significantly "
+                                f"from research finding of {expected:.2f}"
+                            )
+                        else:
+                            logger.info(
+                                f"{metric} of {actual:.2f} aligns with "
+                                f"research finding of {expected:.2f}"
+                            )
+                ```
+
+*   **Validation**:
+    *   Check: Is input data validated early in the process with explicit schema checks?
+    *   Check: Are calculated fields verified against expected values for sample records?
+    *   Check: Is time zone handling consistent across datetime operations?
+    *   Check: Are there appropriate performance monitoring and optimization checks?
+    *   Check: Is there documentation connecting implementation choices to research findings?
+    *   Check: Are model/analysis outputs validated against metrics from research?
+
+*   **Integration with Stepwise Autonomy**:
+    *   This rule extends the verification methods in the core `stepwise-autonomy.mdc` rule.
+    *   When working with data pipelines, follow the general stepwise process outlined in the core rule and add these data-specific verification steps.
+    *   Pay special attention to the "Input Data Check" and "Debugging Intermediate States" steps from the core rule when working with data pipelines.
+
+*   **Source References**: `.cursor/rules/stepwise-autonomy.mdc`; `.cursor/notepads/data-pipeline-verification.md`; `.cursor/rules/sql-correctness.mdc`; `.cursor/rules/sql-performance.mdc`; `.cursor/rules/datascience-repro.mdc`

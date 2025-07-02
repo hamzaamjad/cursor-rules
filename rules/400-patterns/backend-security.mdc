@@ -1,0 +1,63 @@
+---
+description: Fundamental security best practices for backend and API development.
+globs: **/src/api/**,**/src/backend/**,**/src/db/**
+alwaysApply: false
+---
+# backend-security.mdc
+
+*   **Purpose**: To enforce fundamental security best practices for backend and API development, aligning with OWASP recommendations.
+*   **Requirements**:
+    1.  **Input Validation**: All external/untrusted data (request bodies, params, headers) MUST be validated and sanitized using a schema validation library (e.g., `zod`, `pydantic`, `express-validator`). Validate type, format, length, and range.
+    2.  **Authentication & Authorization**:
+        *   Use secure, framework-recommended session management (e.g., HTTPS-only, SameSite cookies).
+        *   Implement proper authorization checks for all sensitive endpoints/operations.
+        *   Rotate secrets (API keys, JWT secrets) periodically (default: quarterly, document exceptions). Store secrets securely (env vars loaded from vault/KMS in prod/stage, `.env` for local dev ONLY), never commit to VCS.
+    3.  **SQL & Data Access**:
+        *   Use parameterized queries or ORM methods that prevent SQL injection by default.
+        *   Direct use of raw SQL execution functions (e.g., ORM `.raw()`) requires explicit justification and review for injection vulnerabilities.
+    4.  **Error Handling**:
+        *   Return generic error messages/codes (e.g., HTTP 4xx/5xx) to clients.
+        *   NEVER expose stack traces, sensitive configuration details, or PII in error responses. Log detailed errors internally.
+    5.  **Logging**:
+        *   Include correlation IDs (`requestId`, `traceId`) in logs. Include authenticated `userId` where applicable.
+        *   Scrub or mask sensitive data (passwords, PII, secrets) before logging payloads.
+    6.  **Rate Limiting**: Implement rate limiting on public endpoints, especially authentication routes (e.g., per IP, per API key), with exponential backoff on failures.
+    7.  **Dependency Management**: Regularly scan dependencies for vulnerabilities (e.g., weekly `npm audit --prod` / `pip-audit`). Patch Critical/High severity vulnerabilities promptly (define SLA, e.g., within 7 days).
+    8.  **Secrets Management**: Use appropriate mechanisms for environment (e.g., Vault, AWS Secrets Manager, GCP Secret Manager for prod/stage; `.env` file loaded via `dotenv` for local development ONLY).
+    9.  **(Placeholder)** *Incorporate specific checks from `@security-checklist.md` once available.*
+*   **Validation**:
+    *   Check (Static Analysis/Linting): Configure linters (e.g., ESLint security plugins, Bandit for Python) to detect common vulnerabilities like lack of input validation, use of raw SQL, insecure cookie settings.
+    *   Check (Code Review): Explicitly review areas using raw SQL, handling sensitive data, authentication/authorization logic. Verify secret management practices. Verify presence of schema validation on input boundaries. Check error responses for information leakage.
+    *   Check (Testing): Security tests should attempt to bypass validation, trigger errors, exploit potential injection points. Dependency scan results must be checked in CI.
+    *   Check: Is `@security-checklist.md` integrated or its content addressed? (Needs Clarification)
+*   **Examples**:
+    *   **Input Validation (Pydantic)**:
+        ```python
+        from pydantic import BaseModel, Field, EmailStr
+
+        class UserSignup(BaseModel):
+            email: EmailStr
+            password: str = Field(min_length=8)
+            full_name: str = Field(max_length=100)
+        ```
+    *   **Error Handling (Generic)**:
+        ```javascript
+        // Bad: Leaks details
+        // app.use((err, req, res, next) => { res.status(500).send(err.stack); });
+        // Good: Logs detail, returns generic error
+        app.use((err, req, res, next) => {
+          console.error(`[${req.id}] Error processing request: ${err.message}`, err.stack);
+          res.status(500).json({ error: 'Internal Server Error' });
+        });
+        ```
+*   **Changes**: Updated to include recent security vulnerabilities and mitigation strategies for backend systems, including enhanced logging practices and dependency management.
+*   **Readiness**: **Needs Clarification** (regarding content/location of `@security-checklist.md`). Assuming it contains more specific checks, it needs to be obtained and integrated.
+*   **Source References**: `.cursor/rules/backend-security.mdc`; [OWASP Top 10](mdc:https:/owasp.org/www-project-top-ten); `pydantic` docs; `zod` docs.
+
+*Purpose*: Protect server-side components against common threats.
+
+- Follow OWASP Top 10: validate & sanitize inputs, enforce least privilege.
+- Use parameterized queries/ORM to prevent SQL injection.
+- Enforce strong authentication/authorization (JWT/OAuth with expiry).
+- Encrypt data at rest and in transit (TLS 1.2+).
+- Regularly scan dependencies for vulnerabilities.

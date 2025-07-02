@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-06-19T14:31:58.326657",
+  "patterns": {
+    "Paradoxical Innovation": {
+      "rules": [
+        "risk-checkpoint",
+        "wildcard-brainstorm"
+      ],
+      "synergy": 0.75,
+      "insight": "Safety constraints channel creativity into practical innovations"
+    },
+    "Guided Discovery": {
+      "rules": [
+        "context-trim",
+        "divergence-convergence"
+      ],
+      "synergy": 0.68,
+      "insight": "Less context enables deeper, more focused exploration"
+    },
+    "Accelerated Verification": {
+      "rules": [
+        "concise-comms",
+        "stepwise-autonomy"
+      ],
+      "synergy": 0.62,
+      "insight": "Brevity accelerates iteration and validation cycles"
+    }
+  },
+  "profiles": [
+    {
+      "name": "Paradoxical Innovation Champion",
+      "fitness": 0.892,
+      "rules": [
+        "context-trim",
+        "risk-checkpoint",
+        "wildcard-brainstorm",
+        "divergence-convergence",
+        "concise-comms"
+      ],
+      "use_case": "Architecture design with compliance requirements"
+    },
+    {
+      "name": "Efficient Explorer",
+      "fitness": 0.878,
+      "rules": [
+        "context-trim",
+        "pareto-prioritization",
+        "divergence-convergence",
+        "analogy-transfer",
+        "concise-comms"
+      ],
+      "use_case": "Large-scale data analysis with token limits"
+    },
+    {
+      "name": "Rapid Prototyping Dynamo",
+      "fitness": 0.863,
+      "rules": [
+        "stepwise-autonomy",
+        "ultrathink-prompting",
+        "test-driven-development",
+        "risk-checkpoint",
+        "concise-comms"
+      ],
+      "use_case": "Hackathon projects and MVP development"
+    }
+  ],
+  "config_example": {
+    "profile": "paradoxical_innovation",
+    "rules": [
+      "105-context-trim",
+      "004-risk-checkpoint",
+      "102-wildcard-brainstorm",
+      "103-divergence-convergence",
+      "106-concise-comms"
+    ],
+    "constraints": {
+      "temporal_pressure": 0.6,
+      "safety_threshold": 0.6,
+      "resource_limit": 0.6
+    },
+    "expected_performance": {
+      "token_efficiency": 0.89,
+      "creativity_score": 0.82,
+      "safety_score": 0.95,
+      "execution_speed": 0.85
+    }
+  }
+}

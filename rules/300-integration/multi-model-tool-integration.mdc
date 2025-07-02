@@ -1,0 +1,62 @@
+---
+description: Guidelines for designing and implementing robust workflows involving multiple LLMs and external tools.
+globs: **/agents/**/*.py,**/orchestrators/**/*.flame
+alwaysApply: false
+---
+# multi-model-tool-integration.mdc
+
+*   **Purpose**: To guide the effective design and implementation of workflows involving multiple LLMs and external tools (APIs, functions), ensuring robustness, appropriate model selection, and reliable orchestration.
+
+*   **Requirements**:
+    1.  **Model & Tool Selection Strategy**:
+        *   Define clear roles for each model and tool within the workflow.
+        *   Choose the LLM for each sub-task based on its specific requirements:
+            *   Use faster/cheaper models (e.g., Haiku, Sonnet, GPT-3.5-Turbo) for simple tasks like classification, extraction, formatting, or routing.
+            *   Use more capable models (e.g., Opus, GPT-4) for complex reasoning, generation, summarization, or tasks requiring deep understanding.
+        *   Document the rationale for model and tool choices per step.
+    2.  **Workflow Orchestration**:
+        *   Design clear sequences for tool calls and model interactions. Use established patterns where applicable (e.g., ReAct, RAG).
+        *   Plan data flow meticulously between steps.
+        *   For complex workflows, manage intermediate state explicitly (e.g., pass necessary context between steps, use a state machine or persistent memory).
+    3.  **Prompt Management**:
+        *   Centralize prompt templates for consistency and reusability.
+        *   Version control prompt templates alongside agent/workflow code.
+    4.  **Error Handling & Resilience**:
+        *   Implement robust error handling for both model calls and tool executions.
+        *   Use retries (with exponential backoff) for transient network issues or temporary model/tool unavailability.
+        *   Define clear fallback logic (e.g., use a simpler model, return a default response, skip an optional step, alert a human) for persistent errors or unexpected outputs.
+    5.  **Data Privacy (PII Protection)**:
+        *   Before calling external tools or models (especially those outside a defined trust boundary), identify and strip/mask Personally Identifiable Information (PII) from the data being sent.
+    6.  **Logging & Observability**:
+        *   Log all significant inputs, outputs (or summaries of large outputs), and latencies for both model calls and tool interactions.
+        *   Include comprehensive metadata for traceability (e.g., `traceId`, `agentId`, model/tool name, timestamp, version).
+        *   Log errors clearly and comprehensively for debugging and monitoring.
+
+*   **Validation**:
+    *   Check (Design Review): Review the workflow diagram or plan. Is the model/tool selection justified for each step? Is the sequence logical? Are potential failure points and their mitigations identified? Is PII handling considered?
+    *   Check (Code Review): Inspect model/tool call logic for robust error handling (retries, fallbacks). Verify PII stripping occurs before external calls. Review state management and logging logic.
+    *   Check (Testing): Include tests for various error conditions (e.g., tool API failure, model timeout, unexpected model output) to verify fallback logic. Test PII stripping effectiveness. Verify logs contain required information.
+
+*   **Examples**:
+    *   **Model Selection Rationale**: "Step 1 (Intent Recognition): Use Claude Haiku for speed/cost as it's a simple classification task. Step 3 (Draft Response): Use Claude Opus for higher quality generation based on retrieved context."
+    *   **Error Handling (Conceptual)**:
+        ```python
+        try:
+            result = call_external_api(query)
+        except TransientError as e:
+            # Retry logic with exponential backoff
+            time.sleep(2**retry_count) 
+            result = call_external_api(query) # Simplified retry
+        except PersistentError as e:
+            logger.error(f"API call failed permanently for traceId {trace_id}: {e}")
+            result = None # Fallback: proceed without API data or trigger alert
+        ```
+    *   **PII Stripping (Conceptual)**:
+        ```python
+        user_query = "Find docs about project X for user jane.doe@example.com"
+        cleaned_query = strip_pii(user_query) # -> "Find docs about project X"
+        search_results = call_search_tool(cleaned_query)
+        ```
+
+*   **Changes**: Consolidated purpose and requirements. Added detail on prompt management, state management, and logging. Clarified PII protection. Enhanced validation checks and examples.
+*   **Source References**: `.cursor/rules/multi-model-tool-integration.mdc`; Research papers on LLM agent patterns (ReAct, RAG); General system design principles for robustness and observability.

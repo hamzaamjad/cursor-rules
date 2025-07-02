@@ -1,0 +1,71 @@
+---
+description: Best practices for creating and using Cursor Notebooks (Python or Markdown).
+globs: **/*.md
+alwaysApply: false
+---
+# notebook-best-practices.mdc
+
+*   **Purpose**: To establish consistent standards and best practices for creating and using Cursor Notebooks (implemented as `.py` files with `#%%` cell markers or `.md` files with fenced code blocks) for data analysis, exploration, visualization, and interactive documentation.
+*   **Requirements**:
+    1.  **Cell Structure**:
+        *   Use `#%%` markers in `.py` files or fenced code blocks (e.g., `` ```python ``) in `.md` files to clearly delineate executable code cells.
+        *   Keep individual code cells focused on a single logical step or operation.
+        *   Use Markdown cells (`##` for headers, lists, text) extensively to explain the code, interpret results, and structure the narrative.
+    2.  **Code Quality**:
+        *   Adhere to `python-clean-code.mdc` standards within Python code cells (typing, documentation, logging, error handling).
+        *   Prioritize vectorized operations (e.g., pandas, numpy) over loops for performance.
+        *   Parameterize key inputs (e.g., file paths, model hyperparameters) typically at the beginning of the notebook for reusability.
+    3.  **Documentation & Narrative**:
+        *   Start notebooks with a clear title, objective, and description in a Markdown cell.
+        *   Introduce each major section with a Markdown header (`##` or `###`).
+        *   Explain the *why* behind code cells, not just the *what*.
+        *   Interpret visualizations and key numerical outputs in Markdown cells immediately following the generating code cell. Align with `analytics-storytelling.mdc`.
+    4.  **Visualization**:
+        *   Use standard, well-maintained libraries (e.g., `matplotlib`, `seaborn`, `plotly`).
+        *   Ensure plots are clearly labeled (title, axes, legends).
+        *   Consider accessibility: use color-blind-friendly palettes and provide descriptive text or alt-text for key visualizations.
+        *   Avoid overly dense or complex plots; break down complex visualizations if necessary.
+    5.  **Version Control**:
+        *   Store notebooks in version control (Git).
+        *   Ensure outputs (plots, large tables) are cleared before committing unless they are essential for understanding the committed state. Use tools or configurations to manage output diffs if necessary.
+    6.  **Reproducibility**:
+        *   Specify required libraries and versions (e.g., in a `requirements.txt` or environment file referenced by the notebook).
+        *   Ensure the notebook runs sequentially from top to bottom without errors.
+*   **Validation**:
+    *   Check: Is the notebook clearly structured with Markdown explanations?
+    *   Check: Does Python code adhere to `python-clean-code.mdc`?
+    *   Check: Are visualizations clear, accessible, and interpreted?
+    *   Check: Are parameters defined and dependencies listed?
+    *   Check: Can the notebook be run sequentially without errors?
+*   **Examples**:
+    *   **Cell Structure (.py)**:
+        ```python
+        #%% [markdown]
+        ## Section 1: Data Loading
+
+        Load the dataset from the specified path.
+
+        #%%
+        import pandas as pd
+        from utils import load_data # Assuming utils module exists
+
+        DATA_PATH = "/path/to/data.csv"
+        df = load_data(DATA_PATH)
+        print(df.info())
+
+        #%% [markdown]
+        ## Section 2: Data Exploration
+
+        Perform initial exploration and visualize distributions.
+
+        #%%
+        import seaborn as sns
+        import matplotlib.pyplot as plt
+
+        # Explain plot
+        sns.histplot(df['target_variable'])
+        plt.title('Distribution of Target Variable')
+        plt.show()
+        ```
+*   **Changes**: Included recent trends in Jupyter Notebook usage, such as interactive widgets or integration with cloud services. Added guidelines for collaborative notebook usage and version control best practices. Included recent findings on effective data visualization techniques.
+*   **Source References**: `.cursor/rules/notebook-best-practices.mdc`; Research ([11], [17]); `python-clean-code.mdc`; `analytics-storytelling.mdc`.

@@ -1,0 +1,174 @@
+---
+description: Data analytics prompt patterns and evaluation
+globs: **/prompts/analytics/**/*.json,prompts/analytics/**/*.json
+alwaysApply: false
+---
+# prompt-eval-data-analytics.mdc
+
+*   **Purpose**: Extend the `prompt-eval.mdc` rule with specific patterns and validation criteria for data analytics prompts, ensuring they are well-structured, business-focused, and actionable.
+
+*   **Requirements**:
+    1. Follow all general requirements from the core `prompt-eval.mdc` rule.
+    2. For data analytics prompts, additionally include the following components:
+       - Business context and metrics alignment
+       - Data structure and quality assumptions
+       - Expected insights format and prioritization criteria
+       - Validation steps for analytical accuracy
+       - Integration guidance for downstream decisions
+    3. Use the provided data analytics prompt patterns as templates for common analytical tasks.
+    4. Apply the 80-20 principle from `80-20-prioritization.mdc` to ensure focus on high-impact insights.
+
+*   **Data Analytics Prompt Patterns**:
+
+    1. **Revenue Analysis Pattern**:
+       ```json
+       {
+         "prompt_metadata": {
+           "title": "Revenue Anomaly Detection Analysis",
+           "version": "1.0",
+           "description": "Analyze revenue data to identify and explain anomalies",
+           "last_updated": "2025-04-28",
+           "task_id": "REVENUE-ANOMALY-DETECTION",
+           "compatible_models": ["Claude 3 Opus", "GPT-4o", "Gemini 1.5 Pro"]
+         },
+         "agent_configuration": {
+           "persona": {
+             "role": "Revenue Operations Analyst",
+             "expertise_level": "expert",
+             "tone": "technical",
+             "audience": "Finance Leadership"
+           },
+           "global_constraints": {
+             "must": [
+               "Focus on statistically significant anomalies (>2σ)",
+               "Consider seasonality and business context",
+               "Prioritize explanations by revenue impact"
+             ],
+             "must_not": [
+               "Flag minor fluctuations within normal variance",
+               "Present technical details without business context"
+             ],
+             "quality": ["Accuracy > Comprehensiveness > Brevity"]
+           }
+         },
+         "context": {
+           "background": "Monthly revenue analysis to identify significant deviations from expected patterns that may require explanation or intervention.",
+           "supplemental_knowledge": [
+             {
+               "id": "K1",
+               "source": "Revenue Seasonality Patterns",
+               "content": "Business typically sees 15-20% Q4 increase, 5-10% Q1 dip, flat Q2, and 10-15% Q3 growth."
+             }
+           ],
+           "input_data": {
+             "format": "csv or dataframe",
+             "content": {
+               "placeholder": "{transaction_data}",
+               "required_columns": ["date", "amount", "customer_id", "product", "segment", "region"]
+             }
+           }
+         },
+         "task": {
+           "objective": "Identify revenue anomalies in Q1 2025 data and provide evidence-based explanations",
+           "success_criteria": [
+             "Anomalies identified with statistical significance metrics",
+             "Root causes validated with multiple data points",
+             "Business impact quantified and prioritized"
+           ],
+           "steps": [
+             { "id": 1, "instruction": "Calculate baseline metrics and expected ranges" },
+             { "id": 2, "instruction": "Identify deviations beyond statistical thresholds" },
+             { "id": 3, "instruction": "Analyze anomalies across key dimensions" },
+             { "id": 4, "instruction": "Investigate root causes with supporting evidence" },
+             { "id": 5, "instruction": "Quantify business impact and prioritize findings" },
+             { "id": 6, "instruction": "Formulate explanations with actionable insights" }
+           ]
+         },
+         "output_specification": {
+           "format": "markdown",
+           "structure": "Executive Summary, Key Anomalies (prioritized by impact), Root Cause Analysis, Recommendations",
+           "validation_rules": [
+             "All anomalies must include statistical significance metrics",
+             "Root causes must be supported by specific data points",
+             "Recommendations must be directly tied to findings"
+           ]
+         },
+         "error_handling": {
+           "ambiguity_resolution": {
+             "protocol": "If data shows conflicting signals, present multiple plausible explanations with supporting evidence for each."
+           },
+           "missing_information": "For key data gaps, state explicitly and analyze what is available, noting limitations."
+         }
+       }
+       ```
+
+    2. **Customer Cohort Analysis Pattern**: See the template in the Notepads directory
+    
+    3. **Market Sizing Analysis Pattern**: See the template in the Notepads directory
+
+*   **Research-Oriented Validation Rules**:
+
+    When evaluating data analytics research prompts, apply these additional validation criteria:
+
+    1. **Business Alignment**:
+       - [ ] Clear connection to specific business metrics or KPIs
+       - [ ] Scope appropriately calibrated to business impact (following 80-20 principle)
+       - [ ] Output format designed for decision-maker consumption
+
+    2. **Data Understanding**:
+       - [ ] Required data structure and quality clearly specified
+       - [ ] Assumptions about the data explicitly stated
+       - [ ] Handling of data limitations and edge cases addressed
+
+    3. **Statistical Validity**:
+       - [ ] Appropriate statistical methods specified for the analysis
+       - [ ] Clear threshold for significance defined
+       - [ ] Validation approach for analytical conclusions included
+
+    4. **Insight Actionability**:
+       - [ ] Clear path from findings to decisions
+       - [ ] Prioritization framework for multiple insights
+       - [ ] Explicit connection to next steps or business processes
+
+*   **Edge Case Handling Examples**:
+
+    1. **Data Quality Issues**:
+       ```
+       Error scenario: Analysis based on data with significant quality issues
+       Handling approach: 
+       1. Establish data quality thresholds upfront (e.g., max % missing values)
+       2. Include pre-analysis data quality assessment step
+       3. Document data quality limitations in final output
+       4. Qualify conclusions based on data reliability
+       ```
+
+    2. **Conflicting Signals**:
+       ```
+       Error scenario: Analysis yields contradictory trends or indicators
+       Handling approach:
+       1. Present multiple interpretations with confidence levels
+       2. Segment analysis to identify contextual factors
+       3. Recommend additional data collection to resolve contradictions
+       4. Provide decision framework that accounts for uncertainty
+       ```
+
+    3. **Inconclusive Results**:
+       ```
+       Error scenario: Analysis fails to detect clear patterns or explanations
+       Handling approach:
+       1. Document what was ruled out and what remains uncertain
+       2. Suggest alternative analytical approaches
+       3. Recommend experimental design to generate more conclusive data
+       4. Provide best interpretation given current limitations
+       ```
+
+*   **Validation**:
+    *   Check: Does the prompt follow the core structure from `prompt-eval.mdc`?
+    *   Check: Are business context and metrics clearly defined?
+    *   Check: Is data structure and quality addressed?
+    *   Check: Are insights prioritized according to business impact?
+    *   Check: Is there guidance for handling data quality issues and edge cases?
+    *   Check: Does the output format support business decision-making?
+    *   Check: Are validation steps included to verify analytical accuracy?
+
+*   **Source References**: `.cursor/rules/prompt-eval.mdc`; `.cursor/notepads/data-analytics-prompt-patterns.md`; `.cursor/rules/80-20-prioritization.mdc`

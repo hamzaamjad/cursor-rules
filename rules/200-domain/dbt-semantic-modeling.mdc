@@ -1,0 +1,50 @@
+---
+description: Guidelines for building a dbt semantic layer.
+globs: **/models/semantic/**/*.yml,**/semantic/**/*.yml,**/exposures.yml
+alwaysApply: false
+---
+# dbt-semantic-modeling
+
+*Purpose*: Build a consistent, governed, and reusable semantic layer using dbt's native semantic models.
+
+**1. Semantic Model Definition**
+- Define `semantic_models:` in YAML under `models/semantic/` or a top-level `semantic/` folder.
+- Use singular, business-centric names (e.g., `customers`, `orders`).
+- Include `label`, `description`, and `meta.owner` for each model.
+
+**2. Dimensions & Hierarchies**
+- Under each model, list `dimensions:` with `name`, `type` (e.g., primary_key, time, categorical), and `description`.
+- Define time hierarchies (`date`, `week`, `month`) and business hierarchies (e.g., region → country → city).
+
+**3. Measures & Metrics**
+- Define `measures:` with `name`, `calculation_method` (`sum`, `average`, `derived`), `expression`, `timestamp`, `time_grains`, and `filters`.
+- Add `meta.business_definition` and `validation_thresholds` for quality checks.
+- Centralize metric definitions to ensure consistency across reports.
+
+**4. Relationships & Joins**
+- Declare `joins:` at project level: specify `from`, `to`, `on`, and `relationship` (one_to_many, many_to_one).
+- Validate cardinality to prevent aggregation errors.
+
+**5. Exposures & Packages**
+- Use `exposures:` to link semantic models to BI dashboards, notebooks, or APIs.
+- Leverage `exports:` to share metrics and semantic definitions across projects.
+
+**6. Testing & Validation**
+- Write schema tests for semantic models: existence, types, and sample values.
+- Implement custom SQL tests to validate key metrics against known benchmarks.
+
+**7. Documentation & Lineage**
+- Generate docs with `dbt docs generate` including semantic models.
+- Tag models and measures for grouping (e.g., `finance`, `marketing`).
+- Version docs in CI; fail on outdated or missing metadata.
+
+**8. CI/CD & Governance**
+- Add semantic builds in CI (`dbt build --select semantic_models`); fail on warnings/errors.
+- Enforce naming and style conventions via pre-commit hooks.
+- Store governance metadata (`meta.access`, `tags.sensitivity`) for row-level and column-level security.
+
+**9. Reusability & Parameterization**
+- Publish semantic layers as packages for reuse across teams.
+- Parameterize definitions using `vars` for environment-specific overrides.
+
+*References*: dbt Labs (Semantic Layer docs), knowledge_base/data_modeling/semantic/semantic_modeling_principles.md

@@ -1,0 +1,13 @@
+---
+description: Guidelines for consistent and usable API design.
+globs: 
+alwaysApply: false
+---
+# api-design-guidelines
+
+*Purpose*: Standardize service interfaces for consistency and usability.
+
+- Version your API in the URL or headers (e.g. `/v1/users`).
+- Use consistent pagination (`limit`/`offset` or cursors).
+- Return structured error responses with codes and human messages.
+- Document endpoints in OpenAPI/Swagger; keep docs in sync with code.

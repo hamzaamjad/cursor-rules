@@ -1,0 +1,15 @@
+---
+description: Tests & CI must accompany code changes
+globs: 
+alwaysApply: false
+---
+# ci-cd-testing-gatekeeper
+
+*Purpose*: Enforce quality and reliability via CI/CD.
+
+- Every PR must pass:
+  - Linting (code style), formatting, and static typing checks.
+  - Unit tests with ≥ 80% coverage; report coverage.
+  - Security scan (e.g., Snyk, Dependabot alerts). Include guidelines for integrating new CI/CD tools and practices.
+- Define checks in pipeline config (GitHub Actions, GitLab CI, etc.).
+- Require at least one approving review before merge. Regularly update test suites to cover new features and edge cases.

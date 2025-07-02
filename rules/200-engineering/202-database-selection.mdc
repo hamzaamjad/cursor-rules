@@ -1,0 +1,58 @@
+---
+description: Database selection criteria for Mirror project
+globs: 
+  - "**/*database*"
+  - "**/*db*"
+  - "**/timeseries/*"
+alwaysApply: false
+---
+
+# Database Selection Checklist
+
+* **Purpose**: To ensure appropriate database technology selection based on access patterns, concurrency requirements, and existing infrastructure.
+
+* **Requirements**: When proposing or implementing database solutions, evaluate against these criteria:
+
+## Concurrency Evaluation
+- [ ] **Write Concurrency**: Will multiple agents/services write simultaneously?
+- [ ] **Read Concurrency**: Will multiple agents/services read simultaneously?
+- [ ] **Connection Limits**: What are the connection pool requirements?
+- [ ] **Transaction Isolation**: What level of ACID compliance is needed?
+
+## Performance Requirements
+- [ ] **Write Performance**: Expected writes per second?
+- [ ] **Read Performance**: Expected queries per second?
+- [ ] **Data Volume**: Expected data size over 1 year?
+- [ ] **Query Complexity**: Simple lookups vs complex analytics?
+
+## Operational Considerations
+- [ ] **Existing Infrastructure**: What databases are already deployed?
+- [ ] **Migration Complexity**: How difficult to migrate from current state?
+- [ ] **Operational Overhead**: Additional services to maintain?
+- [ ] **Backup/Recovery**: Built-in or requires additional tooling?
+
+## Mirror-Specific Context
+Current database infrastructure:
+- **PostgreSQL + TimescaleDB**: Primary database for time-series data (handles concurrent writes)
+- **DuckDB**: Analytics engine for read-only complex queries (single-writer limitation)
+- **ChromaDB**: Vector database for semantic memory
+- **Redis**: Cache and message broker
+
+## Decision Framework
+1. **Concurrent writes needed** → PostgreSQL/TimescaleDB
+2. **Complex analytics only** → DuckDB (read-only mode)
+3. **Semantic search** → ChromaDB
+4. **Temporary data/cache** → Redis
+
+## Anti-Patterns to Avoid
+- ❌ Using DuckDB for concurrent writes
+- ❌ Using PostgreSQL for heavy OLAP without proper indexing
+- ❌ Introducing new databases without clear differentiation
+- ❌ Ignoring existing infrastructure
+
+* **Validation**:
+  - Check: Has concurrency been explicitly evaluated?
+  - Check: Is the choice compatible with existing infrastructure?
+  - Check: Is there a migration path from current state?
+
+* **Source References**: Session retrospective 2025-06-25, Mirror Phase 4 decisions

@@ -1,0 +1,32 @@
+---
+description: Analytics engineering patterns for Mirror's local-first data pipeline
+globs: 
+  - "**/*dbt*"
+  - "**/models/**"
+  - "**/analytics/**"
+alwaysApply: false
+---
+# analytics-engineering.mdc
+
+* **Purpose**: Guide development of Mirror's analytics engineering layer using dbt+DuckDB for transforming raw personal data into AI-consumable information.
+* **Requirements**:
+  1. **Privacy-First**: All transformations run locally. Set `send_anonymous_usage_stats: false` in dbt_project.yml
+  2. **Incremental Processing**: Use `{{ is_incremental() }}` for efficiency on personal devices
+  3. **Semantic Layer**: Models follow staging → intermediate → marts pattern for DIKW progression
+  4. **Testing Coverage**: Every model needs primary key test + business logic validation
+  5. **Documentation**: Each model requires description explaining its role in the semantic layer
+* **Validation**:
+  * Check: Does model compile with `dbt compile`?
+  * Check: Are PII fields hashed using `{{ hash_pii() }}` macro?
+  * Check: Do incremental models have proper unique_key?
+  * Check: Is there a corresponding test in schema.yml?
+* **Patterns**:
+  * **Daily Aggregations**: Use `date_trunc('day', timestamp)` for consistent grouping
+  * **Score Calculations**: Normalize to 0-100 range for AI interpretation
+  * **Anomaly Handling**: Filter outliers in staging, don't propagate to marts
+  * **Mobile Sync**: Only sync mart tables, never raw/staging data
+* **Wildcard Ideas**:
+  * **Real-time CDC**: Use DuckDB's APPENDER API for streaming inserts
+  * **Graph Analytics**: Model social health metrics using DuckDB's recursive CTEs
+  * **Federated Learning**: Pre-aggregate personal models for privacy-preserving ML
+* **Source References**: Mirror dbt evaluation, DuckDB best practices

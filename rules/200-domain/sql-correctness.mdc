@@ -1,0 +1,45 @@
+---
+description: Guidelines for writing correct and robust SQL, with attention to dialect specifics.
+globs: **/*.sql
+alwaysApply: false
+---
+# sql-correctness.mdc
+
+*   **Purpose**: To guide AI assistants and developers in writing correct and robust SQL queries, paying attention to dialect specifics and common pitfalls.
+*   **Requirements**:
+    1.  **Dialect Awareness**:
+        *   Explicitly confirm the target SQL dialect (e.g., Redshift, PostgreSQL, MySQL, BigQuery, Snowflake).
+        *   **Verify function usage against the specific dialect's documentation, especially for date/time manipulation (e.g., `DATEADD`/`DATE_ADD`/`+ INTERVAL`, `DATEDIFF`, `GETDATE`/`NOW`/`CURRENT_TIMESTAMP`), string manipulation, and JSON functions.**
+    2.  **Join Logic**:
+        *   Verify join types (`INNER`, `LEFT`, `RIGHT`, `FULL OUTER`) match the intended logic for handling matching and non-matching rows.
+        *   Ensure join conditions (`ON` clause) correctly link tables using appropriate keys and comparisons. Avoid unintentional cross joins.
+    3.  **Column References**:
+        *   Qualify column names with table aliases or full table names when multiple tables are involved to avoid ambiguity.
+        *   Double-check column names for typos against the source schema.
+    4.  **Filtering**:
+        *   Ensure `WHERE` clauses accurately reflect the desired filtering conditions.
+        *   Be mindful of `NULL` handling in comparisons (use `IS NULL` / `IS NOT NULL`).
+    5.  **Aggregation & Window Functions**:
+        *   Verify `GROUP BY` clauses include all non-aggregated columns in the `SELECT` list (unless the dialect permits otherwise).
+        *   Ensure window function `PARTITION BY` and `ORDER BY` clauses are correctly specified for the intended calculation.
+        *   **Redshift Specific:** Avoid using `COUNT(DISTINCT col) OVER (PARTITION BY ...)` due to potential parser limitations. Instead, pre-aggregate data to the required grain in a preceding CTE to ensure distinctness, then use `COUNT(*) OVER (PARTITION BY ...)` on the pre-aggregated data.
+    6.  **Output Ordering**:
+        *   Include an `ORDER BY` clause for final `SELECT` statements intended for human consumption or reporting to ensure deterministic results, unless ordering is irrelevant or handled downstream.
+    7.  **Syntax & Formatting**:
+        *   Validate overall query syntax against the target dialect.
+        *   Maintain consistent formatting (indentation, capitalization of keywords) for readability. Refer to `sql-performance.mdc` for performance-related style.
+*   **Validation**:
+    *   Check: Is the target SQL dialect mentioned or assumed correctly?
+    *   Check: Are dialect-specific functions used appropriately? (e.g., Redshift `DATEADD` vs. PostgreSQL interval math).
+    *   Check: Is join logic clear and likely correct? Are columns qualified?
+    *   Check: Does the query include an `ORDER BY` clause if the output is likely for reporting?
+    *   Check: Is the syntax valid for the target platform?
+*   **Examples**:
+    *   **Scenario**: Calculating days between two dates in Redshift.
+        *   **Weak (PostgreSQL style)**: `SELECT end_date - start_date FROM my_table;`
+        *   **Improved (Redshift style)**: `SELECT DATEDIFF(day, start_date, end_date) FROM my_table;`
+    *   **Scenario**: Getting user name but handling missing users.
+        *   **Weak (Might error or lose rows on INNER JOIN)**: `SELECT o.order_id, u.name FROM orders o JOIN users u ON o.user_id = u.id;`
+        *   **Improved (Handles missing users)**: `SELECT o.order_id, COALESCE(u.name, 'Unknown') FROM orders o LEFT JOIN users u ON o.user_id = u.id;`
+*   **Changes**: Updated to include recent SQL dialects and best practices for ensuring SQL correctness, including handling of JSON data types and new window functions.
+*   **Source References**: Retrospective from GTM compensation SQL task (July 2024).

@@ -1,0 +1,91 @@
+---
+description: Reproducible data-science workflow checklist
+globs: **/*.ipynb,**/*.py
+alwaysApply: false
+---
+
+# Reproducibility Checklist
+- **Environment**  
+  - Pin all library versions (`requirements.txt`, `environment.yml`, `poetry.lock`).  
+  - Record Python version (`python --version`) and OS info in `README.md`. Use virtual environments.
+- **Randomness control**  
+  - Set seeds for all sources of randomness early in scripts/notebooks (e.g., `random.seed(42)`, `numpy.random.seed(42)`, `torch.manual_seed(42)`). Document the chosen seed value.
+- **Data lineage**  
+  - Record source data locations and checksums (e.g., SHA256) in `README` or logs.  
+  - Version control preprocessing scripts. Log script execution commands and arguments.
+- **Config**  
+  - Store all hyperparameters and key configuration parameters in separate files (e.g., YAML, JSON, `.env`) and commit them to version control. Do not hardcode configuration in scripts.
+- **Outputs**  
+  - Save model artefacts with metadata (git SHA, run timestamp, config file used).  
+  - Log performance metrics to an experiment tracker (MLflow, WandB) or a version-controlled CSV/JSON file. Include examples of using MLflow and WandB for tracking.  
+  - Ensure reproducibility by using Docker or similar containerization tools to encapsulate the environment.
+- **Notebooks**  
+  - Clear all cell outputs before committing `.ipynb` files.  
+  - Consider exporting finalized notebooks to HTML or PDF for easier review without requiring execution.
+- **Ethics & compliance**  
+  - Verify data usage complies with privacy regulations (GDPR, CCPA, etc.).  
+  - Anonymize or pseudonymize Personally Identifiable Information (PII) where required.  
+  - Document known biases and limitations of the dataset/model in the `README` or final report.
+
+Usage: reference `@datascience-repro` when kicking off an analysis or review.
+
+# Validation
+- **Check (File Existence & Format)**: Verify `requirements.txt` or similar exists and pins versions (e.g., `pandas==1.5.3` not `pandas>=1.5`). Check `README.md` for env info and seeds. Check for config files. Check for output logs/artifacts.
+- **Check (Code Review)**: Look for hardcoded seeds, paths, or configs. Review data loading and preprocessing steps for lineage tracking. Review notebook diffs for cleared outputs. Check documentation for bias/limitation statements.
+- **Check (Tooling)**: Use experiment tracker UI (MLflow, WandB) to verify runs are logged with parameters and metrics.
+
+# Examples
+- **Pinning Versions (`requirements.txt`)**:
+  ```
+  pandas==1.5.3
+  scikit-learn==1.2.2
+  numpy==1.23.5
+  mlflow==2.1.1
+  ```
+- **Setting Seeds (Python)**:
+  ```python
+  import random
+  import numpy as np
+  import torch
+
+  SEED = 42
+  random.seed(SEED)
+  np.random.seed(SEED)
+  torch.manual_seed(SEED)
+  # If using CUDA
+  # torch.cuda.manual_seed_all(SEED)
+  print(f"Using random seed: {SEED}")
+  ```
+- **Logging Metrics (Conceptual MLflow)**:
+  ```python
+  import mlflow
+  # ... setup ...
+  with mlflow.start_run():
+      mlflow.log_param("learning_rate", 0.01)
+      mlflow.log_param("seed", SEED)
+      # ... train model ...
+      accuracy = calculate_accuracy(model, test_data)
+      mlflow.log_metric("accuracy", accuracy)
+      mlflow.sklearn.log_model(model, "model") # Logs model artifact
+  ```
+
+# Changes
+- Made requirements more explicit (e.g., use virtual envs, specific file examples).
+- Added detail on *how* to log/save outputs.
+- Added specific validation checks (file formats, code review points, tooling checks).
+- Provided concrete code examples for key requirements.
+
+# Source References
+- `.cursor/rules/datascience-repro.mdc`
+- MLflow/WandB documentation
+- General data science best practices
+
+# datascience-repro
+
+*Purpose*: Guarantee reproducible data-science workflows.
+
+- Pin dependencies with `environment.yml` or `requirements.txt`; freeze with `pip-compile`.
+- Version control notebooks and code; use parameterized notebooks (Papermill).
+- Set and log random seeds for experiments.
+- Store raw/processed data separately; track with metadata.
+- Automate pipelines with Makefile or Airflow; include logging of inputs/outputs.

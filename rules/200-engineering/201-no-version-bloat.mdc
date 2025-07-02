@@ -1,0 +1,28 @@
+---
+description: Prevent file version bloat by enforcing integration over duplication
+globs: ["**/*.py", "**/*.md", "**/*.yaml", "**/*.json"]
+alwaysApply: true
+---
+# No Version Bloat Rule
+
+* **Purpose**: Maintain clean architecture by preventing creation of duplicate "enhanced", "v2", or "_new" versions of existing files.
+* **Principle**: Integrate improvements into existing files rather than creating parallel versions.
+* **Requirements**:
+  1. **Before Creating New Files**: Check if functionality belongs in existing file
+  2. **Naming Convention**: Never use suffixes like "_enhanced", "_v2", "_new", "_improved"
+  3. **Consolidation First**: If prototyping created temporary versions, consolidate immediately
+  4. **Git Strategy**: Use branches for experimental features, not duplicate files
+* **Validation**:
+  * Check: Are there any duplicate versions of core files?
+  * Check: Do new features extend existing infrastructure?
+  * Check: Is the codebase free of abandoned prototype files?
+* **Examples**:
+  * ❌ BAD: Creating `safir_enhanced.py` alongside `safir.py`
+  * ✅ GOOD: Adding enhanced methods to existing `safir.py`
+  * ❌ BAD: `llm_service_v2.py` for new features
+  * ✅ GOOD: Extending `llm_service.py` with new capabilities
+* **Exceptions**: 
+  * Temporary test files during development (must be cleaned up)
+  * True architectural rewrites requiring parallel development
+* **Enforcement**: Review file additions for version suffixes before committing
+* **Source**: Phase 8 retrospective - enhanced prompting implementation lesson

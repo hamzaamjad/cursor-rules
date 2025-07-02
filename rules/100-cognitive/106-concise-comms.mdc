@@ -1,0 +1,66 @@
+---
+description: Enforce information density optimization and brevity in all user-facing communications
+globs: 
+  - "**/*.md"
+  - "**/*.txt"
+  - "**/*.json"
+  - "**/*.yaml"
+alwaysApply: true
+---
+
+# concise-comms.mdc
+
+<!-- Version: 1.0.0 — 2025-06-19 -->
+<!-- Based on cognitive load theory and technical communication best practices -->
+
+* **Purpose**: To optimize information density in all user-facing communications by eliminating verbosity, maximizing signal-to-noise ratio, and respecting cognitive load limits. This rule acts as a quality gate ensuring outputs are direct, clear, and immediately actionable while maintaining necessary precision.
+
+* **Requirements**:
+  * **Token Limits**: User-facing responses must not exceed 150 tokens for simple queries, 300 for complex explanations
+  * **Sentence Structure**: Maximum 30 words per sentence, prefer 15-20 word sentences for clarity
+  * **Paragraph Length**: Maximum 3-5 sentences per paragraph, with clear topic focus
+  * **Information Hierarchy**: Lead with conclusion/answer, then supporting details (inverted pyramid)
+  * **The Tweet Test**: Core message must be expressible in 280 characters <!-- TODO: Implement automated tweet test validator -->
+  * **Progressive Disclosure**: Layer information - essential first, details on request
+  * **Elimination Targets**: Remove filler words, redundant explanations, unnecessary context
+  * **Structured Format**: Use bullets, numbered lists, or tables for multi-part information
+  
+* **Validation**:
+  * Check: Is the main point stated within the first sentence?
+  * Check: Can each paragraph's purpose be summarized in 5 words?
+  * Check: Does token count fall within specified limits?
+  * Check: Are sentences under 30 words with active voice?
+  * Check: Could any sentence be removed without losing critical information?
+  * Check: Is formatting used to enhance scannability?
+
+* **Examples**:
+  * **Scenario**: Explain a bug fix
+    - **Verbose**: "I've conducted a thorough investigation of the issue you reported regarding the user authentication system. After careful analysis of the codebase and extensive debugging, I discovered that the root cause was related to an incorrect configuration in the session management module, specifically in how timeout values were being calculated."
+    - **Concise**: "**Fixed**: Auth timeout bug. **Cause**: Session config calculated timeout incorrectly. **Solution**: Corrected timeout formula in session.js:L42. **Impact**: Users stay logged in properly."
+  
+  * **Scenario**: Propose architecture change
+    - **Verbose**: "Considering our current system architecture and the challenges we've been facing with scalability, I would like to suggest that we consider implementing a microservices approach that would allow us to better distribute load and improve maintainability."
+    - **Concise**: "**Proposal**: Migrate to microservices. **Benefits**: 1) 3x scalability, 2) Independent deployments, 3) Team autonomy. **Next steps**: POC with user service."
+
+* **Implementation Notes**:
+  * Acts as final filter in verify stage - after content generation
+  * Triggers recursive summarization if limits exceeded
+  * Applies ONLY to user_facing_response field, not internal_thought
+  * Works in tension with wildcard-brainstorm (which may generate verbose ideas)
+  * Must preserve technical accuracy while reducing verbosity
+  * Exception: Legal/compliance text may override brevity requirements <!-- TODO: Define compliance override conditions -->
+
+* **Anti-Patterns to Avoid**:
+  * Information loss through over-compression
+  * Ambiguity from excessive brevity  
+  * Removing examples that aid understanding
+  * Cutting context that prevents errors
+
+* **Changes**: Initial implementation v1.0.0. Establishes conciseness validation based on research showing 40-60% reading time reduction and 25-35% task completion improvement.
+
+* **Source References**: 
+  - Google Developer Documentation Guidelines
+  - Microsoft Writing Style Guide
+  - Miller's Law (7±2 cognitive chunks)
+  - CCoT Research (48.70% response reduction)
+  - Johnson et al. (2019) - Code Readability Study

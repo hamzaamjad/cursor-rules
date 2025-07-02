@@ -1,0 +1,13 @@
+---
+description: Guidelines for practicing Test-Driven Development (TDD).
+globs: ["**/*.py", "**/*.ts", "**/*.js", "**/*.go", "tests/**/*.py", "src/**"],**/*.py,**/*.ts,**/*.js,**/*.go,**/tests/**/*.py,src/**
+alwaysApply: false
+---
+# test-driven-development
+
+*Purpose*: Ensure high-quality, maintainable code via tests.
+
+- Write tests before implementation (unit, integration).
+- Aim for ≥ 90% coverage on new modules; report on each PR.
+- Use descriptive test names (Given_When_Then style).
+- Automate test runs in CI; fail builds on new test regressions.
