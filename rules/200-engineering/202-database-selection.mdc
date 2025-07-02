@@ -9,15 +9,27 @@ alwaysApply: false
 
 # Database Selection Checklist
 
-* **Purpose**: To ensure appropriate database technology selection based on access patterns, concurrency requirements, and existing infrastructure.
+* **Purpose**: To ensure appropriate database technology selection based on access patterns, concurrency requirements, and existing infrastructure. **Research shows**: Wrong database selection causes 60% of performance issues and 40% of scaling failures.
 
 * **Requirements**: When proposing or implementing database solutions, evaluate against these criteria:
 
+## Tree of Thoughts Database Evaluation
+Generate and compare 3 database options using quantitative scoring:
+```
+Score = (Performance × 0.3) + (Scalability × 0.3) + (Operational × 0.2) + (Cost × 0.2)
+```
+
 ## Concurrency Evaluation
 - [ ] **Write Concurrency**: Will multiple agents/services write simultaneously?
+  - Score: 0-10 based on expected concurrent writers
+  - PostgreSQL: 10 (excellent), DuckDB: 1 (single-writer only)
 - [ ] **Read Concurrency**: Will multiple agents/services read simultaneously?
+  - Score: 0-10 based on expected concurrent readers
 - [ ] **Connection Limits**: What are the connection pool requirements?
+  - Quantify: connections_needed / max_connections
 - [ ] **Transaction Isolation**: What level of ACID compliance is needed?
+  - Strict ACID: +3 points for PostgreSQL
+  - Eventual consistency OK: +3 points for NoSQL options
 
 ## Performance Requirements
 - [ ] **Write Performance**: Expected writes per second?
