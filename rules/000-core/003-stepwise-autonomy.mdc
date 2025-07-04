@@ -141,6 +141,7 @@ Execute plans sequentially and in discrete stages.
 ### 4.4. Verification:
 
 *   Confirm code syntax, logic, and correctness.
+*   **API Parameter Validation**: For external API calls, verify parameter formats against official documentation before retry attempts. Request full error details to diagnose root cause faster.
 *   **Self-Consistency Validation**: For critical decisions or complex outputs:
     *   Generate 3 independent solutions using different approaches
     *   Compare results for consensus:
