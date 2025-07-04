@@ -1,0 +1,54 @@
+# snmp-monitoring-patterns.mdc
+
+* **Purpose**: Standardize SNMP network monitoring implementation patterns to prevent common pitfalls and ensure reliable monitoring setup.
+* **Requirements**:
+  1. **Interface Discovery First**: Always run `snmpwalk -v2c -c [community] [host] 1.3.6.1.2.1.2.2.1.2` to get interface descriptions before hardcoding OIDs. Map interface names to indices.
+  2. **Counter Validation**: Test specific OIDs with `snmpget` commands before implementing continuous monitoring loops. Verify counters are incrementing as expected.
+  3. **Activity Characterization**: Clarify monitoring goals with user:
+     - **Stability**: Minimal counter changes, low noise
+     - **Activity**: High frequency changes, real-time traffic
+     - **Specific Traffic**: WAN, LAN, or application-specific monitoring
+  4. **Incremental Testing**: Follow progression: single measurement → short interval testing → continuous monitoring
+  5. **OID Construction Pattern**: Use format `1.3.6.1.2.1.2.2.1.[10|16].[interface_index]` where 10=download, 16=upload
+  6. **Error Handling**: Include timeout handling, community string validation, and graceful degradation for unreachable interfaces
+* **Common Interface Patterns**:
+  - **WAN Interfaces**: switch0, br0, eth0, ppp0
+  - **Bridge Interfaces**: br0, br1 (often aggregate traffic)
+  - **VLAN Interfaces**: switch0.1, eth0.2 (sub-interfaces)
+  - **Loopback**: lo (avoid for WAN monitoring)
+* **Discovery Optimization Patterns**:
+  - **WAN Interface Filtering**: Use strict pattern matching (eth0-9, br0-9, specific VLANs) over broad inclusion to reduce 5000+ interfaces to 10-50 candidates
+  - **Discovery vs Monitoring Split**: Always clarify whether optimizing discovery speed or monitoring accuracy before implementing
+  - **Interface Ranking**: Present discovered interfaces in priority table for user selection rather than automatic optimization
+  - **Batch Validation**: Process interface validation in batches of 5 to avoid overwhelming router
+  - **Deduplication**: Remove duplicate interface names (common with multiple SNMP indices for same interface)
+  - **IP Address Filtering**: Exclude IP addresses (`/^\d+\.\d+\.\d+\.\d+$/`) from interface name results
+  - **Priority Categories**: 
+    * primary_wan (switch0, br0, eth0 + common VLANs) - highest priority
+    * physical_wan (eth1-9) - physical ports
+    * bridge_wan (br1-9) - bridge interfaces  
+    * ppp_wan (ppp0+) - PPP connections
+    * named_wan (wan*, internet*, uplink*) - explicitly named
+* **Validation**:
+  * Check: Was interface discovery performed before OID hardcoding?
+  * Check: Were test measurements taken to validate counter behavior?
+  * Check: Are monitoring goals clearly defined (stability vs activity)?
+  * Check: Does the implementation handle SNMP errors gracefully?
+  * Check: For optimization requests, were performance targets and output preferences confirmed upfront?
+  * Check: Was interface filtering applied to reduce discovery scope to manageable size (10-50 candidates)?
+  * Check: Were discovered interfaces presented in ranking table for user selection?
+* **Examples**:
+  * **Discovery Command**: `snmpwalk -v2c -c public 192.168.1.1 1.3.6.1.2.1.2.2.1.2`
+  * **Validation Test**: `snmpget -v2c -c public 192.168.1.1 1.3.6.1.2.1.2.2.1.10.4`
+  * **Activity Test**: Run 3 measurements 2 seconds apart to assess counter change frequency
+  * **Optimization Scope Confirmation**: "Target interface count? Acceptable discovery time? Minimal vs detailed output?"
+  * **Interface Ranking Table**: Present "1. br0 [primary_wan] - 14M bytes activity, 2. eth4 [physical_wan] - 18M bytes activity" before selecting
+  * **Assumption Echo**: "Using strict eth0-9/br0-9 patterns to limit to ~10-50 interfaces...OK?"
+* **Changes**: 
+  - v1.0: Initial version based on bandwidth monitoring retrospective
+  - v1.1: Added Discovery Optimization Patterns section based on WAN interface filtering task retrospective (reduced 5000+ to 13 interfaces)
+* **Source References**: Retrospective from SNMP bandwidth monitoring implementation task and WAN interface discovery optimization task.
+description:
+globs:
+alwaysApply: false
+---

@@ -113,6 +113,12 @@ See **Appendix A: Multi-Step Execution Examples.**
     *   Availability of APIs or services mentioned in the task.
     *   **Structural Integrity of Artifact Collections**: When working with collections of artifacts (e.g., example libraries, datasets, multi-file components), verify that the items conform to their documented structure, schema, or conventions, especially if iterating upon or adding to them. Note any deviations.
 *   Identify ambiguous verbs and outputs.
+*   **Scope Confirmation Checkpoints**: Before implementing optimizations or enhancements, explicitly confirm:
+    *   Performance targets (time, resource usage, output size)  
+    *   Output format preferences (minimal vs detailed)
+    *   Whether to optimize existing flow vs create alternative approach
+    *   Key constraints upfront (polling intervals, language preferences, hard limits)
+    *   Echo major assumptions ("using strict filtering to limit to 10-50 interfaces...OK?")
 *   **Explicitly consider available and registered external services or MCP services** (e.g., specialized data APIs, documentation services, or browser automation tools) that can make steps more efficient or reliable. Only invoke these services when they offer greater confidence, performance, or coverage compared to alternative approaches.
 *   **Efficient Multi-File Ingestion**: When multiple files are identified for initial context gathering (e.g., from a `supplemental_knowledge` list in a prompt), and if a tool for reading multiple files simultaneously (like `mcp_desktop_commander_read_multiple_files`) is available, prioritize its use over sequential single-file reads to improve efficiency. Subsequent analysis and synthesis of the gathered content should still follow a structured approach.
 *   **Orchestrating Complex Tasks with Sequential Thinking**: For tasks with multiple distinct components, iterative analytical loops, or a high likelihood of plan adaptation based on intermediate results (e.g., complex data analysis, multi-stage report generation, implementing features with several sub-tasks), explicitly consider using `mcp_sequential_thinking_sequentialthinking` to structure the overall execution. This promotes modularity, step-wise verification, and clearer articulation of progress.
@@ -168,6 +174,7 @@ Execute plans sequentially and in discrete stages.
     *   If >0.62: Delegate more mechanistic processing to tools
     *   If <0.45: Increase human involvement for strategic decisions
     *   **Empirical Benefit**: 42% cognitive load reduction in medical diagnostics
+*   **Network Monitoring Verification**: For SNMP/network monitoring tools, verify interface indices match expected interfaces through discovery commands before implementing monitoring loops. Use `snmpwalk` for interface discovery, `snmpget` for counter validation, and test measurements to confirm counter behavior before continuous monitoring.
 
 ### 4.5. Tool Usage:
 
