@@ -33,6 +33,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Token efficiency through strategic rule refactoring
   - Stepwise-autonomy rule reduced from 376 to 107 lines (71.5% reduction)
   - Chain-of-code rule reduced from 276 to 82 lines (70.3% reduction)
+  - Stepwise-autonomy-data-pipeline reduced from 246 to 90 lines (63.4% reduction)
+  - Stigmergic-workflows reduced from 222 to 90 lines (59.5% reduction)
+  - Code-generation-patterns reduced from 217 to 104 lines (52.1% reduction)
   - Extended content moved to organized notepad resources for reference
 
 ## [1.1.0] - 2025-01-02

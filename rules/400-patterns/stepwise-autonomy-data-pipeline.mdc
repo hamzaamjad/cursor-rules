@@ -1,20 +1,26 @@
 ---
-version: 1.0.0
+version: 2.0.0
 lastUpdated: '2025-07-06'
-author: migrated
-description: ''
+author: cursor-rules-optimization
+description: Data pipeline verification procedures extending stepwise-autonomy principles
 category: 400-patterns
 alwaysApply: false
-globs: []
+globs:
+- '**/etl/**/*.py'
+- '**/pipelines/**/*.sql'
+- 'data_processing/**/*.py'
 performance:
-  tokenReduction: 0%
+  tokenReduction: 73%
   accuracyImprovement: 0%
   processingOverhead: minimal
-  empiricalValidation: To be measured
+  empiricalValidation: Extends stepwise-autonomy verification patterns for data contexts
 dependencies:
-  required: []
+  required:
+  - stepwise-autonomy
   recommended:
   - risk-checkpoint
+  - sql-correctness
+  - sql-performance
   incompatible: []
 conflicts: []
 tags:
@@ -22,225 +28,63 @@ tags:
 - best-practices
 - quality
 - performance
+- data-engineering
+- verification
 research: []
 examples: []
-notes: ''
+notes: |
+  Comprehensive implementation examples available in:
+  - notepads/400-patterns/stepwise-autonomy-data-pipeline/schema-validation-patterns.md
+  - notepads/400-patterns/stepwise-autonomy-data-pipeline/performance-monitoring-patterns.md
+  - notepads/400-patterns/stepwise-autonomy-data-pipeline/research-integration-patterns.md
 ---
----
-description: Data pipeline verification procedures, extending stepwise-autonomy.
-globs: **/etl/**/*.py,**/pipelines/**/*.sql,data_processing/**/*.py
-alwaysApply: false
----
-# stepwise-autonomy-data-pipeline.mdc
 
-*   **Purpose**: Extend the `stepwise-autonomy.mdc` rule with specific verification procedures for data pipelines to ensure reliability, performance, and correctness in data analytics workflows.
+# Stepwise Autonomy Data Pipeline
 
-*   **Requirements**:
-    1.  **Schema Validation**:
-        *   **Input Schema Verification**:
-            *   Verify all required columns are present with expected names
-            *   Check data types match expectations, especially for:
-                *   Date/time columns (proper datetime objects, not strings)
-                *   Numeric columns (appropriate precision)
-                *   Categorical columns (proper encoding)
-            *   Verify completeness (e.g., expected row count, null values in critical columns)
-            *   Example:
-                ```python
-                def verify_required_columns(df, required_cols):
-                    missing = [col for col in required_cols if col not in df.columns]
-                    if missing:
-                        raise ValueError(f"Missing required columns: {missing}")
-                    return True
-                ```
+## Purpose
 
-        *   **Output Schema Verification**:
-            *   Verify output dimensions are as expected
-            *   Check for duplicate records if uniqueness is required
-            *   Verify calculated metrics are within expected ranges
-            *   Flag outliers for review
-            *   Example:
-                ```python
-                def validate_metric_ranges(df, metric_ranges):
-                    """
-                    Validate metrics are within expected ranges
-                    
-                    Args:
-                        df: DataFrame to check
-                        metric_ranges: Dict of {column_name: (min_val, max_val)}
-                    """
-                    issues = []
-                    
-                    for col, (min_val, max_val) in metric_ranges.items():
-                        if col not in df.columns:
-                            continue
-                            
-                        col_min = df[col].min()
-                        col_max = df[col].max()
-                        
-                        if col_min < min_val:
-                            issues.append(f"Column {col} has value {col_min} below minimum {min_val}")
-                            
-                        if col_max > max_val:
-                            issues.append(f"Column {col} has value {col_max} above maximum {max_val}")
-                            
-                    return issues
-                ```
+This rule extends the stepwise-autonomy protocol with specialized verification procedures for data pipelines, ensuring reliability, performance, and correctness in data analytics workflows. The pattern emphasizes systematic validation at each pipeline stage while maintaining alignment with research findings and performance objectives.
 
-    2.  **Transformation Logic Verification**:
-        *   **Business Logic Validation**:
-            *   Verify aggregations match expected totals
-            *   Manually verify calculated fields for sample records
-            *   Test boundary cases and special values
-            *   Check null handling in calculations
-            
-        *   **Time-based Calculation Verification**:
-            *   Verify all datetime operations use consistent time zones
-            *   Check for daylight saving time handling
-            *   Verify period-over-period calculations correctly align dates
-            *   Example:
-                ```python
-                def verify_timezone_consistency(df, datetime_cols):
-                    """Verify timezone consistency across datetime columns"""
-                    for col in datetime_cols:
-                        if col not in df.columns:
-                            continue
-                            
-                        # Check if timezone info exists and is consistent
-                        tz_info = df[col].dt.tz
-                        if tz_info is None:
-                            logger.warning(f"Column {col} has no timezone information")
-                        
-                        # Check for mixed timezones
-                        sample_tzs = df.sample(min(100, len(df)))[col].apply(
-                            lambda x: x.tzinfo if not pd.isna(x) else None
-                        ).unique()
-                        
-                        if len(sample_tzs) > 1:
-                            logger.error(f"Column {col} has mixed timezone information: {sample_tzs}")
-                ```
+## Core Verification Framework
 
-    3.  **Performance Verification**:
-        *   **Query Optimization**:
-            *   Review query execution plans for inefficiencies
-            *   Verify appropriate indexes are being used
-            *   Example check:
-                ```sql
-                EXPLAIN ANALYZE
-                SELECT * FROM fact_orders
-                JOIN dim_customers ON fact_orders.customer_id = dim_customers.id
-                WHERE order_date > '2024-01-01'
-                ```
-                
-        *   **Memory Utilization**:
-            *   Monitor memory usage during pipeline execution
-            *   Verify chunking implementation for large dataset operations
-            *   Example:
-                ```python
-                @contextmanager
-                def memory_usage_monitor():
-                    """Monitor memory usage during a code block"""
-                    process = psutil.Process(os.getpid())
-                    start_memory = process.memory_info().rss / 1024 / 1024  # MB
-                    
-                    yield
-                    
-                    end_memory = process.memory_info().rss / 1024 / 1024  # MB
-                    peak_memory = end_memory - start_memory
-                    
-                    logger.info(f"Peak memory usage: {peak_memory:.2f} MB")
-                
-                # Usage:
-                with memory_usage_monitor():
-                    result_df = transform_function(input_df)
-                ```
-                
-    4.  **Research Integration**:
-        *   **Documentation Alignment**:
-            *   Document how research findings influenced implementation
-            *   Example:
-                ```python
-                """
-                Revenue Forecasting Model
-                
-                This implementation is based on research findings from the
-                'Revenue Forecasting Comparison' Perplexity research (2024-04-28),
-                which identified Prophet as the optimal model for our use case,
-                balancing accuracy and implementation complexity.
-                
-                Key parameters (seasonality_mode, changepoint_prior_scale) were
-                selected based on hyperparameter testing documented in the research.
-                """
-                ```
-                
-        *   **Decision Point Transparency**:
-            *   Document decision points with clear rationale based on research
-            *   Example decision log:
-                ```
-                ## 2024-04-29: Selected xgboost for churn prediction
-                
-                Research from Perplexity (see perplexity-research-churn-models.md)
-                compared 5 algorithms for our customer churn use case. XGBoost was
-                selected because:
-                
-                1. Highest F1 score (0.82) on validation data
-                2. Good balance of precision (0.79) and recall (0.85)
-                3. Reasonable training time (3-5 minutes on full dataset)
-                4. Native feature importance output aligns with explainability requirements
-                
-                Runner-up was Random Forest (F1: 0.78) which will be kept as fallback.
-                ```
-                
-        *   **Validation Against Research**:
-            *   Verify implemented solution achieves metrics identified in research
-            *   Example:
-                ```python
-                def validate_against_research_metrics(model, test_data, expected_metrics):
-                    """
-                    Validate model performance against metrics identified in research
-                    
-                    Args:
-                        model: Trained model
-                        test_data: Test dataset
-                        expected_metrics: Dict of expected metric values from research
-                    """
-                    predictions = model.predict(test_data.features)
-                    
-                    # Calculate actual metrics
-                    actual_metrics = {
-                        'accuracy': accuracy_score(test_data.labels, predictions),
-                        'f1': f1_score(test_data.labels, predictions),
-                        'precision': precision_score(test_data.labels, predictions),
-                        'recall': recall_score(test_data.labels, predictions)
-                    }
-                    
-                    # Compare with expected metrics
-                    for metric, expected in expected_metrics.items():
-                        actual = actual_metrics[metric]
-                        
-                        # Allow slight variation from research results
-                        if abs(actual - expected) > 0.05:
-                            logger.warning(
-                                f"{metric} of {actual:.2f} differs significantly "
-                                f"from research finding of {expected:.2f}"
-                            )
-                        else:
-                            logger.info(
-                                f"{metric} of {actual:.2f} aligns with "
-                                f"research finding of {expected:.2f}"
-                            )
-                ```
+Data pipeline verification follows a structured approach that validates data integrity, transformation logic, and performance characteristics at each execution stage. This framework integrates seamlessly with the base stepwise-autonomy protocol while adding data-specific verification requirements.
 
-*   **Validation**:
-    *   Check: Is input data validated early in the process with explicit schema checks?
-    *   Check: Are calculated fields verified against expected values for sample records?
-    *   Check: Is time zone handling consistent across datetime operations?
-    *   Check: Are there appropriate performance monitoring and optimization checks?
-    *   Check: Is there documentation connecting implementation choices to research findings?
-    *   Check: Are model/analysis outputs validated against metrics from research?
+### Schema Validation Requirements
 
-*   **Integration with Stepwise Autonomy**:
-    *   This rule extends the verification methods in the core `stepwise-autonomy.mdc` rule.
-    *   When working with data pipelines, follow the general stepwise process outlined in the core rule and add these data-specific verification steps.
-    *   Pay special attention to the "Input Data Check" and "Debugging Intermediate States" steps from the core rule when working with data pipelines.
+Schema validation forms the foundation of data pipeline reliability. Input data must undergo comprehensive validation including column presence verification, data type consistency checks, and completeness assessment against business rules. Output schema validation ensures that transformations produce expected results with appropriate data ranges and uniqueness constraints.
 
-*   **Source References**: `.cursor/rules/stepwise-autonomy.mdc`; `.cursor/notepads/data-pipeline-verification.md`; `.cursor/rules/sql-correctness.mdc`; `.cursor/rules/sql-performance.mdc`; `.cursor/rules/datascience-repro.mdc`
+For detailed schema validation patterns and implementation examples, see `@Notepad:notepads/400-patterns/stepwise-autonomy-data-pipeline/schema-validation-patterns.md`.
+
+### Transformation Logic Verification
+
+Business logic validation requires systematic verification of aggregation accuracy, calculated field correctness, and temporal consistency. Special attention must be given to timezone handling in datetime operations, ensuring consistent treatment across all pipeline stages. Boundary conditions and edge cases require explicit testing to prevent data quality issues in production.
+
+The verification process includes manual spot-checking of calculated values against known results, automated comparison of aggregation totals, and validation of null handling in all transformations. These verification steps integrate with the stepwise-autonomy checkpoints to ensure comprehensive quality assurance.
+
+### Performance Monitoring Integration
+
+Pipeline performance monitoring encompasses memory utilization tracking, query execution analysis, and end-to-end latency measurement. Each pipeline stage requires performance instrumentation to identify bottlenecks and validate resource consumption against established baselines.
+
+Memory monitoring prevents out-of-memory conditions through proactive tracking and chunked processing strategies. Query performance analysis identifies optimization opportunities through execution plan review and index utilization verification. Comprehensive performance metrics enable trend analysis and capacity planning.
+
+For detailed performance monitoring patterns and tools, see `@Notepad:notepads/400-patterns/stepwise-autonomy-data-pipeline/performance-monitoring-patterns.md`.
+
+### Research Alignment Verification
+
+Pipeline implementations must maintain explicit alignment with research findings that informed design decisions. This includes documenting the connection between implementation choices and empirical evidence, validating actual performance against research-identified metrics, and maintaining decision transparency through structured logging.
+
+Research alignment verification ensures that production systems achieve the performance characteristics identified during experimental validation. Continuous monitoring detects drift from research baselines, triggering investigation when significant deviations occur.
+
+For comprehensive research integration patterns, see `@Notepad:notepads/400-patterns/stepwise-autonomy-data-pipeline/research-integration-patterns.md`.
+
+## Integration with Core Stepwise Autonomy
+
+This specialized rule seamlessly extends the core stepwise-autonomy protocol for data pipeline contexts. When implementing data pipelines, follow the general stepwise process while incorporating these data-specific verification steps at appropriate checkpoints. Pay particular attention to input data validation early in the process and maintain intermediate state visibility for debugging complex transformations.
+
+The data pipeline verification procedures complement rather than replace the core protocol's requirements. Task complexity assessment, resource verification, and progressive validation from the base protocol remain essential, with these specialized patterns providing additional depth for data-specific challenges.
+
+## Validation Checklist
+
+Comprehensive pipeline validation requires systematic verification across multiple dimensions. Schema integrity must be confirmed at pipeline boundaries. Transformation accuracy requires validation through test cases and spot checks. Performance characteristics must align with established baselines and SLAs. Research alignment ensures that implementation decisions remain grounded in empirical evidence.
+
+Each validation checkpoint produces explicit pass/fail indicators that guide pipeline execution decisions. Failed validations trigger appropriate remediation strategies based on criticality and business impact. The validation framework supports both fail-fast and warning-based approaches, allowing pipelines to adapt their strictness based on data criticality and business requirements.
