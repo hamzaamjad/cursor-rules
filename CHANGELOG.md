@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Enhanced metadata structure for all rule files with comprehensive tracking capabilities
+- Automated metadata migration script (`scripts/migrate-metadata.py`)
+- Enhanced metadata template (`templates/enhanced-metadata-template.yaml`)
+- Scripts directory for automation tools
+- Python virtual environment configuration for project dependencies
+- Comprehensive metadata fields including:
+  - Version tracking for individual rules
+  - Performance metrics (token reduction, accuracy improvement, processing overhead)
+  - Explicit dependency declarations
+  - Conflict specifications with resolution strategies
+  - Tag-based categorization
+  - Research references and empirical validation fields
+
+### Changed
+- All 61 rule files migrated to enhanced metadata format
+- Metadata structure standardized across all rule categories
+- Improved dependency tracking with explicit declarations
+
+### Improved
+- Rule discoverability through tag-based categorization
+- Performance monitoring capabilities with embedded metrics
+- Dependency validation through explicit relationship declarations
+
 ## [1.1.0] - 2025-01-02
 
 ### Added

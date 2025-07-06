@@ -1,8 +1,32 @@
 ---
-description: 
-globs: 
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: null
+category: 400-patterns
 alwaysApply: true
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+- performance
+research: []
+examples: []
+notes: ''
 ---
+
 # model-selection.mdc
 
 *   **Purpose**: To provide guidance on selecting the most appropriate LLM model for a given prompt or task in Cursor, considering factors such as model capabilities, performance, cost, and compatibility.

@@ -1,12 +1,35 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
 description: Enhance reasoning accuracy through executable code generation
-globs: ["**/*.py", "**/*.js", "**/*.md"]
+category: 100-cognitive
 alwaysApply: false
-dependencies: ["003-stepwise-autonomy", "004-risk-checkpoint"]
+globs:
+- '**/*.py'
+- '**/*.js'
+- '**/*.md'
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 17.9%
+  processingOverhead: minimal
+  empiricalValidation: IEEE study 2024
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
 conflicts: []
-tags: ["cognitive", "verification", "code-generation"]
-version: "1.0.0"
+tags:
+- cognitive-enhancement
+- safety
+- reasoning
+- quality
+research: []
+examples: []
+notes: ''
 ---
+
 
 # Chain of Code (CoC) Reasoning
 

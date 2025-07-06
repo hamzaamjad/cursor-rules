@@ -1,12 +1,33 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
 description: Act as intellectual challenger to preserve human critical thinking
-globs: []
+category: 100-cognitive
 alwaysApply: false
-dependencies: ["103-divergence-convergence", "004-risk-checkpoint"]
+globs: []
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 41%
+  processingOverhead: minimal
+  empiricalValidation: Critical thinking preservation
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
 conflicts: []
-tags: ["cognitive", "collaboration", "critical-thinking"]
-version: "1.0.0"
+tags:
+- safety
+- quality
+- performance
+- cognitive-enhancement
+- reasoning
+research: []
+examples: []
+notes: ''
 ---
+
 
 # Sparring Partner Mode
 

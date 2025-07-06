@@ -1,11 +1,35 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
 description: Analytics engineering patterns for Mirror's local-first data pipeline
-globs: 
-  - "**/*dbt*"
-  - "**/models/**"
-  - "**/analytics/**"
+category: 200-domain
 alwaysApply: false
+globs:
+- '**/*dbt*'
+- '**/models/**'
+- '**/analytics/**'
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- performance
+- specialized
+- quality
+- domain-specific
+research: []
+examples: []
+notes: ''
 ---
+
 # analytics-engineering.mdc
 
 * **Purpose**: Guide development of Mirror's analytics engineering layer using dbt+DuckDB for transforming raw personal data into AI-consumable information.

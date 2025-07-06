@@ -1,12 +1,33 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
 description: Optimize human-AI collaboration through cognitive load monitoring
-globs: []
+category: 100-cognitive
 alwaysApply: true
-dependencies: ["003-stepwise-autonomy"]
+globs: []
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: moderate
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - divergence-convergence
+  - risk-checkpoint
+  incompatible: []
 conflicts: []
-tags: ["cognitive", "performance", "collaboration"]
-version: "1.0.0"
+tags:
+- performance
+- cognitive-enhancement
+- reasoning
+- quality
+research: []
+examples: []
+notes: ''
 ---
+
 
 # Cognitive Load Balancing
 

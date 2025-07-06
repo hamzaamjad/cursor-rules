@@ -1,8 +1,32 @@
 ---
-description: Prevent common formatting errors in AI-generated Python code and establish best practices for multi-file code generation tasks.
-globs: 
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Prevent common formatting errors in AI-generated Python code and establish
+  best practices for multi-file code generation tasks.
+category: 400-patterns
 alwaysApply: false
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+research: []
+examples: []
+notes: ''
 ---
+
 # Code Generation Patterns
 
 * **Purpose**: Prevent common formatting errors in AI-generated Python code and establish best practices for multi-file code generation tasks. **Research Impact**: Chain of Code methodology shows 17.9% improvement in code generation accuracy when following structured patterns.

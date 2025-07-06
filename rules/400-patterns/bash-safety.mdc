@@ -1,8 +1,33 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
 description: Safe, maintainable Bash scripts
-globs: ["**/*.sh"]
+category: 400-patterns
 alwaysApply: false
+globs:
+- '**/*.sh'
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+- safety
+research: []
+examples: []
+notes: ''
 ---
+
 *   **Purpose**: To promote the creation of safe, robust, and maintainable Bash scripts by enforcing strict modes, safe variable handling, and dependency checks.
 *   **Requirements**:
     *   Start all scripts with `set -euo pipefail`.

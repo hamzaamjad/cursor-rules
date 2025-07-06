@@ -1,8 +1,31 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
 description: Core requirements for models using Cursor Agent tools for codebase changes.
-globs: 
+category: 300-integration
 alwaysApply: true
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: moderate
+  empiricalValidation: To be measured
+dependencies:
+  required:
+  - available_tooling_guide.mdc
+  recommended:
+  - divergence-convergence
+  incompatible: []
+conflicts: []
+tags:
+- integration
+- tooling
+research: []
+examples: []
+notes: ''
 ---
+
 # cursor-agent-integration.mdc
 
 *Purpose*: Enable models to reliably and autonomously apply codebase changes using Cursor Agent tools.

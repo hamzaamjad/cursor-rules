@@ -1,11 +1,34 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
 description: Database selection criteria for Mirror project
-globs: 
-  - "**/*database*"
-  - "**/*db*"
-  - "**/timeseries/*"
+category: 200-engineering
 alwaysApply: false
+globs:
+- '**/*database*'
+- '**/*db*'
+- '**/timeseries/*'
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: significant
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - divergence-convergence
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- performance
+- quality
+research: []
+examples: []
+notes: ''
 ---
+
 
 # Database Selection Checklist
 

@@ -1,4 +1,29 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: ''
+category: 200-domain
+alwaysApply: false
+globs: []
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended: []
+  incompatible: []
+conflicts: []
+tags:
+- specialized
+- domain-specific
+research: []
+examples: []
+notes: ''
+---
+---
 description: Patterns for reliable and performant dbt incremental models.
 globs: **/models/**/*.sql
 alwaysApply: false

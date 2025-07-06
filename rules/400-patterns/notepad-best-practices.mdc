@@ -1,8 +1,33 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
 description: Standards for creating and using Cursor Notepads.
-globs: [".cursor/notepads/**/*.md", "notepads/**/*.md"]
+category: 400-patterns
 alwaysApply: false
+globs:
+- .cursor/notepads/**/*.md
+- notepads/**/*.md
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+research: []
+examples: []
+notes: ''
 ---
+
 # notepad-best-practices.mdc
 
 *   **Purpose**: To define standards for creating and using Cursor Notepads (`.cursor/notepads/*.md` or other formats) for storing reusable templates, parameters, research notes, or dynamic content referenced in prompts or rules.

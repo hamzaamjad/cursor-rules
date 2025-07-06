@@ -1,12 +1,39 @@
 ---
-description: Inject controlled randomness and unexpected elements to break cognitive patterns and generate novel solutions
-globs: 
-  - "**/*.py"
-  - "**/*.js"
-  - "**/*.ts"
-  - "**/*.md"
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Inject controlled randomness and unexpected elements to break cognitive
+  patterns and generate novel solutions
+category: 100-cognitive
 alwaysApply: false
+globs:
+- '**/*.py'
+- '**/*.js'
+- '**/*.ts'
+- '**/*.md'
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 25-50%
+  processingOverhead: moderate
+  empiricalValidation: Creativity increase measured
+dependencies:
+  required: []
+  recommended:
+  - divergence-convergence
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- safety
+- quality
+- performance
+- cognitive-enhancement
+- reasoning
+research: []
+examples: []
+notes: ''
 ---
+
 
 # wildcard-brainstorm.mdc
 

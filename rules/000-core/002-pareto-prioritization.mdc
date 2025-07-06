@@ -1,8 +1,33 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
 description: Always think Pareto (focus on high-impact 20 %)
-globs: 
+category: 000-core
 alwaysApply: true
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- safety
+- quality
+- strategic
+- foundational
+- performance
+research: []
+examples: []
+notes: ''
 ---
+
 
 # 80-20-prioritization.mdc
 

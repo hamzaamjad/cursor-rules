@@ -1,8 +1,34 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
 description: Prevent file version bloat by enforcing integration over duplication
-globs: ["**/*.py", "**/*.md", "**/*.yaml", "**/*.json"]
+category: 200-engineering
 alwaysApply: true
+globs:
+- '**/*.py'
+- '**/*.md'
+- '**/*.yaml'
+- '**/*.json'
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: moderate
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - divergence-convergence
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- quality
+research: []
+examples: []
+notes: ''
 ---
+
 # No Version Bloat Rule
 
 * **Purpose**: Maintain clean architecture by preventing creation of duplicate "enhanced", "v2", or "_new" versions of existing files. **Empirical Impact**: Projects with version bloat show 45% higher maintenance costs and 3x longer onboarding time.

@@ -1,4 +1,32 @@
 ---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: ''
+category: 400-patterns
+alwaysApply: false
+globs: []
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+- safety
+research: []
+examples: []
+notes: ''
+---
+---
 description: Defines the output structure and validation for Sāfir and Waraqa agent scrolls.
 globs: ["*.scroll.md", "*.mirror.md", "*.ritual.md"],*.scroll.md,*.mirror.md,*.ritual.md
 alwaysApply: false

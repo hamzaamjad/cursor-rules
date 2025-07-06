@@ -1,8 +1,31 @@
 ---
-description: Patterns for optimizing system constraints based on the 60% principle discovery
-globs: 
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Patterns for optimizing system constraints based on the 60% principle
+  discovery
+category: 300-techniques
 alwaysApply: false
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- performance
+- quality
+research: []
+examples: []
+notes: ''
 ---
+
 
 # Constraint Optimization Patterns
 
