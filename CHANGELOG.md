@@ -30,6 +30,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rule discoverability through tag-based categorization
 - Performance monitoring capabilities with embedded metrics
 - Dependency validation through explicit relationship declarations
+- Token efficiency through strategic rule refactoring
+  - Stepwise-autonomy rule reduced from 376 to 107 lines (71.5% reduction)
+  - Chain-of-code rule reduced from 276 to 82 lines (70.3% reduction)
+  - Extended content moved to organized notepad resources for reference
 
 ## [1.1.0] - 2025-01-02
 
