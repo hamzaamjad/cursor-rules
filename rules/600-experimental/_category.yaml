@@ -1,0 +1,28 @@
+category: experimental
+name: "Experimental Features"
+description: "Beta rules for testing new AI capabilities and patterns"
+priority: 600
+version: 1.0.0
+created: "2025-01-07"
+author: "Hamza Amjad"
+
+purpose: |
+  Sandbox for cutting-edge AI techniques, metacognitive patterns,
+  and experimental workflows not yet production-ready.
+
+scope:
+  - Metacognitive reflection
+  - Multi-agent coordination
+  - Emergent behaviors
+  - Research implementations
+  - Beta features
+
+metadata:
+  icon: "🧪"
+  status: "beta"
+  experimental: true
+  
+warnings:
+  - "Rules may have unpredictable behavior"
+  - "Not recommended for production use"
+  - "Performance not optimized"

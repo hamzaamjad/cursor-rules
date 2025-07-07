@@ -1,5 +1,9 @@
 # Cursor Rules
 
+![Validate Rules](https://github.com/hamza-amjad/cursor-rules/workflows/Validate%20Rules/badge.svg)
+![Benchmark Rules](https://github.com/hamza-amjad/cursor-rules/workflows/Benchmark%20Rules/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A collection of cognitive enhancement rules and methodologies for AI-assisted development.
 
 ## Overview

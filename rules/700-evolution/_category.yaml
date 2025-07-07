@@ -1,0 +1,29 @@
+category: evolution
+name: "Learning & Adaptation"
+description: "Rules for tracking improvement, learning from feedback, and system evolution"
+priority: 700
+version: 1.0.0
+created: "2025-01-07"
+author: "Hamza Amjad"
+
+purpose: |
+  Enable continuous improvement through feedback loops, performance tracking,
+  and adaptive rule refinement based on empirical results.
+
+scope:
+  - Rule effectiveness tracking
+  - A/B testing frameworks
+  - Feedback integration
+  - Performance evolution
+  - Learning algorithms
+
+metadata:
+  icon: "📈"
+  status: "active"
+  experimental: false
+  
+features:
+  - Automatic performance baseline updates
+  - Rule usage analytics
+  - Success rate tracking
+  - Iterative refinement

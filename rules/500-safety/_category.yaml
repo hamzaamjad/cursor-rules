@@ -1,0 +1,23 @@
+category: safety
+name: "Safety & Guardrails"
+description: "Rules for prompt injection protection, input validation, and risk mitigation"
+priority: 500
+version: 1.0.0
+created: "2025-01-07"
+author: "Hamza Amjad"
+
+purpose: |
+  Protect against malicious inputs, ensure safe operations, and maintain
+  system integrity through validation and defensive programming patterns.
+
+scope:
+  - Input sanitization
+  - Prompt injection defense
+  - Output validation
+  - Risk assessment
+  - Security boundaries
+
+metadata:
+  icon: "🛡️"
+  status: "active"
+  experimental: false

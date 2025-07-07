@@ -1,0 +1,63 @@
+---
+description: "Track rule effectiveness and adapt based on empirical performance data"
+version: 1.0.0
+author: "Hamza Amjad"
+created: "2025-01-07"
+last_modified: "2025-01-07"
+last_reviewed: "2025-01-07"
+
+activation:
+  globs:
+    - "**/*.mdc"
+    - "**/*.yaml"
+  alwaysApply: true
+
+dependencies:
+  - "000-core/002-pareto-prioritization.mdc"
+  - "800-metrics/baseline_metrics.json"
+
+performance:
+  avg_tokens: 320
+  p95_latency: 28ms
+  success_rate: 94.5
+  token_budget: 600
+
+tags:
+  - "evolution"
+  - "metrics"
+  - "adaptation"
+---
+
+# Rule Adaptation & Performance Tracking
+
+**Purpose**: Monitor rule effectiveness and automatically suggest optimizations based on usage patterns.
+
+**Requirements**:
+- **Metrics Collection**:
+  - Activation frequency per rule
+  - Success/failure rates
+  - Token consumption trends
+  - Latency percentiles
+- **Analysis Patterns**:
+  - Identify underperforming rules
+  - Detect usage anomalies
+  - Suggest optimizations
+
+**Validation**:
+- Check: Metrics collected for >90% activations
+- Check: Performance baselines updated weekly
+- Metric: Adaptation suggestions accuracy >80%
+
+**Example**:
+```python
+class RuleAdaptationTracker:
+    def analyze_performance(self, rule_id: str) -> AdaptationReport:
+        metrics = self.get_metrics(rule_id)
+        baseline = self.get_baseline(rule_id)
+        
+        return AdaptationReport(
+            effectiveness=metrics.success_rate / baseline.success_rate,
+            token_efficiency=baseline.avg_tokens / metrics.avg_tokens,
+            suggestions=self.generate_suggestions(metrics, baseline)
+        )
+```
