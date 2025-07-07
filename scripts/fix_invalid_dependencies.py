@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Fix invalid dependency entries in YAML metadata"""
+"""Migrate old dependency format to new list-based format"""
 
 import yaml
 from pathlib import Path
 
-def fix_dependencies():
+def migrate_dependencies():
     rules_dir = Path(__file__).parent.parent / 'rules'
     yaml_files = list(rules_dir.rglob("*.yaml"))
     
-    fixed_count = 0
+    migrated_count = 0
     
     for yaml_file in yaml_files:
         if yaml_file.name == '_category.yaml':
@@ -19,28 +19,51 @@ def fix_dependencies():
             metadata = yaml.safe_load(content)
         
         if metadata and 'dependencies' in metadata:
-            # Check for invalid dependencies
-            invalid_deps = ['required', 'recommended', 'incompatible']
-            if any(dep in invalid_deps for dep in metadata['dependencies']):
-                print(f"🔧 Fixing: {yaml_file.name}")
+            # Check if using old dictionary format
+            if isinstance(metadata['dependencies'], dict):
+                print(f"🔧 Migrating: {yaml_file.name}")
                 
-                # Keep only valid path-like dependencies
-                valid_deps = [dep for dep in metadata['dependencies'] 
-                             if dep not in invalid_deps and '/' in dep]
+                # Extract all dependency paths from old format
+                new_deps = []
+                old_deps = metadata['dependencies']
                 
-                if valid_deps:
-                    metadata['dependencies'] = valid_deps
+                # Extract from 'required' section
+                if 'required' in old_deps and isinstance(old_deps['required'], list):
+                    new_deps.extend(old_deps['required'])
+                
+                # Extract from 'recommended' section (optional dependencies)
+                if 'recommended' in old_deps and isinstance(old_deps['recommended'], list):
+                    # Add recommended deps with comment marker
+                    for dep in old_deps['recommended']:
+                        if dep not in new_deps:
+                            new_deps.append(dep)
+                
+                # Update to new format
+                if new_deps:
+                    metadata['dependencies'] = new_deps
                 else:
                     # Remove empty dependencies
                     del metadata['dependencies']
+                
+                # Add conflicts if old format had incompatible rules
+                if 'incompatible' in old_deps and isinstance(old_deps['incompatible'], list):
+                    if 'conflicts' not in metadata:
+                        metadata['conflicts'] = []
+                    for incomp in old_deps['incompatible']:
+                        conflict_entry = {
+                            'rule': incomp,
+                            'resolution': 'avoid'
+                        }
+                        if conflict_entry not in metadata['conflicts']:
+                            metadata['conflicts'].append(conflict_entry)
                 
                 # Write back
                 with open(yaml_file, 'w') as f:
                     yaml.dump(metadata, f, default_flow_style=False, sort_keys=False)
                 
-                fixed_count += 1
+                migrated_count += 1
     
-    print(f"\n✅ Fixed {fixed_count} files with invalid dependencies")
+    print(f"\n✅ Migrated {migrated_count} files from old to new dependency format")
 
 if __name__ == '__main__':
-    fix_dependencies()
+    migrate_dependencies()

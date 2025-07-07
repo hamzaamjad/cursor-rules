@@ -1,5 +1,23 @@
 # Extended content for 448-prompt-eval
 
+## Prompt Evaluation Template
+
+```json
+{
+    "prompt_metadata": {
+      "id": "[Unique identifier, e.g., EVAL-2025-001]",
+      "version": "[Version number, e.g., 1.0.0]",
+      "author": "[Author name or team]",
+      "created": "[ISO 8601 timestamp]",
+      "purpose": "[Brief description of what this prompt achieves]",
+      "domain": "[Domain/category, e.g., code_generation, data_analysis]",
+      "model_tested": ["[List of models tested, e.g., gpt-4, claude-3-opus]"],
+      "performance_metrics": {
+        "accuracy": "[Percentage or score]",
+        "token_efficiency": "[Tokens used vs baseline]",
+        "execution_time": "[Average time in seconds]",
+        "user_satisfaction": "[Score or percentage]"
+      }
     },
     "task": {
       "objective": "[Specific, measurable goal for this prompt execution]",

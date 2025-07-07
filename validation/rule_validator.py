@@ -153,7 +153,8 @@ class DependencyGraph:
         try:
             paths = nx.single_source_shortest_path_length(self.graph, rule)
             return max(paths.values()) if paths else 0
-        except:
+        except nx.NetworkXError:
+            # This can happen if the rule is not in the graph, which is a valid case
             return 0
     
     def get_dependency_tree(self, rule: str) -> Dict:
@@ -227,18 +228,22 @@ class EnhancedRuleValidator:
         start_time = time.perf_counter()
         initial_memory = self.process.memory_info().rss / 1024 / 1024
         
-        # Load file
+        # Load MDC file
         load_start = time.perf_counter()
         with open(rule_path) as f:
             content = f.read()
         load_time = (time.perf_counter() - load_start) * 1000
         
-        # Parse metadata
+        # Parse metadata from corresponding YAML file
         parse_start = time.perf_counter()
-        try:
-            metadata, body = self._parse_rule(content)
-        except:
-            metadata, body = {}, content
+        yaml_path = rule_path.with_suffix('.yaml')
+        metadata = {}
+        if yaml_path.exists():
+            try:
+                with open(yaml_path) as f:
+                    metadata = yaml.safe_load(f)
+            except yaml.YAMLError:
+                metadata = {}
         parse_time = (time.perf_counter() - parse_start) * 1000
         
         # Validation timing
@@ -376,7 +381,8 @@ class EnhancedRuleValidator:
                     metadata = yaml.safe_load(parts[1])
                     body = parts[2].strip()
                     return metadata, body
-                except:
+                except yaml.YAMLError:
+                    # Failed to parse YAML, treat as if no frontmatter exists
                     pass
         return {}, content
     
