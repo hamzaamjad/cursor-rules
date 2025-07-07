@@ -8,6 +8,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- GitHub Actions CI/CD pipeline with validation and benchmarking workflows
+- Automated rule validation on all PRs with performance regression detection
+- New rule categories:
+  - `500-safety/`: Input validation and prompt injection defense (1 rule)
+  - `600-experimental/`: Beta features and metacognitive patterns (1 rule)
+  - `700-evolution/`: Performance tracking and adaptation (1 rule)
+- Production-ready validation framework with:
+  - Performance profiling (timing, memory, token metrics)
+  - Dependency graph analysis with cycle detection
+  - Automatic fix suggestions for common issues
+  - JSON/HTML report generation
+- Benchmarking infrastructure:
+  - `scripts/benchmark_rules.py`: Measure timing, memory, and token usage
+  - `scripts/compare_benchmarks.py`: Generate performance comparison reports
+  - Baseline metrics tracking for regression detection
+- Documentation auto-generation system:
+  - `scripts/generate_docs.py`: Create markdown docs from YAML metadata
+  - Dependency visualization with NetworkX/Matplotlib
+  - Cross-referenced rule documentation
+  - Category documentation with metrics
+- Enhanced `rule_validator.py` with 6 new capabilities:
+  - `benchmark_rule()`: Performance measurement per rule
+  - `analyze_dependencies()`: Build complete dependency graph
+  - `suggest_fixes()`: Generate automatic remediation suggestions
+  - `generate_report()`: Multi-format reporting (JSON/HTML)
+  - Performance baseline comparison
+  - Memory usage tracking
+- CI badges in README for validation and benchmark status
+- Python type hints and mypy validation in CI pipeline
 - Enhanced metadata structure for all rule files with comprehensive tracking capabilities
 - Automated metadata migration script (`scripts/migrate-metadata.py`)
 - Enhanced metadata template (`templates/enhanced-metadata-template.yaml`)
