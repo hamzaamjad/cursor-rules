@@ -1,0 +1,33 @@
+---
+description: "Metadata YAML file for metacognitive reflection protocol"
+version: 1.0.0
+author: "Hamza Amjad"
+created: "2025-01-07"
+last_modified: "2025-01-07"
+last_reviewed: "2025-01-07"
+
+activation:
+  globs:
+    - "**/*.md"
+    - "**/*.mdc"
+  alwaysApply: false
+
+dependencies:
+  - "100-cognitive/105-synthesis-engine.mdc"
+  - "700-evolution/701-rule-adaptation-tracking.mdc"
+
+performance:
+  avg_tokens: 512
+  p95_latency: 45
+  success_rate: 72.3
+  token_budget: 1000
+
+tags:
+  - "experimental"
+  - "metacognition"
+  - "self-improvement"
+
+experimental_features:
+  - "recursive_self_analysis"
+  - "confidence_scoring"
+  - "thought_chain_visualization"

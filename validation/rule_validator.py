@@ -70,11 +70,14 @@ class Fix:
     new_value: Any
     line_number: Optional[int] = None
     
-    def apply(self, content: str) -> str:
-        """Apply fix to content"""
-        # Implementation depends on fix type
-        # This is a simplified version
-        return content
+    def to_dict(self) -> Dict:
+        return {
+            'type': self.type.value,  # Convert enum to string
+            'description': self.description,
+            'old_value': self.old_value,
+            'new_value': self.new_value,
+            'line_number': self.line_number
+        }
 @dataclass
 class ValidationResult:
     """Enhanced validation result with performance metrics"""
@@ -102,7 +105,7 @@ class ValidationResult:
             'errors': self.errors,
             'warnings': self.warnings,
             'metrics': self.metrics,
-            'fixes': [asdict(fix) for fix in self.suggested_fixes],
+            'fixes': [fix.to_dict() for fix in self.suggested_fixes],
             'performance': self.performance.to_dict() if self.performance else None
         }
 
@@ -512,7 +515,7 @@ class EnhancedRuleValidator:
             if r.suggested_fixes:
                 all_fixes.extend([{
                     'rule': str(r.rule_path.name),
-                    'fix': asdict(fix)
+                    'fix': fix.to_dict()
                 } for fix in r.suggested_fixes])
         
         if all_fixes:

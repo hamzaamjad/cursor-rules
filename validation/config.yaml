@@ -1,0 +1,44 @@
+max_lines: 150
+warn_lines: 100
+max_tokens: 1000
+max_dependency_depth: 3
+
+approved_tags:
+  - foundational
+  - strategic
+  - cognitive-enhancement
+  - reasoning
+  - performance
+  - safety
+  - quality
+  - optimization
+  - domain-specific
+  - specialized
+  - integration
+  - tooling
+  - patterns
+  - best-practices
+  - experimental
+  - research
+  - evolution
+  - meta-learning
+  - security
+  - validation
+  - prompt-safety
+  - analytics
+  - metacognition
+  - self-improvement
+  - feedback-loop
+
+required_metadata:
+  - version
+  - description
+  - author
+  - created
+  - performance
+  - tags
+
+performance_thresholds:
+  max_validation_time_ms: 50
+  max_memory_usage_mb: 10
+  min_success_rate: 80

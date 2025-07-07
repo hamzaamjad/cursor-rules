@@ -1,0 +1,26 @@
+description: "Track rule effectiveness and adapt based on empirical performance data"
+version: 1.0.0
+author: "Hamza Amjad"
+created: "2025-01-07"
+last_modified: "2025-01-07"
+last_reviewed: "2025-01-07"
+
+activation:
+  globs:
+    - "**/*.mdc"
+    - "**/*.yaml"
+  alwaysApply: true
+
+dependencies:
+  - "000-core/002-pareto-prioritization.mdc"
+
+performance:
+  avg_tokens: 320
+  p95_latency: 28
+  success_rate: 94.5
+  token_budget: 600
+
+tags:
+  - "evolution"
+  - "metrics"
+  - "adaptation"

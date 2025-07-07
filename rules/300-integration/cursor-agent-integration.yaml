@@ -10,12 +10,6 @@ performance:
   accuracyImprovement: 0%
   processingOverhead: moderate
   empiricalValidation: To be measured
-dependencies:
-  required:
-  - available_tooling_guide.mdc
-  recommended:
-  - divergence-convergence
-  incompatible: []
 conflicts: []
 tags:
 - integration
@@ -23,3 +17,4 @@ tags:
 research: []
 examples: []
 notes: ''
+created: '2025-07-07'

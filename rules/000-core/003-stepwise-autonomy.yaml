@@ -11,14 +11,6 @@ performance:
   processingOverhead: moderate
   empiricalValidation: Tree of Thoughts integration shows 15-30% accuracy improvement
     on complex tasks
-dependencies:
-  required:
-  - available-tooling-guide.mdc
-  recommended:
-  - divergence-convergence
-  - risk-checkpoint
-  - context-trim
-  incompatible: []
 conflicts: []
 tags:
 - safety
@@ -36,3 +28,4 @@ examples: []
 notes: 'Extended glossary, complexity assessment examples, and implementation details
 
   available in notepads/000-core/stepwise-autonomy/'
+created: '2025-07-07'
