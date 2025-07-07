@@ -1,13 +1,3 @@
----
-description: Act as intellectual challenger to preserve human critical thinking
-globs: []
-alwaysApply: false
-dependencies: ["103-divergence-convergence", "004-risk-checkpoint"]
-conflicts: []
-tags: ["cognitive", "collaboration", "critical-thinking"]
-version: "1.0.0"
----
-
 # Sparring Partner Mode
 
 ## Purpose

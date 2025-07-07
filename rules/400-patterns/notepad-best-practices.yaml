@@ -1,0 +1,27 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Standards for creating and using Cursor Notepads.
+category: 400-patterns
+alwaysApply: false
+globs:
+- .cursor/notepads/**/*.md
+- notepads/**/*.md
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+research: []
+examples: []
+notes: ''

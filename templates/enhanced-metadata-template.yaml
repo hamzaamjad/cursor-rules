@@ -1,0 +1,60 @@
+---
+# Enhanced Rule Metadata Template
+# Version: 1.0.0
+# Purpose: Standardized metadata structure for all cursor rules
+
+version: "1.0.0"  # Semantic versioning for individual rules
+lastUpdated: "2025-07-06"
+author: "cursor-rules-optimization"
+
+# Basic Information
+description: "Concise description of rule purpose and impact"
+category: "000-core|100-cognitive|200-domain|300-integration|400-patterns|600-experimental|700-evolution"
+alwaysApply: false  # Whether this rule should always be active
+
+# File Pattern Matching
+globs: 
+  - "**/*.py"
+  - "**/*.ts"
+
+# Performance Metrics
+performance:
+  tokenReduction: "0%"  # Percentage reduction in token usage
+  accuracyImprovement: "0%"  # Measured improvement in task accuracy
+  processingOverhead: "minimal|moderate|significant"  # Runtime impact
+  empiricalValidation: "Study or measurement reference"
+
+# Dependencies
+dependencies:
+  required: []  # Rules that must be loaded before this one
+  recommended: []  # Rules that enhance this rule's effectiveness
+  incompatible: []  # Rules that conflict with this one
+
+# Conflict Resolution
+conflicts:
+  - withRule: "rule-name"
+    resolution: "phase_separation|context_based|priority_override"
+    description: "Explanation of conflict and resolution strategy"
+
+# Tags for Categorization
+tags:
+  - "performance"
+  - "safety"
+  - "cognitive-enhancement"
+
+# Research References
+research:
+  - citation: "Author et al. (2024)"
+    finding: "Key research finding supporting this rule"
+    impact: "Quantitative impact measurement"
+
+# Usage Examples
+examples:
+  - context: "When to use this rule"
+    benefit: "Expected outcome or improvement"
+
+# Implementation Notes
+notes: |
+  Additional implementation guidance or considerations
+  that don't fit in other sections.
+---

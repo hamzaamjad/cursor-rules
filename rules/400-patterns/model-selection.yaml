@@ -1,0 +1,26 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: null
+category: 400-patterns
+alwaysApply: true
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+- performance
+research: []
+examples: []
+notes: ''

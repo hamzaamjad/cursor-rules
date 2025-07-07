@@ -1,0 +1,11 @@
+category: 300-integration
+common_tags:
+- integration
+- performance
+- quality
+- tooling
+defaults:
+  performance:
+    empiricalValidation: To be measured
+    processingOverhead: minimal
+description: Rules for 300-integration

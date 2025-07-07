@@ -1,0 +1,27 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Optimize human-AI collaboration through cognitive load monitoring
+category: 100-cognitive
+alwaysApply: true
+globs: []
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: moderate
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - divergence-convergence
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- performance
+- cognitive-enhancement
+- reasoning
+- quality
+research: []
+examples: []
+notes: ''

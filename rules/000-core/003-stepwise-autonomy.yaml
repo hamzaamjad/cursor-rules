@@ -1,0 +1,38 @@
+version: 2.0.0
+lastUpdated: '2025-07-06'
+author: cursor-rules-optimization
+description: Chain-of-thought & scratch-pad reasoning with stepwise task execution
+category: 000-core
+alwaysApply: true
+globs: null
+performance:
+  tokenReduction: 75%
+  accuracyImprovement: 15-30%
+  processingOverhead: moderate
+  empiricalValidation: Tree of Thoughts integration shows 15-30% accuracy improvement
+    on complex tasks
+dependencies:
+  required:
+  - available-tooling-guide.mdc
+  recommended:
+  - divergence-convergence
+  - risk-checkpoint
+  - context-trim
+  incompatible: []
+conflicts: []
+tags:
+- safety
+- quality
+- strategic
+- optimization
+- foundational
+- performance
+- reasoning
+research:
+- citation: Yao et al. (2024)
+  finding: Tree of Thoughts achieves 15-30% accuracy improvement on complex reasoning
+  impact: Integrated multi-path exploration for complex tasks
+examples: []
+notes: 'Extended glossary, complexity assessment examples, and implementation details
+
+  available in notepads/000-core/stepwise-autonomy/'

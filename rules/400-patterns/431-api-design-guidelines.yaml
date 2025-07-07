@@ -1,0 +1,23 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Guidelines for consistent and usable API design.
+category: 400-patterns
+alwaysApply: false
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended: []
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+research: []
+examples: []
+notes: ''

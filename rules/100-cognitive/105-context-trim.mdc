@@ -1,13 +1,3 @@
----
-description: Intelligently compress and optimize context windows for maximum signal-to-noise ratio
-globs: 
-  - "**/*.md"
-  - "**/*.txt"
-  - "**/*.log"
-  - "**/*.json"
-alwaysApply: true
----
-
 # context-trim.mdc
 
 <!-- Version: 1.0.0 — 2025-06-19 -->

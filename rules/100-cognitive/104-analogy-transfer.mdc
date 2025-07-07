@@ -1,13 +1,3 @@
----
-description: Enable cross-domain knowledge transfer through structured analogical reasoning
-globs: 
-  - "**/*.py"
-  - "**/*.js"
-  - "**/*.md"
-  - "**/*.yaml"
-alwaysApply: false
----
-
 # analogy-transfer.mdc
 
 <!-- Version: 1.0.0 — 2025-06-19 -->

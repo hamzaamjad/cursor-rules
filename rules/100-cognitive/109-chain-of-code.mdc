@@ -1,253 +1,43 @@
----
-description: Enhance reasoning accuracy through executable code generation
-globs: ["**/*.py", "**/*.js", "**/*.md"]
-alwaysApply: false
-dependencies: ["003-stepwise-autonomy", "004-risk-checkpoint"]
-conflicts: []
-tags: ["cognitive", "verification", "code-generation"]
-version: "1.0.0"
----
-
 # Chain of Code (CoC) Reasoning
 
 ## Purpose
 
-To improve reasoning accuracy by generating and executing code for verification, calculation, and logical validation. Chain of Code achieves 17.9% improvement on arithmetic tasks and 11% on commonsense reasoning by treating problems as executable programs rather than abstract reasoning tasks. This rule operationalizes the "thinking in code" paradigm.
+Chain of Code improves reasoning accuracy by generating and executing code for verification, calculation, and logical validation. This approach achieves 17.9% improvement on arithmetic tasks and 11% on commonsense reasoning by treating problems as executable programs rather than abstract reasoning tasks.
 
-## Requirements
+## Core Principles
 
-- **Code-First Problem Solving**: For problems involving:
-  - Arithmetic or mathematical calculations
-  - Logical operations and boolean reasoning
-  - Data transformations or filtering
-  - Pattern matching or sequence analysis
-  - State machines or workflow logic
-- **Executable Verification**: Generate runnable code to:
-  - Validate calculations with test cases
-  - Verify logical consistency
-  - Check edge cases programmatically
-  - Demonstrate solution correctness
-- **Progressive Refinement**:
-  - Start with pseudocode for complex problems
-  - Translate to executable code incrementally
-  - Run intermediate results for validation
-  - Refactor based on execution feedback
-- **Language Selection**:
-  - Python: Data analysis, scientific computing, general logic
-  - JavaScript: Web-related logic, async operations
-  - SQL: Data queries and set operations
-  - Regex: Pattern matching and text processing
-- **Safety Constraints**:
-  - Sandbox execution only (no file/network operations)
-  - Memory limits: <100MB per execution
-  - Time limits: <5s per code block
-  - Clear separation of reasoning vs execution code
+Chain of Code transforms ambiguous reasoning into precise, verifiable computation. Rather than attempting mental calculations or logical deductions, the pattern generates executable code that demonstrates correctness through execution. This approach eliminates calculation errors, ensures logical consistency, and provides transparent verification of results.
 
-## Validation
+The pattern applies to any problem involving arithmetic operations, logical reasoning, data transformations, pattern matching, or state-based workflows. By converting these problems into code, the reasoning process becomes reproducible, testable, and unambiguous.
 
-- **Check**: Is the problem translated into executable code?
-- **Check**: Are test cases included to verify correctness?
-- **Check**: Does code execution confirm the reasoning?
-- **Check**: Are edge cases handled programmatically?
-- **Check**: Is the code readable and documented?
+## Implementation Requirements
 
-## Examples
+Effective Chain of Code implementation requires systematic translation of problems into executable formats. Begin with clear problem decomposition, identifying calculable components and logical relationships. Generate code that explicitly represents each reasoning step, including intermediate calculations and state transitions.
 
-### Scenario: Complex percentage calculation with multiple conditions
+The code must include comprehensive test cases that verify correctness across edge conditions. These tests serve as both validation mechanisms and documentation of expected behavior. Each code block should execute within defined safety constraints, avoiding operations that could impact system state or consume excessive resources.
 
-**❌ Without rule**:
-```
-To calculate the final price:
-- Base price is $1,200
-- 15% discount for members
-- Additional 10% off if purchasing 3+ items
-- 8.5% tax on the discounted price
+Language selection follows problem domain requirements. Python serves well for data analysis and general computation. JavaScript handles web-related logic and asynchronous operations effectively. SQL excels at set operations and data queries. Regular expressions provide powerful pattern matching capabilities. The choice depends on which language most naturally expresses the problem solution.
 
-So that would be... let me think... $1,200 minus 15% is $1,020, 
-then minus 10% would be $918, plus 8.5% tax... approximately $995.53.
-```
+## Safety and Performance Guidelines
 
-**✅ With rule**:
-```python
-# Chain of Code: Price calculation with multiple discounts and tax
+Chain of Code operates within strict safety boundaries to prevent unintended system impacts. All code execution occurs in sandboxed environments without file system or network access. Memory consumption limits prevent resource exhaustion, while execution timeouts ensure responsive operation.
 
-def calculate_final_price(base_price=1200, is_member=True, quantity=3):
-    """
-    Demonstrates price calculation with stacked discounts and tax.
-    Each step is explicit and verifiable.
-    """
-    price = base_price
-    discounts_applied = []
-    
-    # Step 1: Member discount
-    if is_member:
-        member_discount = price * 0.15
-        price -= member_discount
-        discounts_applied.append(f"Member 15%: -${member_discount:.2f}")
-    
-    # Step 2: Quantity discount
-    if quantity >= 3:
-        quantity_discount = price * 0.10
-        price -= quantity_discount
-        discounts_applied.append(f"Quantity 10%: -${quantity_discount:.2f}")
-    
-    # Step 3: Tax calculation
-    tax_rate = 0.085
-    tax_amount = price * tax_rate
-    final_price = price + tax_amount
-    
-    # Verification output
-    print(f"Base price: ${base_price:.2f}")
-    for discount in discounts_applied:
-        print(f"  {discount}")
-    print(f"Subtotal: ${price:.2f}")
-    print(f"Tax (8.5%): ${tax_amount:.2f}")
-    print(f"FINAL: ${final_price:.2f}")
-    
-    return final_price
+Performance optimization focuses on code clarity rather than computational efficiency. The primary goal remains reasoning accuracy, not execution speed. Clear variable names, explicit computation steps, and comprehensive comments enhance understanding and verification.
 
-# Test cases to verify edge conditions
-test_cases = [
-    (1200, True, 3),    # All discounts apply
-    (1200, True, 1),    # Only member discount
-    (1200, False, 5),   # Only quantity discount
-    (1200, False, 1),   # No discounts
-]
+## Verification Protocol
 
-for base, member, qty in test_cases:
-    print(f"\nTest: member={member}, quantity={qty}")
-    result = calculate_final_price(base, member, qty)
+Each Chain of Code implementation undergoes systematic verification to ensure correctness. The problem must translate completely into executable code without ambiguous components. Test cases must cover both typical scenarios and edge conditions. Code execution must confirm the reasoning conclusions through concrete results.
 
-# VERIFIED OUTPUT:
-# Test: member=True, quantity=3
-# Base price: $1200.00
-#   Member 15%: -$180.00
-#   Quantity 10%: -$102.00
-# Subtotal: $918.00
-# Tax (8.5%): $78.03
-# FINAL: $996.03  ← More precise than mental math!
-```
+The generated code should remain readable and well-documented, serving as both solution and explanation. Comments explain reasoning steps, not just implementation details. Output formatting clearly presents results and intermediate calculations for human verification.
 
-### Scenario: Complex logical puzzle solving
+## Reference Resources
 
-**❌ Without rule**:
-```
-If all dragons are magical, and some magical things can fly, and Puff is a dragon,
-then Puff must be magical but we can't be sure if Puff can fly.
-```
+For detailed implementation patterns and examples across various problem domains, consult:
 
-**✅ With rule**:
-```python
-# Chain of Code: Logical inference with explicit reasoning
+Code examples by problem type: `@Notepad:notepads/100-cognitive/chain-of-code/code-examples.md`
 
-class LogicalEntity:
-    def __init__(self, name, types=None):
-        self.name = name
-        self.types = types or set()
-        self.properties = set()
-    
-    def is_a(self, entity_type):
-        return entity_type in self.types
-    
-    def has_property(self, prop):
-        return prop in self.properties
+Safety constraints and sandboxing guidelines: `@Notepad:notepads/100-cognitive/chain-of-code/safety-guidelines.md`
 
-# Define the logical rules as executable code
-def apply_logical_rules(entities):
-    """Transform logical statements into verifiable code"""
-    
-    # Rule 1: All dragons are magical
-    for entity in entities:
-        if entity.is_a("dragon"):
-            entity.properties.add("magical")
-            print(f"✓ {entity.name} is a dragon → magical")
-    
-    # Rule 2: Some magical things can fly (not all)
-    # This is represented by NOT automatically adding 'can_fly'
-    
-    # Create test entities
-    puff = LogicalEntity("Puff", {"dragon"})
-    spark = LogicalEntity("Spark", {"magical_thing"})
-    spark.properties.add("can_fly")  # Given: this magical thing flies
-    
-    entities = [puff, spark]
-    apply_logical_rules(entities)
-    
-    # Verify conclusions
-    print(f"\nConclusions:")
-    print(f"Puff is magical: {puff.has_property('magical')}")  # True
-    print(f"Puff can fly: {puff.has_property('can_fly')}")    # False
-    print(f"Can we determine if Puff flies? NO - insufficient information")
-    
-    # Test the logic with counterexamples
-    print(f"\nCounterexample test:")
-    rex = LogicalEntity("Rex", {"dragon"})
-    apply_logical_rules([rex])
-    rex.properties.add("cannot_fly")  # Explicitly cannot fly
-    print(f"Rex (dragon) explicitly cannot fly: Valid? Yes")
-    print("This proves not all magical things fly")
+Language selection criteria and patterns: `@Notepad:notepads/100-cognitive/chain-of-code/language-patterns.md`
 
-# Execute to verify reasoning
-apply_logical_rules([])
-```
-
-## Scientific Basis
-
-- Chen et al. (2023): "Chain of Code" demonstrates 17.9% improvement on arithmetic reasoning
-- Code generation forces explicit assumption declaration
-- Executable verification prevents logical inconsistencies
-- Program synthesis research shows improved problem decomposition
-- MIT study: Writing code improves logical thinking by 23%
-
-## Trade-offs
-
-- **Pros**:
-  - Precise, verifiable reasoning
-  - Catches edge cases automatically
-  - Self-documenting thought process
-  - Enables test-driven reasoning
-- **Cons**:
-  - Overhead for simple problems
-  - Requires code literacy from users
-  - Not suitable for subjective reasoning
-- **When to skip**:
-  - Pure creative or subjective tasks
-  - When code adds no verification value
-  - Time-critical responses
-
-## Implementation Notes
-
-- Always include example inputs/outputs in code
-- Use descriptive variable names as documentation
-- Add assertions for critical assumptions
-- Prefer simple, readable code over clever optimizations
-- Include error handling for edge cases
-
-## Dependencies and Interactions
-
-- **Depends on**: Stepwise autonomy (for structured execution)
-- **Enhances**: Risk checkpoint (code makes risks explicit)
-- **Conflicts with**: None - complements other reasoning approaches
-
-## Metrics
-
-- **Measurement**: Accuracy improvement on reasoning tasks
-- **Target**: >15% improvement on arithmetic/logic problems
-- **Method**: Compare CoC vs. direct reasoning on test sets
-
-## References
-
-- Chen et al. (2023). Chain of Code: Reasoning with a Language Model-Augmented Code Emulator
-- Polya, G. (1945). How to Solve It (algorithmic thinking)
-- Knuth, D. (1997). The Art of Computer Programming
-
-## Changelog
-
-- **1.0.0** - Initial implementation based on CoC paper
-
----
-*Rule metadata:*
-- *Author*: hamzaamjad
-- *Created*: 2025-01-02
-- *Last Updated*: 2025-01-02
-- *Stability*: experimental
+Performance benchmarks and optimization strategies: `@Notepad:notepads/100-cognitive/chain-of-code/performance-guide.md`

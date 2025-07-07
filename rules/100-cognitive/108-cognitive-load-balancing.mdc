@@ -1,13 +1,3 @@
----
-description: Optimize human-AI collaboration through cognitive load monitoring
-globs: []
-alwaysApply: true
-dependencies: ["003-stepwise-autonomy"]
-conflicts: []
-tags: ["cognitive", "performance", "collaboration"]
-version: "1.0.0"
----
-
 # Cognitive Load Balancing
 
 ## Purpose

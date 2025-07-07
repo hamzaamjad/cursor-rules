@@ -1,0 +1,14 @@
+category: 000-core
+common_tags:
+- foundational
+- optimization
+- performance
+- quality
+- reasoning
+- safety
+- strategic
+defaults:
+  performance:
+    empiricalValidation: To be measured
+    processingOverhead: minimal
+description: Rules for 000-core

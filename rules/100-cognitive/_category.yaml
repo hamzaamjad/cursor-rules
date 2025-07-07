@@ -1,0 +1,14 @@
+category: 100-cognitive
+common_tags:
+- cognitive-enhancement
+- optimization
+- performance
+- quality
+- reasoning
+- safety
+- verification
+defaults:
+  performance:
+    empiricalValidation: To be measured
+    processingOverhead: minimal
+description: Rules for 100-cognitive

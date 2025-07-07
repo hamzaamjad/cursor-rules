@@ -1,13 +1,3 @@
----
-description: Structure cognitive processes through explicit divergent exploration and convergent synthesis phases
-globs: 
-  - "**/*.py"
-  - "**/*.js"
-  - "**/*.ts"
-  - "**/*.md"
-alwaysApply: false
----
-
 # divergence-convergence.mdc
 
 <!-- Version: 1.0.0 — 2025-06-19 -->

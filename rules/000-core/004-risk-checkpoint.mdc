@@ -1,14 +1,3 @@
----
-description: Implement mandatory safety gates and risk assessment for all operations with potential negative impact
-globs: 
-  - "**/*.py"
-  - "**/*.js"
-  - "**/*.sh"
-  - "**/*.yaml"
-  - "**/Dockerfile"
-alwaysApply: true
----
-
 # risk-checkpoint.mdc
 
 <!-- Version: 1.0.0 — 2025-06-19 -->

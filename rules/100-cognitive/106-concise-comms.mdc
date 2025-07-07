@@ -1,13 +1,3 @@
----
-description: Enforce information density optimization and brevity in all user-facing communications
-globs: 
-  - "**/*.md"
-  - "**/*.txt"
-  - "**/*.json"
-  - "**/*.yaml"
-alwaysApply: true
----
-
 # concise-comms.mdc
 
 <!-- Version: 1.0.0 — 2025-06-19 -->

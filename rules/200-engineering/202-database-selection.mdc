@@ -1,12 +1,3 @@
----
-description: Database selection criteria for Mirror project
-globs: 
-  - "**/*database*"
-  - "**/*db*"
-  - "**/timeseries/*"
-alwaysApply: false
----
-
 # Database Selection Checklist
 
 * **Purpose**: To ensure appropriate database technology selection based on access patterns, concurrency requirements, and existing infrastructure. **Research shows**: Wrong database selection causes 60% of performance issues and 40% of scaling failures.

@@ -1,0 +1,28 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Guidelines for designing and implementing robust workflows involving
+  multiple LLMs and external tools.
+category: 300-integration
+alwaysApply: false
+globs:
+- '**/agents/**/*.py'
+- '**/orchestrators/**/*.flame'
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- quality
+- integration
+- tooling
+research: []
+examples: []
+notes: ''

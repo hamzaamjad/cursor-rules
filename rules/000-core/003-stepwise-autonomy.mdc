@@ -1,349 +1,68 @@
----
-description: Chain-of-thought & scratch-pad reasoning
-globs: 
-alwaysApply: true
----
----
-description: Chain-of-thought & scratch-pad reasoning
-globs: 
-alwaysApply: true
----
-# stepwise-autonomy.mdc
-
-<!-- Version: 1.0.0 — 2025-05-08 -->
-<!-- Changelog: .cursor/rules/stepwise-autonomy/changelog.md -->
-
----
-## Quickstart Cheat-Sheet for Constrained Agents
-*   **Assess Complexity (Sec 3):** Classify task (Simple, Moderate, Complex) to adjust protocol.
-*   **Plan & Verify (Sec 4.1):** Outline steps; check resources (libs, files, APIs).
-*   **Execute Sequentially with Verification (Sec 4.3, 4.4):** Perform each step; confirm success before next.
-*   **Adapt if Needed (Sec 4.6):** Revise plan upon failure or new information.
----
-## Usage Considerations for LLM Agents
-
-*   **Core Protocol vs. Optional Modules**: For initial adoption or use with resource-constrained agents, implementers may focus on the "Core Protocol" encompassing **Section 3 (Task Complexity Assessment) through Section 4 (Requirements)** (see **Appendix A** for worked examples of tasks following this core). Sections such as **6 (Task Retrospective and Learning Integration), 7 (Performance Monitoring and Optimization), and 8 (Conflict Resolution)** can be considered optional modules, implemented as agent capabilities and environment support allow.
-*   **Agent Memory & Context Persistence**: Agents with limited transient memory (e.g., some smaller models or stateless API-driven agents) should be designed to reload or re-access critical parts of this protocol (like the Glossary, current plan, or key rules from the Core Protocol) if their context is cleared or reset between turns or sub-tasks. The agent's own working memory for the task at hand is distinct from the `Mandatory Command Shell Statelessness` (see Section 4.5.1).
----
-
-## 1. Purpose
-
-To guide AI assistants in reliably executing complex or non-trivial tasks by breaking them down into verifiable steps and using tools judiciously to reduce uncertainty, *including leveraging specialized MCP services when available*.
-
----
-
-## 2. Glossary of Terms
-
-*   **MCP (Model Context Protocol)**: A term describing the mechanism (often a defined API or function-calling framework) through which language models interact with tools and external services. MCP services are specific instances of such services (e.g., Context7, Perplexity, Puppeteer) that provide capabilities like documentation lookup, research, or browser automation.
-*   **@Refs**: A reference system for linking to files, documentation, or other resources using the format `@Type:path/to/resource`. For example, `@File:src/main.py` or `@Docs:security.mdc#Authentication`.
-*   **Cursor Agent Mode**: An execution environment where the model can directly manipulate files and run commands through specialized tools rather than only generating code snippets.
-*   **Holistic Check**: The process of examining components related to the modified code to identify potential impacts or required corresponding changes.
-*   **Verification**: The systematic confirmation that each step has succeeded before proceeding to the next step.
-
-### 2.1. Abstract Tool Interface and Mapping
-
-The tool names used in this document (e.g., `edit_file`, `run_terminal_cmd`) are example implementations. In other agent runtimes, these may be mapped to different function names like `file_write`, `command_run`, etc. The underlying principle of using available tools rather than generating raw output remains the same regardless of specific tool naming conventions.
-
-**Example Tool Alias Block for Agent Implementation:**
-To ensure clarity for agents that do not support dynamic aliasing, developers can map abstract tool names to concrete implementations:
-*   `abstract: edit_file` -> `concrete: functions.writeFile(path, content)`
-*   `abstract: run_terminal_cmd` -> `concrete: functions.executeShellCommand(command)`
-*   `abstract: read_file` -> `concrete: functions.readFile(path)`
-*   `abstract: list_files` -> `concrete: functions.listFiles(directory)`
-The specific `concrete` invocations will depend on the agent's toolkit.
-
----
-
-## 3. Task Complexity Assessment
-
-### 3.1. Complexity Classification:
-
-*   **Simple Tasks** (Streamlined Protocol):
-    *   Single-step operations with predictable outcomes (e.g., formatting a file, renaming variables).
-    *   Small code changes (< 20 lines) in isolated components.
-    *   Operations with no cross-component dependencies.
-    *   Tasks requiring no external data access or tool usage beyond basic file operations.
-    *   **Protocol Adjustment**: Minimal planning, simplified verification limited to syntax checking and basic result confirmation.
-*   **Moderate Tasks** (Standard Protocol):
-    *   Multi-step operations with well-defined inputs/outputs (e.g., adding a new feature to an existing component).
-    *   Code changes spanning 20-100 lines or affecting 2-3 related files.
-    *   Tasks requiring limited tool usage (e.g., single API lookup, file reads/writes).
-    *   Operations with predictable but non-trivial side effects.
-    *   **Protocol Adjustment**: Brief planning phase, standard verification steps, selective tool usage.
-*   **Complex Tasks** (Enhanced Protocol):
-    *   Operations requiring significant planning or domain understanding (e.g., refactoring core components, debugging system-wide issues).
-    *   Changes spanning multiple components or > 100 lines of code.
-    *   Tasks heavily dependent on external systems, tools, or MCP services.
-    *   Operations with potential cascading effects across the codebase.
-    *   **Protocol Adjustment**: Comprehensive planning, rigorous verification at each step, extensive tool usage including specialized MCP services, mandatory task retrospective.
-
-### 3.2. Complexity Reassessment Triggers:
-
-*   **Escalation Indicators:**
-    *   Verification steps repeatedly fail despite corrections.
-    *   Related dependencies or components are discovered mid-execution.
-    *   Tool operations produce unexpected or inconsistent results.
-    *   Task scope expands during execution (e.g., fixing one bug reveals others).
-    *   Time estimation exceeds initial projection by > 50%.
-*   **De-escalation Indicators:**
-    *   Initial assessment reveals simpler structure than anticipated.
-    *   Multiple verification steps pass without issues.
-    *   User confirms reduced scope or simplified requirements.
-
-### 3.3. Examples:
-See **Appendix A: Multi-Step Execution Examples.**
-
----
-
-## 4. Requirements
-
-### 4.1. Task Decomposition and Resource Verification:
-
-*   Internally outline a plan with discrete steps.
-*   **Tree of Thoughts (ToT) Integration**: For complex reasoning tasks (complexity level: Complex), explore multiple solution paths:
-    *   Generate 3-5 potential approaches before committing to one
-    *   Evaluate each path's promise based on intermediate milestones
-    *   Backtrack when confidence drops below 70%
-    *   Select path with highest success probability
-    *   **Empirical Benefit**: 15-30% accuracy improvement on complex reasoning tasks
-*   Verify specific resources at task start including:
-    *   Required libraries and their versions.
-    *   Necessary configuration files.
-    *   Access permissions to relevant paths.
-    *   Availability of APIs or services mentioned in the task.
-    *   **Structural Integrity of Artifact Collections**: When working with collections of artifacts (e.g., example libraries, datasets, multi-file components), verify that the items conform to their documented structure, schema, or conventions, especially if iterating upon or adding to them. Note any deviations.
-*   Identify ambiguous verbs and outputs.
-*   **Scope Confirmation Checkpoints**: Before implementing optimizations or enhancements, explicitly confirm:
-    *   Performance targets (time, resource usage, output size)  
-    *   Output format preferences (minimal vs detailed)
-    *   Whether to optimize existing flow vs create alternative approach
-    *   Key constraints upfront (polling intervals, language preferences, hard limits)
-    *   Echo major assumptions ("using strict filtering to limit to 10-50 interfaces...OK?")
-*   **Explicitly consider available and registered external services or MCP services** (e.g., specialized data APIs, documentation services, or browser automation tools) that can make steps more efficient or reliable. Only invoke these services when they offer greater confidence, performance, or coverage compared to alternative approaches.
-*   **Efficient Multi-File Ingestion**: When multiple files are identified for initial context gathering (e.g., from a `supplemental_knowledge` list in a prompt), and if a tool for reading multiple files simultaneously (like `mcp_desktop_commander_read_multiple_files`) is available, prioritize its use over sequential single-file reads to improve efficiency. Subsequent analysis and synthesis of the gathered content should still follow a structured approach.
-*   **Orchestrating Complex Tasks with Sequential Thinking**: For tasks with multiple distinct components, iterative analytical loops, or a high likelihood of plan adaptation based on intermediate results (e.g., complex data analysis, multi-stage report generation, implementing features with several sub-tasks), explicitly consider using `mcp_sequential_thinking_sequentialthinking` to structure the overall execution. This promotes modularity, step-wise verification, and clearer articulation of progress.
-
-**Common Action Verb Disambiguation Table:**
-
-| Verb      | Potential Interpretations                                      | Clarification Needed                                 |
-| --------- | -------------------------------------------------------------- | ---------------------------------------------------- |
-| remove    | Delete file, remove code, comment out, disable feature.        | Removal method and scope (permanent vs. reversible). |
-| integrate | Import/use library, merge code, hook into existing workflow.   | Integration depth and connection points.             |
-| update    | Replace completely, extend functionality, patch specific parts.| Update scope and preservation requirements.          |
-| fix       | Minimal change to address specific issue, broader refactoring. | Fix scope and approach (targeted vs. comprehensive). |
-| report    | Console output, file output, structured data, summary text.    | Output format, destination, and level of detail.     |
-| implement | Basic functionality, full spec, with/without tests.            | Implementation completeness and testing requirements.|
-
-### 4.2. Cursor Agent Mode Guidance:
-
-*   Use tools for all supported actions (see Section 2.1 for interface mapping).
-*   Verify outcomes after each tool invocation.
-*   Avoid manual code output unless tool use is explicitly unsupported.
-*   Attempt self-correction and log failures.
-
-### 4.3. Step-by-Step Execution:
-Execute plans sequentially and in discrete stages.
-
-### 4.4. Verification:
-
-*   Confirm code syntax, logic, and correctness.
-*   **API Parameter Validation**: For external API calls, verify parameter formats against official documentation before retry attempts. Request full error details to diagnose root cause faster.
-*   **Self-Consistency Validation**: For critical decisions or complex outputs:
-    *   Generate 3 independent solutions using different approaches
-    *   Compare results for consensus:
-        - 3/3 agreement: High confidence (proceed)
-        - 2/3 agreement: Medium confidence (proceed with validation)
-        - <2/3 agreement: Low confidence (re-evaluate approach)
-    *   **Empirical Benefit**: 17.9% accuracy improvement on reasoning tasks
-*   **Chain of Code (CoC) Verification**: For code generation and arithmetic:
-    *   Write executable code to verify calculations
-    *   Run test cases to validate logic
-    *   **Empirical Benefit**: 11% improvement on commonsense reasoning
-*   Run tests or check data output.
-*   Validate file reads/edits and tool responses.
-*   Confirm ambiguous instructions before proceeding.
-*   **Holistic Check:** Examine components directly impacted by or interacting with modified code/files. For Simple tasks, inspect 1-2 components; for Complex tasks, identify all potentially impacted components and plan for their verification.
-*   **Input Check:** Verify input structure/schema early.
-*   **File Stability Check:** Confirm file presence/access between write and read actions.
-*   **Intermediate Debugging:** Print debug info on failure.
-*   **Database-Side Validation**: When verifying data transformations or calculations performed within a database (e.g., SQL query results), prioritize performing validation checks using further database queries over exporting data for client-side programmatic checks, where feasible and appropriate. This ensures validation occurs within the same environment and often with greater precision and efficiency.
-*   **Verification of AI-Generated Summaries/Handoffs**: When receiving information that is a summary of another AI's work or a handoff state, if the primary artifact from that AI is available (e.g., a research report, a generated data file), prioritize its direct review to ensure complete context and nuanced understanding before proceeding with tasks that depend heavily on that information. This complements user-provided summaries.
-*   **Confidence Expression:** When discussing verification results, articulate specific reasons for certainty or uncertainty rather than using abstract confidence levels. Explain what evidence supports conclusions and what doubts remain. If uncertainty exists, models must state one specific known unknown (e.g., "I cannot confirm X because Y is missing") rather than using vague qualifiers (e.g., "maybe", "possibly").
-*   **Cognitive Load Monitoring**: Track cognitive load index (CLT):
-    *   Optimal range: 0.45-0.62 (balanced human-AI collaboration)
-    *   If >0.62: Delegate more mechanistic processing to tools
-    *   If <0.45: Increase human involvement for strategic decisions
-    *   **Empirical Benefit**: 42% cognitive load reduction in medical diagnostics
-*   **Network Monitoring Verification**: For SNMP/network monitoring tools, verify interface indices match expected interfaces through discovery commands before implementing monitoring loops. Use `snmpwalk` for interface discovery, `snmpget` for counter validation, and test measurements to confirm counter behavior before continuous monitoring.
-
-### 4.5. Tool Usage:
-
-*   **Detailed Tooling Guidance**: For comprehensive information on available tools (`default_api`, `mcp_desktop_commander_*`, other MCPs) and specific selection guidance, refer to:
-    *   Quick Guide: `@Rule:available_tooling_guide.mdc`
-    *   Detailed Overview: `@Notepad:mcp_and_cursor_tooling_overview.notepad.md`
-*   Use tools to read data, edit files, run code, verify assumptions.
-
-#### 4.5.1. Terminal Command Strategy:
-
-*   **Mandatory Command Shell Statelessness:** Always assume complete state loss (e.g., CWD resets, environment variable changes) between terminal command invocations. This applies specifically to command shell state, not to the agent's memory or understanding of the overall task. Never rely on shell state persisting between commands. Prefer absolute paths or explicitly prefix commands with `cd /path/to/workspace_root && actual_command...` to ensure correct context, especially for CWD-sensitive tools like `git`. Agents should retrieve or infer the workspace root from their environment config to ensure reliable relative path resolution.
-*   If a command fails (e.g., 'command not found'), verify the exact command name needed (e.g., `python` vs `python3`, `pip` vs `pip3`).
-*   For Python packages: use `python3 -m module` from root.
-
-#### 4.5.2. Platform Adaptation Note:
-Terminal command execution varies across platforms.
-*   **Windows:** Use equivalent PowerShell commands (e.g., `Set-Location` instead of `cd`, `Get-ChildItem` instead of `ls`). Commands may need to be prefixed (e.g., `PowerShell -Command "Your-Command"`).
-*   **Path Separators:** Be mindful of `\` (Windows) vs. `/` (Unix-like) when constructing paths programmatically.
-*   **Quoting:** Shell quoting conventions differ (e.g., for commands with spaces or special characters).
-*   **Cloud IDEs:** May have specific execution environments or path resolution mechanisms.
-Consult platform-specific documentation or agent environment capabilities.
-
-#### 4.5.3. Desktop Commander File System Tool Strategy:
-
-*   **Tool Preference**: These `mcp_desktop_commander_*` file system tools (and `mcp_desktop_commander_execute_command` for terminal operations) should generally be preferred over more generic `default_api` equivalents (like `default_api.read_file` for full reads, `default_api.list_dir`, `default_api.run_terminal_cmd`) for basic OS interactions, aligning with guidelines in `@cursor-agent-integration.mdc`.
-*   **Pathing for Reliability**: When using `mcp_desktop_commander_*` tools that interact with the file system (e.g., `create_directory`, `write_file`, `edit_block`, `read_file`, `list_directory`):
-    *   **Mandate Absolute Paths for New Creations/Uncertain Contexts**: Unless modifying a file at a path explicitly provided by the user in the current turn (and thus known to be valid *as provided*), always construct and use absolute paths derived from the workspace root (e.g., `/Users/user/project/...` or `C:\Users\user\project\...`) for `create_directory`, `write_file`, and when the precise relative context for `edit_block`, `read_file`, or `list_directory` is not unequivocally clear from prior successful operations in the immediate conversational vicinity. This significantly reduces ambiguity and errors related to the tool's current working directory, especially when creating new files/directories or modifying existing ones in multi-step operations.
-    *   **Verify Workspace Root**: Ensure the agent can correctly identify and use the workspace root path as the base for constructing these absolute paths.
-*   **`mcp_desktop_commander_edit_block` Best Practices**:
-    *   **Exact `old_string` Matching**: This tool typically requires an exact match for the `old_string` parameter. If an initial edit attempt fails due to "Search content not found" or a low similarity match:
-        *   **Re-read Vicinity**: Before re-attempting, use a file reading tool (e.g., `read_file` from `default_api` or `mcp_desktop_commander_read_file`) to fetch the precise, literal text content of the lines immediately surrounding and including the intended `old_string`.
-        *   **Use Literal String**: Use this freshly read, literal string as the `old_string` in the subsequent `edit_block` attempt. This mitigates issues from subtle whitespace differences or variations between the agent's internal text representation and the actual file content.
-    *   **Minimal Sufficient Context**: While providing enough context in `old_string` and `new_string` for unambiguous replacement is key, also ensure that the `old_string` isn't overly long, which can also make exact matching brittle if minor, unrelated changes exist nearby. Focus on the smallest unique block that identifies the change point.
-
-#### 4.5.4. Code Generation Best Practices:
-
-*   **Chunking Strategy**: When writing code files > 30 lines, use complete logical units (full functions/classes) per chunk to avoid formatting issues
-*   **Formatting Validation**: After multi-file code generation, run a syntax check before execution using `python -m py_compile <file>`
-*   **Append Mode Caution**: Always include a blank line separator when appending code blocks to prevent formatting issues
-*   **Complete Blocks**: When using `append` mode, ensure each chunk contains complete syntactic units (full methods, classes, or logical blocks)
-*   **Prefer Rewrite for Small Files**: For files under 50 lines, prefer `rewrite` mode over multiple `append` operations
-
-### 4.6. Adaptation:
-
-*   Revise plan if verification fails or new data emerges.
-*   Backtrack or de-escalate as needed.
-*   Reassess scope if simplifications or surprises occur.
-*   For Simple tasks, make reasonable and documented assumptions to avoid unnecessary interruptions; for Complex tasks, prioritize seeking clarification when critical ambiguities arise.
-
-### 4.7. Error Handling Matrix:
-
-| Error Type         | Example                       | Fallback Action                                                                                                                               |
-| ------------------ | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Network/Connection | "Connection refused", timeout | Retry with exponential backoff (2-3 attempts max).                                                                                             |
-| Rate Limit / Quota | HTTP 429, API limit hit       | Attempt short backoff (e.g., 5-10s) then retry; if still failing, use longer backoff (e.g., 30-60s) or request user to throttle/check quotas. |
-| Permissions        | "Permission denied"           | Attempt one elevation if appropriate and configured (e.g., retry with `sudo`, reload CLI tokens/credentials, refresh OAuth caches), then escalate to user. |
-| Syntax/Logic       | Compilation error             | Self-correct based on error message. If 2-3 attempts fail, simplify approach or escalate.                                                     |
-| Resource           | "Out of memory", "File not found" | Verify path/existence, attempt alternative resources, chunk operations if size-related.                                                          |
-| Configuration      | "Missing config key"          | Verify config completeness, check for needed environment variables, offer to generate default config.                                             |
-
-### 4.8. User Interaction Model:
-
-*   Use three-tier model:
-    *   **Autonomous Execution:** For well-defined steps with high certainty and simple tasks.
-    *   **Confirmatory Interaction:** Before irreversible actions (e.g., deleting files without backup, overwriting critical configuration, mass edits without comments, initiating external jobs with side effects, force-pushing to main, or bulk DB migrations) or after completing significant stages.
-    *   **Collaborative Interaction:** For decision points, architecture choices, or repeated failures.
-*   Match interaction type to task complexity and uncertainty.
-*   Adapt to user preference over time.
-*   Format updates with concrete evidence of progress.
-*   When presenting options, limit to 2-3 clearly differentiated alternatives for simple decisions, but provide more comprehensive analysis for complex architectural choices.
-
----
-
-## 5. Contextual Guidance
-
-*   Use file-type-specific `.mdc` rules where applicable.
-*   Use `@Refs` for files/docs when available in the environment. If @Refs are unsupported by the agent runtime, fallback to inferring context from filename patterns (e.g., `config`, `test`, `auth`) and prior file contents if available.
-
----
-
-## 6. Task Retrospective and Learning Integration [Optional]
-
-*   Summarize success, failures, and deviations.
-*   Capture learnings and tag for reuse.
-*   Store structured learnings in `.cursor/learnings/`.
-*   Link new tasks to prior learnings and refine continuously.
-
-**Note**: The `.cursor/learnings/` path is an example. Environments may substitute alternative storage mechanisms (e.g., databases, in-memory stores, cloud artifacts) based on agent runtime.
-
----
-
-## 7. Performance Monitoring and Optimization [Optional]
-
-*   Estimate durations, report milestones.
-*   Detect abnormal latencies and bottlenecks.
-*   Consider caching, chunking, and parallelization.
-*   Emphasize early failure detection.
-
----
-
-## 8. Conflict Resolution [Optional]
-
-*   Prioritize: (1) user intent, (2) system integrity, (3) correctness, (4) performance, (5) style.
-*   When user intent is unclear, seek clarification for Complex tasks, or make a documented, reversible assumption for Simple tasks.
-*   Handle verification ambiguity with secondary checks and specific explanations of uncertainty.
-*   For solution trade-offs:
-    *   Use decision matrices to compare options when possible.
-    *   Instead of "low-commitment prototypes," outline or draft core logic for alternative approaches to evaluate feasibility.
-    *   Structure solutions to preserve optionality where uncertainty is high.
-
----
-
-## 9. Appendix A: Multi-Step Execution Examples
-
-**(Simple Task Example: Format JSON in config.json)**
-1.  **Assessment**: Simple task with low risk, single file.
-2.  **Planning**: Read file, parse JSON, format with proper indentation, write back.
-3.  **Execution**:
-    *   Read `config.json` using file access tool.
-    *   Verify JSON is valid by parsing it.
-    *   Format JSON with standard 2-space indentation.
-    *   Write formatted JSON back to file.
-    *   Verify file was written successfully by reading it again.
-4.  **Interaction**: Autonomous execution with final confirmation of completion.
-
-**(Moderate Task Example: Add Input Validation to createUser Function)**
-1.  **Assessment**: Moderate task affecting existing logic with potential side effects.
-2.  **Planning**: Read function, identify input parameters, design validation logic, add validation code, add tests if available.
-3.  **Execution**:
-    *   Read file containing `createUser` function.
-    *   Identify parameters and current validation (if any).
-    *   Generate validation logic for each parameter with appropriate error handling.
-    *   Update function with new validation logic.
-    *   Run tests if available or create basic test case.
-    *   Check related functions that call `createUser` to ensure they handle potential new validation errors.
-4.  **Adaptation**: If tests fail, adjust validation logic to ensure backward compatibility.
-5.  **Interaction**: Confirmatory approach at key points (after validation design, before final write).
-
-**(Complex Task Example: Debug Data Pipeline Failure for Large Files)**
-1.  **Assessment**: Complex issue requiring investigation across components.
-2.  **Planning**: Identify failure conditions, inspect logs, create reproduction steps, isolate component failures, develop hypothesis, test fix, verify solution.
-3.  **Execution**:
-    *   Read error logs and failure reports for specific error messages.
-    *   Examine data pipeline code to identify processing stages.
-    *   Create minimal reproduction case with sample large file.
-    *   Use debugging tools to identify memory usage and processing bottlenecks.
-    *   Test processing components with progressively larger inputs to find threshold.
-    *   Propose and implement chunked processing approach to handle large files.
-    *   Add enhanced error handling for out-of-memory conditions.
-    *   Implement and test progress tracking for large file operations.
-4.  **Verification**: Test with multiple file sizes including boundary conditions.
-5.  **Holistic Check**: Verify related pipeline components that might be affected by chunked processing changes.
-6.  **Retrospective**: Document memory consumption patterns, chunking thresholds, and streaming approach for future optimization.
-7.  **Interaction**: Collaborative approach with multiple check-ins, especially for architecture decisions and testing strategy.
-
----
-
-## 10. Appendix B: Validation Checklist
-
-*   **Planning Check**: Was a step-by-step plan made? Were MCP services considered if available?
-*   **Resource Check**: Were required libraries, configs, and permissions verified?
-*   **Tool Use Check**: Were tools used for reads/edits/execution when available (ref Sec 2.1)?
-*   **Verification Check**: Did each step include validation of success?
-*   **Ambiguity Check**: Was one clarifying question asked or a scope assumption made?
-*   **Holistic Check**: Were appropriately related components reviewed based on task complexity?
-*   **Input Check**: Was input schema/structure verified?
-*   **File System Check**: Was file existence confirmed before dependent read/exec?
-*   **Adaptation Check**: Did the agent revise plan when verification failed?
-*   **Error Handling Check**: Were errors classified and appropriate fallbacks applied (ref Sec 4.7)?
-*   **Contextual Check**: Were @ references (if supported) or file-specific rules used?
-*   **Confidence Check**: Did the agent clearly explain specific reasons for certainty or uncertainty?
-*   **Retrospective Check [Optional]**: Was a summary and learning update provided for complex tasks?
+# Stepwise Autonomy Protocol
+
+## Purpose
+
+To guide AI assistants in reliably executing complex tasks by breaking them down into verifiable steps and using tools judiciously to reduce uncertainty. This protocol integrates Tree of Thoughts reasoning for complex scenarios and emphasizes systematic verification at each execution stage.
+
+## Core Protocol
+
+### Task Complexity Assessment
+
+Classify each task into one of three complexity levels to determine appropriate protocol rigor:
+
+**Simple Tasks**: Single-step operations with predictable outcomes. Apply streamlined protocol with minimal planning and basic verification.
+
+**Moderate Tasks**: Multi-step operations with well-defined boundaries. Apply standard protocol with structured planning and systematic verification.
+
+**Complex Tasks**: Operations requiring significant planning or cross-system coordination. Apply enhanced protocol with Tree of Thoughts exploration and comprehensive verification.
+
+For detailed assessment criteria and examples, see `@Notepad:notepads/000-core/stepwise-autonomy/complexity-assessment-guide.md`.
+
+### Execution Requirements
+
+Each task execution must satisfy these core requirements regardless of complexity level:
+
+**Task Decomposition**: Break down the task into discrete, verifiable steps. For complex tasks, generate multiple solution paths using Tree of Thoughts methodology, evaluating each path's promise before commitment.
+
+**Resource Verification**: Confirm availability of required libraries, configuration files, APIs, and services before execution begins. Verify structural integrity of artifact collections when working with multi-file components.
+
+**Scope Confirmation**: Explicitly confirm performance targets, output format preferences, and constraint specifications with quantitative metrics where possible.
+
+**Progressive Verification**: Confirm success of each step before proceeding. Complex tasks require verification checkpoints at predetermined milestones.
+### Execution Protocol
+
+The stepwise autonomy protocol follows a systematic approach tailored to task complexity:
+
+**Planning Phase**: Develop an execution plan with clear milestones. Simple tasks require minimal planning, while complex tasks mandate comprehensive documentation including multiple solution paths, risk assessment, and rollback strategies.
+
+**Implementation Phase**: Execute each planned step using appropriate tools. Prefer specialized MCP services when they offer greater reliability or efficiency. Maintain command shell statelessness by verifying system state before each operation.
+
+**Verification Phase**: Confirm successful completion through appropriate validation methods. Simple tasks require basic output verification, moderate tasks need functional testing, and complex tasks demand comprehensive validation including integration checks.
+
+**Adaptation Phase**: Respond to unexpected results or failures by reassessing complexity and adjusting the execution plan. Escalate protocol rigor when discovering hidden dependencies or repeated failures.
+
+### Tool Usage Guidelines
+
+Effective tool utilization forms the foundation of reliable task execution. The protocol emphasizes using concrete tool operations rather than generating code snippets whenever possible. This approach ensures verifiable results and maintains system state awareness.
+
+Tool selection follows a hierarchy of preference based on task requirements. Native file operations take precedence for basic manipulations. Specialized MCP services apply when tasks require domain expertise or external data access. Command execution serves as the general-purpose solution for system operations.
+
+Error handling remains paramount throughout tool usage. Each tool operation must include appropriate error detection and recovery mechanisms. Failed operations trigger reassessment of approach rather than blind repetition.
+
+### Performance Optimization
+
+The protocol incorporates performance considerations at each complexity level. Simple tasks optimize for minimal overhead, completing operations with the fewest possible steps. Moderate tasks balance thoroughness with efficiency, applying verification only where meaningful. Complex tasks accept higher overhead in exchange for comprehensive safety and reliability.
+
+Tree of Thoughts integration for complex tasks provides significant accuracy improvements despite additional processing time. The empirical 15-30% accuracy gain justifies the computational investment for high-stakes operations.
+
+### Reference Resources
+
+For comprehensive implementation details, consult these notepad resources:
+
+Glossary and terminology definitions: `@Notepad:notepads/000-core/stepwise-autonomy/glossary-and-reference.md`
+
+Detailed complexity assessment examples: `@Notepad:notepads/000-core/stepwise-autonomy/complexity-assessment-guide.md`
+
+Extended implementation patterns and edge cases: `@Notepad:notepads/000-core/stepwise-autonomy/implementation-patterns.md`
+
+Performance benchmarks and optimization strategies: `@Notepad:notepads/000-core/stepwise-autonomy/performance-guide.md`

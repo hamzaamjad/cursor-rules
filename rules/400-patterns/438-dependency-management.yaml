@@ -1,0 +1,37 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Best practices for managing external library dependencies.
+category: 400-patterns
+alwaysApply: false
+globs:
+- '["poetry.lock"'
+- '"Pipfile.lock"'
+- '"requirements.txt"'
+- '"package-lock.json"'
+- '"yarn.lock"'
+- '"go.mod"'
+- '"pom.xml"]'
+- poetry.lock
+- Pipfile.lock
+- requirements.txt
+- package-lock.json
+- yarn.lock
+- go.mod
+- pom.xml
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended: []
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+research: []
+examples: []
+notes: ''

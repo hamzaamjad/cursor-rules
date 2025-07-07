@@ -1,13 +1,3 @@
----
-description: Inject controlled randomness and unexpected elements to break cognitive patterns and generate novel solutions
-globs: 
-  - "**/*.py"
-  - "**/*.js"
-  - "**/*.ts"
-  - "**/*.md"
-alwaysApply: false
----
-
 # wildcard-brainstorm.mdc
 
 <!-- Version: 1.0.0 — 2025-06-19 -->

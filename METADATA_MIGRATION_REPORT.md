@@ -1,0 +1,70 @@
+# Metadata Migration Report
+
+Date: 2025-07-06 15:21:22
+
+Total files processed: 61
+Successful migrations: 61
+Failed migrations: 0
+
+## Successfully Migrated Rules
+✓ Migrated: 000-core/001-philosophers-stone.mdc
+✓ Migrated: 000-core/002-pareto-prioritization.mdc
+✓ Migrated: 000-core/003-stepwise-autonomy.mdc
+✓ Migrated: 000-core/004-risk-checkpoint.mdc
+✓ Migrated: 100-cognitive/101-ultrathink-prompting.mdc
+✓ Migrated: 100-cognitive/102-wildcard-brainstorm.mdc
+✓ Migrated: 100-cognitive/103-divergence-convergence.mdc
+✓ Migrated: 100-cognitive/104-analogy-transfer.mdc
+✓ Migrated: 100-cognitive/105-context-trim.mdc
+✓ Migrated: 100-cognitive/106-concise-comms.mdc
+✓ Migrated: 100-cognitive/107-sparring-partner-mode.mdc
+✓ Migrated: 100-cognitive/108-cognitive-load-balancing.mdc
+✓ Migrated: 100-cognitive/109-chain-of-code.mdc
+✓ Migrated: 200-domain/analytics-engineering.mdc
+✓ Migrated: 200-domain/analytics-storytelling.mdc
+✓ Migrated: 200-domain/datascience-repro.mdc
+✓ Migrated: 200-domain/dbt-analytics-engineering.mdc
+✓ Migrated: 200-domain/dbt-incremental-loading-patterns.mdc
+✓ Migrated: 200-domain/dbt-mcp-server.mdc
+✓ Migrated: 200-domain/dbt-model-quality.mdc
+✓ Migrated: 200-domain/dbt-semantic-modeling.mdc
+✓ Migrated: 200-domain/python-clean-code.mdc
+✓ Migrated: 200-domain/sql-correctness.mdc
+✓ Migrated: 200-domain/sql-performance.mdc
+✓ Migrated: 200-engineering/201-no-version-bloat.mdc
+✓ Migrated: 200-engineering/202-database-selection.mdc
+✓ Migrated: 300-integration/available-tooling-guide.mdc
+✓ Migrated: 300-integration/cursor-agent-integration.mdc
+✓ Migrated: 300-integration/multi-model-tool-integration.mdc
+✓ Migrated: 300-integration/perplexity-research-framework.mdc
+✓ Migrated: 300-techniques/constraint-optimization.mdc
+✓ Migrated: 400-patterns/427-stigmergic-workflows.mdc
+✓ Migrated: 400-patterns/428-pre-task-rule-review.mdc
+✓ Migrated: 400-patterns/80-20-prioritization-data-analytics.mdc
+✓ Migrated: 400-patterns/api-design-guidelines.mdc
+✓ Migrated: 400-patterns/api-webhook-discrepancy-documentation.mdc
+✓ Migrated: 400-patterns/backend-security.mdc
+✓ Migrated: 400-patterns/bash-safety.mdc
+✓ Migrated: 400-patterns/ci-cd-testing-gatekeeper.mdc
+✓ Migrated: 400-patterns/code-generation-patterns.mdc
+✓ Migrated: 400-patterns/context-integration.mdc
+✓ Migrated: 400-patterns/dependency-management.mdc
+✓ Migrated: 400-patterns/deployment-config.mdc
+✓ Migrated: 400-patterns/document-analysis.mdc
+✓ Migrated: 400-patterns/example-library-integrity.mdc
+✓ Migrated: 400-patterns/logging-monitoring.mdc
+✓ Migrated: 400-patterns/model-selection.mdc
+✓ Migrated: 400-patterns/notebook-best-practices.mdc
+✓ Migrated: 400-patterns/notepad-best-practices.mdc
+✓ Migrated: 400-patterns/prompt-coding-standards.mdc
+✓ Migrated: 400-patterns/prompt-eval-data-analytics.mdc
+✓ Migrated: 400-patterns/prompt-eval.mdc
+✓ Migrated: 400-patterns/research-prompt-guidelines.mdc
+✓ Migrated: 400-patterns/rule-security.mdc
+✓ Migrated: 400-patterns/safir-scroll-output.mdc
+✓ Migrated: 400-patterns/sdk-development-checklist.mdc
+✓ Migrated: 400-patterns/stepwise-autonomy-data-pipeline.mdc
+✓ Migrated: 400-patterns/structured-data-embedding-best-practices.mdc
+✓ Migrated: 400-patterns/task-retrospective.mdc
+✓ Migrated: 400-patterns/test-driven-development.mdc
+✓ Migrated: snmp-monitoring-patterns.mdc

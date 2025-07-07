@@ -1,0 +1,28 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Fundamental security best practices for backend and API development.
+category: 400-patterns
+alwaysApply: false
+globs:
+- '**/src/api/**'
+- '**/src/backend/**'
+- '**/src/db/**'
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+research: []
+examples: []
+notes: ''

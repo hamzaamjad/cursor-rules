@@ -1,0 +1,9 @@
+category: 200-engineering
+common_tags:
+- performance
+- quality
+defaults:
+  performance:
+    empiricalValidation: To be measured
+    processingOverhead: minimal
+description: Rules for 200-engineering

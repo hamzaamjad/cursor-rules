@@ -1,0 +1,26 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: SQL correctness & performance guard-rails
+category: 200-domain
+alwaysApply: false
+globs: []
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: significant
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- performance
+- specialized
+- quality
+- domain-specific
+research: []
+examples: []
+notes: ''

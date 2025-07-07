@@ -1,0 +1,29 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Comprehensive checklist for SDK development ensuring consistency and
+  completeness
+category: 400-patterns
+alwaysApply: false
+globs:
+- '**/sdk/**/*.py'
+- '**/client/**/*.py'
+- '**/lib/**/*.py'
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: moderate
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+research: []
+examples: []
+notes: ''
