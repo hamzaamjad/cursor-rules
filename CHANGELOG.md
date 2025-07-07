@@ -37,6 +37,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Memory usage tracking
 - CI badges in README for validation and benchmark status
 - Python type hints and mypy validation in CI pipeline
+- Automated fix scripts:
+  - `scripts/fix_missing_created.py`: Added created field to 108 files
+  - `scripts/fix_invalid_dependencies.py`: Fixed 103 invalid dependency entries
+  - `scripts/move_oversized_to_notepad.py`: Moved 5 oversized rules to notepads
+- Validation configuration file (`validation/config.yaml`) with customizable thresholds
 - Enhanced metadata structure for all rule files with comprehensive tracking capabilities
 - Automated metadata migration script (`scripts/migrate-metadata.py`)
 - Enhanced metadata template (`templates/enhanced-metadata-template.yaml`)
@@ -66,6 +71,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Average rule size decreased from 1,674 to 616 tokens**
 
 ### Fixed
+- **All 106 rules now pass validation** (100% success rate)
+- Missing metadata fields in 109 files
+- Invalid dependency formats in 103 files
+- Oversized rules moved to notepad system (5 files)
+- YAML syntax errors in multiple configuration files
 - Duplicate frontmatter blocks in 29 files removed
 - Missing descriptions restored from secondary metadata blocks
 - Migration script regex parsing made more robust
