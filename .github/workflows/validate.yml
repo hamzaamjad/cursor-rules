@@ -29,12 +29,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pytest pytest-cov pytest-benchmark
+        pip install pytest pytest-cov pytest-benchmark mypy types-PyYAML
 
     - name: Run type checking
-      run: |
-        pip install mypy types-PyYAML
-        mypy validation/ --ignore-missing-imports
+      run: mypy validation/ --ignore-missing-imports
 
     - name: Validate all rules
       run: |
@@ -43,55 +41,7 @@ jobs:
         python -c "import json; report = json.load(open('validation_report.json')); exit(1 if not report.get('success', False) else 0)"
 
     - name: Check for circular dependencies
-      run: |
-        python -c "
-        from pathlib import Path
-        import yaml
-        import json
-        
-        rules_dir = Path('rules')
-        dependency_graph = {}
-        
-        # Build dependency graph
-        for yaml_file in rules_dir.rglob('*.yaml'):
-            with open(yaml_file) as f:
-                meta = yaml.safe_load(f)
-                if meta and 'dependencies' in meta:
-                    rule_name = yaml_file.stem
-                    dependency_graph[rule_name] = meta['dependencies']
-        
-        # Check for cycles
-        def has_cycle(graph):
-            visited = set()
-            rec_stack = set()
-            
-            def dfs(node):
-                visited.add(node)
-                rec_stack.add(node)
-                
-                for dep in graph.get(node, []):
-                    dep_name = Path(dep).stem
-                    if dep_name not in visited:
-                        if dfs(dep_name):
-                            return True
-                    elif dep_name in rec_stack:
-                        return True
-                
-                rec_stack.remove(node)
-                return False
-            
-            for node in graph:
-                if node not in visited:
-                    if dfs(node):
-                        return True
-            return False
-        
-        if has_cycle(dependency_graph):
-            print('ERROR: Circular dependencies detected!')
-            exit(1)
-        else:
-            print('✓ No circular dependencies found')
-        "
+      run: python scripts/check_circular_deps.py
 
     - name: Performance check
       run: |

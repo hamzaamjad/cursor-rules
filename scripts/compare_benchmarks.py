@@ -33,8 +33,8 @@ def compare_metrics(baseline: Dict, current: Dict) -> str:
         time_delta = current_metrics['validation_time_ms'] - base_metrics['validation_time_ms']
         
         # Percentage changes
-        token_pct = (token_delta / base_metrics['token_count'] * 100) if base_metrics['token_count'] > 0 else 0
-        time_pct = (time_delta / base_metrics['validation_time_ms'] * 100) if base_metrics['validation_time_ms'] > 0 else 0
+        token_pct = (token_delta / base_metrics['token_count'] * 100) if base_metrics.get('token_count', 0) > 0 else 0
+        time_pct = (time_delta / base_metrics['validation_time_ms'] * 100) if base_metrics.get('validation_time_ms', 0) > 0 else 0
         
         # Categorize changes
         if token_pct > 10 or time_pct > 20:

@@ -44,7 +44,7 @@ class RuleBenchmarker:
             import tiktoken
             enc = tiktoken.encoding_for_model("gpt-4")
             return len(enc.encode(content))
-        except ImportError:
+        except (ImportError, KeyError):
             # Fallback: ~4 chars per token
             return len(content) // 4
     
