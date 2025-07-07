@@ -180,6 +180,7 @@ Self-organizing behaviors emerge from simple rules that create complex, adaptive
 
 ```python
 import os
+from datetime import datetime
 from pathlib import Path
 
 def auto_generate_index(directory, threshold=10):
