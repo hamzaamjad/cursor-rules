@@ -29,3 +29,8 @@ notes: 'Extended glossary, complexity assessment examples, and implementation de
 
   available in notepads/000-core/stepwise-autonomy/'
 created: '2025-07-07'
+dependencies:
+- available-tooling-guide.mdc
+- divergence-convergence
+- risk-checkpoint
+- context-trim

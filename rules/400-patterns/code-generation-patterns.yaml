@@ -37,3 +37,6 @@ notes: 'Comprehensive implementation resources available in:
 
   - notepads/400-patterns/code-generation-patterns/templates-and-examples.md'
 created: '2025-07-07'
+dependencies:
+- chain-of-code
+- stepwise-autonomy

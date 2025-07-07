@@ -39,3 +39,6 @@ notes: 'Comprehensive implementation resources available in:
 
   '
 created: '2025-07-07'
+dependencies:
+- stepwise-autonomy
+- chain-of-code

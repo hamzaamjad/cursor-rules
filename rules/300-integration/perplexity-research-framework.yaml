@@ -20,3 +20,6 @@ research: []
 examples: []
 notes: ''
 created: '2025-07-07'
+dependencies:
+- divergence-convergence
+- risk-checkpoint

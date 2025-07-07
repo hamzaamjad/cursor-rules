@@ -1,149 +1,136 @@
-# Rule Loading Configuration
-# Version: 2.0.0
-# This file defines the loading order and dependencies for Mirror project rules
-
-## Core Rules (Always Load)
 core_rules:
-  - 000-core/001-philosophers-stone.mdc
-  - 000-core/002-pareto-prioritization.mdc  
-  - 000-core/003-stepwise-autonomy.mdc
-  - 000-core/004-risk-checkpoint.mdc
-
-## Cognitive Enhancement Rules
+- 000-core/001-philosophers-stone.mdc
+- 000-core/002-pareto-prioritization.mdc
+- 000-core/003-stepwise-autonomy.mdc
+- 000-core/004-risk-checkpoint.mdc
 cognitive_rules:
-  requires: [core_rules]
+  requires:
+  - core_rules
   rules:
-    - 100-cognitive/105-context-trim.mdc      # Load first for efficiency
-    - 100-cognitive/103-divergence-convergence.mdc
-    - 100-cognitive/101-ultrathink-prompting.mdc
-    - 100-cognitive/102-wildcard-brainstorm.mdc
-    - 100-cognitive/104-analogy-transfer.mdc
-    - 100-cognitive/106-concise-comms.mdc
-
-## Domain Rule Sets
+  - 100-cognitive/105-context-trim.mdc
+  - 100-cognitive/103-divergence-convergence.mdc
+  - 100-cognitive/101-ultrathink-prompting.mdc
+  - 100-cognitive/102-wildcard-brainstorm.mdc
+  - 100-cognitive/104-analogy-transfer.mdc
+  - 100-cognitive/106-concise-comms.mdc
 domain_rules:
   analytics:
-    requires: [core_rules]
+    requires:
+    - core_rules
     rules:
-      - 200-domain/analytics-engineering.mdc
-      - 200-domain/analytics-storytelling.mdc
-      - 200-domain/datascience-repro.mdc
-  
+    - 200-domain/analytics-engineering.mdc
+    - 200-domain/analytics-storytelling.mdc
+    - 200-domain/datascience-repro.mdc
   dbt:
-    requires: [core_rules, domain_rules.analytics]
+    requires:
+    - core_rules
+    - domain_rules.analytics
     rules:
-      - 200-domain/dbt-analytics-engineering.mdc
-      - 200-domain/dbt-model-quality.mdc
-      - 200-domain/dbt-semantic-modeling.mdc
-      - 200-domain/dbt-incremental-loading-patterns.mdc
-      - 200-domain/dbt-mcp-server.mdc
-  
+    - 200-domain/dbt-analytics-engineering.mdc
+    - 200-domain/dbt-model-quality.mdc
+    - 200-domain/dbt-semantic-modeling.mdc
+    - 200-domain/dbt-incremental-loading-patterns.mdc
+    - 200-domain/dbt-mcp-server.mdc
   sql:
-    requires: [core_rules]
+    requires:
+    - core_rules
     rules:
-      - 200-domain/sql-correctness.mdc
-      - 200-domain/sql-performance.mdc
-  
+    - 200-domain/sql-correctness.mdc
+    - 200-domain/sql-performance.mdc
   python:
-    requires: [core_rules]
+    requires:
+    - core_rules
     rules:
-      - 200-domain/python-clean-code.mdc
-
-## Integration Rules
+    - 200-domain/python-clean-code.mdc
 integration_rules:
-  requires: [core_rules]
+  requires:
+  - core_rules
   rules:
-    - 300-integration/cursor-agent-integration.mdc
-    - 300-integration/available_tooling_guide.mdc
-    - 300-integration/multi-model-tool-integration.mdc
-    - 300-integration/perplexity-research-framework.mdc
-
-## Pattern Rules
+  - 300-integration/cursor-agent-integration.mdc
+  - 300-integration/available_tooling_guide.mdc
+  - 300-integration/multi-model-tool-integration.mdc
+  - 300-integration/perplexity-research-framework.mdc
 pattern_rules:
   testing:
-    requires: [core_rules]
+    requires:
+    - core_rules
     rules:
-      - 400-patterns/test-driven-development.mdc
-      - 400-patterns/ci-cd-testing-gatekeeper.mdc
-  
+    - 400-patterns/test-driven-development.mdc
+    - 400-patterns/ci-cd-testing-gatekeeper.mdc
   code_quality:
-    requires: [core_rules, cognitive_rules]
+    requires:
+    - core_rules
+    - cognitive_rules
     rules:
-      - 400-patterns/code-generation-patterns.mdc
-      - 400-patterns/api-design-guidelines.mdc
-      - 400-patterns/backend-security.mdc
-      - 400-patterns/sdk-development-checklist.mdc
-  
+    - 400-patterns/code-generation-patterns.mdc
+    - 400-patterns/api-design-guidelines.mdc
+    - 400-patterns/backend-security.mdc
+    - 400-patterns/sdk-development-checklist.mdc
   operations:
-    requires: [core_rules]
+    requires:
+    - core_rules
     rules:
-      - 400-patterns/logging-monitoring.mdc
-      - 400-patterns/deployment-config.mdc
-      - 400-patterns/dependency-management.mdc
-      - 400-patterns/bash-safety.mdc
-  
+    - 400-patterns/logging-monitoring.mdc
+    - 400-patterns/deployment-config.mdc
+    - 400-patterns/dependency-management.mdc
+    - 400-patterns/bash-safety.mdc
   documentation:
-    requires: [core_rules, cognitive_rules]
+    requires:
+    - core_rules
+    - cognitive_rules
     rules:
-      - 400-patterns/document-analysis.mdc
-      - 400-patterns/research-prompt-guidelines.mdc
-      - 400-patterns/notebook-best-practices.mdc
-      - 400-patterns/notepad-best-practices.mdc
-
-## Rule Profiles (Common Combinations)
+    - 400-patterns/document-analysis.mdc
+    - 400-patterns/research-prompt-guidelines.mdc
+    - 400-patterns/notebook-best-practices.mdc
+    - 400-patterns/notepad-best-practices.mdc
 profiles:
   default:
     description: Standard configuration for general use
     includes:
-      - core_rules
-      - cognitive_rules
-  
+    - core_rules
+    - cognitive_rules
   data_analyst:
     description: Configuration for data analysis tasks
     includes:
-      - core_rules
-      - cognitive_rules
-      - domain_rules.analytics
-      - domain_rules.sql
-      - pattern_rules.documentation
-  
+    - core_rules
+    - cognitive_rules
+    - domain_rules.analytics
+    - domain_rules.sql
+    - pattern_rules.documentation
   dbt_developer:
     description: Configuration for dbt development
     includes:
-      - core_rules
-      - cognitive_rules
-      - domain_rules.analytics
-      - domain_rules.dbt
-      - domain_rules.sql
-  
+    - core_rules
+    - cognitive_rules
+    - domain_rules.analytics
+    - domain_rules.dbt
+    - domain_rules.sql
   full_stack:
     description: Complete configuration with all rules
     includes:
-      - core_rules
-      - cognitive_rules
-      - domain_rules
-      - integration_rules
-      - pattern_rules
-
-## Conflict Resolution
+    - core_rules
+    - cognitive_rules
+    - domain_rules
+    - integration_rules
+    - pattern_rules
 conflicts:
-  # When rules conflict, higher priority wins
   priority_order:
-    1: 000-core/004-risk-checkpoint.mdc      # Safety always wins
-    2: 000-core/001-philosophers-stone.mdc   # Strategic vision
-    3: 000-core/002-pareto-prioritization.mdc # Efficiency focus
-    4: 100-cognitive/106-concise-comms.mdc   # Output quality
-    5: 100-cognitive/105-context-trim.mdc    # Input efficiency
-  
-  # Specific conflict resolutions
+    1: 000-core/004-risk-checkpoint.mdc
+    2: 000-core/001-philosophers-stone.mdc
+    3: 000-core/002-pareto-prioritization.mdc
+    4: 100-cognitive/106-concise-comms.mdc
+    5: 100-cognitive/105-context-trim.mdc
   resolutions:
-    - conflict: [wildcard-brainstorm, concise-comms]
-      resolution: Apply wildcard-brainstorm to internal_thought, concise-comms to user_response
-    
-    - conflict: [risk-checkpoint, stepwise-autonomy]
-      resolution: Risk-checkpoint can override stepwise-autonomy progression
-    
-    - conflict: [divergence-convergence, context-trim]
-      resolution: Context-trim applies before divergence phase begins
-
-created: '2025-07-07'
+  - conflict:
+    - wildcard-brainstorm
+    - concise-comms
+    resolution: Apply wildcard-brainstorm to internal_thought, concise-comms to user_response
+  - conflict:
+    - risk-checkpoint
+    - stepwise-autonomy
+    resolution: Risk-checkpoint can override stepwise-autonomy progression
+  - conflict:
+    - divergence-convergence
+    - context-trim
+    resolution: Context-trim applies before divergence phase begins
+created: '2025-07-01'

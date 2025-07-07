@@ -30,3 +30,6 @@ notes: 'Comprehensive code examples and implementation patterns available in
 
   notepads/100-cognitive/chain-of-code/'
 created: '2025-07-07'
+dependencies:
+- risk-checkpoint
+- stepwise-autonomy

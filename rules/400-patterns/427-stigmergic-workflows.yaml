@@ -45,3 +45,5 @@ notes: 'Extensive implementation examples and scientific foundation available in
 
   - notepads/400-patterns/stigmergic-workflows/scientific-foundation-and-guidelines.md'
 created: '2025-07-07'
+dependencies:
+- analogy-transfer

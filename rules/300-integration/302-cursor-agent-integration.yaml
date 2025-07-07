@@ -18,3 +18,5 @@ research: []
 examples: []
 notes: ''
 created: '2025-07-07'
+dependencies:
+- available_tooling_guide.mdc

@@ -31,3 +31,8 @@ notes: 'Comprehensive implementation examples available in:
 
   - notepads/400-patterns/stepwise-autonomy-data-pipeline/research-integration-patterns.md'
 created: '2025-07-07'
+dependencies:
+- stepwise-autonomy
+- risk-checkpoint
+- sql-correctness
+- sql-performance

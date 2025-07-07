@@ -33,3 +33,8 @@ notes: 'Comprehensive implementation examples available in:
 
   '
 created: '2025-07-07'
+dependencies:
+- stepwise-autonomy
+- 200-domain/212-sql-correctness
+- 000-core/004-risk-checkpoint
+- 200-domain/213-sql-performance
