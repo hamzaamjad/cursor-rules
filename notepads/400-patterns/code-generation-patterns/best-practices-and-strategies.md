@@ -244,6 +244,7 @@ Comprehensive validation ensures generated code meets quality standards and func
 Always verify syntax correctness immediately after generation:
 
 ```python
+import os
 import subprocess
 import tempfile
 
