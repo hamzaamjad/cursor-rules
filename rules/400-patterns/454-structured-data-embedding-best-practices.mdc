@@ -1,0 +1,90 @@
+---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: null
+category: 400-patterns
+alwaysApply: false
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+- safety
+research: []
+examples: []
+notes: ''
+---
+
+# Structured Data Embedding Best Practices
+
+* **Purpose**: To guide AI assistants and developers in reliably embedding or referencing complex structured data (e.g., JSON, XML, YAML objects) within other structured files, particularly AI prompts or configuration files.
+* **Trigger**: This rule should be considered when a task involves an AI generating or modifying a file that will contain another substantial, structured data object as one of its values.
+* **Requirements**:
+  1.  **Assess Embedding Complexity**:
+      *   For small, simple structured data (e.g., a JSON object with 1-2 levels of nesting and few keys), direct embedding as an escaped string *may* be acceptable.
+      *   For large or complex structured data (multiple nesting levels, many keys, or requiring intricate escaping), direct embedding is strongly discouraged due to high error probability and poor maintainability.
+  2.  **Prioritize External File References (Preferred Method)**:
+      *   **Strategy**: Store the complex structured data in its own dedicated file (e.g., `schema.json`, `config_snippet.xml`).
+      *   **Reference**: In the parent file, use a string field to store the file path or a resolvable URI pointing to this external file.
+      *   **Clarity**: Include a descriptive field name (e.g., `schemaFilePath`, `externalConfigUrl`) and potentially a `sourceType: "FileReference"` or similar metadata hint.
+      *   **Agent Capability**: This assumes the consuming system or AI agent has the capability to read/resolve these file references. If not, this must be flagged as a constraint.
+  3.  **Guidelines for Direct String Embedding (If Unavoidable)**:
+      *   **Escaping**: All special characters within the structured data string (e.g., double quotes, backslashes in JSON) MUST be correctly escaped according to the parent file format's rules. For JSON embedding within JSON, this often means `"` becomes `\\\\\\\"` and `\\\\` becomes `\\\\\\\\`.
+      *   **Validation**: After generating the parent file with the embedded string, the AI MUST attempt to validate the syntax of the parent file.
+      *   **Iterative Correction Limit**: If linting/validation of the parent file fails due to the embedded string, attempt correction only once or twice. If errors persist, an AI should:
+          *   Alert the user to the escaping complexity.
+          *   Strongly recommend switching to the "External File Reference" method.
+          *   If proceeding with embedding, output the problematic string and ask the user for manual verification or correction of the escaping.
+      *   **No Comments within String Literals**: Ensure no comments (e.g., `//`, `#`) are present within the string literal representing the embedded data, as these can break parsing even if the outer language supports comments.
+  4.  **Consider Data Serialization Libraries**:
+      *   If an AI is programmatically constructing the embedded string (e.g., in Python environment before generating the final file edit), it should use standard library functions (e.g., `json.dumps()` in Python, applied appropriately for the level of nesting/embedding) to handle escaping, rather than manual string manipulation.
+
+* **Validation**:
+  * Check: Was the complexity of the data to be embedded assessed?
+  * Check: Was the "External File Reference" method considered and prioritized if applicable?
+  * Check: If direct string embedding was used, were escaping rules for the parent format explicitly mentioned or handled?
+  * Check: If direct embedding led to errors, was the iterative correction limit respected and alternative strategies (like user verification or switching to file reference) proposed?
+
+* **Examples**:
+  * **Scenario**: An AI needs to generate a JSON prompt that includes a detailed JSON schema for LLM B's output.
+    *   **Weak (Direct Embedding - Risky for Complex Schemas)**:
+        ```json
+        // In parent_prompt.json
+        {
+          "task": "Analyze data according to the following schema.",
+          "output_schema_string": "{\\\"type\\\": \\\"object\\\", \\\"properties\\\": {\\\"name\\\": {\\\"type\\\": \\\"string\\\"} ... (very long and complex schema) ... }}"
+        }
+        ```
+    *   **Improved (External File Reference)**:
+        ```json
+        // In parent_prompt.json
+        {
+          "task": "Analyze data according to the schema defined in the referenced file.",
+          "output_schema_source_type": "FileReference",
+          "output_schema_location": "/path/to/detailed_llm_b_output_schema.json"
+        }
+
+        // In /path/to/detailed_llm_b_output_schema.json
+        {
+          "type": "object",
+          "properties": {
+            "name": {"type": "string"}
+            // ... (very long and complex schema) ...
+          }
+        }
+        ```
+
+* **Changes**: Initial version based on challenges encountered with meta-prompt generation.
+* **Source References**: Reflects learnings from attempts to embed `Master Prompt Schema v8.0` within `meta_prompt_generator_template.json`.

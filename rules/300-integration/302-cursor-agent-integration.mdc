@@ -1,0 +1,82 @@
+---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Core requirements for models using Cursor Agent tools for codebase changes.
+category: 300-integration
+alwaysApply: true
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: moderate
+  empiricalValidation: To be measured
+dependencies:
+  required:
+  - available_tooling_guide.mdc
+  recommended:
+  incompatible: []
+conflicts: []
+tags:
+- integration
+- tooling
+research: []
+examples: []
+notes: ''
+---
+
+# cursor-agent-integration.mdc
+
+*Purpose*: Enable models to reliably and autonomously apply codebase changes using Cursor Agent tools.
+
+## Requirements
+- **Tool Invocation**: Always use Cursor Agent tools (e.g., `edit_file`, `run_terminal_cmd`, `read_file`) for file edits, command execution, and verification. Where MCP-specific equivalents exist (e.g., `mcp_desktop_commander_write_file` for full file writes, `mcp_desktop_commander_execute_command` for terminal commands), they should be preferred over more generic `default_api` counterparts if the action aligns with their specific purpose.
+- **Verification**: After each action, verify the result (e.g., read file after edit, check command output). If verification fails, attempt self-correction or fallback.
+- **Error Handling**: Log all failed actions, retries, and fallbacks. Clearly report persistent failures.
+- **Idempotency**: Ensure actions are idempotent where possible (e.g., repeated edits yield the same result).
+- **Security**: Never expose secrets or sensitive data in logs or outputs.
+
+## Best Practices
+- **Plan Actions**: Decompose complex changes into discrete tool invocations.
+- **Use Minimal Scope**: Edit only the necessary lines/files. Avoid broad or ambiguous changes.
+- **Read Before Edit**: Always read the file or state before making changes to confirm context.
+- **Verify Directory Creation**: After creating a new directory and before writing multiple files into it, consider a quick verification (e.g., using `list_dir` or an equivalent) to confirm the directory was created as expected. This adds robustness, especially in complex, multi-step file system operations.
+- **Verify After Edit**: Read the file or check output after each change to confirm success.
+- **Fallbacks**: If an edit fails, attempt a corrective action or revert, and log the attempt.
+
+### Strategies for Handling Complex/Embedded Content in Files
+- **Structured Data File Strategy**: For complex structured data files (e.g., YAML, JSON), if `edit_file` partial edits prove unreliable, consider a read-parse-modify-serialize-rewrite strategy. This involves reading the full file, parsing it (e.g., with `yaml.safe_load` or `json.loads`), modifying the resulting data structure in code, serializing it back to a string, and then using `mcp_desktop_commander_write_file` or `edit_file` with the complete new content to overwrite the original file. This is a more robust fallback for maintaining the integrity of such files.
+- **Refined Edit Strategy for Structured Files (New)**: If `default_api.edit_file` (or a similar broad context editor) fails to apply a desired change to a structured file (JSON, YAML), before resorting to a full read-parse-modify-rewrite, first attempt a more surgical edit using `mcp_desktop_commander_edit_block`. To do this effectively: 1. Use `mcp_desktop_commander_read_file` to fetch the exact text of the section to be changed. 2. Use this exact text as the `old_string` argument for `mcp_desktop_commander_edit_block`. This precision can overcome subtle differences that cause broader editors to fail and is often more efficient than a full rewrite for targeted changes.
+- **Handling Quotes in JSON Strings with `edit_file`**: When using `edit_file` to modify JSON string values that themselves contain quotes, ensure Python\'s string literal escaping (for the `code_edit` parameter) and JSON\'s own string rules are both satisfied.
+    - For single quotes within a JSON string value (e.g., `"description": "User\'s input"`), directly using the single quote within the Python string literal for `code_edit` is often most robust if the Python string is delimited by a different quote type (e.g., `code_edit = """... "description": "User\'s input" ..."""`) or by escaping the outer quotes if they are the same. If the `code_edit` parameter uses triple single quotes `\\\'\\\'\\\'...\\\'\\\'\\\'`, then internal single quotes would need escaping e.g. `\\\'\\\'\\\'... "description": "User\\\\\\\'s input" ...\\\'\\\'\\\'`.
+    - For double quotes within a JSON string value (e.g., `"message": "He said \\\"Hello!\\\""`), the JSON requires `\\\"`. So, the Python string for `code_edit` would look like: `code_edit = '... "message": "He said \\\\\\\"Hello!\\\\\\\"" ...'` (Python needs `\\\\\\\"` to produce `\\\"` in the final string for the JSON).
+    - Always verify the edit, as escaping complexities can sometimes lead to unexpected results.
+- **Handling Embedded Structured Data in Prompts (New)**: When generating or editing prompts (e.g., JSON files) that require embedding other large, structured data objects (like a JSON schema as a string value within the parent JSON prompt):
+    - **Prioritize File References**: If the agent environment and the consuming LLM can support it, referencing the structured data object from an external file (e.g., providing a file path as the value) is strongly preferred. This avoids complex string escaping issues and improves maintainability.
+    - **Caution with Direct Embedding**: If direct embedding as a string is necessary and linting errors arise from tools like `edit_file` after an initial generation or modification attempt, proactively consider asking the user if they would prefer to switch to a file reference strategy. Repeated automated attempts to fix complex escaping in deeply nested strings can be unreliable.
+
+### Tooling Preference
+
+### Detailed Tooling Guidance
+- **Comprehensive Tool Comparison**: For a detailed comparison of all available tools (`default_api`, `mcp_desktop_commander_*`, and other MCPs), their specific features, and advanced usage strategies, consult the primary knowledge artifact: `@Notepad:mcp_and_cursor_tooling_overview.notepad.md`.
+- **Quick Selection Guide**: For concise, actionable heuristics on choosing the right tool for common tasks, refer to the rule: `@Rule:available_tooling_guide.mdc`.
+- **Prioritize Specialized MCP Tools**:
+    - For general operating system interactions:
+        - **File System Operations**: `mcp_desktop_commander_write_file`, `mcp_desktop_commander_create_directory`, `mcp_desktop_commander_list_directory`, `mcp_desktop_commander_move_file`, `mcp_desktop_commander_get_file_info`, and `mcp_desktop_commander_edit_block` should be preferred over generic `default_api` equivalents (like `default_api.edit_file` for full overwrites, `default_api.list_dir`, etc.). This preference for `mcp_desktop_commander_write_file` also extends to scenarios involving substantial additions of new content to an existing file, where a read-modify-rewrite pattern (using `mcp_desktop_commander_read_file` to get current content, modifying it in memory, then `mcp_desktop_commander_write_file` to write the new entire content) is often more robust and potentially more cost-effective than constructing a complex `default_api.edit_file` call for large appends.
+        - **Reading Entire Files**: For ingesting the full content of files (e.g., configuration files, design documents for complete contextual understanding), `mcp_desktop_commander_read_file` is preferred over `default_api.read_file` used with `should_read_entire_file=True`.
+        - **Terminal Commands**: `mcp_desktop_commander_execute_command` is preferred over `default_api.run_terminal_cmd`.
+    - This general preference assumes the `mcp_desktop_commander_*` tools offer better integration, security, logging, or cost-effectiveness.
+    - However, `default_api` tools remain appropriate if they offer unique capabilities not present in the MCP Desktop Commander variant (e.g., `default_api.read_file` for reading specific line ranges when full content is not needed, `default_api.edit_file` for highly surgical, context-aware edits if `mcp_desktop_commander_edit_block` proves less suitable for a complex diff, or `default_api.fetch_rules` for its specific purpose of retrieving rule definitions).
+
+## Examples
+- *Update a function in `foo.py`*: Use `edit_file` to change the function, then `read_file` to verify. If the function is not updated as expected, retry or report.
+- *Run a shell command*: Use `run_terminal_cmd` to execute, then check output or status. If the command fails, log and attempt a fix if possible.
+
+## Verification Steps
+1. Confirm tool invocation matches intended action.
+2. Check post-action state/output for correctness.
+3. If verification fails, attempt correction or escalate.
+
+## Changes
+- Initial version based on retrospective from CrewAI Autopilot and Cursor Agent Mode integration.
+- Added "Structured Data File Strategy" to Best Practices based on Transmutation Phase III learnings.

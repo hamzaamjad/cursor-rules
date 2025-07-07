@@ -1,0 +1,56 @@
+---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Guidelines for integrating with and managing the dbt MCP server.
+category: 200-domain
+alwaysApply: false
+globs: start_digital_twin.sh,stop_digital_twin.sh,config.json
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- safety
+- quality
+- specialized
+- optimization
+- domain-specific
+research: []
+examples: []
+notes: ''
+---
+
+# dbt MCP Server Integration
+
+- **Purpose:** Enable LLMs and agents to access dbt project metadata and semantic layer via the dbt MCP server. Ensure integration with the latest MCP server features and any recent updates in dbt.
+- **Startup:** Managed by `start_digital_twin.sh` with dependency checks and logging. Configured in `config.json` under `mcpServers.dbt_mcp`.
+- **Shutdown:** Managed by `stop_digital_twin.sh` with PID and pattern matching.
+- **Config:**
+  - `command`: Full path to `mcp` executable
+  - `args`: `['run', '<path-to-main.py>', '--transport', 'http']` (HTTP transport recommended for agent access)
+  - `env`: `DBT_PROJECT_DIR`, `DBT_PATH`, `DBT_HOST`, `DBT_PROD_ENV_ID`, `DBT_TOKEN`, `FASTMCP_TRANSPORT=http`
+- **HTTP Transport Verification:**
+  - Confirm the server is running with HTTP transport (not stdio, which is default).
+  - Check port 8000 (default) is open: `lsof -iTCP:8000 -sTCP:LISTEN`
+  - Test endpoints: `/docs`, `/`, `/health` using `curl`.
+  - If endpoints are not available, check logs for transport mode and errors.
+  - Ensure server logs the full HTTP endpoint and transport mode on startup.
+- **Security:**
+  - Ensure environment variables are used for all sensitive configurations. Regularly audit these variables for compliance with security standards.
+  - Implement role-based access control (RBAC) for accessing the MCP server.
+  - Use HTTPS for secure communication if possible.
+- **Troubleshooting:**
+  - Check logs in `/Users/USERNAME/.digital_twin/logs/dbt_mcp_server.log`
+  - If API is not available, verify config and restart the server.
+  - Reference: https://github.com/dbt-labs/dbt-mcp
+  - For persistent issues, consult the dbt MCP server community forums or GitHub issues.
+- **Related Rules:** bash-safety, stepwise-autonomy, 80-20-prioritization
+  - Verify these rules for any updates that might affect dbt MCP server integration.

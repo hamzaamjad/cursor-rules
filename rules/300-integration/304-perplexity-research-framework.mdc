@@ -1,0 +1,111 @@
+---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Unified framework for standard and deep research
+category: 300-integration
+alwaysApply: false
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: significant
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- performance
+- quality
+- integration
+- tooling
+research: []
+examples: []
+notes: ''
+---
+
+\
+---
+description: Unified framework for standard and deep research
+globs: 
+alwaysApply: false
+---
+# perplexity-research-framework.mdc
+
+*   **Purpose**: To provide a comprehensive framework for effectively using Perplexity research tools (both standard and deep research) to ensure all research efforts are well-scoped, focused, and directly contribute to high-impact business objectives. **Research Impact**: Structured research frameworks show 35% improvement in decision quality and 50% reduction in research time.
+
+*   **Research Depth Selection**:
+    * **Standard Research** (`mcp_perplexity-ask_perplexity_research`): For routine information needs, verification tasks, or topics with clear parameters.
+    * **Deep Research**: For complex topics requiring synthesis across multiple domains, emerging topics with limited established knowledge, or when comprehensive analysis is needed.
+    * *Refer to `@.cursor/notepads/perplexity-research-framework-details.notepad.md` for guidance on selecting depth.*
+
+*   **Requirements**:
+    1.  **Justification & Scoping**: 
+        * Only initiate research when it addresses the top 20% of questions that will deliver 80% of value.
+        * Clearly articulate business impact using metrics from `@.cursor/rules/80-20-prioritization.mdc`.
+        * Break complex topics into focused sub-questions, ensuring scope is aligned with task objectives.
+        * Verify availability of internal data sources and tools early in the scoping phase.
+        * Establish a clear protocol for seeking clarification on task requirements or resource availability at the outset.
+        * *See Notepad for detailed scoping examples.*
+        
+    2.  **Focused Question Formulation**:
+        * Frame specific, answerable questions rather than broad topics.
+        * Use domain-specific terminology and avoid bias in phrasing.
+        * **Tree of Thoughts Research Pattern**:
+          - Generate 3 research angles before committing
+          - Example for "database optimization":
+            1. Performance angle: "Benchmark comparisons of PostgreSQL vs DuckDB"
+            2. Architecture angle: "OLTP vs OLAP trade-offs in hybrid systems"
+            3. Cost angle: "TCO analysis of managed vs self-hosted databases"
+          - Select angle with highest information value
+        * **Quantitative Query Enhancement**:
+          - Always request metrics: "with performance benchmarks"
+          - Seek comparisons: "compared to industry standards"
+          - Time-bound queries: "as of 2024/2025"
+        * *Refer to `@.cursor/notepads/perplexity-research-framework-details.notepad.md` for examples.*
+        
+    3.  **Output Specification**:
+        * Specify desired format (e.g., comparison table, list, analysis).
+        * Define level of technical detail based on audience.
+        * For data-intensive research, request quantitative metrics where available.
+        * *Refer to `@.cursor/notepads/perplexity-research-framework-details.notepad.md` for examples.*
+        
+    4.  **Citation Review**:
+        * Critically evaluate sources for relevance, credibility, and timeliness.
+        * Prioritize primary sources or reputable secondary sources.
+        * For rapidly evolving topics, check source recency.
+        * Note potential biases or limitations in major sources.
+        
+    5.  **Actionable Summary**:
+        * Synthesize findings into concise, decision-oriented summary.
+        * Highlight decision points using the 80-20 principle.
+        * For analytical research, include quantitative comparisons where possible.
+        * *Refer to `@.cursor/notepads/perplexity-research-framework-details.notepad.md` for examples.*
+        
+    6.  **Integration**:
+        * Explicitly state how findings inform next steps following `@.cursor/rules/stepwise-autonomy.mdc`.
+        * Update project plans or code approach based on research.
+        * For data analytics workflows, document how research findings influenced implementation choices.
+        * Ensure external research findings are integrated with internal knowledge and data to form a holistic view.
+        * If research indicates no change is needed, state that with rationale.
+
+*   **Data Analytics-Specific Guidance**:
+    * For revenue/finance analysis: Focus on actionable metrics tied to business outcomes.
+    * For data architecture research: Prioritize performance, scalability, and compatibility with existing tools.
+    * For visualization/reporting research: Balance technical capabilities with ease of implementation and end-user needs.
+    * For machine learning/modeling research: Evaluate models based on both accuracy and operational considerations (training time, interpretability, deployment complexity).
+    * *See Notepad for detailed examples.*
+
+*   **Validation**:
+    *   Check: Is the justification for research clear and aligned with business impact?
+    *   Check: Are research questions specific, focused, and using appropriate domain terminology?
+    *   Check: Is the output specification clear about format and level of technical detail?
+    *   Check: Is there evidence that sources were evaluated for quality and relevance?
+    *   Check: Does the summary prioritize findings according to the 80-20 principle?
+    *   Check: Is there a clear statement on how findings integrate into the task execution?
+    *   Check: For data analytics research, are findings tied to relevant business metrics?
+
+*   **Source References**: `@.cursor/rules/80-20-prioritization.mdc`; `@.cursor/notepads/perplexity-research-framework-details.notepad.md`

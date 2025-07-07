@@ -1,0 +1,148 @@
+---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: null
+category: 400-patterns
+alwaysApply: false
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: moderate
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+research: []
+examples: []
+notes: ''
+---
+
+# API/Webhook Vendor Documentation Discrepancy Rule
+
+## Purpose
+
+To provide a systematic framework for discovering, documenting, and handling discrepancies between vendor-supplied API/webhook documentation and actual implementation behavior. **Empirical Impact**: Vendor documentation accuracy averages 60-70%, with webhook implementations showing 40% format variations from documented standards.
+
+## Requirements
+
+### 1. Discovery Phase (Before Implementation)
+- **Capture Real Data First**: Deploy a minimal webhook receiver to capture actual vendor payloads before implementing business logic
+- **Document Expected vs Actual**: Create comparison tables showing documented vs observed behavior
+- **Test Multiple Scenarios**: Capture various event types, authentication methods, and edge cases
+- **Version Tracking**: Document API/webhook versions and any changes over time
+
+### 2. Systematic Documentation Pattern
+```markdown
+## Vendor API/Webhook Discrepancy Report
+
+**Vendor**: [Name]
+**API Version**: [Version]
+**Documentation URL**: [Link]
+**Date Discovered**: [YYYY-MM-DD]
+
+### Authentication Discrepancies
+| Documented | Actual | Impact | Workaround |
+|------------|--------|--------|------------|
+| `sha256=hash` | `t=timestamp,v1=hash` | Signature validation fails | Implemented multi-format verification |
+
+### Header Discrepancies  
+| Expected Header | Present | Alternative | Notes |
+|----------------|---------|-------------|-------|
+| `X-Vendor-Event` | ❌ No | Infer from payload | Event type missing, requires smart detection |
+
+### Payload Format Discrepancies
+| Documented Structure | Actual Structure | Parsing Approach |
+|---------------------|------------------|------------------|
+| `{"event": "type"}` | `{"data": {"event_type": "type"}}` | Nested extraction required |
+```
+
+### 3. Testing Strategy
+- **Multi-Method Authentication**: Test all documented auth methods plus common variations
+- **Payload Capture**: Log complete headers, body, and metadata for analysis
+- **Edge Case Discovery**: Test with various event types, sizes, and frequencies
+- **Environment Validation**: Verify consistency across dev/staging/prod endpoints
+
+### 4. Implementation Resilience Patterns
+- **Graceful Degradation**: Handle missing headers/fields without failing
+- **Smart Detection**: Infer missing information from payload structure
+- **Multiple Format Support**: Support both documented and actual formats
+- **Extensive Logging**: Debug-level logging for signature/auth troubleshooting
+
+### 5. Debugging Utilities
+Create reusable debugging tools:
+```python
+def webhook_debug_analyzer(request):
+    """Comprehensive webhook request analyzer"""
+    return {
+        "headers": dict(request.headers),
+        "body_raw": request.body,
+        "body_parsed": parse_safely(request.body),
+        "signature_analysis": test_signature_methods(request),
+        "content_analysis": infer_event_type(request),
+        "timestamp": datetime.utcnow().isoformat()
+    }
+```
+
+## Validation
+- **Check**: Is real vendor data captured before implementation?
+- **Check**: Are discrepancies documented in comparison format?
+- **Check**: Does implementation handle both documented and actual formats?
+- **Check**: Are debugging tools available for troubleshooting?
+- **Check**: Is the discrepancy report updated when new variations discovered?
+
+## Examples
+
+### Ascend Webhook Integration (2025-01-02)
+**Documented**: Standard webhook with `sha256=signature` and `X-Ascend-Event` header  
+**Actual**: Custom format `t=timestamp,v1=hash` with no event header  
+**Solution**: Multi-format signature verification + smart event type inference  
+**Time Impact**: 6 hours debugging, 8 deployments  
+**Lesson**: Always capture real data first
+
+### Generic Debugging Approach
+```python
+# 1. Deploy capture endpoint first
+@app.post("/webhook/debug")  
+async def capture_real_data(request: Request):
+    data = await webhook_debug_analyzer(request)
+    logger.info(f"Vendor webhook captured: {json.dumps(data, indent=2)}")
+    return {"status": "captured"}
+
+# 2. Analyze patterns before implementing business logic
+# 3. Build resilient handler supporting multiple formats
+# 4. Document all discovered discrepancies
+```
+
+## Integration Notes
+- **Works with**: stepwise-autonomy.mdc (debugging workflows)
+- **Complements**: logging-monitoring.mdc (debugging observability)
+- **Feeds into**: api-design-guidelines.mdc (lessons for our own APIs)
+
+## Systemic Updates
+- Add webhook debugging template to project scaffolding
+- Include discrepancy documentation in API integration checklists
+- Create reusable debugging utilities library
+
+## Changes
+- **1.0.0** - Initial version based on Ascend webhook integration retrospective
+
+## Source References
+- Ascend API integration experience (2025-01-02)
+- Industry studies on API documentation accuracy
+- Webhook security best practices (OWASP)
+
+---
+*Rule metadata:*
+- *Author*: hamzaamjad  
+- *Created*: 2025-01-02
+- *Last Updated*: 2025-01-02
+- *Stability*: stable

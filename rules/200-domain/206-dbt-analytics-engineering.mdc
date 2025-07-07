@@ -1,0 +1,81 @@
+---
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Best practices for dbt analytics engineering workflows.
+category: 200-domain
+alwaysApply: false
+globs: dbt_project.yml,**/schemas/*.yml,**/sources.yml,**/models/**/*.sql,**/seeds/**/*.csv,**/snapshots/**/*.sql,**/analyses/**/*.sql,**/macros/**/*.sql
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended: []
+  incompatible: []
+conflicts: []
+tags:
+- performance
+- specialized
+- quality
+- domain-specific
+research: []
+examples: []
+notes: ''
+---
+
+# dbt-analytics-engineering
+
+*Purpose*: Establish a robust, scalable, and maintainable analytics engineering workflow using dbt.
+
+**1. Project Structure & Naming**
+- Organize models into folders:
+  - `staging/` for raw table transformations
+  - `marts/` subdivided into `core/`, `operational/`, `analytics/`
+- Prefix folders and models using `stg_`, `src_`, `dim_`, `fct_`
+- Use snake_case and singular nouns for model names
+
+**2. Documentation & Lineage**
+- Document all sources and models with YAML docs (`description`, `meta`, `tags`)
+- Generate and version the docs site via `dbt docs generate` in CI
+- Tag models for lineage grouping (e.g., `business_domain`, `data_source`)
+
+**3. Testing & Quality**
+- Define schema tests: `unique`, `not_null`, `accepted_values`, `relationships`
+- Create custom generic tests for domain-specific rules (e.g., `same_day_orders`)
+- Use snapshots for Slowly Changing Dimensions (SCD1/SCD2)
+- Integrate `pre-commit-dbt` and require tests in PR checks
+
+**4. Performance & Materializations**
+- Materialize models strategically:
+  - `view` for lightweight transforms
+  - `table` for heavy or reused results
+  - `incremental` with `unique_key` and explicit `on_schema_change`
+- Partition and cluster large tables where supported (e.g., by date)
+- Avoid expensive operations (cross-joins, cartesian products)
+- Leverage warehouse-specific optimizations (e.g., Snowflake clustering)
+
+**5. Reusability & Macros**
+- Centralize reusable logic in `macros/` (e.g., `watermark`, `safe_cast`)
+- Use the `dbt_utils` package for common operations (surrogate_key, pivot)
+- Abstract environment-specific configs in `dbt_project.yml` via `vars`
+
+**6. Metrics & Semantic Layer**
+- Define metrics in `metrics/` files and build a centralized semantic layer
+- Leverage `exposures` for BI tool integration and lineage tracking
+- Validate metric definitions with endpoint tests
+
+**7. CI/CD & Versioning**
+- Pin dbt core and package versions in `packages.yml` lockfile
+- Automate pipelines: `dbt deps`, `dbt run`, `dbt test`, `dbt docs generate`
+- Promote between environments via Git branches and release tags
+- Monitor run history and alert on failures or freshness threshold breaches
+
+**8. Observability & Monitoring**
+- Configure `sources.yml` freshness thresholds and enforce via CI
+- Log run metadata (timing, row counts) to the `run_results` table
+- Integrate data observability frameworks (e.g., Great Expectations, Monte Carlo)
+
+*References*: Consolidated from dbt Labs guides ("Analytics engineering: Six best practices", "Data quality best practices") and community standards.

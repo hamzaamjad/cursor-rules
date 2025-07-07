@@ -25,18 +25,23 @@ class MetadataMigrator:
     
     def extract_current_metadata(self, content: str) -> Tuple[Dict, str]:
         """Extract existing YAML frontmatter and remaining content"""
-        # Handle potential duplicate frontmatter blocks
-        if content.startswith('---'):
-            parts = content.split('---', 3)
-            if len(parts) >= 3:
-                try:
-                    # Try to parse the second part as YAML
-                    metadata = yaml.safe_load(parts[1])
-                    remaining_content = '---'.join(parts[2:])
-                    return metadata or {}, remaining_content
-                except:
-                    pass
+        # Use regex to properly extract frontmatter
+        import re
         
+        # Match frontmatter block more reliably
+        frontmatter_pattern = r'^---\n(.*?)\n---\n(.*)$'
+        match = re.match(frontmatter_pattern, content, re.DOTALL)
+        
+        if match:
+            try:
+                metadata = yaml.safe_load(match.group(1))
+                remaining_content = match.group(2)
+                return metadata or {}, remaining_content
+            except yaml.YAMLError:
+                # If YAML parsing fails, return empty metadata
+                return {}, content
+        
+        # No frontmatter found
         return {}, content    
     def infer_category(self, file_path: Path) -> str:
         """Infer category from file path"""
