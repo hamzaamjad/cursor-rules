@@ -1,32 +1,3 @@
----
-version: 1.0.0
-lastUpdated: '2025-07-06'
-author: migrated
-description: null
-category: 000-core
-alwaysApply: false
-globs: null
-performance:
-  tokenReduction: 0%
-  accuracyImprovement: 0%
-  processingOverhead: minimal
-  empiricalValidation: To be measured
-dependencies:
-  required: []
-  recommended:
-  - risk-checkpoint
-  incompatible: []
-conflicts: []
-tags:
-- strategic
-- foundational
-- quality
-- safety
-research: []
-examples: []
-notes: ''
----
-
 # The Philosopher’s Stone: A Strategic Execution Protocol for Advanced Language Model Collaboration
 
 ## Purpose

@@ -1,29 +1,3 @@
----
-version: 1.0.0
-lastUpdated: '2025-07-06'
-author: migrated
-description: ''
-category: root
-alwaysApply: false
-globs: []
-performance:
-  tokenReduction: 0%
-  accuracyImprovement: 0%
-  processingOverhead: minimal
-  empiricalValidation: To be measured
-dependencies:
-  required: []
-  recommended:
-  - risk-checkpoint
-  incompatible: []
-conflicts: []
-tags:
-- performance
-- quality
-research: []
-examples: []
-notes: ''
----
 # snmp-monitoring-patterns.mdc
 
 * **Purpose**: Standardize SNMP network monitoring implementation patterns to prevent common pitfalls and ensure reliable monitoring setup.

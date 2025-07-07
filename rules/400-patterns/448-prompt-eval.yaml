@@ -1,0 +1,26 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Prompt template creation & evaluation using a standard JSON structure.
+category: 400-patterns
+alwaysApply: false
+globs: prompts/**/*.json,**/prompts/**/*.json
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+- performance
+research: []
+examples: []
+notes: ''

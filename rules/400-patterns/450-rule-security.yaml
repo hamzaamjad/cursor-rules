@@ -1,0 +1,26 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Security considerations and best practices for Cursor Rules (.mdc files).
+category: 400-patterns
+alwaysApply: false
+globs: .cursor/rules/**/*.mdc
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- patterns
+- best-practices
+- quality
+- safety
+research: []
+examples: []
+notes: ''

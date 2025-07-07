@@ -1,0 +1,27 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Guidelines for integrating with and managing the dbt MCP server.
+category: 200-domain
+alwaysApply: false
+globs: start_digital_twin.sh,stop_digital_twin.sh,config.json
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- safety
+- quality
+- specialized
+- optimization
+- domain-specific
+research: []
+examples: []
+notes: ''

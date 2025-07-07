@@ -1,0 +1,24 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: null
+category: 300-integration
+alwaysApply: true
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: moderate
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended: []
+  incompatible: []
+conflicts: []
+tags:
+- performance
+- integration
+- tooling
+research: []
+examples: []
+notes: ''

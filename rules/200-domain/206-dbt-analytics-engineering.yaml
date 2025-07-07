@@ -1,0 +1,25 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Best practices for dbt analytics engineering workflows.
+category: 200-domain
+alwaysApply: false
+globs: dbt_project.yml,**/schemas/*.yml,**/sources.yml,**/models/**/*.sql,**/seeds/**/*.csv,**/snapshots/**/*.sql,**/analyses/**/*.sql,**/macros/**/*.sql
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended: []
+  incompatible: []
+conflicts: []
+tags:
+- performance
+- specialized
+- quality
+- domain-specific
+research: []
+examples: []
+notes: ''

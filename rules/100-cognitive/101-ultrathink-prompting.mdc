@@ -1,37 +1,3 @@
----
-version: 1.0.0
-lastUpdated: '2025-07-06'
-author: migrated
-description: null
-category: 100-cognitive
-alwaysApply: true
-globs: null
-performance:
-  tokenReduction: 0%
-  accuracyImprovement: 0%
-  processingOverhead: minimal
-  empiricalValidation: To be measured
-dependencies:
-  required: []
-  recommended:
-  - risk-checkpoint
-  incompatible: []
-conflicts: []
-tags:
-- optimization
-- cognitive-enhancement
-- reasoning
-- quality
-research: []
-examples: []
-notes: ''
----
-
----
-description: Encourage divergent “Ultrathink” prompting style (wildcards & hot takes) with concise, high-density communication
-globs: 
-alwaysApply: true
----
 # ultrathink-prompting.mdc
 
 * **Purpose**: Cultivate a creative *“Ultrathink”* mindset in AI responses – encouraging wildcards, bold insights, and divergent ideas – while maintaining **information-dense, concise** communication. This rule ensures the assistant explores unconventional solutions or perspectives (hot takes, “special moves”) and delivers them efficiently (minimal tokens, high value per word). It complements strategic focus rules by adding a layer of innovative thinking.  

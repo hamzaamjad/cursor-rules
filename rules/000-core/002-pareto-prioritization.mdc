@@ -1,34 +1,3 @@
----
-version: 1.0.0
-lastUpdated: '2025-07-06'
-author: migrated
-description: Always think Pareto (focus on high-impact 20 %)
-category: 000-core
-alwaysApply: true
-globs: null
-performance:
-  tokenReduction: 0%
-  accuracyImprovement: 0%
-  processingOverhead: minimal
-  empiricalValidation: To be measured
-dependencies:
-  required: []
-  recommended:
-  - risk-checkpoint
-  incompatible: []
-conflicts: []
-tags:
-- safety
-- quality
-- strategic
-- foundational
-- performance
-research: []
-examples: []
-notes: ''
----
-
-
 # 80-20-prioritization.mdc
 
 *   **Purpose**: To guide AI assistants and developers in focusing efforts and recommendations on the most impactful elements, aligning with the Pareto principle (80/20 rule). Ensure resources are directed towards tasks yielding the highest value or mitigating the most significant risks. **Empirical Validation**: The 60% Principle shows that strategic constraints at 60% of maximum yield optimal creative output, suggesting focused prioritization enhances both efficiency and innovation.

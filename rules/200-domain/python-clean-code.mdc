@@ -1,31 +1,3 @@
----
-version: 1.0.0
-lastUpdated: '2025-07-06'
-author: migrated
-description: 'Python quality, typing, logging, and data analytics patterns'
-category: 200-domain
-alwaysApply: false
-globs: []
-performance:
-  tokenReduction: 0%
-  accuracyImprovement: 0%
-  processingOverhead: significant
-  empiricalValidation: To be measured
-dependencies:
-  required: []
-  recommended:
-  - risk-checkpoint
-  incompatible: []
-conflicts: []
-tags:
-- performance
-- specialized
-- quality
-- domain-specific
-research: []
-examples: []
-notes: ''
----
 # python-clean-code.mdc
 
 *   **Purpose**: Ensure maintainable, consistent, and robust Python code, with special emphasis on data analytics workflows. **Research shows**: Clean code practices reduce maintenance time by 40-60% and bug density by 15-50% (Martin, 2008).

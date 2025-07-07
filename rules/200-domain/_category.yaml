@@ -1,0 +1,13 @@
+category: 200-domain
+common_tags:
+- domain-specific
+- optimization
+- performance
+- quality
+- safety
+- specialized
+defaults:
+  performance:
+    empiricalValidation: To be measured
+    processingOverhead: minimal
+description: Rules for 200-domain

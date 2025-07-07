@@ -1,0 +1,27 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Enforce dbt model style, docs, and tests
+category: 200-domain
+alwaysApply: false
+globs:
+- '**/models/**/*.sql'
+- '**/schemas/*.yml'
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended: []
+  incompatible: []
+conflicts: []
+tags:
+- performance
+- specialized
+- quality
+- domain-specific
+research: []
+examples: []
+notes: ''

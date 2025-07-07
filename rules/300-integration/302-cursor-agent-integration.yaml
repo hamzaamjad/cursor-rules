@@ -1,0 +1,24 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Core requirements for models using Cursor Agent tools for codebase changes.
+category: 300-integration
+alwaysApply: true
+globs: null
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: moderate
+  empiricalValidation: To be measured
+dependencies:
+  required:
+  - available_tooling_guide.mdc
+  recommended: null
+  incompatible: []
+conflicts: []
+tags:
+- integration
+- tooling
+research: []
+examples: []
+notes: ''

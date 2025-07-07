@@ -1,32 +1,3 @@
----
-version: 1.0.0
-lastUpdated: '2025-07-06'
-author: migrated
-description: Framework for creating effective prompts for research tasks.
-category: 400-patterns
-alwaysApply: false
-globs: null
-performance:
-  tokenReduction: 0%
-  accuracyImprovement: 0%
-  processingOverhead: minimal
-  empiricalValidation: To be measured
-dependencies:
-  required: []
-  recommended:
-  - risk-checkpoint
-  incompatible: []
-conflicts: []
-tags:
-- patterns
-- best-practices
-- quality
-- performance
-research: []
-examples: []
-notes: ''
----
-
 # research-prompt-guidelines.mdc
 
 *   **Purpose**: To provide a framework for creating effective prompts for research tasks, incorporating best practices and lessons learned from previous research-oriented prompts.

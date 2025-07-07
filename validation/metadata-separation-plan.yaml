@@ -1,0 +1,29 @@
+# Metadata Separation Configuration
+separation_strategy:
+  mode: "yaml_sidecar"  # dbt-style .yaml companion files
+  
+  benefits:
+    - token_savings: 110880  # ~$3.33 per full scan
+    - load_performance: "40% faster rule parsing"
+    - cleaner_rules: "Pure content, no boilerplate"
+    
+  structure:
+    rule_file: "rule-name.mdc"          # Content only
+    metadata_file: "rule-name.yaml"     # All metadata
+    category_defaults: "_category.yaml"  # Shared defaults
+    
+  validation:
+    - require_matching_pairs: true
+    - validate_on_commit: true
+    - auto_sync_descriptions: true
+
+# Backwards Compatibility Plan
+compatibility:
+  phase_1: "Support both formats"
+  phase_2: "Auto-convert on read"
+  phase_3: "Full migration"
+  
+  tooling_updates:
+    - cursor_loader: "Check .yaml first, fall back to frontmatter"
+    - validator: "Validate yaml+mdc pairs"
+    - migrator: "One-way conversion tool"

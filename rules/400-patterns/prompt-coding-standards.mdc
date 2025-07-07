@@ -1,32 +1,3 @@
----
-version: 1.0.0
-lastUpdated: '2025-07-06'
-author: migrated
-description: null
-category: 400-patterns
-alwaysApply: true
-globs: null
-performance:
-  tokenReduction: 0%
-  accuracyImprovement: 0%
-  processingOverhead: significant
-  empiricalValidation: To be measured
-dependencies:
-  required: []
-  recommended:
-  - risk-checkpoint
-  incompatible: []
-conflicts: []
-tags:
-- patterns
-- optimization
-- best-practices
-- quality
-research: []
-examples: []
-notes: ''
----
-
 # prompt-coding-standards.mdc
 
 *   **Purpose**: To provide guidance on incorporating coding standards and best practices into prompt output specifications. **Research shows**: Well-structured prompts reduce cognitive load by 42% and improve output quality by 35%.

@@ -1,0 +1,28 @@
+version: 1.0.0
+lastUpdated: '2025-07-06'
+author: migrated
+description: Guidelines for building a dbt semantic layer.
+category: 200-domain
+alwaysApply: false
+globs:
+- '**/models/semantic/**/*.yml'
+- '**/semantic/**/*.yml'
+- '**/exposures.yml'
+performance:
+  tokenReduction: 0%
+  accuracyImprovement: 0%
+  processingOverhead: minimal
+  empiricalValidation: To be measured
+dependencies:
+  required: []
+  recommended:
+  - risk-checkpoint
+  incompatible: []
+conflicts: []
+tags:
+- specialized
+- quality
+- domain-specific
+research: []
+examples: []
+notes: ''

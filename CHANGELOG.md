@@ -20,11 +20,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Conflict specifications with resolution strategies
   - Tag-based categorization
   - Research references and empirical validation fields
+- Missing notepad files for rule references (5 files in stepwise-autonomy and chain-of-code)
+- `requirements.txt` with project dependencies (pyyaml, psutil, click, pytest, etc.)
+- `scripts/fix-metadata-issues.py` for automated metadata repair
 
 ### Changed
 - All 61 rule files migrated to enhanced metadata format
 - Metadata structure standardized across all rule categories
 - Improved dependency tracking with explicit declarations
+
+### Fixed
+- Duplicate frontmatter blocks in 29 files removed
+- Missing descriptions restored from secondary metadata blocks
+- Migration script regex parsing made more robust
+- `snmp-monitoring-patterns.mdc` moved from root to `300-techniques/302-snmp-monitoring-patterns.mdc`
+- Hardcoded paths in migration script changed to relative paths
 
 ### Improved
 - Rule discoverability through tag-based categorization

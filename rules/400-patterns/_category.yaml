@@ -1,0 +1,20 @@
+category: 400-patterns
+common_tags:
+- best-practices
+- code-generation
+- coordination
+- data-engineering
+- emergent-systems
+- formatting
+- optimization
+- patterns
+- performance
+- quality
+- safety
+- validation
+- verification
+defaults:
+  performance:
+    empiricalValidation: To be measured
+    processingOverhead: minimal
+description: Rules for 400-patterns
