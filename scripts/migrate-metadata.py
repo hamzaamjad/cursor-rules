@@ -228,8 +228,8 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description="Migrate rule metadata to enhanced format")
-    parser.add_argument("--rules-dir", default="/Users/hamzaamjad/cursor-rules/rules", help="Rules directory")
-    parser.add_argument("--template", default="/Users/hamzaamjad/cursor-rules/templates/enhanced-metadata-template.yaml", help="Template file")
+    parser.add_argument("--rules-dir", default="./rules", help="Rules directory")
+    parser.add_argument("--template", default="./templates/enhanced-metadata-template.yaml", help="Template file")
     parser.add_argument("--dry-run", action="store_true", help="Preview migration without changes")
     
     args = parser.parse_args()
