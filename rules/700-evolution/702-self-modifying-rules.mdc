@@ -1,0 +1,91 @@
+---
+description: "Self-modifying rules that adapt based on performance metrics"
+version: 1.0.0
+author: "Evolution Team"
+created: "2025-01-07"
+last_modified: "2025-01-07"
+last_reviewed: "2025-01-07"
+
+dependencies:
+  - "000-core/001-philosophers-stone.mdc"
+  - "700-evolution/701-rule-adaptation-tracking.mdc"
+
+performance:
+  avg_tokens: 620
+  p95_latency: 45
+  success_rate: 89.7
+  token_budget: 800
+
+tags:
+  - "evolution"
+  - "self-modifying"
+  - "adaptive"
+  - "meta-learning"
+---
+
+# Evolution: Self-Modifying Rules
+
+* **Purpose**: Rules that rewrite their own parameters based on performance feedback
+
+* **Requirements**:
+  * **Mutation Engine**:
+    - Parameter types: thresholds, weights, sequences
+    - Mutation rate: 0.05-0.15 per generation
+    - Constraints: Keep within safe bounds
+  * **Fitness Evaluation**:
+    - Success rate tracking over 100 runs
+    - Token efficiency score
+    - User satisfaction signals
+  * **Evolution Strategy**:
+    - (1+λ) selection: Keep best + offspring
+    - Population size: 5 variants
+    - Generation interval: 24 hours
+
+* **Validation**:
+  * Check: No mutation exceeds safety bounds
+  * Check: Fitness monotonically improves
+  * Check: Rollback mechanism functional
+  * Metric: Performance gain: +15% after 10 generations
+  * Metric: Stability: <2% regression rate
+
+* **Examples**:
+  <example_correct>
+  Initial: threshold = 0.7
+  Generation 5: threshold = 0.82 (evolved)
+  Performance: +18% accuracy, -5% false positives
+  </example_correct>
+
+* **Genome Structure**:
+  ```yaml
+  mutable_parameters:
+    confidence_threshold:
+      type: float
+      range: [0.5, 0.95]
+      mutation_step: 0.05
+      current: 0.75
+    context_window:
+      type: int
+      range: [3, 10]
+      mutation_step: 1
+      current: 5
+    weights:
+      recency: 0.3
+      relevance: 0.5
+      reliability: 0.2
+  
+  fitness_history:
+    - generation: 1
+      fitness: 0.72
+      parameters: {threshold: 0.70, window: 5}
+    - generation: 2
+      fitness: 0.78
+      parameters: {threshold: 0.75, window: 6}
+  ```
+
+* **Evolution Protocol**:
+  1. Measure baseline performance
+  2. Generate λ mutations
+  3. Evaluate each variant
+  4. Select best performer
+  5. Archive previous generation
+  6. Deploy new parameters

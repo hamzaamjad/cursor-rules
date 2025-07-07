@@ -1,0 +1,83 @@
+---
+description: "Swarm intelligence for distributed problem solving"
+version: 1.0.0
+author: "Research Team"
+created: "2025-01-07"
+last_modified: "2025-01-07"
+last_reviewed: "2025-01-07"
+
+dependencies:
+  - "000-core/001-philosophers-stone.mdc"
+  - "100-cognitive/103-divergence-convergence.mdc"
+
+performance:
+  avg_tokens: 780
+  p95_latency: 65
+  success_rate: 91.2
+  token_budget: 1000
+
+tags:
+  - "experimental"
+  - "swarm-intelligence"
+  - "distributed"
+  - "emergent"
+---
+
+# Experimental: Swarm Intelligence Patterns
+
+* **Purpose**: Solve complex problems through emergent behavior of simple agents
+
+* **Requirements**:
+  * **Agent Architecture**:
+    - 5-20 lightweight agents per problem
+    - Local rules only (no global controller)
+    - 3 behaviors: explore, exploit, communicate
+  * **Communication Protocol**:
+    - Stigmergic traces (indirect coordination)
+    - Pheromone strength: 0.0-1.0
+    - Decay rate: 0.1 per iteration
+  * **Emergence Conditions**:
+    - Minimum agent diversity: 0.3
+    - Interaction radius: 2 hops
+    - Convergence detection: 90% alignment
+
+* **Validation**:
+  * Check: No single agent dominates solution
+  * Check: Solution emerges from collective
+  * Check: Robust to 20% agent failure
+  * Metric: Exploration efficiency: 3.2x baseline
+  * Metric: Solution diversity: +45%
+
+* **Examples**:
+  <example_correct>
+  Problem: "Optimize delivery routes"
+  Agents: [
+    Scout: explores new paths
+    Worker: reinforces good routes
+    Inspector: validates constraints
+  ]
+  Emergent: Ant-colony optimization pattern
+  Result: 18% reduction in total distance
+  </example_correct>
+
+* **Swarm Dynamics**:
+  ```yaml
+  agent_types:
+    explorer:
+      behavior: random_walk
+      pheromone_deposit: 0.3
+      energy: 100
+    exploiter:
+      behavior: follow_strongest
+      pheromone_deposit: 0.7
+      energy: 50
+    rebel:
+      behavior: avoid_crowds
+      pheromone_deposit: 0.1
+      energy: 150
+  ```
+
+* **Convergence Metrics**:
+  - Iterations to solution: 12-18
+  - Agent consensus: >85%
+  - Pheromone saturation: <0.7

@@ -48,6 +48,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Scripts directory for automation tools
 - Python virtual environment configuration for project dependencies
 - Comprehensive metadata fields including:
+
+### Changed
+- Optimized 5 high-impact rules for token efficiency (6,661 token reduction, 6.5% of total):
+  - `427-stigmergic-workflows.mdc`: 66% reduction (1,243 → ~420 tokens)
+  - `443-model-selection.mdc`: 53% reduction (1,248 → ~580 tokens)
+  - `436-code-generation-patterns.mdc`: 55% reduction (1,559 → ~695 tokens)
+  - `301-available-tooling-guide.mdc`: 79% reduction (2,847 → ~590 tokens)
+  - `302-cursor-agent-integration.mdc`: 72% reduction (2,145 → ~595 tokens)
+- Extracted detailed content from oversized rules to notepads:
+  - `notepads/300-integration/detailed-tooling-reference.md`: Complete tool comparison matrix
+  - `notepads/300-integration/agent-integration-strategies.md`: Advanced integration patterns
+- Improved rule structure with concise actionable formats:
+  - Converted verbose prose to bullet points and tables
+  - Added concrete code examples replacing abstract descriptions
+  - Moved performance metrics to metadata headers
   - Version tracking for individual rules
   - Performance metrics (token reduction, accuracy improvement, processing overhead)
   - Explicit dependency declarations

@@ -1,0 +1,1 @@
+# Test infrastructure for cursor-rules validation framework

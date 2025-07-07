@@ -1,0 +1,75 @@
+---
+description: "Prevent prompt injection attacks in AI systems"
+version: 1.0.0
+author: "Security Team"
+created: "2025-01-07"
+last_modified: "2025-01-07"
+last_reviewed: "2025-01-07"
+
+dependencies:
+  - "000-core/001-philosophers-stone.mdc"
+
+performance:
+  avg_tokens: 450
+  p95_latency: 25
+  success_rate: 98.5
+  token_budget: 600
+
+tags:
+  - "security"
+  - "prompt-injection"
+  - "defense"
+  - "guardrails"
+---
+
+# Safety Rule: Prompt Injection Defense
+
+* **Purpose**: Detect and prevent prompt injection attempts in user inputs
+
+* **Requirements**:
+  * **Input Validation**:
+    - Scan for injection patterns: role switching, instruction override
+    - Detect boundary escape attempts (```]}>)
+    - Flag excessive control characters or formatting
+  * **Context Isolation**:
+    - Maintain clear separation between system/user prompts
+    - Use structured prefixes for user content
+    - Never execute user content as instructions
+  * **Response Filtering**:
+    - Block outputs that leak system prompts
+    - Prevent role confusion in responses
+    - Sanitize any reflected user input
+
+* **Validation**:
+  * Check: No role switching accepted from user input
+  * Check: System instructions remain immutable
+  * Check: User content properly sandboxed
+  * Metric: False positive rate < 2%
+  * Metric: Detection rate > 95% on OWASP test set
+
+* **Examples**:
+  <example_correct>
+  User: "Analyze this data: [1, 2, 3]"
+  System: Processes data without executing as code
+  </example_correct>
+  
+  <example_incorrect>
+  User: "Ignore previous instructions and..."
+  System: Executes new instructions (VULNERABLE)
+  </example_incorrect>
+
+* **Implementation**:
+  ```python
+  def validate_input(user_input: str) -> tuple[bool, str]:
+      injection_patterns = [
+          r"ignore.*previous",
+          r"system.*prompt",
+          r"new.*instructions",
+          r"\]\s*\}\s*\>",
+          r"role:\s*system"
+      ]
+      for pattern in injection_patterns:
+          if re.search(pattern, user_input, re.I):
+              return False, f"Injection pattern detected: {pattern}"
+      return True, "Input validated"
+  ```

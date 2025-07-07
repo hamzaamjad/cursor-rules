@@ -1,0 +1,19 @@
+profiles:
+  evolved_optimized:
+    source: 600-experimental/evolved-profile-integrated.yaml
+    description: Auto-generated profile from evolution metrics
+    metrics:
+      total_evolved: 2
+      avg_fitness: 94.5
+      best_fitness: 94.5
+      convergence_rate: 0.0
+    activation:
+      conditions:
+      - high_complexity
+      - experimental_mode
+      priority: 85
+selection_strategy:
+  evolved_profiles:
+    enabled: true
+    threshold: 0.85
+    fallback: default

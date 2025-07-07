@@ -1,0 +1,21 @@
+# Coverage configuration
+[run]
+source = scripts/
+omit = 
+    scripts/fix-*.py
+    scripts/fix_*.py
+    scripts/restore_*.py
+    scripts/move_*.py
+    scripts/migrate-*.py
+    scripts/separate-*.py
+    scripts/check_*.py
+    */tests/*
+    */__pycache__/*
+
+[report]
+precision = 2
+show_missing = true
+skip_covered = false
+
+[html]
+directory = htmlcov

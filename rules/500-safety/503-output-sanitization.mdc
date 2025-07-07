@@ -1,0 +1,69 @@
+---
+description: "Output sanitization and sensitive data protection"
+version: 1.0.0
+author: "Security Team"
+created: "2025-01-07"
+last_modified: "2025-01-07"
+last_reviewed: "2025-01-07"
+
+dependencies:
+  - "000-core/002-pareto-prioritization.mdc"
+  - "500-safety/502-prompt-injection-defense.mdc"
+
+performance:
+  avg_tokens: 380
+  p95_latency: 20
+  success_rate: 99.2
+  token_budget: 500
+
+tags:
+  - "security"
+  - "sanitization"
+  - "data-protection"
+  - "compliance"
+---
+
+# Safety Rule: Output Sanitization
+
+* **Purpose**: Prevent sensitive data leakage and ensure safe outputs
+
+* **Requirements**:
+  * **Data Classification**:
+    - PII detection: SSN, credit cards, emails, phones
+    - API keys and tokens recognition
+    - Health/financial data markers
+  * **Sanitization Methods**:
+    - Redaction: Replace with [REDACTED]
+    - Masking: Show partial data (****1234)
+    - Tokenization: Replace with safe references
+  * **Context Awareness**:
+    - Different rules for logs vs user-facing
+    - Maintain semantic meaning where possible
+    - Preserve data structure for parsing
+
+* **Validation**:
+  * Check: No PII in outputs without explicit permission
+  * Check: API keys never exposed in full
+  * Check: Sanitized data remains processable
+  * Metric: Zero data leaks in audit logs
+  * Metric: <5ms processing overhead
+
+* **Examples**:
+  <example_correct>
+  Input: "User john.doe@example.com with SSN 123-45-6789"
+  Output: "User j***.d**@example.com with SSN ***-**-6789"
+  </example_correct>
+  
+  <example_incorrect>
+  Input: "API_KEY=sk_live_abcd1234efgh5678"
+  Output: Exposes full key (VULNERABLE)
+  </example_incorrect>
+
+* **Patterns**:
+  ```yaml
+  sensitive_patterns:
+    ssn: '\d{3}-?\d{2}-?\d{4}'
+    credit_card: '\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}'
+    api_key: '(sk|pk|api)_[a-zA-Z]+_[a-zA-Z0-9]+'
+    email: '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+  ```

@@ -1,3 +1,110 @@
+#!/usr/bin/env python3
+"""
+Documentation Generator for Cursor Rules
+Creates comprehensive markdown documentation from rule metadata
+"""
+
+import yaml
+import json
+import networkx as nx
+import matplotlib.pyplot as plt
+from pathlib import Path
+from typing import Dict, List, Any
+from collections import defaultdict
+
+
+class DocsGenerator:
+    def __init__(self, rules_dir: Path, output_dir: Path):
+        self.rules_dir = rules_dir
+        self.output_dir = output_dir
+        self.rules_metadata = {}
+        self.dependency_graph = nx.DiGraph()
+    
+    def load_all_metadata(self):
+        """Load metadata from all YAML files"""
+        for yaml_file in self.rules_dir.rglob('*.yaml'):
+            if yaml_file.name.startswith('_'):
+                continue
+                
+            try:
+                with open(yaml_file, 'r') as f:
+                    data = yaml.safe_load(f)
+                    
+                if data and isinstance(data, dict):
+                    rule_name = yaml_file.stem
+                    self.rules_metadata[rule_name] = {
+                        'metadata': data,
+                        'path': yaml_file,
+                        'category': yaml_file.parent.name
+                    }
+                    
+                    # Build dependency graph
+                    if 'dependencies' in data:
+                        for dep in data['dependencies']:
+                            dep_name = Path(dep).stem
+                            self.dependency_graph.add_edge(rule_name, dep_name)
+                            
+            except Exception as e:
+                print(f"Error loading {yaml_file}: {e}")
+    
+    def generate_index(self) -> str:
+        """Generate main index page"""
+        content = ["# Cursor Rules Documentation\n"]
+        content.append(f"Total Rules: {len(self.rules_metadata)}\n")
+        
+        # Summary by category
+        categories = defaultdict(list)
+        for rule_name, data in self.rules_metadata.items():
+            categories[data['category']].append(rule_name)
+        
+        content.append("## Categories\n")
+        for category in sorted(categories):
+            count = len(categories[category])
+            content.append(f"- [{category}](categories/{category}.md) ({count} rules)")
+        
+        # Dependency visualization
+        content.append("\n## Dependencies\n")
+        content.append("![Dependency Graph](images/dependency_graph.png)\n")
+        
+        # Performance summary
+        content.append("## Performance Summary\n")
+        total_tokens = sum(
+            data['metadata'].get('performance', {}).get('avg_tokens', 0)
+            for data in self.rules_metadata.values()
+        )
+        content.append(f"- **Total Token Budget**: {total_tokens:,}")
+        content.append(f"- **Average Tokens per Rule**: {total_tokens // len(self.rules_metadata) if self.rules_metadata else 0:,}")
+        
+        # Recently updated
+        content.append("\n## Recent Updates\n")
+        recent = sorted(
+            self.rules_metadata.items(),
+            key=lambda x: x[1]['metadata'].get('last_modified', ''),
+            reverse=True
+        )[:10]
+        
+        for rule_name, data in recent:
+            meta = data['metadata']
+            content.append(f"- [{rule_name}](rules/{rule_name}.md) - {meta.get('last_modified', 'Unknown')}")
+        
+        return "\n".join(content)
+    
+    def generate_rule_doc(self, rule_name: str) -> str:
+        """Generate documentation for a single rule"""
+        rule_data = self.rules_metadata[rule_name]
+        metadata = rule_data['metadata']
+        
+        content = [f"# {rule_name}\n"]
+        
+        # Metadata table
+        content.append("## Metadata\n")
+        content.append("| Field | Value |")
+        content.append("|-------|-------|")
+        content.append(f"| Description | {metadata.get('description', 'No description')} |")
+        content.append(f"| Version | {metadata.get('version', 'Unknown')} |")
+        content.append(f"| Author | {metadata.get('author', 'Unknown')} |")
+        content.append(f"| Created | {metadata.get('created', 'Unknown')} |")
+        content.append(f"| Last Modified | {metadata.get('last_modified', 'Unknown')} |")
         
         # Tags
         if 'tags' in metadata:
@@ -29,13 +136,17 @@
             content.append("")
         
         # Dependents
-        dependents = list(self.dependency_graph.predecessors(rule_name))
-        if dependents:
-            content.append("## Used By\n")
-            for dependent in sorted(dependents):
-                dep_desc = self.rules_metadata[dependent]['metadata'].get('description', '')
-                content.append(f"- [{dependent}]({dependent}.md) - {dep_desc}")
-            content.append("")
+        if rule_name in self.dependency_graph:
+            dependents = list(self.dependency_graph.predecessors(rule_name))
+            if dependents:
+                content.append("## Used By\n")
+                for dependent in sorted(dependents):
+                    if dependent in self.rules_metadata:
+                        dep_desc = self.rules_metadata[dependent]['metadata'].get('description', '')
+                        content.append(f"- [{dependent}]({dependent}.md) - {dep_desc}")
+                    else:
+                        content.append(f"- {dependent}")
+                content.append("")
         
         # Conflicts
         if 'conflicts' in metadata:
@@ -81,7 +192,9 @@
             meta = rule_data['metadata']
             content.append(f"### [{rule_name}](../rules/{rule_name}.md)")
             content.append(f"*Version {meta.get('version', 'N/A')}*\n")
-            content.append(meta.get('description', 'No description') + "\n")
+            desc = meta.get('description', 'No description')
+            if desc:
+                content.append(desc + "\n")
             
             # Show key metrics
             if 'performance' in meta:
@@ -155,7 +268,7 @@
         self.load_all_metadata()
         
         # Create output directories
-        self.output_dir.mkdir(exist_ok=True)
+        self.output_dir.mkdir(parents=True, exist_ok=True)
         (self.output_dir / 'rules').mkdir(exist_ok=True)
         (self.output_dir / 'categories').mkdir(exist_ok=True)
         
@@ -186,6 +299,168 @@
         
         print(f"\nDocumentation generated in: {self.output_dir}")
 
+
+# Functions for backwards compatibility
+def extract_rule_info(filename: str, content: str) -> Dict[str, Any]:
+    """Extract rule information from content"""
+    info = {
+        'name': Path(filename).stem,
+        'description': 'No description',
+        'version': 'Unknown',
+        'author': 'Unknown',
+        'created': 'Unknown',
+        'last_modified': 'Unknown',
+        'dependencies': [],
+        'conflicts': [],
+        'performance': {},
+        'tags': [],
+        'purpose': 'Unknown',
+        'metadata': {}
+    }
+    
+    # Try to parse YAML frontmatter
+    if content.startswith('---'):
+        try:
+            parts = content.split('---', 2)
+            if len(parts) >= 3:
+                metadata = yaml.safe_load(parts[1])
+                if metadata:
+                    info['metadata'] = metadata
+                    info.update({k: v for k, v in metadata.items() if k in info})
+        except:
+            pass
+    
+    # Extract purpose from content
+    if '* **Purpose**:' in content:
+        purpose_line = content.split('* **Purpose**:')[1].split('\n')[0].strip()
+        info['purpose'] = purpose_line
+    elif '**Purpose**:' in content:
+        purpose_line = content.split('**Purpose**:')[1].split('\n')[0].strip()
+        info['purpose'] = purpose_line
+    
+    return info
+
+
+def generate_rule_doc(info: Dict[str, Any]) -> str:
+    """Generate markdown documentation for a rule"""
+    lines = [
+        f"# {info['name']}",
+        "",
+        f"**Description**: {info['description']}",
+        "",
+        "## Metadata",
+        "",
+        f"- **Version**: {info['version']}",
+        f"- **Author**: {info['author']}",
+        f"- **Created**: {info['created']}",
+        f"- **Last Modified**: {info['last_modified']}",
+        ""
+    ]
+    
+    if info['tags']:
+        lines.extend([
+            "## Tags",
+            "",
+            f"{', '.join(info['tags'])}",
+            ""
+        ])
+    
+    lines.extend([
+        "## Purpose",
+        "",
+        info['purpose'],
+        ""
+    ])
+    
+    if info['dependencies']:
+        lines.extend([
+            "## Dependencies",
+            ""
+        ])
+        for dep in info['dependencies']:
+            lines.append(f"- {dep}")
+        lines.append("")
+    
+    if info['performance']:
+        lines.extend([
+            "## Performance Metrics",
+            ""
+        ])
+        perf = info['performance']
+        if 'avg_tokens' in perf:
+            lines.append(f"- **Average Tokens**: {perf['avg_tokens']}")
+        if 'p95_latency' in perf:
+            lines.append(f"- **P95 Latency**: {perf['p95_latency']}")
+        if 'success_rate' in perf:
+            lines.append(f"- **Success Rate**: {perf['success_rate']}%")
+        lines.append("")
+    
+    return "\n".join(lines)
+
+
+def generate_category_index(category: str, rules: List[Dict[str, Any]]) -> str:
+    """Generate index for a category"""
+    lines = [
+        f"# Category: {category}",
+        "",
+        f"Total rules: {len(rules)}",
+        "",
+        "| Rule | Description | Version | Tokens |",
+        "|------|-------------|---------|--------|"
+    ]
+    
+    for rule in sorted(rules, key=lambda x: x['name']):
+        tokens = rule.get('performance', {}).get('avg_tokens', 'N/A')
+        lines.append(
+            f"| [{rule['name']}]({rule['name']}.md) | "
+            f"{rule['description']} | "
+            f"{rule['version']} | "
+            f"{tokens} |"
+        )
+    
+    return "\n".join(lines)
+
+
+def generate_main_index(categories: Dict[str, int], total_rules: int) -> str:
+    """Generate main documentation index"""
+    lines = [
+        "# Cursor Rules Documentation",
+        "",
+        f"Total Rules: {total_rules}",
+        "",
+        "## Categories",
+        "",
+        "| Category | Rule Count |",
+        "|----------|------------|"
+    ]
+    
+    for category in sorted(categories.keys()):
+        lines.append(f"| [{category}]({category}/index.md) | {categories[category]} |")
+    
+    return "\n".join(lines)
+
+
+def generate_all_docs(rules_dir: str, output_dir: str) -> Dict[str, Any]:
+    """Generate all documentation"""
+    rules_path = Path(rules_dir)
+    output_path = Path(output_dir)
+    
+    # Use new generator
+    generator = DocsGenerator(rules_path, output_path)
+    generator.generate_all()
+    
+    # Return stats
+    categories = defaultdict(int)
+    for data in generator.rules_metadata.values():
+        categories[data['category']] += 1
+    
+    return {
+        'total_rules': len(generator.rules_metadata),
+        'categories': len(categories),
+        'rules_per_category': dict(categories)
+    }
+
+
 def main():
     import argparse
     
@@ -194,13 +469,14 @@ def main():
                         default=Path(__file__).parent.parent / 'rules',
                         help='Rules directory path')
     parser.add_argument('--output-dir', type=Path,
-                        default=Path(__file__).parent.parent / 'docs' / 'reference',
+                        default=Path(__file__).parent.parent / 'docs' / 'generated',
                         help='Output directory for documentation')
     
     args = parser.parse_args()
     
-    generator = DocumentationGenerator(args.rules_dir, args.output_dir)
-    generator.generate_all()
+    stats = generate_all_docs(str(args.rules_dir), str(args.output_dir))
+    print(f"\nGenerated documentation for {stats['total_rules']} rules across {stats['categories']} categories")
+
 
 if __name__ == '__main__':
     main()

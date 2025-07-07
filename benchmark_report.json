@@ -1,1213 +1,1279 @@
 {
-  "timestamp": "2025-07-07T15:46:17.325473",
+  "timestamp": "2025-07-07T19:30:22.886525",
   "summary": {
-    "total_rules": 106,
-    "total_tokens": 99305,
-    "total_lines": 6143,
-    "avg_load_time_ms": 0.04,
-    "avg_tokens_per_rule": 936.84
+    "total_rules": 112,
+    "total_tokens": 102760,
+    "total_lines": 6639,
+    "avg_load_time_ms": 0.2,
+    "avg_tokens_per_rule": 917.5
   },
   "outliers": {
     "largest_by_tokens": {
       "rule_name": "301-available-tooling-guide",
       "rule_path": "300-integration/301-available-tooling-guide.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.32,
+      "load_time_ms": 0.2,
+      "parse_time_ms": 1.52,
       "token_count": 2847,
       "line_count": 59,
       "file_size_bytes": 11390,
-      "memory_usage_kb": 15.74,
-      "timestamp": "2025-07-07T15:46:17.137512"
+      "memory_usage_kb": 15.57,
+      "timestamp": "2025-07-07T19:30:22.660549"
     },
     "largest_by_lines": {
       "rule_name": "107-sparring-partner-mode",
       "rule_path": "100-cognitive/107-sparring-partner-mode.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.52,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.81,
       "token_count": 1385,
       "line_count": 141,
       "file_size_bytes": 5549,
-      "memory_usage_kb": 15.38,
-      "timestamp": "2025-07-07T15:46:17.325422"
+      "memory_usage_kb": 15.62,
+      "timestamp": "2025-07-07T19:30:22.886455"
     },
     "slowest_load": {
-      "rule_name": "106-concise-comms",
-      "rule_path": "100-cognitive/106-concise-comms.mdc",
-      "load_time_ms": 0.1,
-      "parse_time_ms": 1.86,
-      "token_count": 1114,
-      "line_count": 62,
-      "file_size_bytes": 4462,
-      "memory_usage_kb": 13.41,
-      "timestamp": "2025-07-07T15:46:17.313102"
+      "rule_name": "model-selection",
+      "rule_path": "400-patterns/model-selection.mdc",
+      "load_time_ms": 2.61,
+      "parse_time_ms": 1.75,
+      "token_count": 1248,
+      "line_count": 45,
+      "file_size_bytes": 4995,
+      "memory_usage_kb": 9.38,
+      "timestamp": "2025-07-07T19:30:22.702670"
     }
   },
   "rules": [
     {
+      "rule_name": "703-rule-combination-learning",
+      "rule_path": "700-evolution/703-rule-combination-learning.mdc",
+      "load_time_ms": 0.04,
+      "parse_time_ms": 0.03,
+      "token_count": 682,
+      "line_count": 86,
+      "file_size_bytes": 2729,
+      "memory_usage_kb": 4.5,
+      "timestamp": "2025-07-07T19:30:22.649806"
+    },
+    {
+      "rule_name": "702-self-modifying-rules",
+      "rule_path": "700-evolution/702-self-modifying-rules.mdc",
+      "load_time_ms": 0.19,
+      "parse_time_ms": 0.03,
+      "token_count": 559,
+      "line_count": 91,
+      "file_size_bytes": 2239,
+      "memory_usage_kb": 6.12,
+      "timestamp": "2025-07-07T19:30:22.650153"
+    },
+    {
       "rule_name": "701-rule-adaptation-tracking",
       "rule_path": "700-evolution/701-rule-adaptation-tracking.mdc",
-      "load_time_ms": 0.05,
-      "parse_time_ms": 1.85,
+      "load_time_ms": 0.23,
+      "parse_time_ms": 1.66,
       "token_count": 397,
       "line_count": 63,
       "file_size_bytes": 1589,
-      "memory_usage_kb": 10.02,
-      "timestamp": "2025-07-07T15:46:17.131102"
+      "memory_usage_kb": 10.04,
+      "timestamp": "2025-07-07T19:30:22.652177"
     },
     {
       "rule_name": "201-no-version-bloat",
       "rule_path": "200-engineering/201-no-version-bloat.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.55,
+      "load_time_ms": 0.21,
+      "parse_time_ms": 2.05,
       "token_count": 1468,
       "line_count": 111,
       "file_size_bytes": 5959,
-      "memory_usage_kb": 16.28,
-      "timestamp": "2025-07-07T15:46:17.132837"
+      "memory_usage_kb": 16.65,
+      "timestamp": "2025-07-07T19:30:22.654575"
     },
     {
       "rule_name": "202-database-selection",
       "rule_path": "200-engineering/202-database-selection.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.45,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.8,
       "token_count": 717,
       "line_count": 61,
       "file_size_bytes": 2890,
-      "memory_usage_kb": 10.36,
-      "timestamp": "2025-07-07T15:46:17.134437"
+      "memory_usage_kb": 10.52,
+      "timestamp": "2025-07-07T19:30:22.656684"
     },
     {
       "rule_name": "302-cursor-agent-integration",
       "rule_path": "300-integration/302-cursor-agent-integration.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.45,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.69,
       "token_count": 2145,
       "line_count": 55,
       "file_size_bytes": 8582,
-      "memory_usage_kb": 12.96,
-      "timestamp": "2025-07-07T15:46:17.136032"
+      "memory_usage_kb": 13.13,
+      "timestamp": "2025-07-07T19:30:22.658689"
     },
     {
       "rule_name": "301-available-tooling-guide",
       "rule_path": "300-integration/301-available-tooling-guide.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.32,
+      "load_time_ms": 0.2,
+      "parse_time_ms": 1.52,
       "token_count": 2847,
       "line_count": 59,
       "file_size_bytes": 11390,
-      "memory_usage_kb": 15.74,
-      "timestamp": "2025-07-07T15:46:17.137512"
+      "memory_usage_kb": 15.57,
+      "timestamp": "2025-07-07T19:30:22.660549"
     },
     {
       "rule_name": "available-tooling-guide",
       "rule_path": "300-integration/available-tooling-guide.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.31,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.56,
       "token_count": 2847,
       "line_count": 59,
       "file_size_bytes": 11390,
-      "memory_usage_kb": 15.55,
-      "timestamp": "2025-07-07T15:46:17.138975"
+      "memory_usage_kb": 15.53,
+      "timestamp": "2025-07-07T19:30:22.662415"
     },
     {
       "rule_name": "perplexity-research-framework",
       "rule_path": "300-integration/perplexity-research-framework.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.46,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.78,
       "token_count": 1396,
       "line_count": 82,
       "file_size_bytes": 5586,
-      "memory_usage_kb": 10.02,
-      "timestamp": "2025-07-07T15:46:17.140593"
+      "memory_usage_kb": 10.4,
+      "timestamp": "2025-07-07T19:30:22.664500"
     },
     {
       "rule_name": "multi-model-tool-integration",
       "rule_path": "300-integration/multi-model-tool-integration.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.77,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.91,
       "token_count": 1154,
       "line_count": 57,
       "file_size_bytes": 4616,
-      "memory_usage_kb": 9.24,
-      "timestamp": "2025-07-07T15:46:17.142544"
+      "memory_usage_kb": 9.35,
+      "timestamp": "2025-07-07T19:30:22.666715"
     },
     {
       "rule_name": "304-perplexity-research-framework",
       "rule_path": "300-integration/304-perplexity-research-framework.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.64,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.8,
       "token_count": 1396,
       "line_count": 82,
       "file_size_bytes": 5586,
-      "memory_usage_kb": 10.0,
-      "timestamp": "2025-07-07T15:46:17.144384"
+      "memory_usage_kb": 10.16,
+      "timestamp": "2025-07-07T19:30:22.668828"
     },
     {
       "rule_name": "cursor-agent-integration",
       "rule_path": "300-integration/cursor-agent-integration.mdc",
-      "load_time_ms": 0.05,
-      "parse_time_ms": 1.43,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.72,
       "token_count": 2145,
       "line_count": 55,
       "file_size_bytes": 8582,
-      "memory_usage_kb": 12.89,
-      "timestamp": "2025-07-07T15:46:17.146006"
+      "memory_usage_kb": 13.02,
+      "timestamp": "2025-07-07T19:30:22.670855"
     },
     {
       "rule_name": "303-multi-model-tool-integration",
       "rule_path": "300-integration/303-multi-model-tool-integration.mdc",
-      "load_time_ms": 0.04,
+      "load_time_ms": 0.08,
       "parse_time_ms": 1.82,
       "token_count": 1154,
       "line_count": 57,
       "file_size_bytes": 4616,
-      "memory_usage_kb": 9.2,
-      "timestamp": "2025-07-07T15:46:17.148197"
+      "memory_usage_kb": 9.36,
+      "timestamp": "2025-07-07T19:30:22.672878"
     },
     {
       "rule_name": "003-stepwise-autonomy",
       "rule_path": "000-core/003-stepwise-autonomy.mdc",
-      "load_time_ms": 0.05,
-      "parse_time_ms": 2.45,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 2.82,
       "token_count": 1269,
       "line_count": 68,
       "file_size_bytes": 5079,
-      "memory_usage_kb": 10.37,
-      "timestamp": "2025-07-07T15:46:17.150846"
+      "memory_usage_kb": 10.99,
+      "timestamp": "2025-07-07T19:30:22.676022"
     },
     {
       "rule_name": "001-philosophers-stone",
       "rule_path": "000-core/001-philosophers-stone.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.33,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.64,
       "token_count": 1144,
       "line_count": 111,
       "file_size_bytes": 4593,
-      "memory_usage_kb": 13.29,
-      "timestamp": "2025-07-07T15:46:17.152334"
+      "memory_usage_kb": 13.47,
+      "timestamp": "2025-07-07T19:30:22.677992"
     },
     {
       "rule_name": "002-pareto-prioritization",
       "rule_path": "000-core/002-pareto-prioritization.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.48,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.81,
       "token_count": 829,
       "line_count": 28,
       "file_size_bytes": 3321,
-      "memory_usage_kb": 7.75,
-      "timestamp": "2025-07-07T15:46:17.153964"
+      "memory_usage_kb": 7.93,
+      "timestamp": "2025-07-07T19:30:22.680093"
     },
     {
       "rule_name": "004-risk-checkpoint",
       "rule_path": "000-core/004-risk-checkpoint.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.78,
+      "load_time_ms": 0.21,
+      "parse_time_ms": 2.1,
       "token_count": 1404,
       "line_count": 131,
       "file_size_bytes": 5660,
-      "memory_usage_kb": 16.02,
-      "timestamp": "2025-07-07T15:46:17.155909"
+      "memory_usage_kb": 16.04,
+      "timestamp": "2025-07-07T19:30:22.682546"
+    },
+    {
+      "rule_name": "603-swarm-intelligence",
+      "rule_path": "600-experimental/603-swarm-intelligence.mdc",
+      "load_time_ms": 0.18,
+      "parse_time_ms": 0.03,
+      "token_count": 514,
+      "line_count": 83,
+      "file_size_bytes": 2056,
+      "memory_usage_kb": 3.58,
+      "timestamp": "2025-07-07T19:30:22.682870"
+    },
+    {
+      "rule_name": "602-quantum-superposition",
+      "rule_path": "600-experimental/602-quantum-superposition.mdc",
+      "load_time_ms": 0.23,
+      "parse_time_ms": 0.02,
+      "token_count": 702,
+      "line_count": 92,
+      "file_size_bytes": 2811,
+      "memory_usage_kb": 4.44,
+      "timestamp": "2025-07-07T19:30:22.683234"
     },
     {
       "rule_name": "452-sdk-development-checklist",
       "rule_path": "400-patterns/452-sdk-development-checklist.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.56,
+      "load_time_ms": 0.22,
+      "parse_time_ms": 1.93,
       "token_count": 483,
       "line_count": 33,
       "file_size_bytes": 1936,
-      "memory_usage_kb": 8.53,
-      "timestamp": "2025-07-07T15:46:17.157619"
+      "memory_usage_kb": 8.82,
+      "timestamp": "2025-07-07T19:30:22.685500"
     },
     {
       "rule_name": "441-example-library-integrity",
       "rule_path": "400-patterns/441-example-library-integrity.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.5,
+      "load_time_ms": 0.25,
+      "parse_time_ms": 1.79,
       "token_count": 1199,
       "line_count": 59,
       "file_size_bytes": 4796,
-      "memory_usage_kb": 9.21,
-      "timestamp": "2025-07-07T15:46:17.159269"
+      "memory_usage_kb": 9.39,
+      "timestamp": "2025-07-07T19:30:22.687659"
     },
     {
       "rule_name": "448-prompt-eval",
       "rule_path": "400-patterns/448-prompt-eval.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.51,
+      "load_time_ms": 0.2,
+      "parse_time_ms": 1.77,
       "token_count": 1650,
       "line_count": 104,
       "file_size_bytes": 6601,
-      "memory_usage_kb": 10.96,
-      "timestamp": "2025-07-07T15:46:17.160927"
+      "memory_usage_kb": 11.13,
+      "timestamp": "2025-07-07T19:30:22.689768"
     },
     {
       "rule_name": "code-generation-patterns",
       "rule_path": "400-patterns/code-generation-patterns.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 2.81,
+      "load_time_ms": 0.22,
+      "parse_time_ms": 3.11,
       "token_count": 1559,
       "line_count": 61,
       "file_size_bytes": 6236,
-      "memory_usage_kb": 11.88,
-      "timestamp": "2025-07-07T15:46:17.163888"
+      "memory_usage_kb": 12.11,
+      "timestamp": "2025-07-07T19:30:22.693249"
     },
     {
       "rule_name": "434-bash-safety",
       "rule_path": "400-patterns/434-bash-safety.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.42,
+      "load_time_ms": 0.33,
+      "parse_time_ms": 1.8,
       "token_count": 968,
       "line_count": 63,
       "file_size_bytes": 3874,
-      "memory_usage_kb": 8.45,
-      "timestamp": "2025-07-07T15:46:17.165442"
+      "memory_usage_kb": 8.62,
+      "timestamp": "2025-07-07T19:30:22.695536"
     },
     {
       "rule_name": "442-logging-monitoring",
       "rule_path": "400-patterns/442-logging-monitoring.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.91,
+      "load_time_ms": 0.14,
+      "parse_time_ms": 2.35,
       "token_count": 1118,
       "line_count": 58,
       "file_size_bytes": 4477,
-      "memory_usage_kb": 13.89,
-      "timestamp": "2025-07-07T15:46:17.167495"
+      "memory_usage_kb": 14.01,
+      "timestamp": "2025-07-07T19:30:22.698175"
     },
     {
       "rule_name": "model-selection",
       "rule_path": "400-patterns/model-selection.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.35,
+      "load_time_ms": 2.61,
+      "parse_time_ms": 1.75,
       "token_count": 1248,
       "line_count": 45,
       "file_size_bytes": 4995,
-      "memory_usage_kb": 9.2,
-      "timestamp": "2025-07-07T15:46:17.168989"
+      "memory_usage_kb": 9.38,
+      "timestamp": "2025-07-07T19:30:22.702670"
     },
     {
       "rule_name": "435-ci-cd-testing-gatekeeper",
       "rule_path": "400-patterns/435-ci-cd-testing-gatekeeper.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.39,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.49,
       "token_count": 132,
       "line_count": 10,
       "file_size_bytes": 531,
       "memory_usage_kb": 5.41,
-      "timestamp": "2025-07-07T15:46:17.170524"
+      "timestamp": "2025-07-07T19:30:22.704469"
     },
     {
       "rule_name": "sdk-development-checklist",
       "rule_path": "400-patterns/sdk-development-checklist.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.59,
+      "load_time_ms": 0.27,
+      "parse_time_ms": 1.81,
       "token_count": 483,
       "line_count": 33,
       "file_size_bytes": 1936,
-      "memory_usage_kb": 8.47,
-      "timestamp": "2025-07-07T15:46:17.172261"
+      "memory_usage_kb": 8.71,
+      "timestamp": "2025-07-07T19:30:22.706664"
     },
     {
       "rule_name": "440-document-analysis",
       "rule_path": "400-patterns/440-document-analysis.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.69,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.94,
       "token_count": 784,
       "line_count": 62,
       "file_size_bytes": 3138,
-      "memory_usage_kb": 11.05,
-      "timestamp": "2025-07-07T15:46:17.174093"
+      "memory_usage_kb": 11.28,
+      "timestamp": "2025-07-07T19:30:22.708899"
     },
     {
       "rule_name": "444-notebook-best-practices",
       "rule_path": "400-patterns/444-notebook-best-practices.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.48,
+      "load_time_ms": 0.2,
+      "parse_time_ms": 1.74,
       "token_count": 1024,
       "line_count": 66,
       "file_size_bytes": 4099,
-      "memory_usage_kb": 8.53,
-      "timestamp": "2025-07-07T15:46:17.175722"
+      "memory_usage_kb": 8.71,
+      "timestamp": "2025-07-07T19:30:22.710976"
     },
     {
       "rule_name": "logging-monitoring",
       "rule_path": "400-patterns/logging-monitoring.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.95,
+      "load_time_ms": 0.15,
+      "parse_time_ms": 2.3,
       "token_count": 1118,
       "line_count": 58,
       "file_size_bytes": 4477,
-      "memory_usage_kb": 13.82,
-      "timestamp": "2025-07-07T15:46:17.177823"
+      "memory_usage_kb": 14.05,
+      "timestamp": "2025-07-07T19:30:22.713550"
     },
     {
       "rule_name": "structured-data-embedding-best-practices",
       "rule_path": "400-patterns/structured-data-embedding-best-practices.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.36,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.68,
       "token_count": 1255,
       "line_count": 61,
       "file_size_bytes": 5023,
-      "memory_usage_kb": 9.3,
-      "timestamp": "2025-07-07T15:46:17.179334"
+      "memory_usage_kb": 9.48,
+      "timestamp": "2025-07-07T19:30:22.715553"
     },
     {
       "rule_name": "test-driven-development",
       "rule_path": "400-patterns/test-driven-development.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.98,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 2.26,
       "token_count": 381,
       "line_count": 37,
       "file_size_bytes": 1528,
-      "memory_usage_kb": 8.13,
-      "timestamp": "2025-07-07T15:46:17.181466"
+      "memory_usage_kb": 8.3,
+      "timestamp": "2025-07-07T19:30:22.718123"
     },
     {
       "rule_name": "431-api-design-guidelines",
       "rule_path": "400-patterns/431-api-design-guidelines.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.36,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.49,
       "token_count": 88,
       "line_count": 8,
       "file_size_bytes": 355,
       "memory_usage_kb": 4.8,
-      "timestamp": "2025-07-07T15:46:17.182972"
+      "timestamp": "2025-07-07T19:30:22.719915"
     },
     {
       "rule_name": "430-80-20-prioritization-data-analytics",
       "rule_path": "400-patterns/430-80-20-prioritization-data-analytics.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.46,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.71,
       "token_count": 1644,
       "line_count": 137,
       "file_size_bytes": 6584,
-      "memory_usage_kb": 10.98,
-      "timestamp": "2025-07-07T15:46:17.184573"
+      "memory_usage_kb": 11.15,
+      "timestamp": "2025-07-07T19:30:22.721928"
     },
     {
       "rule_name": "455-task-retrospective",
       "rule_path": "400-patterns/455-task-retrospective.mdc",
-      "load_time_ms": 0.02,
-      "parse_time_ms": 1.34,
+      "load_time_ms": 0.15,
+      "parse_time_ms": 1.55,
       "token_count": 701,
       "line_count": 26,
       "file_size_bytes": 2805,
-      "memory_usage_kb": 7.04,
-      "timestamp": "2025-07-07T15:46:17.186054"
+      "memory_usage_kb": 7.21,
+      "timestamp": "2025-07-07T19:30:22.723748"
     },
     {
       "rule_name": "document-analysis",
       "rule_path": "400-patterns/document-analysis.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.74,
+      "load_time_ms": 0.15,
+      "parse_time_ms": 1.95,
       "token_count": 784,
       "line_count": 62,
       "file_size_bytes": 3138,
-      "memory_usage_kb": 10.94,
-      "timestamp": "2025-07-07T15:46:17.187948"
+      "memory_usage_kb": 11.12,
+      "timestamp": "2025-07-07T19:30:22.725972"
     },
     {
       "rule_name": "443-model-selection",
       "rule_path": "400-patterns/443-model-selection.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.36,
+      "load_time_ms": 0.14,
+      "parse_time_ms": 1.64,
       "token_count": 1248,
       "line_count": 45,
       "file_size_bytes": 4995,
-      "memory_usage_kb": 9.22,
-      "timestamp": "2025-07-07T15:46:17.189456"
+      "memory_usage_kb": 9.39,
+      "timestamp": "2025-07-07T19:30:22.727879"
     },
     {
       "rule_name": "research-prompt-guidelines",
       "rule_path": "400-patterns/research-prompt-guidelines.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.5,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.8,
       "token_count": 1092,
       "line_count": 27,
       "file_size_bytes": 4370,
-      "memory_usage_kb": 8.88,
-      "timestamp": "2025-07-07T15:46:17.191099"
+      "memory_usage_kb": 9.06,
+      "timestamp": "2025-07-07T19:30:22.730005"
     },
     {
       "rule_name": "450-rule-security",
       "rule_path": "400-patterns/450-rule-security.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.47,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.81,
       "token_count": 693,
       "line_count": 38,
       "file_size_bytes": 2775,
-      "memory_usage_kb": 7.21,
-      "timestamp": "2025-07-07T15:46:17.192712"
+      "memory_usage_kb": 7.39,
+      "timestamp": "2025-07-07T19:30:22.732151"
     },
     {
       "rule_name": "439-deployment-config",
       "rule_path": "400-patterns/439-deployment-config.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.4,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 2.96,
       "token_count": 702,
       "line_count": 60,
       "file_size_bytes": 2821,
-      "memory_usage_kb": 15.38,
-      "timestamp": "2025-07-07T15:46:17.194253"
+      "memory_usage_kb": 15.56,
+      "timestamp": "2025-07-07T19:30:22.735465"
     },
     {
       "rule_name": "427-stigmergic-workflows",
       "rule_path": "400-patterns/427-stigmergic-workflows.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 3.95,
+      "load_time_ms": 0.21,
+      "parse_time_ms": 4.19,
       "token_count": 1243,
       "line_count": 39,
       "file_size_bytes": 4972,
-      "memory_usage_kb": 12.57,
-      "timestamp": "2025-07-07T15:46:17.198343"
+      "memory_usage_kb": 12.81,
+      "timestamp": "2025-07-07T19:30:22.740003"
     },
     {
       "rule_name": "80-20-prioritization-data-analytics",
       "rule_path": "400-patterns/80-20-prioritization-data-analytics.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.45,
+      "load_time_ms": 0.28,
+      "parse_time_ms": 1.7,
       "token_count": 1644,
       "line_count": 137,
       "file_size_bytes": 6584,
-      "memory_usage_kb": 10.96,
-      "timestamp": "2025-07-07T15:46:17.199941"
+      "memory_usage_kb": 11.14,
+      "timestamp": "2025-07-07T19:30:22.742097"
     },
     {
       "rule_name": "453-stepwise-autonomy-data-pipeline",
       "rule_path": "400-patterns/453-stepwise-autonomy-data-pipeline.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 2.18,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 2.64,
       "token_count": 1311,
       "line_count": 49,
       "file_size_bytes": 5244,
-      "memory_usage_kb": 10.58,
-      "timestamp": "2025-07-07T15:46:17.202268"
+      "memory_usage_kb": 10.92,
+      "timestamp": "2025-07-07T19:30:22.745064"
     },
     {
       "rule_name": "example-library-integrity",
       "rule_path": "400-patterns/example-library-integrity.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.55,
+      "load_time_ms": 0.21,
+      "parse_time_ms": 1.83,
       "token_count": 1199,
       "line_count": 59,
       "file_size_bytes": 4796,
-      "memory_usage_kb": 9.2,
-      "timestamp": "2025-07-07T15:46:17.203977"
+      "memory_usage_kb": 9.38,
+      "timestamp": "2025-07-07T19:30:22.747215"
     },
     {
       "rule_name": "context-integration",
       "rule_path": "400-patterns/context-integration.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.48,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.69,
       "token_count": 297,
       "line_count": 14,
       "file_size_bytes": 1189,
-      "memory_usage_kb": 5.56,
-      "timestamp": "2025-07-07T15:46:17.205614"
+      "memory_usage_kb": 5.74,
+      "timestamp": "2025-07-07T19:30:22.749187"
     },
     {
       "rule_name": "445-notepad-best-practices",
       "rule_path": "400-patterns/445-notepad-best-practices.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.59,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.79,
       "token_count": 838,
       "line_count": 71,
       "file_size_bytes": 3355,
-      "memory_usage_kb": 7.86,
-      "timestamp": "2025-07-07T15:46:17.207349"
+      "memory_usage_kb": 8.04,
+      "timestamp": "2025-07-07T19:30:22.751283"
     },
     {
       "rule_name": "deployment-config",
       "rule_path": "400-patterns/deployment-config.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.32,
+      "load_time_ms": 0.3,
+      "parse_time_ms": 1.74,
       "token_count": 702,
       "line_count": 60,
       "file_size_bytes": 2821,
-      "memory_usage_kb": 15.37,
-      "timestamp": "2025-07-07T15:46:17.208824"
+      "memory_usage_kb": 15.55,
+      "timestamp": "2025-07-07T19:30:22.753474"
     },
     {
       "rule_name": "backend-security",
       "rule_path": "400-patterns/backend-security.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.58,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.86,
       "token_count": 1192,
       "line_count": 58,
       "file_size_bytes": 4770,
-      "memory_usage_kb": 9.45,
-      "timestamp": "2025-07-07T15:46:17.210560"
+      "memory_usage_kb": 9.62,
+      "timestamp": "2025-07-07T19:30:22.755679"
     },
     {
       "rule_name": "prompt-eval-data-analytics",
       "rule_path": "400-patterns/prompt-eval-data-analytics.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.58,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.75,
       "token_count": 1212,
       "line_count": 104,
       "file_size_bytes": 4851,
-      "memory_usage_kb": 14.03,
-      "timestamp": "2025-07-07T15:46:17.212302"
+      "memory_usage_kb": 14.26,
+      "timestamp": "2025-07-07T19:30:22.757724"
     },
     {
       "rule_name": "436-code-generation-patterns",
       "rule_path": "400-patterns/436-code-generation-patterns.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 3.38,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 3.23,
       "token_count": 1559,
       "line_count": 61,
       "file_size_bytes": 6236,
-      "memory_usage_kb": 11.9,
-      "timestamp": "2025-07-07T15:46:17.215890"
+      "memory_usage_kb": 12.13,
+      "timestamp": "2025-07-07T19:30:22.761297"
     },
     {
       "rule_name": "bash-safety",
       "rule_path": "400-patterns/bash-safety.mdc",
-      "load_time_ms": 0.05,
-      "parse_time_ms": 1.43,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.72,
       "token_count": 968,
       "line_count": 63,
       "file_size_bytes": 3874,
-      "memory_usage_kb": 8.28,
-      "timestamp": "2025-07-07T15:46:17.217482"
+      "memory_usage_kb": 8.4,
+      "timestamp": "2025-07-07T19:30:22.763339"
     },
     {
       "rule_name": "notepad-best-practices",
       "rule_path": "400-patterns/notepad-best-practices.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.47,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.77,
       "token_count": 838,
       "line_count": 71,
       "file_size_bytes": 3355,
-      "memory_usage_kb": 7.85,
-      "timestamp": "2025-07-07T15:46:17.219090"
+      "memory_usage_kb": 8.03,
+      "timestamp": "2025-07-07T19:30:22.765403"
     },
     {
       "rule_name": "ci-cd-testing-gatekeeper",
       "rule_path": "400-patterns/ci-cd-testing-gatekeeper.mdc",
-      "load_time_ms": 0.02,
-      "parse_time_ms": 1.41,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.59,
       "token_count": 132,
       "line_count": 10,
       "file_size_bytes": 531,
       "memory_usage_kb": 5.55,
-      "timestamp": "2025-07-07T15:46:17.220638"
+      "timestamp": "2025-07-07T19:30:22.767291"
     },
     {
       "rule_name": "437-context-integration",
       "rule_path": "400-patterns/437-context-integration.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.46,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.8,
       "token_count": 297,
       "line_count": 14,
       "file_size_bytes": 1189,
-      "memory_usage_kb": 5.57,
-      "timestamp": "2025-07-07T15:46:17.222246"
+      "memory_usage_kb": 5.75,
+      "timestamp": "2025-07-07T19:30:22.769377"
     },
     {
       "rule_name": "433-backend-security",
       "rule_path": "400-patterns/433-backend-security.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.64,
+      "load_time_ms": 0.13,
+      "parse_time_ms": 1.75,
       "token_count": 1192,
       "line_count": 58,
       "file_size_bytes": 4770,
-      "memory_usage_kb": 9.3,
-      "timestamp": "2025-07-07T15:46:17.224039"
+      "memory_usage_kb": 9.48,
+      "timestamp": "2025-07-07T19:30:22.771378"
     },
     {
       "rule_name": "notebook-best-practices",
       "rule_path": "400-patterns/notebook-best-practices.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.64,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.66,
       "token_count": 1024,
       "line_count": 66,
       "file_size_bytes": 4099,
-      "memory_usage_kb": 8.52,
-      "timestamp": "2025-07-07T15:46:17.225826"
+      "memory_usage_kb": 8.7,
+      "timestamp": "2025-07-07T19:30:22.773322"
     },
     {
       "rule_name": "449-research-prompt-guidelines",
       "rule_path": "400-patterns/449-research-prompt-guidelines.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.69,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.71,
       "token_count": 1092,
       "line_count": 27,
       "file_size_bytes": 4370,
-      "memory_usage_kb": 8.74,
-      "timestamp": "2025-07-07T15:46:17.227699"
+      "memory_usage_kb": 8.91,
+      "timestamp": "2025-07-07T19:30:22.775316"
     },
     {
       "rule_name": "447-prompt-eval-data-analytics",
       "rule_path": "400-patterns/447-prompt-eval-data-analytics.mdc",
-      "load_time_ms": 0.05,
-      "parse_time_ms": 1.71,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.76,
       "token_count": 1213,
       "line_count": 104,
       "file_size_bytes": 4855,
-      "memory_usage_kb": 14.26,
-      "timestamp": "2025-07-07T15:46:17.229606"
+      "memory_usage_kb": 14.44,
+      "timestamp": "2025-07-07T19:30:22.777372"
     },
     {
       "rule_name": "prompt-coding-standards",
       "rule_path": "400-patterns/prompt-coding-standards.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.48,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.69,
       "token_count": 679,
       "line_count": 29,
       "file_size_bytes": 2718,
-      "memory_usage_kb": 7.01,
-      "timestamp": "2025-07-07T15:46:17.231252"
+      "memory_usage_kb": 7.19,
+      "timestamp": "2025-07-07T19:30:22.779366"
     },
     {
       "rule_name": "454-structured-data-embedding-best-practices",
       "rule_path": "400-patterns/454-structured-data-embedding-best-practices.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.37,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.6,
       "token_count": 1255,
       "line_count": 61,
       "file_size_bytes": 5023,
-      "memory_usage_kb": 9.31,
-      "timestamp": "2025-07-07T15:46:17.232786"
+      "memory_usage_kb": 9.49,
+      "timestamp": "2025-07-07T19:30:22.781272"
     },
     {
       "rule_name": "api-webhook-discrepancy-documentation",
       "rule_path": "400-patterns/api-webhook-discrepancy-documentation.mdc",
-      "load_time_ms": 0.05,
-      "parse_time_ms": 1.35,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.69,
       "token_count": 1247,
       "line_count": 120,
       "file_size_bytes": 4990,
-      "memory_usage_kb": 14.1,
-      "timestamp": "2025-07-07T15:46:17.234294"
+      "memory_usage_kb": 14.34,
+      "timestamp": "2025-07-07T19:30:22.783271"
     },
     {
       "rule_name": "428-pre-task-rule-review",
       "rule_path": "400-patterns/428-pre-task-rule-review.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.45,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.75,
       "token_count": 995,
       "line_count": 69,
       "file_size_bytes": 3992,
-      "memory_usage_kb": 12.15,
-      "timestamp": "2025-07-07T15:46:17.235888"
+      "memory_usage_kb": 12.39,
+      "timestamp": "2025-07-07T19:30:22.785308"
     },
     {
       "rule_name": "432-api-webhook-discrepancy-documentation",
       "rule_path": "400-patterns/432-api-webhook-discrepancy-documentation.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.34,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.49,
       "token_count": 1247,
       "line_count": 120,
       "file_size_bytes": 4990,
-      "memory_usage_kb": 14.27,
-      "timestamp": "2025-07-07T15:46:17.237369"
+      "memory_usage_kb": 14.39,
+      "timestamp": "2025-07-07T19:30:22.787091"
     },
     {
       "rule_name": "438-dependency-management",
       "rule_path": "400-patterns/438-dependency-management.mdc",
-      "load_time_ms": 0.02,
-      "parse_time_ms": 1.94,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 2.09,
       "token_count": 87,
       "line_count": 8,
       "file_size_bytes": 348,
-      "memory_usage_kb": 5.54,
-      "timestamp": "2025-07-07T15:46:17.239444"
+      "memory_usage_kb": 5.48,
+      "timestamp": "2025-07-07T19:30:22.789466"
     },
     {
       "rule_name": "safir-scroll-output",
       "rule_path": "400-patterns/safir-scroll-output.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.77,
+      "load_time_ms": 0.15,
+      "parse_time_ms": 1.97,
       "token_count": 543,
       "line_count": 72,
       "file_size_bytes": 2210,
-      "memory_usage_kb": 13.47,
-      "timestamp": "2025-07-07T15:46:17.241373"
+      "memory_usage_kb": 13.65,
+      "timestamp": "2025-07-07T19:30:22.791701"
     },
     {
       "rule_name": "446-prompt-coding-standards",
       "rule_path": "400-patterns/446-prompt-coding-standards.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.35,
+      "load_time_ms": 0.15,
+      "parse_time_ms": 1.63,
       "token_count": 679,
       "line_count": 29,
       "file_size_bytes": 2718,
-      "memory_usage_kb": 7.02,
-      "timestamp": "2025-07-07T15:46:17.242869"
+      "memory_usage_kb": 7.2,
+      "timestamp": "2025-07-07T19:30:22.793609"
     },
     {
       "rule_name": "api-design-guidelines",
       "rule_path": "400-patterns/api-design-guidelines.mdc",
-      "load_time_ms": 0.02,
-      "parse_time_ms": 1.36,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.54,
       "token_count": 88,
       "line_count": 8,
       "file_size_bytes": 355,
       "memory_usage_kb": 4.63,
-      "timestamp": "2025-07-07T15:46:17.244368"
+      "timestamp": "2025-07-07T19:30:22.795456"
     },
     {
       "rule_name": "rule-security",
       "rule_path": "400-patterns/rule-security.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.49,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.73,
       "token_count": 693,
       "line_count": 38,
       "file_size_bytes": 2775,
-      "memory_usage_kb": 7.35,
-      "timestamp": "2025-07-07T15:46:17.245999"
+      "memory_usage_kb": 7.53,
+      "timestamp": "2025-07-07T19:30:22.797468"
     },
     {
       "rule_name": "dependency-management",
       "rule_path": "400-patterns/dependency-management.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 2.0,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 2.21,
       "token_count": 87,
       "line_count": 8,
       "file_size_bytes": 348,
       "memory_usage_kb": 5.53,
-      "timestamp": "2025-07-07T15:46:17.248147"
+      "timestamp": "2025-07-07T19:30:22.799974"
     },
     {
       "rule_name": "456-test-driven-development",
       "rule_path": "400-patterns/456-test-driven-development.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.87,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 2.23,
       "token_count": 381,
       "line_count": 37,
       "file_size_bytes": 1528,
-      "memory_usage_kb": 8.14,
-      "timestamp": "2025-07-07T15:46:17.250183"
+      "memory_usage_kb": 8.32,
+      "timestamp": "2025-07-07T19:30:22.802496"
     },
     {
       "rule_name": "task-retrospective",
       "rule_path": "400-patterns/task-retrospective.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.32,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.58,
       "token_count": 701,
       "line_count": 26,
       "file_size_bytes": 2805,
-      "memory_usage_kb": 7.02,
-      "timestamp": "2025-07-07T15:46:17.251665"
+      "memory_usage_kb": 7.2,
+      "timestamp": "2025-07-07T19:30:22.804364"
     },
     {
       "rule_name": "451-safir-scroll-output",
       "rule_path": "400-patterns/451-safir-scroll-output.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.92,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 2.05,
       "token_count": 543,
       "line_count": 72,
       "file_size_bytes": 2210,
-      "memory_usage_kb": 13.48,
-      "timestamp": "2025-07-07T15:46:17.253749"
+      "memory_usage_kb": 13.66,
+      "timestamp": "2025-07-07T19:30:22.806678"
     },
     {
       "rule_name": "stepwise-autonomy-data-pipeline",
       "rule_path": "400-patterns/stepwise-autonomy-data-pipeline.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 2.09,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 2.61,
       "token_count": 1311,
       "line_count": 49,
       "file_size_bytes": 5244,
-      "memory_usage_kb": 10.57,
-      "timestamp": "2025-07-07T15:46:17.255989"
+      "memory_usage_kb": 10.93,
+      "timestamp": "2025-07-07T19:30:22.809574"
     },
     {
       "rule_name": "prompt-eval",
       "rule_path": "400-patterns/prompt-eval.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.51,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.82,
       "token_count": 1649,
       "line_count": 104,
       "file_size_bytes": 6597,
-      "memory_usage_kb": 10.94,
-      "timestamp": "2025-07-07T15:46:17.257646"
+      "memory_usage_kb": 11.06,
+      "timestamp": "2025-07-07T19:30:22.811708"
+    },
+    {
+      "rule_name": "503-output-sanitization",
+      "rule_path": "500-safety/503-output-sanitization.mdc",
+      "load_time_ms": 0.2,
+      "parse_time_ms": 0.04,
+      "token_count": 471,
+      "line_count": 69,
+      "file_size_bytes": 1886,
+      "memory_usage_kb": 3.41,
+      "timestamp": "2025-07-07T19:30:22.812071"
     },
     {
       "rule_name": "501-input-validation",
       "rule_path": "500-safety/501-input-validation.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.49,
+      "load_time_ms": 0.14,
+      "parse_time_ms": 1.58,
       "token_count": 396,
       "line_count": 67,
       "file_size_bytes": 1587,
-      "memory_usage_kb": 5.78,
-      "timestamp": "2025-07-07T15:46:17.259290"
+      "memory_usage_kb": 5.84,
+      "timestamp": "2025-07-07T19:30:22.813913"
+    },
+    {
+      "rule_name": "502-prompt-injection-defense",
+      "rule_path": "500-safety/502-prompt-injection-defense.mdc",
+      "load_time_ms": 0.2,
+      "parse_time_ms": 0.02,
+      "token_count": 527,
+      "line_count": 75,
+      "file_size_bytes": 2110,
+      "memory_usage_kb": 3.57,
+      "timestamp": "2025-07-07T19:30:22.814246"
     },
     {
       "rule_name": "dbt-mcp-server",
       "rule_path": "200-domain/dbt-mcp-server.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.57,
+      "load_time_ms": 0.24,
+      "parse_time_ms": 1.81,
       "token_count": 472,
       "line_count": 26,
       "file_size_bytes": 1891,
-      "memory_usage_kb": 6.45,
-      "timestamp": "2025-07-07T15:46:17.261011"
+      "memory_usage_kb": 6.87,
+      "timestamp": "2025-07-07T19:30:22.816436"
     },
     {
       "rule_name": "204-analytics-storytelling",
       "rule_path": "200-domain/204-analytics-storytelling.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.37,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.58,
       "token_count": 128,
       "line_count": 8,
       "file_size_bytes": 522,
       "memory_usage_kb": 5.42,
-      "timestamp": "2025-07-07T15:46:17.262541"
+      "timestamp": "2025-07-07T19:30:22.818325"
     },
     {
       "rule_name": "205-datascience-repro",
       "rule_path": "200-domain/205-datascience-repro.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.53,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.72,
       "token_count": 1011,
       "line_count": 85,
       "file_size_bytes": 4046,
-      "memory_usage_kb": 8.7,
-      "timestamp": "2025-07-07T15:46:17.264230"
+      "memory_usage_kb": 8.72,
+      "timestamp": "2025-07-07T19:30:22.820339"
     },
     {
       "rule_name": "207-dbt-incremental-loading-patterns",
       "rule_path": "200-domain/207-dbt-incremental-loading-patterns.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 6.09,
+      "load_time_ms": 0.28,
+      "parse_time_ms": 1.5,
       "token_count": 312,
       "line_count": 33,
       "file_size_bytes": 1250,
-      "memory_usage_kb": 5.53,
-      "timestamp": "2025-07-07T15:46:17.270572"
+      "memory_usage_kb": 5.65,
+      "timestamp": "2025-07-07T19:30:22.822236"
     },
     {
       "rule_name": "analytics-engineering",
       "rule_path": "200-domain/analytics-engineering.mdc",
-      "load_time_ms": 0.07,
-      "parse_time_ms": 1.8,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.78,
       "token_count": 401,
       "line_count": 24,
       "file_size_bytes": 1609,
-      "memory_usage_kb": 7.79,
-      "timestamp": "2025-07-07T15:46:17.272609"
+      "memory_usage_kb": 8.02,
+      "timestamp": "2025-07-07T19:30:22.824277"
     },
     {
       "rule_name": "datascience-repro",
       "rule_path": "200-domain/datascience-repro.mdc",
-      "load_time_ms": 0.04,
+      "load_time_ms": 0.16,
       "parse_time_ms": 1.66,
       "token_count": 1011,
       "line_count": 85,
       "file_size_bytes": 4046,
-      "memory_usage_kb": 8.53,
-      "timestamp": "2025-07-07T15:46:17.274453"
+      "memory_usage_kb": 8.87,
+      "timestamp": "2025-07-07T19:30:22.826208"
     },
     {
       "rule_name": "dbt-semantic-modeling",
       "rule_path": "200-domain/dbt-semantic-modeling.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.7,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.78,
       "token_count": 590,
       "line_count": 45,
       "file_size_bytes": 2367,
-      "memory_usage_kb": 9.28,
-      "timestamp": "2025-07-07T15:46:17.276321"
+      "memory_usage_kb": 9.45,
+      "timestamp": "2025-07-07T19:30:22.828289"
     },
     {
       "rule_name": "210-dbt-semantic-modeling",
       "rule_path": "200-domain/210-dbt-semantic-modeling.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.72,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.79,
       "token_count": 590,
       "line_count": 45,
       "file_size_bytes": 2367,
-      "memory_usage_kb": 9.39,
-      "timestamp": "2025-07-07T15:46:17.278230"
+      "memory_usage_kb": 9.46,
+      "timestamp": "2025-07-07T19:30:22.830375"
     },
     {
       "rule_name": "analytics-storytelling",
       "rule_path": "200-domain/analytics-storytelling.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.68,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.53,
       "token_count": 128,
       "line_count": 8,
       "file_size_bytes": 522,
-      "memory_usage_kb": 5.35,
-      "timestamp": "2025-07-07T15:46:17.280170"
+      "memory_usage_kb": 5.41,
+      "timestamp": "2025-07-07T19:30:22.832199"
     },
     {
       "rule_name": "dbt-model-quality",
       "rule_path": "200-domain/dbt-model-quality.mdc",
-      "load_time_ms": 0.07,
-      "parse_time_ms": 1.78,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.72,
       "token_count": 85,
       "line_count": 8,
       "file_size_bytes": 342,
       "memory_usage_kb": 4.9,
-      "timestamp": "2025-07-07T15:46:17.282206"
+      "timestamp": "2025-07-07T19:30:22.834205"
     },
     {
       "rule_name": "python-clean-code",
       "rule_path": "200-domain/python-clean-code.mdc",
-      "load_time_ms": 0.05,
-      "parse_time_ms": 1.64,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.75,
       "token_count": 1335,
       "line_count": 104,
       "file_size_bytes": 5342,
-      "memory_usage_kb": 14.88,
-      "timestamp": "2025-07-07T15:46:17.284131"
+      "memory_usage_kb": 15.27,
+      "timestamp": "2025-07-07T19:30:22.836261"
     },
     {
       "rule_name": "dbt-analytics-engineering",
       "rule_path": "200-domain/dbt-analytics-engineering.mdc",
-      "load_time_ms": 0.08,
-      "parse_time_ms": 1.68,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.71,
       "token_count": 649,
       "line_count": 53,
       "file_size_bytes": 2598,
-      "memory_usage_kb": 7.11,
-      "timestamp": "2025-07-07T15:46:17.286038"
+      "memory_usage_kb": 7.17,
+      "timestamp": "2025-07-07T19:30:22.838246"
     },
     {
       "rule_name": "209-dbt-model-quality",
       "rule_path": "200-domain/209-dbt-model-quality.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.5,
+      "load_time_ms": 0.15,
+      "parse_time_ms": 1.55,
       "token_count": 85,
       "line_count": 8,
       "file_size_bytes": 342,
-      "memory_usage_kb": 5.01,
-      "timestamp": "2025-07-07T15:46:17.287688"
+      "memory_usage_kb": 4.91,
+      "timestamp": "2025-07-07T19:30:22.840063"
     },
     {
       "rule_name": "213-sql-performance",
       "rule_path": "200-domain/213-sql-performance.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.47,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.63,
       "token_count": 389,
       "line_count": 37,
       "file_size_bytes": 1559,
-      "memory_usage_kb": 7.48,
-      "timestamp": "2025-07-07T15:46:17.289364"
+      "memory_usage_kb": 7.71,
+      "timestamp": "2025-07-07T19:30:22.841974"
     },
     {
       "rule_name": "sql-performance",
       "rule_path": "200-domain/sql-performance.mdc",
-      "load_time_ms": 0.06,
-      "parse_time_ms": 1.46,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.67,
       "token_count": 389,
       "line_count": 37,
       "file_size_bytes": 1559,
-      "memory_usage_kb": 7.46,
-      "timestamp": "2025-07-07T15:46:17.291021"
+      "memory_usage_kb": 7.7,
+      "timestamp": "2025-07-07T19:30:22.843943"
     },
     {
       "rule_name": "dbt-incremental-loading-patterns",
       "rule_path": "200-domain/dbt-incremental-loading-patterns.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.43,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.58,
       "token_count": 312,
       "line_count": 33,
       "file_size_bytes": 1250,
-      "memory_usage_kb": 5.58,
-      "timestamp": "2025-07-07T15:46:17.292623"
+      "memory_usage_kb": 5.79,
+      "timestamp": "2025-07-07T19:30:22.845839"
     },
     {
       "rule_name": "208-dbt-mcp-server",
       "rule_path": "200-domain/208-dbt-mcp-server.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.71,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 1.84,
       "token_count": 472,
       "line_count": 26,
       "file_size_bytes": 1891,
-      "memory_usage_kb": 6.38,
-      "timestamp": "2025-07-07T15:46:17.294517"
+      "memory_usage_kb": 6.62,
+      "timestamp": "2025-07-07T19:30:22.847962"
     },
     {
       "rule_name": "203-analytics-engineering",
       "rule_path": "200-domain/203-analytics-engineering.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.87,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.88,
       "token_count": 401,
       "line_count": 24,
       "file_size_bytes": 1609,
-      "memory_usage_kb": 7.95,
-      "timestamp": "2025-07-07T15:46:17.296550"
+      "memory_usage_kb": 8.03,
+      "timestamp": "2025-07-07T19:30:22.850124"
     },
     {
       "rule_name": "211-python-clean-code",
       "rule_path": "200-domain/211-python-clean-code.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.49,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.72,
       "token_count": 1335,
       "line_count": 104,
       "file_size_bytes": 5342,
-      "memory_usage_kb": 14.89,
-      "timestamp": "2025-07-07T15:46:17.298220"
+      "memory_usage_kb": 15.12,
+      "timestamp": "2025-07-07T19:30:22.852120"
     },
     {
       "rule_name": "206-dbt-analytics-engineering",
       "rule_path": "200-domain/206-dbt-analytics-engineering.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.98,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.78,
       "token_count": 649,
       "line_count": 53,
       "file_size_bytes": 2598,
-      "memory_usage_kb": 7.12,
-      "timestamp": "2025-07-07T15:46:17.300404"
+      "memory_usage_kb": 7.18,
+      "timestamp": "2025-07-07T19:30:22.854181"
     },
     {
       "rule_name": "212-sql-correctness",
       "rule_path": "200-domain/212-sql-correctness.mdc",
-      "load_time_ms": 0.05,
-      "parse_time_ms": 1.65,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.79,
       "token_count": 945,
       "line_count": 40,
       "file_size_bytes": 3781,
-      "memory_usage_kb": 8.15,
-      "timestamp": "2025-07-07T15:46:17.302232"
+      "memory_usage_kb": 8.54,
+      "timestamp": "2025-07-07T19:30:22.856246"
     },
     {
       "rule_name": "sql-correctness",
       "rule_path": "200-domain/sql-correctness.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.46,
+      "load_time_ms": 0.16,
+      "parse_time_ms": 1.76,
       "token_count": 945,
       "line_count": 40,
       "file_size_bytes": 3781,
-      "memory_usage_kb": 8.14,
-      "timestamp": "2025-07-07T15:46:17.303828"
+      "memory_usage_kb": 8.37,
+      "timestamp": "2025-07-07T19:30:22.858275"
     },
     {
       "rule_name": "302-snmp-monitoring-patterns",
       "rule_path": "300-techniques/302-snmp-monitoring-patterns.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.25,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 2.47,
       "token_count": 1039,
       "line_count": 54,
       "file_size_bytes": 4163,
-      "memory_usage_kb": 12.59,
-      "timestamp": "2025-07-07T15:46:17.305213"
+      "memory_usage_kb": 12.67,
+      "timestamp": "2025-07-07T19:30:22.861052"
     },
     {
       "rule_name": "301-constraint-optimization",
       "rule_path": "300-techniques/301-constraint-optimization.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.35,
+      "load_time_ms": 0.21,
+      "parse_time_ms": 1.71,
       "token_count": 1006,
       "line_count": 112,
       "file_size_bytes": 4025,
-      "memory_usage_kb": 12.18,
-      "timestamp": "2025-07-07T15:46:17.306691"
+      "memory_usage_kb": 12.42,
+      "timestamp": "2025-07-07T19:30:22.863098"
     },
     {
       "rule_name": "constraint-optimization",
       "rule_path": "300-techniques/constraint-optimization.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.34,
+      "load_time_ms": 0.17,
+      "parse_time_ms": 1.68,
       "token_count": 1006,
       "line_count": 112,
       "file_size_bytes": 4025,
-      "memory_usage_kb": 12.17,
-      "timestamp": "2025-07-07T15:46:17.308164"
+      "memory_usage_kb": 12.41,
+      "timestamp": "2025-07-07T19:30:22.865083"
     },
     {
       "rule_name": "109-chain-of-code",
       "rule_path": "100-cognitive/109-chain-of-code.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 2.55,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 2.73,
       "token_count": 969,
       "line_count": 43,
       "file_size_bytes": 3877,
-      "memory_usage_kb": 9.21,
-      "timestamp": "2025-07-07T15:46:17.310971"
+      "memory_usage_kb": 9.65,
+      "timestamp": "2025-07-07T19:30:22.868141"
     },
     {
       "rule_name": "106-concise-comms",
       "rule_path": "100-cognitive/106-concise-comms.mdc",
-      "load_time_ms": 0.1,
-      "parse_time_ms": 1.86,
+      "load_time_ms": 0.3,
+      "parse_time_ms": 2.05,
       "token_count": 1114,
       "line_count": 62,
       "file_size_bytes": 4462,
-      "memory_usage_kb": 13.41,
-      "timestamp": "2025-07-07T15:46:17.313102"
+      "memory_usage_kb": 13.78,
+      "timestamp": "2025-07-07T19:30:22.870612"
     },
     {
       "rule_name": "105-context-trim",
       "rule_path": "100-cognitive/105-context-trim.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.8,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 2.04,
       "token_count": 1342,
       "line_count": 120,
       "file_size_bytes": 5393,
-      "memory_usage_kb": 15.41,
-      "timestamp": "2025-07-07T15:46:17.315099"
+      "memory_usage_kb": 15.54,
+      "timestamp": "2025-07-07T19:30:22.872974"
     },
     {
       "rule_name": "101-ultrathink-prompting",
       "rule_path": "100-cognitive/101-ultrathink-prompting.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.23,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.4,
       "token_count": 1208,
       "line_count": 24,
       "file_size_bytes": 4931,
-      "memory_usage_kb": 13.21,
-      "timestamp": "2025-07-07T15:46:17.316509"
+      "memory_usage_kb": 13.27,
+      "timestamp": "2025-07-07T19:30:22.874694"
     },
     {
       "rule_name": "108-cognitive-load-balancing",
       "rule_path": "100-cognitive/108-cognitive-load-balancing.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.5,
+      "load_time_ms": 0.21,
+      "parse_time_ms": 2.11,
       "token_count": 929,
       "line_count": 104,
       "file_size_bytes": 3758,
-      "memory_usage_kb": 11.73,
-      "timestamp": "2025-07-07T15:46:17.318165"
+      "memory_usage_kb": 12.03,
+      "timestamp": "2025-07-07T19:30:22.877136"
     },
     {
       "rule_name": "102-wildcard-brainstorm",
       "rule_path": "100-cognitive/102-wildcard-brainstorm.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.72,
+      "load_time_ms": 0.18,
+      "parse_time_ms": 2.11,
       "token_count": 967,
       "line_count": 45,
       "file_size_bytes": 3872,
-      "memory_usage_kb": 12.38,
-      "timestamp": "2025-07-07T15:46:17.320027"
+      "memory_usage_kb": 12.83,
+      "timestamp": "2025-07-07T19:30:22.879569"
     },
     {
       "rule_name": "104-analogy-transfer",
       "rule_path": "100-cognitive/104-analogy-transfer.mdc",
-      "load_time_ms": 0.04,
-      "parse_time_ms": 1.65,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.98,
       "token_count": 1307,
       "line_count": 97,
       "file_size_bytes": 5267,
-      "memory_usage_kb": 14.91,
-      "timestamp": "2025-07-07T15:46:17.321833"
+      "memory_usage_kb": 15.21,
+      "timestamp": "2025-07-07T19:30:22.881886"
     },
     {
       "rule_name": "103-divergence-convergence",
       "rule_path": "100-cognitive/103-divergence-convergence.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.76,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 2.12,
       "token_count": 1199,
       "line_count": 89,
       "file_size_bytes": 4800,
-      "memory_usage_kb": 14.35,
-      "timestamp": "2025-07-07T15:46:17.323750"
+      "memory_usage_kb": 14.49,
+      "timestamp": "2025-07-07T19:30:22.884323"
     },
     {
       "rule_name": "107-sparring-partner-mode",
       "rule_path": "100-cognitive/107-sparring-partner-mode.mdc",
-      "load_time_ms": 0.03,
-      "parse_time_ms": 1.52,
+      "load_time_ms": 0.19,
+      "parse_time_ms": 1.81,
       "token_count": 1385,
       "line_count": 141,
       "file_size_bytes": 5549,
-      "memory_usage_kb": 15.38,
-      "timestamp": "2025-07-07T15:46:17.325422"
+      "memory_usage_kb": 15.62,
+      "timestamp": "2025-07-07T19:30:22.886455"
     }
   ]
 }
