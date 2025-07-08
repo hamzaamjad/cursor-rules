@@ -19,7 +19,7 @@ markers = [
 
 [tool.coverage.run]
 source = ["scripts"]
-omit = ["*/tests/*", "*/__pycache__/*"]
+omit = ["*/tests/*", "*/__pycache__/*", "scripts/integrate_evolved_profiles.py"]
 
 [tool.coverage.report]
 precision = 2
