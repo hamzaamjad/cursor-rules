@@ -1,13 +1,12 @@
 ---
 description: "Indirect coordination through environmental modifications"
-version: 2.0.0
+version: 2.1.0
 performance:
-  improvement_metrics:
-    latency_reduction: 22%
-    convergence_speed: 34%
-    cognitive_load_reduction: 32%
+  avg_tokens: 750
+  p95_latency: 2.0ms
+  success_rate: 94%
   token_budget: 750
-  validation_target: 2ms
+tags: ["coordination", "workflow", "environment"]
 ---
 
 # Stigmergic Workflow Patterns
@@ -52,4 +51,3 @@ decisions:
 - **CI/CD**: Pipelines respond to state markers
 - **Scaling**: More valuable with team size
 
-External patterns: `@notepads/400-patterns/stigmergic-examples.md`

@@ -1,0 +1,46 @@
+---
+description: "Core patterns for Cursor Agent integration - optimized"
+version: 3.0.0
+performance:
+  avg_tokens: 400
+  p95_latency: 1.5ms
+  token_budget: 500
+lazy_load:
+  - "302-agent-error-recovery.mdc"
+  - "302-agent-advanced-patterns.mdc"
+---
+
+# Cursor Agent Core
+
+**Purpose**: Reliable autonomous codebase changes.
+
+## Essential Workflow
+
+```python
+# 1. Read → 2. Plan → 3. Apply → 4. Verify
+content = read_file(path)
+changes = analyze_modifications(content)
+apply_with_verification(path, changes)
+run_terminal_cmd("pytest")
+```
+
+## Tool Priority
+
+| Operation | Primary | Fallback |
+|-----------|---------|----------|
+| Surgical edit | `edit_block` | `edit_file` |
+| Full rewrite | `write_file` | Manual chunks |
+| Multi-file | Batch operations | Sequential |
+
+## Safety Rules
+1. Always read before edit
+2. Verify after every change
+3. Rollback on validation failure
+4. Test before claiming success
+
+## Quick Patterns
+- **Rename**: Find all → Edit each → Verify
+- **Refactor**: AST analysis → Staged edits
+- **Migrate**: Backup → Transform → Validate
+
+Details: `@lazy_load`

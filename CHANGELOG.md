@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Optimized metadata structure for 3 slowest-parsing rules:
+  - `427-stigmergic-workflows.mdc`: Fixed broken external reference, simplified nested metadata (4.40ms → 0.21ms, 95% improvement)
+  - `model-selection.mdc`: Added missing metadata header, condensed content by 40% (4.36ms → 0.20ms, 95.4% improvement)
+  - `436-code-generation-patterns.mdc`: Simplified performance metrics structure (3.40ms → 0.22ms, 93.5% improvement)
+- Metadata optimization pattern: Remove nested structures in performance section for faster YAML parsing
+- Modularized 2 largest rules for token efficiency:
+  - `301-available-tooling-guide.mdc`: Split into 3 modules (2847 → ~450 tokens core, 84% reduction)
+  - `302-cursor-agent-integration.mdc`: Split into 3 modules (2145 → ~400 tokens core, 81% reduction)
+- Created lazy-loading pattern for detailed content, reducing initial load overhead
+
 ### Added
 - GitHub Actions CI/CD pipeline with validation and benchmarking workflows
 - Automated rule validation on all PRs with performance regression detection

@@ -1,0 +1,44 @@
+---
+description: "Agent error recovery patterns - lazy loaded"
+version: 1.0.0
+performance:
+  avg_tokens: 350
+  p95_latency: 1.0ms
+dependencies:
+  - "302-cursor-agent-core.mdc"
+---
+
+# Agent Error Recovery
+
+## Common Failures & Fixes
+
+| Error | Detection | Recovery |
+|-------|-----------|----------|
+| Edit conflict | "Content not found" | Re-read → Retry with fresh content |
+| Test failure | Exit code ≠ 0 | Analyze output → Fix → Retest |
+| Partial write | Truncated file | Restore backup → Chunk smaller |
+| Race condition | Unexpected state | Lock file → Sequential ops |
+
+## Recovery Patterns
+
+```python
+def safe_edit_with_retry(path, changes, max_attempts=3):
+    for attempt in range(max_attempts):
+        try:
+            current = read_file(path)
+            backup = create_backup(path)
+            result = edit_file(path, changes)
+            if verify_changes(path, expected):
+                return result
+        except EditError as e:
+            restore_backup(backup)
+            if attempt == max_attempts - 1:
+                raise
+            changes = adapt_changes(e, current)
+```
+
+## Rollback Strategy
+1. Always backup before destructive ops
+2. Use git stash for complex changes
+3. Implement undo log for multi-file edits
+4. Test rollback path in dry-run mode
