@@ -1,39 +1,54 @@
+---
+description: "Indirect coordination through environmental modifications"
+version: 3.0.0
+performance:
+  avg_tokens: 750
+  p95_latency: 1.8ms
+  validation_target: 2ms
+---
+
 # Stigmergic Workflow Patterns
 
-## Purpose
+**Purpose**: Enable coordination through environmental traces rather than direct communication.
 
-Stigmergic workflows implement indirect coordination mechanisms where developers communicate through environmental modifications rather than direct messaging. This biologically-inspired pattern reduces communication overhead while enabling sophisticated collective behaviors. Research demonstrates 22% latency reduction, 34% faster convergence on optimal solutions, and 32% lower cognitive load compared to traditional coordination approaches.
+## Core Patterns
 
-## Core Principles
+### Environmental Markers
+```bash
+TODO(api): Design endpoints        # Work classification
+feature_WIP_username.tsx          # Progress broadcasting
+DECIDED: REST over GraphQL        # Rationale documentation
+```
 
-Stigmergy enables coordination through traces left in the development environment that guide subsequent actions. Rather than scheduling meetings or writing extensive documentation, teams embed coordination information directly into code, filenames, and automated markers. This environmental communication creates self-organizing systems that naturally evolve toward efficiency.
+### Adaptive Signals
+- Hotspot markers: `PERF_CRITICAL: START/END`
+- Success patterns: Usage count > 10 → recommended
+- Warning indicators: Error rate tracking
 
-The pattern draws inspiration from ant colonies and termite construction, where complex collective behaviors emerge from simple environmental modifications. In software contexts, these modifications include code comments with specific semantics, file naming conventions that broadcast state, and automated markers that strengthen or decay based on usage patterns.
+### State Communication
+```json
+{".workflow-state.json": {
+  "phase": "implementation",
+  "blockers": ["api_design"],
+  "decisions": [{
+    "choice": "REST",
+    "rationale": "latency < 200ms",
+    "evidence": "benchmarks/api.json"
+  }]
+}}
+```
 
-## Implementation Requirements
+### Auto-Organization
+- Index at 20+ files
+- Promote patterns at 10+ uses
+- Cluster by naming proximity
 
-Effective stigmergic coordination requires systematic approaches to environmental modification across four key dimensions. Each dimension contributes to the overall coordination effectiveness while maintaining system clarity and preventing information overload.
+## Validation
+✓ Context discovery < 30s
+✓ State inferable from environment
+✓ Measurable conflict reduction
 
-Environmental markers provide the foundation through structured comments and naming conventions. These markers must convey work state, quality indicators, performance characteristics, and coordination dependencies using consistent vocabulary. Examples include TODO comments with category classifications, status indicators in filenames, and breadcrumb trails that document decision paths.
-
-Pheromone-like signals strengthen or fade based on usage patterns, creating adaptive systems that optimize naturally. Performance hotspots accumulate markers through profiling data, success patterns become reinforced through repetition, and warning scents emerge at common failure points. These signals guide optimization efforts without central planning.
-
-Artifact-based communication persists complex state through structured files and decision logs. State files capture workflow progress and common failure patterns, while decision logs document the rationale behind architectural choices with explicit links to supporting evidence. These artifacts enable asynchronous coordination across time zones and team boundaries.
-
-Self-organizing behaviors emerge from simple rules that create complex adaptive systems. Directories automatically generate indices when complexity exceeds thresholds, frequently used patterns promote themselves to recommended status, and related work clusters through naming proximity. These emergent properties reduce the need for explicit organization efforts.
-
-## Validation and Measurement
-
-Successful stigmergic implementation requires systematic validation across multiple dimensions. Environmental modifications must remain interpretable to future developers encountering the code without additional context. Workflow state should be inferable from environmental cues alone, enabling developers to understand progress and blockers through exploration rather than documentation.
-
-Pattern effectiveness measurement focuses on coordination efficiency and development outcomes. Time to context discovery serves as the primary metric, with targets below 30 seconds indicating effective environmental communication. Integration conflict rates, bug discovery timing, and code reuse patterns provide concrete evidence of coordination improvements.
-
-## Integration Considerations
-
-Stigmergic patterns enhance existing development workflows without requiring wholesale process changes. The approach integrates naturally with version control systems, where commit messages and branch names become environmental signals. Continuous integration pipelines can recognize and respond to state markers, adjusting build and deployment behaviors accordingly.
-
-The patterns scale effectively with team size, becoming more valuable as coordination complexity increases. Small teams may find limited benefit, while large distributed teams often see dramatic improvements in coordination efficiency. Regulatory environments requiring explicit audit trails may need to supplement stigmergic patterns with traditional documentation.
-
-For comprehensive implementation examples demonstrating environmental markers, pheromone signals, and self-organizing behaviors, consult `@Notepad:notepads/400-patterns/stigmergic-workflows/implementation-examples.md`.
-
-For theoretical foundation, research validation, and adoption guidelines, see `@Notepad:notepads/400-patterns/stigmergic-workflows/scientific-foundation-and-guidelines.md`.
+## Performance Impact
+- Latency: -22%
+- Convergence: +34%
+- Cognitive load: -32%

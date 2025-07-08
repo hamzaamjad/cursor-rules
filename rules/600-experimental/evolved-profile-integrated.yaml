@@ -1,0 +1,25 @@
+created: '2025-07-07T19:29:39.213360'
+description: Auto-generated profile from evolution metrics
+metrics:
+  avg_fitness: 94.5
+  best_fitness: 94.5
+  convergence_rate: 0.0
+  total_evolved: 2
+name: evolved_optimized
+rules:
+  conditional:
+    high_complexity:
+    - 600-experimental/603-swarm-intelligence.mdc
+    - 700-evolution/703-rule-combination-learning.mdc
+    safety_critical:
+    - 500-safety/502-prompt-injection-defense.mdc
+    - 500-safety/503-output-sanitization.mdc
+  primary:
+  - 000-core/001-philosophers-stone.mdc
+  - 700-evolution/702-self-modifying-rules.mdc
+  - 600-experimental/602-quantum-superposition.mdc
+  weights:
+    evolution: 0.4
+    experimental: 0.3
+    safety: 0.3
+version: 1.0.0

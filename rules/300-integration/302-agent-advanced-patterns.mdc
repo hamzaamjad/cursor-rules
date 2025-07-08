@@ -1,0 +1,52 @@
+---
+description: "Advanced agent patterns - lazy loaded"
+version: 1.0.0
+performance:
+  avg_tokens: 400
+  p95_latency: 1.0ms
+dependencies:
+  - "302-cursor-agent-core.mdc"
+---
+
+# Advanced Agent Patterns
+
+## Multi-File Operations
+
+```python
+# Atomic multi-file changes
+changes = {
+    'src/api.py': [...edits...],
+    'tests/test_api.py': [...edits...],
+    'docs/api.md': [...edits...]
+}
+
+with atomic_operation():
+    for path, edits in changes.items():
+        apply_edits(path, edits)
+    run_tests()  # Rollback all if fails
+```
+
+## AST-Based Refactoring
+
+```python
+# Safe function rename across codebase
+ast_tree = parse_codebase(['*.py'])
+references = find_all_references('old_function')
+for ref in references:
+    edit_block(ref.file, ref.line, 'new_function')
+```
+
+## Parallel Processing
+
+| Pattern | Use Case | Max Concurrent |
+|---------|----------|----------------|
+| Read-only analysis | Search/lint | CPU count |
+| File writes | Independent files | 4-8 |
+| Test execution | Unit tests | CPU count |
+| Git operations | Commits | 1 (serial) |
+
+## Performance Optimization
+- Batch similar operations
+- Cache file reads
+- Use incremental parsing
+- Profile before optimizing

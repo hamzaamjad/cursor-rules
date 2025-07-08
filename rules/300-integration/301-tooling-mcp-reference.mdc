@@ -1,0 +1,43 @@
+---
+description: "MCP tool detailed reference - lazy loaded"
+version: 1.0.0
+performance:
+  avg_tokens: 800
+  p95_latency: 1.0ms
+dependencies:
+  - "301-available-tooling-core.mdc"
+---
+
+# MCP Tool Reference
+
+## Desktop Commander
+```yaml
+edit_block: Line-based precise edits
+write_file: Full file write/append
+read_file: Partial reads with offset
+search_code: Regex with context lines
+list_directory: File/dir enumeration
+get_file_info: Metadata + line counts
+```
+
+## GitHub MCP
+```yaml
+create_pull_request: PR creation
+push_files: Multi-file commits
+search_repositories: Query repos
+get_issue: Issue details
+fork_repository: Fork to account
+```
+
+## Perplexity MCP
+```yaml
+perplexity_research: Deep research
+perplexity_reason: Complex reasoning
+perplexity_ask: Quick queries
+```
+
+## Other MCP Servers
+- **HuggingFace**: Model/dataset search, image generation
+- **Memory**: Knowledge graph operations
+- **Sequential Thinking**: Multi-step reasoning
+- **Time**: Timezone conversions

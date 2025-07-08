@@ -15,12 +15,6 @@ performance:
   accuracyImprovement: 25-50%
   processingOverhead: moderate
   empiricalValidation: Creativity increase measured
-dependencies:
-  required: []
-  recommended:
-  - divergence-convergence
-  - risk-checkpoint
-  incompatible: []
 conflicts: []
 tags:
 - safety
@@ -31,3 +25,7 @@ tags:
 research: []
 examples: []
 notes: ''
+created: '2025-07-07'
+dependencies:
+- divergence-convergence
+- risk-checkpoint

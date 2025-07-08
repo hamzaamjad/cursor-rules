@@ -16,11 +16,6 @@ performance:
   accuracyImprovement: 0%
   processingOverhead: minimal
   empiricalValidation: To be measured
-dependencies:
-  required: []
-  recommended:
-  - context-trim
-  incompatible: []
 conflicts: []
 tags:
 - patterns
@@ -30,3 +25,6 @@ tags:
 research: []
 examples: []
 notes: ''
+created: '2025-07-07'
+dependencies:
+- context-trim

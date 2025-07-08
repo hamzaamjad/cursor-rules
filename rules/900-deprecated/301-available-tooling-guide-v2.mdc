@@ -1,0 +1,73 @@
+---
+description: "Tool selection heuristics for Cursor and MCP integrations"
+version: 2.0.0
+performance:
+  token_budget: 600
+  validation_target: 2ms
+references:
+  - "@Notepad:notepads/300-integration/detailed-tooling-reference.md"
+---
+
+# AI Agent Tooling Selection
+
+**Purpose**: Select optimal tools from Cursor's default_api and MCP servers.
+
+## Decision Framework
+
+### Tool Priority
+1. **Specialized MCP** → When feature-rich (desktop_commander, context7)
+2. **Default API** → For standard operations with no MCP advantage
+3. **Fallback** → Default API when MCP unavailable
+
+### Quick Selection
+
+| Operation | Primary Tool | Why |
+|-----------|-------------|-----|
+| **File Operations** |
+| Surgical edit | `mcp_desktop_commander_edit_block` | Precise diffs |
+| Full write | `mcp_desktop_commander_write_file` | URL support |
+| Read lines | `default_api.read_file` | Optimized partial |
+| Delete | `default_api.delete_file` | No MCP equivalent |
+| **Search** |
+| Code patterns | `mcp_desktop_commander_search_code` | Ripgrep power |
+| Basic grep | `default_api.grep_search` | Simple patterns |
+| Semantic | `default_api.Codebase` | Conceptual search |
+| **Execution** |
+| Commands | `mcp_desktop_commander_execute_command` | Session mgmt |
+| Simple run | `default_api.run_terminal_cmd` | One-shot tasks |
+
+## Key Rules
+
+### File Paths
+```python
+# Always absolute paths for MCP tools
+path = "/Users/hamza/project/file.py"  # ✓
+path = "./file.py"  # ✗
+```
+
+### Error Handling
+- Verify operations with read-back
+- Check exit codes for commands
+- Handle tool limits (25 calls/session)
+
+### Performance
+- MCP for complex operations
+- Default API for simple tasks
+- Batch operations when possible
+
+## Tool Categories
+
+### MCP Servers
+- **desktop_commander**: File/process control
+- **context7**: Live library docs
+- **github/slack/notion**: Service APIs
+- **memory**: Agent state persistence
+- **sequential_thinking**: Complex reasoning
+
+### Default API
+- Basic file/search operations
+- Terminal commands
+- Web search/fetch
+- Rule retrieval
+
+Full reference: `@Notepad:notepads/300-integration/detailed-tooling-reference.md`

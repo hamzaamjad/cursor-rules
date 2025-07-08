@@ -5,6 +5,9 @@
 pyyaml>=6.0.1      # YAML parsing for metadata
 psutil>=5.9.0      # System monitoring for performance metrics
 click>=8.1.0       # CLI framework for scripts
+tiktoken>=0.5.0    # Token counting for LLM context
+networkx>=3.0      # Graph operations for dependency analysis
+matplotlib>=3.7.0  # Visualization for dependency graphs
 
 # Development dependencies
 pytest>=7.4.0      # Testing framework

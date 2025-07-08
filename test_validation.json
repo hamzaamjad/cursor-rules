@@ -1,0 +1,5026 @@
+{
+  "timestamp": "2025-07-07T14:15:31.242171",
+  "success": false,
+  "total_rules": 106,
+  "valid_rules": 0,
+  "error_count": 424,
+  "warning_count": 72,
+  "dependency_cycles": [],
+  "results": [
+    {
+      "rule": "701-rule-adaptation-tracking.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing metadata file: 701-rule-adaptation-tracking.yaml"
+      ],
+      "warnings": [],
+      "metrics": {},
+      "fixes": [],
+      "performance": null
+    },
+    {
+      "rule": "501-input-validation.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing metadata file: 501-input-validation.yaml"
+      ],
+      "warnings": [],
+      "metrics": {},
+      "fixes": [],
+      "performance": null
+    },
+    {
+      "rule": "201-no-version-bloat.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 111 lines",
+        "High token count: ~1468 tokens"
+      ],
+      "metrics": {
+        "line_count": 111,
+        "estimated_tokens": 1468
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "201-no-version-bloat.mdc",
+        "load_time_ms": 0.07,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.01,
+        "token_count": 1468,
+        "line_count": 111,
+        "file_size_bytes": 5959,
+        "memory_usage_mb": 0.02
+      }
+    },
+    {
+      "rule": "202-database-selection.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 61,
+        "estimated_tokens": 717
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "202-database-selection.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 717,
+        "line_count": 61,
+        "file_size_bytes": 2890,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "302-cursor-agent-integration.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~2145 tokens"
+      ],
+      "metrics": {
+        "line_count": 55,
+        "estimated_tokens": 2145
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "302-cursor-agent-integration.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 2145,
+        "line_count": 55,
+        "file_size_bytes": 8582,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "301-available-tooling-guide.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~2847 tokens"
+      ],
+      "metrics": {
+        "line_count": 59,
+        "estimated_tokens": 2847
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "301-available-tooling-guide.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 2847,
+        "line_count": 59,
+        "file_size_bytes": 11390,
+        "memory_usage_mb": 0.02
+      }
+    },
+    {
+      "rule": "available-tooling-guide.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~2847 tokens"
+      ],
+      "metrics": {
+        "line_count": 59,
+        "estimated_tokens": 2847
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "available-tooling-guide.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 2847,
+        "line_count": 59,
+        "file_size_bytes": 11390,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "perplexity-research-framework.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1396 tokens"
+      ],
+      "metrics": {
+        "line_count": 82,
+        "estimated_tokens": 1396
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "perplexity-research-framework.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1396,
+        "line_count": 82,
+        "file_size_bytes": 5586,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "multi-model-tool-integration.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1154 tokens"
+      ],
+      "metrics": {
+        "line_count": 57,
+        "estimated_tokens": 1154
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "multi-model-tool-integration.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1154,
+        "line_count": 57,
+        "file_size_bytes": 4616,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "304-perplexity-research-framework.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1396 tokens"
+      ],
+      "metrics": {
+        "line_count": 82,
+        "estimated_tokens": 1396
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "304-perplexity-research-framework.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1396,
+        "line_count": 82,
+        "file_size_bytes": 5586,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "cursor-agent-integration.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~2145 tokens"
+      ],
+      "metrics": {
+        "line_count": 55,
+        "estimated_tokens": 2145
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "cursor-agent-integration.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 2145,
+        "line_count": 55,
+        "file_size_bytes": 8582,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "303-multi-model-tool-integration.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1154 tokens"
+      ],
+      "metrics": {
+        "line_count": 57,
+        "estimated_tokens": 1154
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "303-multi-model-tool-integration.mdc",
+        "load_time_ms": 0.06,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1154,
+        "line_count": 57,
+        "file_size_bytes": 4616,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "003-stepwise-autonomy.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1269 tokens"
+      ],
+      "metrics": {
+        "line_count": 68,
+        "estimated_tokens": 1269
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "003-stepwise-autonomy.mdc",
+        "load_time_ms": 0.05,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1269,
+        "line_count": 68,
+        "file_size_bytes": 5079,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "001-philosophers-stone.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 111 lines",
+        "High token count: ~1144 tokens"
+      ],
+      "metrics": {
+        "line_count": 111,
+        "estimated_tokens": 1144
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "001-philosophers-stone.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1144,
+        "line_count": 111,
+        "file_size_bytes": 4593,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "002-pareto-prioritization.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 28,
+        "estimated_tokens": 829
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "002-pareto-prioritization.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 829,
+        "line_count": 28,
+        "file_size_bytes": 3321,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "004-risk-checkpoint.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 131 lines",
+        "High token count: ~1404 tokens"
+      ],
+      "metrics": {
+        "line_count": 131,
+        "estimated_tokens": 1404
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "004-risk-checkpoint.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1404,
+        "line_count": 131,
+        "file_size_bytes": 5660,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "452-sdk-development-checklist.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 33,
+        "estimated_tokens": 483
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "452-sdk-development-checklist.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 483,
+        "line_count": 33,
+        "file_size_bytes": 1936,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "441-example-library-integrity.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1199 tokens"
+      ],
+      "metrics": {
+        "line_count": 59,
+        "estimated_tokens": 1199
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "441-example-library-integrity.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1199,
+        "line_count": 59,
+        "file_size_bytes": 4796,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "448-prompt-eval.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Rule exceeds maximum lines: 167 > 150",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~2539 tokens"
+      ],
+      "metrics": {
+        "line_count": 167,
+        "estimated_tokens": 2539
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        },
+        {
+          "type": "reduce_tokens",
+          "description": "Move to notepad system",
+          "old_value": 167,
+          "new_value": 100,
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "448-prompt-eval.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 2539,
+        "line_count": 167,
+        "file_size_bytes": 10161,
+        "memory_usage_mb": 0.02
+      }
+    },
+    {
+      "rule": "code-generation-patterns.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Unknown tags: {'formatting', 'code-generation'}",
+        "High token count: ~1559 tokens"
+      ],
+      "metrics": {
+        "line_count": 61,
+        "estimated_tokens": 1559
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "code-generation-patterns.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1559,
+        "line_count": 61,
+        "file_size_bytes": 6236,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "434-bash-safety.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 63,
+        "estimated_tokens": 968
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "434-bash-safety.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 968,
+        "line_count": 63,
+        "file_size_bytes": 3874,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "442-logging-monitoring.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1118 tokens"
+      ],
+      "metrics": {
+        "line_count": 58,
+        "estimated_tokens": 1118
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "442-logging-monitoring.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1118,
+        "line_count": 58,
+        "file_size_bytes": 4477,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "model-selection.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1248 tokens"
+      ],
+      "metrics": {
+        "line_count": 45,
+        "estimated_tokens": 1248
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "model-selection.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1248,
+        "line_count": 45,
+        "file_size_bytes": 4995,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "435-ci-cd-testing-gatekeeper.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 10,
+        "estimated_tokens": 132
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "435-ci-cd-testing-gatekeeper.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 132,
+        "line_count": 10,
+        "file_size_bytes": 531,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "sdk-development-checklist.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 33,
+        "estimated_tokens": 483
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "sdk-development-checklist.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 483,
+        "line_count": 33,
+        "file_size_bytes": 1936,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "440-document-analysis.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 62,
+        "estimated_tokens": 784
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "440-document-analysis.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 784,
+        "line_count": 62,
+        "file_size_bytes": 3138,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "444-notebook-best-practices.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1024 tokens"
+      ],
+      "metrics": {
+        "line_count": 66,
+        "estimated_tokens": 1024
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "444-notebook-best-practices.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1024,
+        "line_count": 66,
+        "file_size_bytes": 4099,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "logging-monitoring.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1118 tokens"
+      ],
+      "metrics": {
+        "line_count": 58,
+        "estimated_tokens": 1118
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "logging-monitoring.mdc",
+        "load_time_ms": 0.07,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1118,
+        "line_count": 58,
+        "file_size_bytes": 4477,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "structured-data-embedding-best-practices.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1255 tokens"
+      ],
+      "metrics": {
+        "line_count": 61,
+        "estimated_tokens": 1255
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "structured-data-embedding-best-practices.mdc",
+        "load_time_ms": 0.05,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1255,
+        "line_count": 61,
+        "file_size_bytes": 5023,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "test-driven-development.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 37,
+        "estimated_tokens": 381
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "test-driven-development.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 381,
+        "line_count": 37,
+        "file_size_bytes": 1528,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "431-api-design-guidelines.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 8,
+        "estimated_tokens": 88
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "431-api-design-guidelines.mdc",
+        "load_time_ms": 0.1,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.01,
+        "token_count": 88,
+        "line_count": 8,
+        "file_size_bytes": 355,
+        "memory_usage_mb": 0.02
+      }
+    },
+    {
+      "rule": "430-80-20-prioritization-data-analytics.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 137 lines",
+        "High token count: ~1644 tokens"
+      ],
+      "metrics": {
+        "line_count": 137,
+        "estimated_tokens": 1644
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "430-80-20-prioritization-data-analytics.mdc",
+        "load_time_ms": 0.05,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1644,
+        "line_count": 137,
+        "file_size_bytes": 6584,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "455-task-retrospective.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 26,
+        "estimated_tokens": 701
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "455-task-retrospective.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 701,
+        "line_count": 26,
+        "file_size_bytes": 2805,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "document-analysis.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 62,
+        "estimated_tokens": 784
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "document-analysis.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 784,
+        "line_count": 62,
+        "file_size_bytes": 3138,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "443-model-selection.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1248 tokens"
+      ],
+      "metrics": {
+        "line_count": 45,
+        "estimated_tokens": 1248
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "443-model-selection.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1248,
+        "line_count": 45,
+        "file_size_bytes": 4995,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "research-prompt-guidelines.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1092 tokens"
+      ],
+      "metrics": {
+        "line_count": 27,
+        "estimated_tokens": 1092
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "research-prompt-guidelines.mdc",
+        "load_time_ms": 0.06,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1092,
+        "line_count": 27,
+        "file_size_bytes": 4370,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "450-rule-security.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 38,
+        "estimated_tokens": 693
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "450-rule-security.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 693,
+        "line_count": 38,
+        "file_size_bytes": 2775,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "439-deployment-config.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 60,
+        "estimated_tokens": 702
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "439-deployment-config.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 702,
+        "line_count": 60,
+        "file_size_bytes": 2821,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "427-stigmergic-workflows.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Unknown tags: {'emergent-systems', 'coordination'}",
+        "High token count: ~1243 tokens"
+      ],
+      "metrics": {
+        "line_count": 39,
+        "estimated_tokens": 1243
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "427-stigmergic-workflows.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1243,
+        "line_count": 39,
+        "file_size_bytes": 4972,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "80-20-prioritization-data-analytics.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 137 lines",
+        "High token count: ~1644 tokens"
+      ],
+      "metrics": {
+        "line_count": 137,
+        "estimated_tokens": 1644
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "80-20-prioritization-data-analytics.mdc",
+        "load_time_ms": 0.07,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1644,
+        "line_count": 137,
+        "file_size_bytes": 6584,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "453-stepwise-autonomy-data-pipeline.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Unknown tags: {'verification', 'data-engineering'}",
+        "High token count: ~1311 tokens"
+      ],
+      "metrics": {
+        "line_count": 49,
+        "estimated_tokens": 1311
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "453-stepwise-autonomy-data-pipeline.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1311,
+        "line_count": 49,
+        "file_size_bytes": 5244,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "example-library-integrity.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1199 tokens"
+      ],
+      "metrics": {
+        "line_count": 59,
+        "estimated_tokens": 1199
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "example-library-integrity.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1199,
+        "line_count": 59,
+        "file_size_bytes": 4796,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "context-integration.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 14,
+        "estimated_tokens": 297
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "context-integration.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 297,
+        "line_count": 14,
+        "file_size_bytes": 1189,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "445-notepad-best-practices.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 71,
+        "estimated_tokens": 838
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "445-notepad-best-practices.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 838,
+        "line_count": 71,
+        "file_size_bytes": 3355,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "deployment-config.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 60,
+        "estimated_tokens": 702
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "deployment-config.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 702,
+        "line_count": 60,
+        "file_size_bytes": 2821,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "backend-security.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1192 tokens"
+      ],
+      "metrics": {
+        "line_count": 58,
+        "estimated_tokens": 1192
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "backend-security.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1192,
+        "line_count": 58,
+        "file_size_bytes": 4770,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "prompt-eval-data-analytics.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Rule exceeds maximum lines: 169 > 150",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1975 tokens"
+      ],
+      "metrics": {
+        "line_count": 169,
+        "estimated_tokens": 1975
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        },
+        {
+          "type": "reduce_tokens",
+          "description": "Move to notepad system",
+          "old_value": 169,
+          "new_value": 100,
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "prompt-eval-data-analytics.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1975,
+        "line_count": 169,
+        "file_size_bytes": 7902,
+        "memory_usage_mb": 0.02
+      }
+    },
+    {
+      "rule": "436-code-generation-patterns.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Unknown tags: {'formatting', 'code-generation'}",
+        "High token count: ~1559 tokens"
+      ],
+      "metrics": {
+        "line_count": 61,
+        "estimated_tokens": 1559
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "436-code-generation-patterns.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1559,
+        "line_count": 61,
+        "file_size_bytes": 6236,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "bash-safety.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 63,
+        "estimated_tokens": 968
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "bash-safety.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 968,
+        "line_count": 63,
+        "file_size_bytes": 3874,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "notepad-best-practices.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 71,
+        "estimated_tokens": 838
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "notepad-best-practices.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 838,
+        "line_count": 71,
+        "file_size_bytes": 3355,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "ci-cd-testing-gatekeeper.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 10,
+        "estimated_tokens": 132
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "ci-cd-testing-gatekeeper.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 132,
+        "line_count": 10,
+        "file_size_bytes": 531,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "437-context-integration.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 14,
+        "estimated_tokens": 297
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "437-context-integration.mdc",
+        "load_time_ms": 0.05,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 297,
+        "line_count": 14,
+        "file_size_bytes": 1189,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "433-backend-security.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1192 tokens"
+      ],
+      "metrics": {
+        "line_count": 58,
+        "estimated_tokens": 1192
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "433-backend-security.mdc",
+        "load_time_ms": 0.05,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1192,
+        "line_count": 58,
+        "file_size_bytes": 4770,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "notebook-best-practices.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1024 tokens"
+      ],
+      "metrics": {
+        "line_count": 66,
+        "estimated_tokens": 1024
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "notebook-best-practices.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1024,
+        "line_count": 66,
+        "file_size_bytes": 4099,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "449-research-prompt-guidelines.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1092 tokens"
+      ],
+      "metrics": {
+        "line_count": 27,
+        "estimated_tokens": 1092
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "449-research-prompt-guidelines.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1092,
+        "line_count": 27,
+        "file_size_bytes": 4370,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "447-prompt-eval-data-analytics.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Rule exceeds maximum lines: 169 > 150",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1975 tokens"
+      ],
+      "metrics": {
+        "line_count": 169,
+        "estimated_tokens": 1975
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        },
+        {
+          "type": "reduce_tokens",
+          "description": "Move to notepad system",
+          "old_value": 169,
+          "new_value": 100,
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "447-prompt-eval-data-analytics.mdc",
+        "load_time_ms": 0.05,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1975,
+        "line_count": 169,
+        "file_size_bytes": 7902,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "prompt-coding-standards.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 29,
+        "estimated_tokens": 679
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "prompt-coding-standards.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 679,
+        "line_count": 29,
+        "file_size_bytes": 2718,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "454-structured-data-embedding-best-practices.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1255 tokens"
+      ],
+      "metrics": {
+        "line_count": 61,
+        "estimated_tokens": 1255
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "454-structured-data-embedding-best-practices.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1255,
+        "line_count": 61,
+        "file_size_bytes": 5023,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "api-webhook-discrepancy-documentation.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 120 lines",
+        "High token count: ~1247 tokens"
+      ],
+      "metrics": {
+        "line_count": 120,
+        "estimated_tokens": 1247
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "api-webhook-discrepancy-documentation.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1247,
+        "line_count": 120,
+        "file_size_bytes": 4990,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "428-pre-task-rule-review.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 69,
+        "estimated_tokens": 995
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "428-pre-task-rule-review.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 995,
+        "line_count": 69,
+        "file_size_bytes": 3992,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "432-api-webhook-discrepancy-documentation.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 120 lines",
+        "High token count: ~1247 tokens"
+      ],
+      "metrics": {
+        "line_count": 120,
+        "estimated_tokens": 1247
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "432-api-webhook-discrepancy-documentation.mdc",
+        "load_time_ms": 0.06,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1247,
+        "line_count": 120,
+        "file_size_bytes": 4990,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "438-dependency-management.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 8,
+        "estimated_tokens": 87
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "438-dependency-management.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 87,
+        "line_count": 8,
+        "file_size_bytes": 348,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "safir-scroll-output.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 72,
+        "estimated_tokens": 543
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "safir-scroll-output.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 543,
+        "line_count": 72,
+        "file_size_bytes": 2210,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "446-prompt-coding-standards.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 29,
+        "estimated_tokens": 679
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "446-prompt-coding-standards.mdc",
+        "load_time_ms": 0.06,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 679,
+        "line_count": 29,
+        "file_size_bytes": 2718,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "api-design-guidelines.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 8,
+        "estimated_tokens": 88
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "api-design-guidelines.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 88,
+        "line_count": 8,
+        "file_size_bytes": 355,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "rule-security.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 38,
+        "estimated_tokens": 693
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "rule-security.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 693,
+        "line_count": 38,
+        "file_size_bytes": 2775,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "dependency-management.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 8,
+        "estimated_tokens": 87
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "dependency-management.mdc",
+        "load_time_ms": 0.05,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 87,
+        "line_count": 8,
+        "file_size_bytes": 348,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "456-test-driven-development.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 37,
+        "estimated_tokens": 381
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "456-test-driven-development.mdc",
+        "load_time_ms": 0.06,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 381,
+        "line_count": 37,
+        "file_size_bytes": 1528,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "task-retrospective.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 26,
+        "estimated_tokens": 701
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "task-retrospective.mdc",
+        "load_time_ms": 0.05,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 701,
+        "line_count": 26,
+        "file_size_bytes": 2805,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "451-safir-scroll-output.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 72,
+        "estimated_tokens": 543
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "451-safir-scroll-output.mdc",
+        "load_time_ms": 0.07,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 543,
+        "line_count": 72,
+        "file_size_bytes": 2210,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "stepwise-autonomy-data-pipeline.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Unknown tags: {'verification', 'data-engineering'}",
+        "High token count: ~1311 tokens"
+      ],
+      "metrics": {
+        "line_count": 49,
+        "estimated_tokens": 1311
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "stepwise-autonomy-data-pipeline.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1311,
+        "line_count": 49,
+        "file_size_bytes": 5244,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "prompt-eval.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Rule exceeds maximum lines: 167 > 150",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~2539 tokens"
+      ],
+      "metrics": {
+        "line_count": 167,
+        "estimated_tokens": 2539
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        },
+        {
+          "type": "reduce_tokens",
+          "description": "Move to notepad system",
+          "old_value": 167,
+          "new_value": 100,
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "prompt-eval.mdc",
+        "load_time_ms": 0.05,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 2539,
+        "line_count": 167,
+        "file_size_bytes": 10161,
+        "memory_usage_mb": 0.02
+      }
+    },
+    {
+      "rule": "dbt-mcp-server.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 26,
+        "estimated_tokens": 472
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "dbt-mcp-server.mdc",
+        "load_time_ms": 0.07,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 472,
+        "line_count": 26,
+        "file_size_bytes": 1891,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "204-analytics-storytelling.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 8,
+        "estimated_tokens": 128
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "204-analytics-storytelling.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 128,
+        "line_count": 8,
+        "file_size_bytes": 522,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "205-datascience-repro.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1011 tokens"
+      ],
+      "metrics": {
+        "line_count": 85,
+        "estimated_tokens": 1011
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "205-datascience-repro.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1011,
+        "line_count": 85,
+        "file_size_bytes": 4046,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "207-dbt-incremental-loading-patterns.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 33,
+        "estimated_tokens": 312
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "207-dbt-incremental-loading-patterns.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 312,
+        "line_count": 33,
+        "file_size_bytes": 1250,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "analytics-engineering.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 24,
+        "estimated_tokens": 401
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "analytics-engineering.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 401,
+        "line_count": 24,
+        "file_size_bytes": 1609,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "datascience-repro.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1011 tokens"
+      ],
+      "metrics": {
+        "line_count": 85,
+        "estimated_tokens": 1011
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "datascience-repro.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1011,
+        "line_count": 85,
+        "file_size_bytes": 4046,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "dbt-semantic-modeling.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 45,
+        "estimated_tokens": 590
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "dbt-semantic-modeling.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 590,
+        "line_count": 45,
+        "file_size_bytes": 2367,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "210-dbt-semantic-modeling.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 45,
+        "estimated_tokens": 590
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "210-dbt-semantic-modeling.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 590,
+        "line_count": 45,
+        "file_size_bytes": 2367,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "analytics-storytelling.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 8,
+        "estimated_tokens": 128
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "analytics-storytelling.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 128,
+        "line_count": 8,
+        "file_size_bytes": 522,
+        "memory_usage_mb": 0.02
+      }
+    },
+    {
+      "rule": "dbt-model-quality.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 8,
+        "estimated_tokens": 85
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "dbt-model-quality.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 85,
+        "line_count": 8,
+        "file_size_bytes": 342,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "python-clean-code.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 104 lines",
+        "High token count: ~1335 tokens"
+      ],
+      "metrics": {
+        "line_count": 104,
+        "estimated_tokens": 1335
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "python-clean-code.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1335,
+        "line_count": 104,
+        "file_size_bytes": 5342,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "dbt-analytics-engineering.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 53,
+        "estimated_tokens": 649
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "dbt-analytics-engineering.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 649,
+        "line_count": 53,
+        "file_size_bytes": 2598,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "209-dbt-model-quality.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 8,
+        "estimated_tokens": 85
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "209-dbt-model-quality.mdc",
+        "load_time_ms": 0.04,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.01,
+        "token_count": 85,
+        "line_count": 8,
+        "file_size_bytes": 342,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "213-sql-performance.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 37,
+        "estimated_tokens": 389
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "213-sql-performance.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 389,
+        "line_count": 37,
+        "file_size_bytes": 1559,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "sql-performance.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 37,
+        "estimated_tokens": 389
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "sql-performance.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 389,
+        "line_count": 37,
+        "file_size_bytes": 1559,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "dbt-incremental-loading-patterns.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 33,
+        "estimated_tokens": 312
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "dbt-incremental-loading-patterns.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 312,
+        "line_count": 33,
+        "file_size_bytes": 1250,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "208-dbt-mcp-server.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 26,
+        "estimated_tokens": 472
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "208-dbt-mcp-server.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 472,
+        "line_count": 26,
+        "file_size_bytes": 1891,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "203-analytics-engineering.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 24,
+        "estimated_tokens": 401
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "203-analytics-engineering.mdc",
+        "load_time_ms": 0.09,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.01,
+        "token_count": 401,
+        "line_count": 24,
+        "file_size_bytes": 1609,
+        "memory_usage_mb": 0.02
+      }
+    },
+    {
+      "rule": "211-python-clean-code.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 104 lines",
+        "High token count: ~1335 tokens"
+      ],
+      "metrics": {
+        "line_count": 104,
+        "estimated_tokens": 1335
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "211-python-clean-code.mdc",
+        "load_time_ms": 0.05,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1335,
+        "line_count": 104,
+        "file_size_bytes": 5342,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "206-dbt-analytics-engineering.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 53,
+        "estimated_tokens": 649
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "206-dbt-analytics-engineering.mdc",
+        "load_time_ms": 0.06,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 649,
+        "line_count": 53,
+        "file_size_bytes": 2598,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "212-sql-correctness.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 40,
+        "estimated_tokens": 945
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "212-sql-correctness.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 945,
+        "line_count": 40,
+        "file_size_bytes": 3781,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "sql-correctness.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 40,
+        "estimated_tokens": 945
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "sql-correctness.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 945,
+        "line_count": 40,
+        "file_size_bytes": 3781,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "302-snmp-monitoring-patterns.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1039 tokens"
+      ],
+      "metrics": {
+        "line_count": 54,
+        "estimated_tokens": 1039
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "302-snmp-monitoring-patterns.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1039,
+        "line_count": 54,
+        "file_size_bytes": 4163,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "301-constraint-optimization.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 112 lines",
+        "High token count: ~1006 tokens"
+      ],
+      "metrics": {
+        "line_count": 112,
+        "estimated_tokens": 1006
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "301-constraint-optimization.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1006,
+        "line_count": 112,
+        "file_size_bytes": 4025,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "constraint-optimization.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 112 lines",
+        "High token count: ~1006 tokens"
+      ],
+      "metrics": {
+        "line_count": 112,
+        "estimated_tokens": 1006
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "constraint-optimization.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1006,
+        "line_count": 112,
+        "file_size_bytes": 4025,
+        "memory_usage_mb": 0.02
+      }
+    },
+    {
+      "rule": "109-chain-of-code.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Unknown tags: {'verification'}"
+      ],
+      "metrics": {
+        "line_count": 43,
+        "estimated_tokens": 969
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "109-chain-of-code.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 969,
+        "line_count": 43,
+        "file_size_bytes": 3877,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "106-concise-comms.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1114 tokens"
+      ],
+      "metrics": {
+        "line_count": 62,
+        "estimated_tokens": 1114
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "106-concise-comms.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1114,
+        "line_count": 62,
+        "file_size_bytes": 4462,
+        "memory_usage_mb": 0.02
+      }
+    },
+    {
+      "rule": "105-context-trim.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 120 lines",
+        "High token count: ~1342 tokens"
+      ],
+      "metrics": {
+        "line_count": 120,
+        "estimated_tokens": 1342
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "105-context-trim.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1342,
+        "line_count": 120,
+        "file_size_bytes": 5393,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "101-ultrathink-prompting.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: version",
+        "Missing required metadata field: author",
+        "Missing required metadata field: created",
+        "Missing required metadata field: performance",
+        "Missing required metadata field: tags"
+      ],
+      "warnings": [
+        "High token count: ~1208 tokens"
+      ],
+      "metrics": {
+        "line_count": 24,
+        "estimated_tokens": 1208
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing version field",
+          "old_value": null,
+          "new_value": "1.0.0",
+          "line_number": null
+        },
+        {
+          "type": "add_missing_field",
+          "description": "Add missing author field",
+          "old_value": null,
+          "new_value": "Unknown",
+          "line_number": null
+        },
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        },
+        {
+          "type": "add_missing_field",
+          "description": "Add missing performance field",
+          "old_value": null,
+          "new_value": {
+            "avg_tokens": 0,
+            "p95_latency": 0,
+            "success_rate": 0,
+            "token_budget": 1000
+          },
+          "line_number": null
+        },
+        {
+          "type": "add_missing_field",
+          "description": "Add missing tags field",
+          "old_value": null,
+          "new_value": [],
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "101-ultrathink-prompting.mdc",
+        "load_time_ms": 0.02,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1208,
+        "line_count": 24,
+        "file_size_bytes": 4931,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "108-cognitive-load-balancing.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Rule exceeds maximum lines: 159 > 150",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1453 tokens"
+      ],
+      "metrics": {
+        "line_count": 159,
+        "estimated_tokens": 1453
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        },
+        {
+          "type": "reduce_tokens",
+          "description": "Move to notepad system",
+          "old_value": 159,
+          "new_value": 100,
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "108-cognitive-load-balancing.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1453,
+        "line_count": 159,
+        "file_size_bytes": 5856,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "102-wildcard-brainstorm.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [],
+      "metrics": {
+        "line_count": 45,
+        "estimated_tokens": 967
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "102-wildcard-brainstorm.mdc",
+        "load_time_ms": 0.06,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 967,
+        "line_count": 45,
+        "file_size_bytes": 3872,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "104-analogy-transfer.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1307 tokens"
+      ],
+      "metrics": {
+        "line_count": 97,
+        "estimated_tokens": 1307
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "104-analogy-transfer.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1307,
+        "line_count": 97,
+        "file_size_bytes": 5267,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "103-divergence-convergence.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "High token count: ~1199 tokens"
+      ],
+      "metrics": {
+        "line_count": 89,
+        "estimated_tokens": 1199
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "103-divergence-convergence.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1199,
+        "line_count": 89,
+        "file_size_bytes": 4800,
+        "memory_usage_mb": 0.0
+      }
+    },
+    {
+      "rule": "107-sparring-partner-mode.mdc",
+      "status": "FAIL",
+      "severity": "error",
+      "errors": [
+        "Missing required metadata field: created",
+        "Dependency not found: required",
+        "Dependency not found: recommended",
+        "Dependency not found: incompatible"
+      ],
+      "warnings": [
+        "Rule approaching size limit: 141 lines",
+        "High token count: ~1385 tokens"
+      ],
+      "metrics": {
+        "line_count": 141,
+        "estimated_tokens": 1385
+      },
+      "fixes": [
+        {
+          "type": "add_missing_field",
+          "description": "Add missing created field",
+          "old_value": null,
+          "new_value": "2025-07-07",
+          "line_number": null
+        }
+      ],
+      "performance": {
+        "rule": "107-sparring-partner-mode.mdc",
+        "load_time_ms": 0.03,
+        "parse_time_ms": 0.0,
+        "validation_time_ms": 0.0,
+        "token_count": 1385,
+        "line_count": 141,
+        "file_size_bytes": 5549,
+        "memory_usage_mb": 0.0
+      }
+    }
+  ],
+  "performance_summary": {
+    "avg_validation_time_ms": 0.0003846153846153846,
+    "total_tokens": 102340,
+    "largest_rule": {
+      "rule": "prompt-eval-data-analytics.mdc",
+      "load_time_ms": 0.04,
+      "parse_time_ms": 0.0,
+      "validation_time_ms": 0.0,
+      "token_count": 1975,
+      "line_count": 169,
+      "file_size_bytes": 7902,
+      "memory_usage_mb": 0.02
+    }
+  },
+  "suggested_fixes": [
+    {
+      "rule": "201-no-version-bloat.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "202-database-selection.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "302-cursor-agent-integration.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "301-available-tooling-guide.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "available-tooling-guide.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "perplexity-research-framework.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "multi-model-tool-integration.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "304-perplexity-research-framework.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "cursor-agent-integration.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "303-multi-model-tool-integration.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "003-stepwise-autonomy.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "001-philosophers-stone.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "002-pareto-prioritization.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "004-risk-checkpoint.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "452-sdk-development-checklist.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "441-example-library-integrity.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "448-prompt-eval.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "448-prompt-eval.mdc",
+      "fix": {
+        "type": "reduce_tokens",
+        "description": "Move to notepad system",
+        "old_value": 167,
+        "new_value": 100,
+        "line_number": null
+      }
+    },
+    {
+      "rule": "code-generation-patterns.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "434-bash-safety.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "442-logging-monitoring.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "model-selection.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "435-ci-cd-testing-gatekeeper.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "sdk-development-checklist.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "440-document-analysis.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "444-notebook-best-practices.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "logging-monitoring.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "structured-data-embedding-best-practices.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "test-driven-development.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "431-api-design-guidelines.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "430-80-20-prioritization-data-analytics.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "455-task-retrospective.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "document-analysis.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "443-model-selection.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "research-prompt-guidelines.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "450-rule-security.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "439-deployment-config.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "427-stigmergic-workflows.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "80-20-prioritization-data-analytics.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "453-stepwise-autonomy-data-pipeline.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "example-library-integrity.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "context-integration.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "445-notepad-best-practices.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "deployment-config.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "backend-security.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "prompt-eval-data-analytics.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "prompt-eval-data-analytics.mdc",
+      "fix": {
+        "type": "reduce_tokens",
+        "description": "Move to notepad system",
+        "old_value": 169,
+        "new_value": 100,
+        "line_number": null
+      }
+    },
+    {
+      "rule": "436-code-generation-patterns.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "bash-safety.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "notepad-best-practices.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "ci-cd-testing-gatekeeper.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "437-context-integration.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "433-backend-security.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "notebook-best-practices.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "449-research-prompt-guidelines.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "447-prompt-eval-data-analytics.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "447-prompt-eval-data-analytics.mdc",
+      "fix": {
+        "type": "reduce_tokens",
+        "description": "Move to notepad system",
+        "old_value": 169,
+        "new_value": 100,
+        "line_number": null
+      }
+    },
+    {
+      "rule": "prompt-coding-standards.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "454-structured-data-embedding-best-practices.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "api-webhook-discrepancy-documentation.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "428-pre-task-rule-review.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "432-api-webhook-discrepancy-documentation.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "438-dependency-management.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "safir-scroll-output.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "446-prompt-coding-standards.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "api-design-guidelines.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "rule-security.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "dependency-management.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "456-test-driven-development.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "task-retrospective.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "451-safir-scroll-output.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "stepwise-autonomy-data-pipeline.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "prompt-eval.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "prompt-eval.mdc",
+      "fix": {
+        "type": "reduce_tokens",
+        "description": "Move to notepad system",
+        "old_value": 167,
+        "new_value": 100,
+        "line_number": null
+      }
+    },
+    {
+      "rule": "dbt-mcp-server.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "204-analytics-storytelling.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "205-datascience-repro.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "207-dbt-incremental-loading-patterns.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "analytics-engineering.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "datascience-repro.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "dbt-semantic-modeling.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "210-dbt-semantic-modeling.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "analytics-storytelling.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "dbt-model-quality.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "python-clean-code.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "dbt-analytics-engineering.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "209-dbt-model-quality.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "213-sql-performance.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "sql-performance.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "dbt-incremental-loading-patterns.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "208-dbt-mcp-server.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "203-analytics-engineering.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "211-python-clean-code.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "206-dbt-analytics-engineering.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "212-sql-correctness.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "sql-correctness.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "302-snmp-monitoring-patterns.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "301-constraint-optimization.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "constraint-optimization.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "109-chain-of-code.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "106-concise-comms.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "105-context-trim.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "101-ultrathink-prompting.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing version field",
+        "old_value": null,
+        "new_value": "1.0.0",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "101-ultrathink-prompting.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing author field",
+        "old_value": null,
+        "new_value": "Unknown",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "101-ultrathink-prompting.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "101-ultrathink-prompting.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing performance field",
+        "old_value": null,
+        "new_value": {
+          "avg_tokens": 0,
+          "p95_latency": 0,
+          "success_rate": 0,
+          "token_budget": 1000
+        },
+        "line_number": null
+      }
+    },
+    {
+      "rule": "101-ultrathink-prompting.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing tags field",
+        "old_value": null,
+        "new_value": [],
+        "line_number": null
+      }
+    },
+    {
+      "rule": "108-cognitive-load-balancing.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "108-cognitive-load-balancing.mdc",
+      "fix": {
+        "type": "reduce_tokens",
+        "description": "Move to notepad system",
+        "old_value": 159,
+        "new_value": 100,
+        "line_number": null
+      }
+    },
+    {
+      "rule": "102-wildcard-brainstorm.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "104-analogy-transfer.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "103-divergence-convergence.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    },
+    {
+      "rule": "107-sparring-partner-mode.mdc",
+      "fix": {
+        "type": "add_missing_field",
+        "description": "Add missing created field",
+        "old_value": null,
+        "new_value": "2025-07-07",
+        "line_number": null
+      }
+    }
+  ]
+}

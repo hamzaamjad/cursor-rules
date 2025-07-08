@@ -13,14 +13,6 @@ performance:
   accuracyImprovement: 0%
   processingOverhead: minimal
   empiricalValidation: Extends stepwise-autonomy verification patterns for data contexts
-dependencies:
-  required:
-  - stepwise-autonomy
-  recommended:
-  - risk-checkpoint
-  - sql-correctness
-  - sql-performance
-  incompatible: []
 conflicts: []
 tags:
 - patterns
@@ -38,3 +30,9 @@ notes: 'Comprehensive implementation examples available in:
   - notepads/400-patterns/stepwise-autonomy-data-pipeline/performance-monitoring-patterns.md
 
   - notepads/400-patterns/stepwise-autonomy-data-pipeline/research-integration-patterns.md'
+created: '2025-07-07'
+dependencies:
+- stepwise-autonomy
+- risk-checkpoint
+- sql-correctness
+- sql-performance

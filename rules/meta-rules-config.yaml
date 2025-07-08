@@ -1,183 +1,170 @@
-# Meta-Rules Configuration
-# This file defines rule interaction patterns and automatic rule selection
-
-version: "2.0.0"
-last_updated: "2025-06-19"
-
-# Rule Categories with Load Priority
+version: 2.0.0
+last_updated: '2025-06-19'
 categories:
   000-core:
     priority: 1
-    load_order: "sequential"
-    description: "Foundational rules - always load first"
-    
+    load_order: sequential
+    description: Foundational rules - always load first
   100-cognitive:
     priority: 2
-    load_order: "dependency_based"
-    description: "Cognitive enhancement rules"
-    
+    load_order: dependency_based
+    description: Cognitive enhancement rules
   200-domain:
     priority: 3
-    load_order: "on_demand"
-    description: "Domain-specific rules"
-    
+    load_order: on_demand
+    description: Domain-specific rules
   300-integration:
     priority: 4
-    load_order: "lazy"
-    description: "Tool integration rules"
-    
+    load_order: lazy
+    description: Tool integration rules
   400-patterns:
     priority: 5
-    load_order: "contextual"
-    description: "Development patterns"
-
-# Automatic Rule Selection Profiles
+    load_order: contextual
+    description: Development patterns
 profiles:
   creative_exploration:
-    name: "Creative Problem Solving"
-    description: "Maximum ideation with safety bounds"
+    name: Creative Problem Solving
+    description: Maximum ideation with safety bounds
     rules:
-      - "105-context-trim"
-      - "103-divergence-convergence"
-      - "102-wildcard-brainstorm"
-      - "104-analogy-transfer"
-      - "101-ultrathink-prompting"
-      - "004-risk-checkpoint"
-      - "106-concise-comms"
-    
+    - 105-context-trim
+    - 103-divergence-convergence
+    - 102-wildcard-brainstorm
+    - 104-analogy-transfer
+    - 101-ultrathink-prompting
+    - 004-risk-checkpoint
+    - 106-concise-comms
   analytical_research:
-    name: "Deep Analysis"
-    description: "Structured investigation with data focus"
+    name: Deep Analysis
+    description: Structured investigation with data focus
     rules:
-      - "105-context-trim"
-      - "001-philosophers-stone"
-      - "002-pareto-prioritization"
-      - "003-stepwise-autonomy"
-      - "perplexity-research-framework"
-      - "106-concise-comms"
-    
+    - 105-context-trim
+    - 001-philosophers-stone
+    - 002-pareto-prioritization
+    - 003-stepwise-autonomy
+    - perplexity-research-framework
+    - 106-concise-comms
   production_changes:
-    name: "Production Safety"
-    description: "Maximum safety for production modifications"
+    name: Production Safety
+    description: Maximum safety for production modifications
     rules:
-      - "004-risk-checkpoint"
-      - "003-stepwise-autonomy"
-      - "backend-security"
-      - "ci-cd-testing-gatekeeper"
-      - "002-pareto-prioritization"
-    
+    - 004-risk-checkpoint
+    - 003-stepwise-autonomy
+    - backend-security
+    - ci-cd-testing-gatekeeper
+    - 002-pareto-prioritization
   rapid_prototype:
-    name: "Fast Iteration"
-    description: "Quick experiments with controlled risk"
+    name: Fast Iteration
+    description: Quick experiments with controlled risk
     rules:
-      - "101-ultrathink-prompting"
-      - "102-wildcard-brainstorm"
-      - "code-generation-patterns"
-      - "test-driven-development"
-      - "004-risk-checkpoint"
-
-# Rule Interaction Constraints
+    - 101-ultrathink-prompting
+    - 102-wildcard-brainstorm
+    - code-generation-patterns
+    - test-driven-development
+    - 004-risk-checkpoint
 constraints:
   mutual_exclusion:
-    - group: ["wildcard-brainstorm", "concise-comms"]
-      resolution: "phase_separation"
-      
-    - group: ["ultrathink-prompting", "sql-correctness"]
-      resolution: "context_based"
-  
+  - group:
+    - wildcard-brainstorm
+    - concise-comms
+    resolution: phase_separation
+  - group:
+    - ultrathink-prompting
+    - sql-correctness
+    resolution: context_based
   mandatory_sequences:
-    - sequence: ["context-trim", "*"]
-      description: "Context trim must run first"
-      
-    - sequence: ["*", "risk-checkpoint", "act"]
-      description: "Risk checkpoint before any action"
-      
-    - sequence: ["divergence", "convergence"]
-      description: "Divergence must precede convergence"
-  
+  - sequence:
+    - context-trim
+    - '*'
+    description: Context trim must run first
+  - sequence:
+    - '*'
+    - risk-checkpoint
+    - act
+    description: Risk checkpoint before any action
+  - sequence:
+    - divergence
+    - convergence
+    description: Divergence must precede convergence
   dependency_chains:
-    - chain: ["philosophers-stone", "divergence-convergence"]
-      type: "enhances"
-      
-    - chain: ["pareto-prioritization", "context-trim"]
-      type: "similar_principle"
-      
-    - chain: ["stepwise-autonomy", "risk-checkpoint"]
-      type: "requires"
-
-# Dynamic Rule Modifiers
+  - chain:
+    - philosophers-stone
+    - divergence-convergence
+    type: enhances
+  - chain:
+    - pareto-prioritization
+    - context-trim
+    type: similar_principle
+  - chain:
+    - stepwise-autonomy
+    - risk-checkpoint
+    type: requires
 modifiers:
   risk_context:
     low:
-      boost: ["wildcard-brainstorm", "ultrathink-prompting"]
+      boost:
+      - wildcard-brainstorm
+      - ultrathink-prompting
       suppress: []
-    
     medium:
-      boost: ["divergence-convergence"]
+      boost:
+      - divergence-convergence
       suppress: []
-    
     high:
-      boost: ["risk-checkpoint", "stepwise-autonomy"]
-      suppress: ["wildcard-brainstorm"]
-    
+      boost:
+      - risk-checkpoint
+      - stepwise-autonomy
+      suppress:
+      - wildcard-brainstorm
     critical:
-      boost: ["risk-checkpoint", "backend-security"]
-      suppress: ["wildcard-brainstorm", "ultrathink-prompting"]
-  
+      boost:
+      - risk-checkpoint
+      - backend-security
+      suppress:
+      - wildcard-brainstorm
+      - ultrathink-prompting
   task_complexity:
     simple:
-      suppress: ["divergence-convergence", "analogy-transfer"]
-      
+      suppress:
+      - divergence-convergence
+      - analogy-transfer
     moderate:
       default: true
-      
     complex:
-      boost: ["divergence-convergence", "context-trim", "stepwise-autonomy"]
-
-# Performance Metrics
+      boost:
+      - divergence-convergence
+      - context-trim
+      - stepwise-autonomy
 metrics:
   token_efficiency:
-    - rule: "context-trim"
-      reduction: "93%"
-      
-    - rule: "concise-comms"
-      reduction: "48.7%"
-      
-    - rule: "divergence-convergence"
-      overhead: "15%" # Due to two-phase process
-  
+  - rule: context-trim
+    reduction: 93%
+  - rule: concise-comms
+    reduction: 48.7%
+  - rule: divergence-convergence
+    overhead: 15%
   quality_impact:
-    - rule: "risk-checkpoint"
-      incident_reduction: "90-95%"
-      
-    - rule: "wildcard-brainstorm"
-      creativity_increase: "25-50%"
-      
-    - rule: "analogy-transfer"
-      problem_solving_improvement: "d=0.50"
-
-# Rule Evolution Tracking
+  - rule: risk-checkpoint
+    incident_reduction: 90-95%
+  - rule: wildcard-brainstorm
+    creativity_increase: 25-50%
+  - rule: analogy-transfer
+    problem_solving_improvement: d=0.50
 evolution:
   capability_safety_pairs:
-    - capability: "wildcard-brainstorm"
-      safety_update: "risk-checkpoint.yaml#wildcard-patterns"
-      
-    - capability: "analogy-transfer"
-      safety_update: "risk-checkpoint.yaml#analogy-validation"
-      
-    - capability: "perplexity-research"
-      safety_update: "risk-checkpoint.yaml#external-api-patterns"
-
-# Experimental Features
+  - capability: wildcard-brainstorm
+    safety_update: risk-checkpoint.yaml#wildcard-patterns
+  - capability: analogy-transfer
+    safety_update: risk-checkpoint.yaml#analogy-validation
+  - capability: perplexity-research
+    safety_update: risk-checkpoint.yaml#external-api-patterns
 experimental:
   auto_phase_detection:
     enabled: false
-    description: "Automatically detect when to switch between divergence/convergence"
-    
+    description: Automatically detect when to switch between divergence/convergence
   dynamic_risk_scoring:
     enabled: false
-    description: "Real-time risk assessment based on cumulative actions"
-    
+    description: Real-time risk assessment based on cumulative actions
   rule_learning:
     enabled: false
-    description: "Learn optimal rule combinations from usage patterns"
+    description: Learn optimal rule combinations from usage patterns
+created: '2025-07-01'

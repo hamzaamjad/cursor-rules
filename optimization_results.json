@@ -1,0 +1,64 @@
+{
+  "timestamp": "2025-07-07T20:24:58.018980",
+  "parse_optimizations": {
+    "427-stigmergic-workflows.mdc": {
+      "before_ms": 4.19,
+      "after_ms": 0.0,
+      "improvement_percent": 100.0
+    },
+    "model-selection.mdc": {
+      "before_ms": 4.36,
+      "after_ms": 0.0,
+      "improvement_percent": 100.0
+    },
+    "436-code-generation-patterns.mdc": {
+      "before_ms": 3.4,
+      "after_ms": 0.0,
+      "improvement_percent": 100.0
+    }
+  },
+  "modularization": {
+    "301-available-tooling-guide": {
+      "before_tokens": 2847,
+      "after_tokens": 752,
+      "reduction_percent": 73.6,
+      "modules": [
+        {
+          "name": "301-available-tooling-core",
+          "tokens": 270
+        },
+        {
+          "name": "301-tooling-mcp-reference",
+          "tokens": 244
+        },
+        {
+          "name": "301-tooling-api-reference",
+          "tokens": 238
+        }
+      ]
+    },
+    "302-cursor-agent-integration": {
+      "before_tokens": 2145,
+      "after_tokens": 885,
+      "reduction_percent": 58.7,
+      "modules": [
+        {
+          "name": "302-cursor-agent-core",
+          "tokens": 270
+        },
+        {
+          "name": "302-agent-error-recovery",
+          "tokens": 321
+        },
+        {
+          "name": "302-agent-advanced-patterns",
+          "tokens": 294
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_parse_improvement_percent": 100.0,
+    "avg_token_reduction_percent": 66.2
+  }
+}

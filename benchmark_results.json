@@ -1,0 +1,52 @@
+{
+  "original": {
+    "rule_name": "427-stigmergic-workflows-v2",
+    "rule_path": "/Users/hamzaamjad/cursor-rules/rules/900-deprecated/427-stigmergic-workflows-v2.mdc",
+    "load_time_ms": 0.036716461181640625,
+    "parse_time_ms": 0.010013580322265625,
+    "validation_time_ms": 0.04673004150390625,
+    "token_count": 395,
+    "line_count": 55,
+    "file_size_bytes": 1586,
+    "timestamp": "2025-07-07T20:14:01.244725"
+  },
+  "optimized": [
+    {
+      "rule_name": "427-stigmergic-core",
+      "rule_path": "/Users/hamzaamjad/cursor-rules/rules/400-patterns/427-stigmergic-core.mdc",
+      "load_time_ms": 0.02193450927734375,
+      "parse_time_ms": 0.0026226043701171875,
+      "validation_time_ms": 0.024557113647460938,
+      "token_count": 226,
+      "line_count": 41,
+      "file_size_bytes": 904,
+      "timestamp": "2025-07-07T20:14:01.244783"
+    },
+    {
+      "rule_name": "427-stigmergic-markers",
+      "rule_path": "/Users/hamzaamjad/cursor-rules/rules/400-patterns/427-stigmergic-markers.mdc",
+      "load_time_ms": 0.023126602172851562,
+      "parse_time_ms": 0.0040531158447265625,
+      "validation_time_ms": 0.027179718017578125,
+      "token_count": 269,
+      "line_count": 46,
+      "file_size_bytes": 1079,
+      "timestamp": "2025-07-07T20:14:01.244830"
+    },
+    {
+      "rule_name": "427-stigmergic-artifacts",
+      "rule_path": "/Users/hamzaamjad/cursor-rules/rules/400-patterns/427-stigmergic-artifacts.mdc",
+      "load_time_ms": 0.019073486328125,
+      "parse_time_ms": 0.0059604644775390625,
+      "validation_time_ms": 0.025033950805664062,
+      "token_count": 398,
+      "line_count": 66,
+      "file_size_bytes": 1637,
+      "timestamp": "2025-07-07T20:14:01.244871"
+    }
+  ],
+  "summary": {
+    "time_improvement_percent": -64.28571428571429,
+    "token_reduction_percent": -126.07594936708861
+  }
+}

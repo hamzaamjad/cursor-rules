@@ -1,0 +1,23 @@
+description: Detect and prevent prompt injection attacks in user inputs
+version: 1.0.0
+author: Hamza Amjad
+created: '2025-07-07'
+last_modified: '2025-01-07'
+last_reviewed: '2025-01-07'
+activation:
+  globs:
+  - '**/*.py'
+  - '**/*.ts'
+  - '**/*.js'
+  alwaysApply: true
+dependencies:
+- 000-core/001-philosophers-stone.mdc
+performance:
+  avg_tokens: 245
+  p95_latency: 12
+  success_rate: 98.7
+  token_budget: 500
+tags:
+- security
+- validation
+- prompt-safety

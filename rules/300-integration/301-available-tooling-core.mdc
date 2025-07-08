@@ -1,0 +1,38 @@
+---
+description: "Core tool selection heuristics - optimized"
+version: 3.0.0
+performance:
+  avg_tokens: 450
+  p95_latency: 1.5ms
+  token_budget: 500
+lazy_load:
+  - "301-tooling-mcp-reference.mdc"
+  - "301-tooling-api-reference.mdc"
+---
+
+# Tool Selection Core
+
+**Purpose**: Quick tool selection for Cursor & MCP operations.
+
+## Priority Matrix
+
+| Need | Use | Reason |
+|------|-----|---------|
+| Edit specific lines | `mcp_desktop_commander_edit_block` | Precise diffs |
+| Write full file | `mcp_desktop_commander_write_file` | URL support |
+| Read partial | `default_api.read_file` | Line control |
+| Search code | `mcp_desktop_commander_search_code` | Regex + context |
+| Delete | `default_api.delete_file` | No MCP equiv |
+
+## Decision Rules
+1. MCP when feature-rich (desktop_commander, context7)
+2. Default API for standard ops
+3. Fallback to default when MCP unavailable
+
+## Quick Reference
+- **File ops**: MCP > default_api
+- **Git**: GitHub MCP exclusively  
+- **Time**: MCP for timezone conversion
+- **Web**: default_api (search + fetch)
+
+For detailed tool specs: `@lazy_load`

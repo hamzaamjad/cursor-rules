@@ -1,0 +1,67 @@
+---
+description: "Detect and prevent prompt injection attacks in user inputs"
+version: 1.0.0
+author: "Hamza Amjad"
+created: "2025-01-07"
+last_modified: "2025-01-07"
+last_reviewed: "2025-01-07"
+
+activation:
+  globs:
+    - "**/*.py"
+    - "**/*.ts"
+    - "**/*.js"
+  alwaysApply: true
+
+dependencies:
+  - "000-core/001-philosophers-stone.mdc"
+
+performance:
+  avg_tokens: 245
+  p95_latency: 12ms
+  success_rate: 98.7
+  token_budget: 500
+
+tags:
+  - "security"
+  - "validation"
+  - "prompt-safety"
+---
+
+# Input Validation & Injection Defense
+
+**Purpose**: Detect and neutralize prompt injection attempts before processing.
+
+**Requirements**:
+- **Pattern Detection**:
+  - Identify common injection patterns
+  - Flag suspicious control sequences
+  - Detect role-switching attempts
+- **Sanitization**:
+  - Strip dangerous tokens
+  - Escape control characters
+  - Normalize unicode variants
+
+**Validation**:
+- Check: Input contains no system prompts
+- Check: No role impersonation detected
+- Check: Character encoding normalized
+- Metric: <5ms processing overhead
+
+**Examples**:
+```python
+# Correct: Sanitized input
+def process_user_input(text: str) -> str:
+    # Remove system prompt markers
+    text = re.sub(r'<\|system\|>.*?<\|/system\|>', '', text)
+    # Normalize unicode
+    text = unicodedata.normalize('NFKC', text)
+    # Validate against injection patterns
+    if contains_injection(text):
+        raise ValidationError("Potential injection detected")
+    return text
+
+# Incorrect: Direct processing
+def unsafe_process(text: str) -> str:
+    return execute_prompt(text)  # VULNERABLE
+```

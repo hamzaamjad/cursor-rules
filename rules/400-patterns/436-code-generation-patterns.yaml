@@ -16,12 +16,6 @@ performance:
   processingOverhead: minimal
   empiricalValidation: Chain of Code methodology shows 17.9% improvement in code generation
     accuracy
-dependencies:
-  required: []
-  recommended:
-  - stepwise-autonomy
-  - chain-of-code
-  incompatible: []
 conflicts: []
 tags:
 - patterns
@@ -44,3 +38,7 @@ notes: 'Comprehensive implementation resources available in:
   - notepads/400-patterns/code-generation-patterns/templates-and-examples.md
 
   '
+created: '2025-07-07'
+dependencies:
+- stepwise-autonomy
+- chain-of-code

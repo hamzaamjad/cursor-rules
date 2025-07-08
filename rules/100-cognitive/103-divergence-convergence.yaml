@@ -15,14 +15,6 @@ performance:
   accuracyImprovement: 0%
   processingOverhead: moderate
   empiricalValidation: 15% overhead due to two-phase process
-dependencies:
-  required: []
-  recommended:
-  - divergence-convergence
-  - risk-checkpoint
-  incompatible:
-  - concise-comms
-  - wildcard-brainstorm
 conflicts: []
 tags:
 - safety
@@ -33,3 +25,7 @@ tags:
 research: []
 examples: []
 notes: ''
+created: '2025-07-07'
+dependencies:
+- divergence-convergence
+- risk-checkpoint

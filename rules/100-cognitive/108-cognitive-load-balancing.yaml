@@ -10,12 +10,6 @@ performance:
   accuracyImprovement: 0%
   processingOverhead: moderate
   empiricalValidation: To be measured
-dependencies:
-  required: []
-  recommended:
-  - divergence-convergence
-  - risk-checkpoint
-  incompatible: []
 conflicts: []
 tags:
 - performance
@@ -25,3 +19,7 @@ tags:
 research: []
 examples: []
 notes: ''
+created: '2025-07-07'
+dependencies:
+- divergence-convergence
+- risk-checkpoint

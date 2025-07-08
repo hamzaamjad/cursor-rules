@@ -1,0 +1,98 @@
+---
+description: "Reliable autonomous codebase changes with Cursor Agent tools"
+version: 2.0.0
+performance:
+  token_budget: 600
+  validation_target: 2ms
+references:
+  - "@Notepad:notepads/300-integration/agent-integration-strategies.md"
+---
+
+# Cursor Agent Integration
+
+**Purpose**: Enable reliable autonomous codebase changes using Cursor Agent tools.
+
+## Core Workflow
+
+```python
+# 1. Read current state
+content = read_file(path)
+
+# 2. Plan precise changes
+changes = analyze_required_modifications(content)
+
+# 3. Apply with verification
+for change in changes:
+    result = edit_file(path, change)
+    verify = read_file(path)
+    if not validate_change(verify):
+        rollback_or_retry(change)
+
+# 4. Confirm final state
+run_terminal_cmd("pytest tests/")
+```
+
+## Tool Selection
+
+| Task | Preferred Tool | Fallback |
+|------|---------------|----------|
+| **Surgical edit** | `mcp_desktop_commander_edit_block` | `default_api.edit_file` |
+| **Full rewrite** | `mcp_desktop_commander_write_file` | `default_api.edit_file` |
+| **Read full** | `mcp_desktop_commander_read_file` | `default_api.read_file` |
+| **Execute cmd** | `mcp_desktop_commander_execute_command` | `default_api.run_terminal_cmd` |
+
+## Critical Patterns
+
+### Structured File Edits
+```python
+# Robust JSON/YAML modification
+data = yaml.safe_load(read_file("config.yaml"))
+data['new_key'] = 'value'
+write_file("config.yaml", yaml.dump(data))
+```
+
+### Complex Content Embedding
+```python
+# Prefer file references over embedded strings
+{
+  "schema_path": "./schemas/api.json"  # ✓
+  # NOT: "schema": "{\"type\":\"object\"...}"  # ✗
+}
+```
+
+### Edit Verification Loop
+```python
+MAX_RETRIES = 3
+for attempt in range(MAX_RETRIES):
+    if edit_file(path, change):
+        if verify_content(read_file(path)):
+            break
+    if attempt == MAX_RETRIES - 1:
+        log_failure_and_notify()
+```
+
+## Security & Safety
+
+- **Never log secrets**: Filter sensitive data
+- **Idempotent actions**: Repeated ops = same result
+- **Atomic changes**: Complete or rollback
+- **Path validation**: Always use absolute paths
+
+## Common Failures & Solutions
+
+| Failure | Solution |
+|---------|----------|
+| Edit not applied | Use exact string match with edit_block |
+| JSON escaping | Read-parse-modify-write pattern |
+| Large appends | Full rewrite instead of edit |
+| Command timeout | Use session management |
+
+## Verification Checklist
+
+- [ ] Pre-read file state
+- [ ] Apply minimal change
+- [ ] Post-read verification
+- [ ] Test execution
+- [ ] Error logged if failed
+
+Details: `@Notepad:notepads/300-integration/agent-integration-strategies.md`

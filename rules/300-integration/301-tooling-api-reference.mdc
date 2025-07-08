@@ -1,0 +1,46 @@
+---
+description: "Default API tool reference - lazy loaded"
+version: 1.0.0
+performance:
+  avg_tokens: 600
+  p95_latency: 1.0ms
+dependencies:
+  - "301-available-tooling-core.mdc"
+---
+
+# Default API Reference
+
+## File Operations
+```yaml
+read_file: {offset, length} for partial reads
+write_file: Standard file write
+delete_file: Remove files
+list_directory: Basic enumeration
+get_file_info: File metadata
+```
+
+## System Tools
+```yaml
+run_terminal_command: Execute with timeout
+create_directory: Mkdir with parents
+```
+
+## Network Tools
+```yaml
+brave_search: Web search with citations
+get_url_content: Fetch and parse URLs
+```
+
+## Analysis
+```yaml
+analysis_tool: JavaScript REPL
+- File parsing (CSV, JSON, Excel)
+- Data visualization prep
+- Complex calculations
+```
+
+## When to Use Default API
+1. Standard operations with no MCP advantage
+2. Fallback when MCP unavailable
+3. Simple tasks requiring basic functionality
+4. Cross-platform compatibility needed

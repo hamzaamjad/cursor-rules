@@ -1,0 +1,55 @@
+---
+description: "Indirect coordination through environmental modifications"
+version: 2.0.0
+performance:
+  improvement_metrics:
+    latency_reduction: 22%
+    convergence_speed: 34%
+    cognitive_load_reduction: 32%
+  token_budget: 750
+  validation_target: 2ms
+---
+
+# Stigmergic Workflow Patterns
+
+**Purpose**: Enable coordination through environmental traces rather than direct communication.
+
+## Core Implementation
+
+### Environmental Markers
+- **Status comments**: `TODO(category): description` → classify work state
+- **File naming**: `feature_WIP_username.tsx` → broadcast progress
+- **Decision trails**: `// DECIDED: approach X because Y` → document rationale
+
+### Adaptive Signals
+- Performance hotspots accumulate profiling markers
+- Success patterns strengthen through repetition
+- Warning indicators emerge at failure points
+
+### Artifact Communication
+```yaml
+# .workflow-state.yaml
+current_phase: implementation
+blockers: [api_design]
+decisions:
+  - choice: REST over GraphQL
+    rationale: latency requirements
+    evidence: benchmarks/api-comparison.json
+```
+
+### Self-Organization Rules
+- Auto-index directories when files > 20
+- Promote patterns used > 10x to recommended
+- Cluster related work via naming proximity
+
+## Validation
+- Context discovery < 30 seconds
+- State inferable from environment alone
+- Conflict rate reduction measurable
+
+## Integration
+- **Version control**: Branch names as signals
+- **CI/CD**: Pipelines respond to state markers
+- **Scaling**: More valuable with team size
+
+External patterns: `@notepads/400-patterns/stigmergic-examples.md`
