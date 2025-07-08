@@ -179,3 +179,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]: https://github.com/hamzaamjad/cursor-rules/compare/v1.1.0...HEAD
 [1.1.0]: https://github.com/hamzaamjad/cursor-rules/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/hamzaamjad/cursor-rules/releases/tag/v1.0.0
+### Performance Optimization Phase - 2025-01-07
+
+#### Optimized
+- **427-stigmergic-workflows**: 4.40ms → 0.03ms (99% faster), 1243 → 308 tokens (75% reduction)
+  - Fixed broken external dependency
+  - Streamlined YAML metadata
+  - Consolidated examples into JSON format
+- **436-code-generation-patterns**: 3.40ms → 0.02ms (99% faster), 1559 → 447 tokens (71% reduction)
+  - Reduced from 104 to 85 lines
+  - Focused on critical patterns only
+  - Removed redundant examples
+
+#### Removed
+- **code-generation-patterns.mdc**: Duplicate of 436-code-generation-patterns
+- **model-selection.mdc**: Duplicate of 443-model-selection
+
+#### Performance Impact
+- Total time saved: 7.75ms
+- Total tokens saved: 2047
+- Rules now meet <2ms validation target

@@ -1,105 +1,87 @@
 ---
-description: "Prevent AI-specific code formatting errors and generation pitfalls"
-version: 2.1.0
+description: "Prevent AI code generation errors"
+version: 3.0.0
 performance:
-  avg_tokens: 700
-  p95_latency: 2.0ms
-  success_rate: 96%
+  avg_tokens: 600
+  p95_latency: 1.5ms
   token_budget: 700
-tags: ["code-generation", "formatting", "anti-patterns"]
 ---
 
 # Code Generation Patterns
 
-**Purpose**: Prevent formatting errors and ensure professional-grade AI-generated code.
+**Purpose**: Ensure professional-grade AI-generated code without common formatting errors.
 
-## Critical Anti-Patterns
+## Critical Patterns
 
-### Common Failures
+### Formatting Rules
 ```python
-# ❌ WRONG: Code on same line as docstring
-def process(): """Process data""" return data
-
-# ✅ CORRECT: Proper separation
+# ✅ CORRECT Structure
 def process():
-    """Process data"""
+    """Process data."""
     return data
+
+# ❌ AVOID: Same-line docstrings
+def bad(): """Wrong""" return None
 ```
 
-### Prevention Checklist
-- Newline after docstrings/comments
-- Blank lines between functions/classes
-- Consistent indentation after multiline strings
-- Complete logical units in each write
-
-## Generation Strategy
-
-### Chain of Code Method
-1. **Structure** → Define skeleton
-2. **Logic** → Add core functionality
-3. **Tests** → Verify each function
-4. **Optimize** → Refine implementation
-
-### File Operations
+### Import Organization
 ```python
-# Small files (<100 lines): Complete rewrite
-with open('module.py', 'w') as f:
-    f.write(complete_content)
+# Standard → Third-party → Local
+import os
+import json
 
-# Large files: Chunked approach
-# Never split functions/classes across chunks
-chunks = split_by_logical_units(content, max_lines=50)
-for chunk in chunks:
-    append_with_validation(chunk)
+import numpy as np
+import pandas as pd
+
+from .utils import helper
+from .models import DataModel
 ```
 
-## Multi-File Coordination
+### Error Handling
+```python
+# Always include proper error handling
+try:
+    result = risky_operation()
+except SpecificError as e:
+    logger.error(f"Operation failed: {e}")
+    raise ProcessingError(f"Cannot process: {e}") from e
+```
 
-### Generation Order
-1. `__init__.py` → Package structure
-2. Base classes → Foundation types
-3. Implementations → Core logic
-4. Tests → Validation suite
+### Type Safety
+```python
+from typing import List, Dict, Optional
 
-### Cross-File Consistency
-- Shared naming: `user_service`, `UserService`, `test_user_service`
-- Import tracking: Verify all imports resolve
-- Dependency order: Base before derived
+def process_items(items: List[Dict[str, Any]]) -> Optional[pd.DataFrame]:
+    """Process with full type hints."""
+    if not items:
+        return None
+    return pd.DataFrame(items)
+```
 
-## Validation Framework
+## Common Pitfalls
 
-### Required Checks
+1. **Missing newlines** after docstrings/comments
+2. **Incomplete imports** - always specify full paths
+3. **Bare exceptions** - catch specific errors
+4. **No type hints** - add for public APIs
+5. **Magic numbers** - use named constants
+
+## Validation Checklist
+- [ ] Proper indentation (4 spaces)
+- [ ] Docstrings for public functions
+- [ ] Error handling for I/O operations
+- [ ] Type hints for parameters/returns
+- [ ] No trailing whitespace
+- [ ] Consistent quote style
+
+## Quick Fixes
 ```bash
-# Syntax validation
-python -m py_compile generated.py
-
-# Import verification
-python -c "import generated"
-
-# Format compliance
-black --check generated.py
+# Auto-format Python
+black --line-length 88 *.py
 
 # Type checking
-mypy generated.py
+mypy --strict *.py
+
+# Linting
+ruff check --fix *.py
 ```
-
-### Quality Gates
-- ✓ All functions complete
-- ✓ Proper spacing/indentation
-- ✓ Imports resolve
-- ✓ Tests pass
-- ✓ Docstrings present
-
-## Recovery Patterns
-
-### Error Correction
-```python
-# AST-based formatting fix
-import ast, black
-
-# Parse and reformat
-tree = ast.parse(problematic_code)
-fixed = black.format_str(ast.unparse(tree), mode=black.Mode())
-```
-
-External: `@notepads/400-patterns/code-gen-templates.md`

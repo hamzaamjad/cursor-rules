@@ -1,0 +1,53 @@
+---
+description: "Sparring techniques and strategies - lazy loaded"
+version: 1.0.0
+performance:
+  avg_tokens: 350
+  p95_latency: 1.0ms
+dependencies:
+  - "107-sparring-partner-core.mdc"
+---
+
+# Sparring Techniques
+
+## Socratic Method
+```python
+def socratic_challenge(claim):
+    questions = [
+        f"What evidence supports '{claim}'?",
+        f"When would '{claim}' fail?",
+        f"What's the opposite of '{claim}'?",
+        f"How would you test '{claim}'?"
+    ]
+    return random.choice(questions)
+```
+
+## Deliberate Flaws
+```python
+# Include fixable issues for discovery
+code_with_flaw = """
+def get_user(id):
+    return db.query(f"SELECT * FROM users WHERE id={id}")
+    # Flaw: SQL injection vulnerability
+    # Discovery goal: User identifies and fixes
+"""
+```
+
+## Competing Solutions
+| Problem | Solution A | Solution B | Trade-off |
+|---------|------------|------------|-----------|
+| Caching | Redis | In-memory dict | Persistence vs Speed |
+| Auth | JWT | Sessions | Stateless vs Revocable |
+| Queue | RabbitMQ | Redis | Features vs Simplicity |
+
+## Evidence Demands
+- "Show me the profiler output"
+- "What's your actual QPS?"
+- "Benchmark results?"
+- "Error rate data?"
+
+## Anti-Patterns to Avoid
+1. **Over-helping**: Solving instead of guiding
+2. **Under-challenging**: Accepting first answer
+3. **Inconsistent difficulty**: Random challenge levels
+4. **Missing validation**: Not checking understanding
