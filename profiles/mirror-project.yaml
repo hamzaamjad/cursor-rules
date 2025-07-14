@@ -1,0 +1,98 @@
+name: "mirror-project"
+description: "Mirror Project specific rule profile - local-first health AI workspace"
+version: "1.0.0"
+created: "2025-07-14"
+author: "Hamza Amjad"
+
+# Target platform token limits (adjusted for realistic usage)
+platform_limits:
+  claude: 8000
+  cursor: 1200
+  gemini: 6000
+  codex: 4000
+  zed: 2000
+
+# Core rule categories (always included)
+core_rules:
+  - "000-core/001-philosophers-stone.mdc"
+  - "000-core/002-pareto-prioritization.mdc"
+  - "000-core/003-stepwise-autonomy.mdc"
+  - "000-core/004-risk-checkpoint.mdc"
+
+# Project-specific rule selection
+project_rules:
+  privacy:
+    - "500-safety/501-input-validation.mdc"
+    - "500-safety/502-prompt-injection-defense.mdc"
+    - "500-safety/503-output-sanitization.mdc"
+    - "400-patterns/450-rule-security.mdc"
+    - "400-patterns/433-backend-security.mdc"
+  
+  health_data:
+    - "200-domain/python-clean-code.mdc"
+    - "200-domain/analytics-engineering.mdc"
+    - "200-domain/datascience-repro.mdc"
+    - "400-patterns/431-api-design-guidelines.mdc"
+    - "400-patterns/438-dependency-management.mdc"
+  
+  fastapi:
+    - "400-patterns/431-api-design-guidelines.mdc"
+    - "400-patterns/433-backend-security.mdc"
+    - "400-patterns/442-logging-monitoring.mdc"
+    - "400-patterns/456-test-driven-development.mdc"
+    - "400-patterns/435-ci-cd-testing-gatekeeper.mdc"
+  
+  local_first:
+    - "200-engineering/201-no-version-bloat.mdc"
+    - "200-engineering/202-database-selection.mdc"
+    - "400-patterns/439-deployment-config.mdc"
+    - "400-patterns/444-notebook-best-practices.mdc"
+
+# Integration rules for development workflow
+integration_rules:
+  - "300-integration/301-available-tooling-core.mdc"
+  - "300-integration/302-cursor-agent-core.mdc"
+  - "300-integration/303-multi-model-tool-integration.mdc"
+
+# Cognitive enhancement rules
+cognitive_rules:
+  - "100-cognitive/101-ultrathink-prompting.mdc"
+  - "100-cognitive/105-context-trim.mdc"
+  - "100-cognitive/106-concise-comms.mdc"
+  - "100-cognitive/108-cognitive-load-balancing.mdc"
+
+# Platform-specific optimizations
+platform_optimizations:
+  claude:
+    include_categories: ["core_rules", "project_rules", "integration_rules", "cognitive_rules"]
+    exclude_rules: []
+    token_budget: 7500
+  
+  cursor:
+    include_categories: ["core_rules", "project_rules.privacy", "project_rules.fastapi"]
+    exclude_rules: []
+    token_budget: 1000
+  
+  gemini:
+    include_categories: ["core_rules", "project_rules", "cognitive_rules"]
+    exclude_rules: []
+    token_budget: 2500
+  
+  codex:
+    include_categories: ["core_rules", "project_rules.fastapi", "project_rules.local_first"]
+    exclude_rules: []
+    token_budget: 1800
+  
+  zed:
+    include_categories: ["core_rules", "project_rules.privacy"]
+    exclude_rules: []
+    token_budget: 800
+
+# Rule priority weighting (higher = more important)
+rule_priorities:
+  "000-core/001-philosophers-stone.mdc": 1000
+  "000-core/003-stepwise-autonomy.mdc": 900
+  "500-safety/501-input-validation.mdc": 800
+  "400-patterns/433-backend-security.mdc": 750
+  "200-domain/python-clean-code.mdc": 700
+  "400-patterns/431-api-design-guidelines.mdc": 650

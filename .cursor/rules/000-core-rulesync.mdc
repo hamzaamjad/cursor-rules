@@ -1,0 +1,89 @@
+---
+description: "Core rulesync standards - unified AI assistant rules"
+globs:
+  - **/*
+alwaysApply: true
+priority: 999
+version: "1.0.0"
+tags:
+  - core
+  - standards
+  - rulesync
+created: "2025-07-14T05:57:39.551206"
+last_modified: "2025-07-14T05:57:39.551212"
+---
+
+# AI Assistant Rules for The Mirror Project
+
+## Core Philosophy
+You are assisting with *The Mirror Project* - a local-first, privacy-respecting AI workspace that unifies LLMs, personal health & context streams, and autonomous agents. Always prioritize:
+- Information density and engineering precision
+- Privacy and local-first architecture
+- Practical, working solutions over theoretical discussions
+
+## Communication Style
+- Be information-dense and engineering-precise; avoid fluff
+- Default to "you can do this" coaching tone
+- Ask clarifying questions ONLY when ambiguity blocks action
+- Prefer primary sources and official documentation; always cite links
+
+## Code Standards
+- **Language**: Python 3.11+ with type hints
+- **Framework**: FastAPI with Pydantic v2 for APIs
+- **Style**: Well-commented, runnable code with minimal external dependencies
+- **Testing**: Maintain 80%+ coverage with descriptive test names
+- **Security**: Never commit secrets, validate all inputs, use secure defaults
+
+## Output Formats
+- **Code**: Properly formatted with comments, ready to run
+- **Tasks**: Numbered checklists or YAML/JSON specs ready for agents
+- **Documentation**: Markdown with clear heading hierarchy and links
+- **Diagrams**: Mermaid for architecture, tables for comparisons
+
+## Technology Stack
+### Core
+- Python 3.11, FastAPI, Pydantic v2, Poetry/venv
+- PostgreSQL + TimescaleDB, Redis, Docker
+- GitHub Actions for CI/CD
+
+### ML/LLM
+- HuggingFace (transformers, accelerate)
+- Diffusion-based LLaDA-8B
+- Vector stores (Chroma), RAG implementations
+
+### Infrastructure
+- Kubernetes-lite (k3d), Prometheus + Grafana
+- Pulumi (TypeScript) for IaC
+- Git-secrets pre-commit hooks
+
+## Project-Specific Context
+- Building local-first health data integration (WHOOP, Oura, Tomorrow.io)
+- Implementing FastAPI/OpenAI-style endpoints
+- Creating Grafana dashboards for visualization
+- Ensuring GitHub Actions CI/CD with act-local parity
+
+## Development Workflow
+1. Rapid prototyping with edge-case thinking
+2. Test coverage for all new features
+3. Clear documentation in README/AGENTS.md
+4. Containerized, production-ready deployments
+
+## What to Avoid
+- Re-explaining basic git or Unix commands unless asked
+- Over-confirming after each instruction
+- Generic wellness tips not tied to quantified data
+- Theoretical discussions without practical implementation
+
+## Special Instructions
+- May run bash/python snippets directly (no sudo without explicit permission)
+- Generate Grafana JSON, GitHub workflow YAML, FastAPI routes, or SQL migrations that drop cleanly into the repo
+- Translate research papers into actionable engineering steps
+- Synthesize multi-agent coordination patterns & failure modes
+
+## Current Focus Areas
+1. Mirror MVP implementation with health data integration
+2. Autonomous agent development for "Life OS"
+3. Privacy-preserving architecture patterns
+4. Local LLM optimization and deployment
+
+Remember: This is an engineering-focused project. Prioritize working code, clear documentation, and practical solutions that respect user privacy and data sovereignty.
