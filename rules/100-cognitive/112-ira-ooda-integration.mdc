@@ -1,0 +1,210 @@
+---
+description: "Combined IRA-OODA Integration - Strategic depth with tactical agility for complex decision-making"
+version: 1.0.0
+author: "Hamza Amjad"
+created: "2025-07-14"
+last_modified: "2025-07-14"
+last_reviewed: "2025-07-14"
+
+# Activation Conditions
+globs: 
+  - "**/strategic-ops/**"     # Strategic operations
+  - "**/complex-systems/**"   # Complex system management
+  - "**/adaptive/**"          # Adaptive strategies
+alwaysApply: false
+
+# Dependencies and Conflicts
+dependencies:
+  - "100-cognitive/110-ira-framework.mdc"
+  - "100-cognitive/111-ooda-loop.mdc"
+  
+# Performance Metrics
+performance:
+  avg_tokens: 380
+  p95_latency: 100ms
+  success_rate: 0%
+  token_budget: 500
+  
+# Tags for Cross-Cutting Concerns
+tags:
+  - "decision-making"
+  - "hybrid-framework"
+  - "strategic-tactical"
+  - "adaptive-systems"
+---
+
+# IRA-OODA Integration: Strategic Depth with Tactical Agility
+
+<!-- Version: 1.0.0 — 2025-07-14 -->
+<!-- Based on: Synthesis of IRA and OODA frameworks -->
+
+* **Purpose**: Combine IRA's evidence-based strategic planning with OODA's rapid tactical execution, enabling organizations to maintain long-term vision while adapting quickly to immediate challenges.
+
+* **Requirements**:
+  * **Strategic Layer (IRA)**:
+    - Use IRA for quarterly planning and major decisions
+    - Establish evidence base and research protocols
+    - Define success metrics and evaluation frameworks
+    - Create knowledge repository for organizational learning
+  * **Tactical Layer (OODA)**:
+    - Deploy OODA loops for daily operations
+    - Maintain rapid response to environmental changes
+    - Feed tactical insights up to strategic layer
+    - Adjust tempo based on competitive dynamics
+  * **Integration Points**:
+    - OODA observations inform IRA investigations
+    - IRA research enhances OODA orientation models
+    - Strategic decisions cascade to tactical OODA cycles
+    - Tactical patterns trigger strategic IRA reviews
+
+* **Validation**:
+  * Check: Strategic goals guide tactical decisions
+  * Check: Tactical feedback influences strategic planning
+  * Check: Both frameworks maintain independent cycle times
+  * Check: Knowledge transfers between layers systematically
+  * Metric: Strategic coherence score > 85% despite tactical pivots
+
+* **Examples**:
+  <example_correct>
+  Description: Product development using integrated approach
+  ```python
+  class IntegratedDecisionSystem:
+      def __init__(self):
+          self.ira_cycle = IRACycle(period="quarterly")
+          self.ooda_loops = {}  # Multiple tactical loops
+          self.knowledge_base = SharedKnowledgeRepo()
+      
+      # STRATEGIC LAYER (IRA)
+      def strategic_planning(self):
+          """Quarterly IRA cycle for product strategy"""
+          # INVESTIGATE: Analyze market position
+          investigation = {
+              "market_analysis": self.aggregate_ooda_insights("market"),
+              "user_research": self.analyze_feedback_patterns(),
+              "competitive_landscape": self.research_competitors(),
+              "evidence_gaps": self.identify_unknowns()
+          }
+          
+          # RESEARCH: Deep dive into opportunities
+          research_findings = {
+              "user_needs": self.conduct_user_interviews(n=50),
+              "technical_feasibility": self.prototype_solutions(),
+              "market_fit": self.validate_assumptions()
+          }
+          
+          # ACT: Set strategic direction
+          strategic_actions = {
+              "product_roadmap": self.update_roadmap(research_findings),
+              "resource_allocation": self.allocate_teams(),
+              "success_metrics": self.define_okrs(),
+              "ooda_parameters": self.configure_tactical_boundaries()
+          }
+          
+          # Update orientation models for OODA loops
+          self.knowledge_base.update_strategic_context(strategic_actions)
+          return strategic_actions
+      
+      # TACTICAL LAYER (OODA)
+      def spawn_tactical_loop(self, domain: str):
+          """Create domain-specific OODA loop"""
+          
+          class TacticalOODA:
+              def __init__(self, domain, knowledge_base):
+                  self.domain = domain
+                  self.kb = knowledge_base
+                  self.strategic_context = self.kb.get_strategic_context()
+              
+              def observe(self):
+                  # Real-time observations
+                  return {
+                      "user_behavior": self.monitor_analytics(),
+                      "system_performance": self.check_metrics(),
+                      "competitor_moves": self.scan_market_signals()
+                  }
+              
+              def orient(self, observations):
+                  # Blend tactical data with strategic context
+                  orientation = {
+                      "tactical_situation": self.assess_immediate(observations),
+                      "strategic_alignment": self.check_strategy_fit(observations),
+                      "adaptation_needed": self.detect_drift()
+                  }
+                  
+                  # Feed significant patterns to IRA layer
+                  if orientation["adaptation_needed"] > 0.7:
+                      self.kb.flag_for_strategic_review(orientation)
+                  
+                  return orientation
+              
+              def decide(self, orientation):
+                  # Decisions within strategic boundaries
+                  if self.within_strategic_parameters(orientation):
+                      return self.autonomous_decision(orientation)
+                  else:
+                      return self.escalate_to_strategic_layer(orientation)
+              
+              def act(self, decision):
+                  results = self.execute_decision(decision)
+                  # Share learnings across system
+                  self.kb.record_tactical_outcome(results)
+                  return results
+          
+          self.ooda_loops[domain] = TacticalOODA(domain, self.knowledge_base)
+          return self.ooda_loops[domain]
+      
+      # INTEGRATION LAYER
+      def synchronize_layers(self):
+          """Ensure strategic-tactical alignment"""
+          # Bottom-up: Aggregate tactical insights
+          tactical_patterns = self.analyze_ooda_patterns()
+          
+          # Top-down: Cascade strategic updates
+          strategic_updates = self.ira_cycle.get_updates()
+          
+          # Bidirectional knowledge flow
+          self.knowledge_base.synchronize(
+              strategic=strategic_updates,
+              tactical=tactical_patterns
+          )
+          
+          # Trigger IRA investigation if tactical variance is high
+          if tactical_patterns["variance"] > self.threshold:
+              self.ira_cycle.trigger_investigation(tactical_patterns)
+  ```
+  </example_correct>
+  
+  <example_incorrect>
+  Description: Conflicting frameworks without integration
+  ```python
+  # BAD: Separate systems that don't communicate
+  def run_ira():
+      # Slow strategic planning in isolation
+      yearly_plan = create_annual_strategy()
+      return yearly_plan  # Never updated based on reality
+  
+  def run_ooda():
+      # Rapid tactics without strategic context
+      while True:
+          react_to_immediate_crisis()  # No long-term vision
+  
+  # No knowledge sharing or synchronization
+  # Strategic plans become obsolete
+  # Tactical actions drift from goals
+  ```
+  </example_incorrect>
+
+* **Integration Patterns**:
+  * **Cascading Context**: Strategic decisions become OODA orientation constraints
+  * **Bubbling Insights**: Tactical patterns trigger strategic investigations
+  * **Shared Learning**: Both layers contribute to organizational knowledge
+  * **Temporal Harmony**: Different cycle times that remain synchronized
+  
+* **When to Use Each**:
+  * **Pure IRA**: Major pivots, annual planning, new market entry
+  * **Pure OODA**: Crisis response, competitive moves, daily operations
+  * **Integrated**: Product development, market expansion, digital transformation
+
+* **References**:
+  * [Strategic-Tactical Integration in Military Doctrine](https://www.armyupress.army.mil/Journals/Military-Review/)
+  * [Adaptive Enterprise Architecture](https://www.opengroup.org/togaf)
+  * Internal: `@patterns/multi-timescale-systems.mdc`

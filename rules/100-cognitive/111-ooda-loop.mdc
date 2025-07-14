@@ -1,0 +1,201 @@
+---
+description: "OODA Loop - Rapid iterative decision-making through Observe, Orient, Decide, Act cycles"
+version: 1.0.0
+author: "Hamza Amjad"
+created: "2025-07-14"
+last_modified: "2025-07-14"
+last_reviewed: "2025-07-14"
+
+# Activation Conditions
+globs: 
+  - "**/incident/**"    # Incident response scenarios
+  - "**/strategy/**"    # Strategic planning
+  - "**/real-time/**"   # Real-time systems
+  - "**/*monitor*"      # Monitoring and observability
+alwaysApply: false
+
+# Dependencies and Conflicts
+dependencies:
+  - "000-core/003-stepwise-autonomy.mdc"
+  - "100-cognitive/103-divergence-convergence.mdc"
+  
+conflicts:
+  - rule: "000-core/004-risk-checkpoint.mdc"
+    resolution: "merge"  # OODA includes risk in Orient phase
+    
+# Performance Metrics
+performance:
+  avg_tokens: 425
+  p95_latency: 120ms
+  success_rate: 0%
+  token_budget: 550
+  
+# Tags for Cross-Cutting Concerns
+tags:
+  - "decision-making"
+  - "agility"
+  - "feedback-loops"
+  - "competitive-advantage"
+  - "real-time"
+---
+
+# OODA Loop: Observe, Orient, Decide, Act
+
+<!-- Version: 1.0.0 — 2025-07-14 -->
+<!-- Based on: John Boyd's Military Strategy Theory -->
+
+* **Purpose**: Enable rapid decision-making and adaptation through continuous cycles of observation, orientation, decision, and action, achieving competitive advantage by operating inside adversaries' or problems' decision cycles.
+
+* **Requirements**:
+  * **Observe Phase**:
+    - Gather unfiltered, real-time data from all available sensors
+    - Maintain awareness without premature interpretation
+    - Prioritize timeliness over completeness for volatile situations
+    - Document raw observations separately from analysis
+  * **Orient Phase**:
+    - Synthesize observations with existing mental models
+    - Apply "destruction and creation" - challenge assumptions
+    - Integrate cultural context, experience, and new information
+    - Identify mismatches between expectations and reality
+  * **Decide Phase**:
+    - Generate hypotheses as falsifiable predictions
+    - Favor "good enough" decisions over perfect ones
+    - Consider resource constraints and time pressure
+    - Maintain decision reversibility where possible
+  * **Act Phase**:
+    - Execute decisions with clear measurement criteria
+    - Generate observable outcomes for feedback
+    - Maintain action tempo to disrupt competitor cycles
+    - Capture results for next observation phase
+
+* **Validation**:
+  * Check: Each phase completed before progressing (no skipping)
+  * Check: Feedback from Act phase feeds new Observations
+  * Check: Orientation models updated based on outcomes
+  * Check: Decision tempo faster than environmental change rate
+  * Metric: Complete cycle time < problem evolution time
+
+* **Examples**:
+  <example_correct>
+  Description: Incident response using OODA Loop
+  ```python
+  class OODAIncidentResponse:
+      def __init__(self):
+          self.cycle_count = 0
+          self.orientation_model = self.load_threat_models()
+      
+      def observe(self) -> dict:
+          """Gather unfiltered sensor data"""
+          return {
+              "network_traffic": self.collect_netflow(),
+              "system_logs": self.aggregate_logs(),
+              "user_reports": self.check_tickets(),
+              "timestamp": datetime.now(),
+              "cycle": self.cycle_count
+          }
+      
+      def orient(self, observations: dict) -> dict:
+          """Synthesize data with threat models"""
+          # Destruction: Challenge existing assumptions
+          anomalies = self.detect_anomalies(observations)
+          
+          # Creation: Build new understanding
+          threat_assessment = {
+              "attack_vectors": self.correlate_with_ttps(anomalies),
+              "affected_systems": self.map_blast_radius(observations),
+              "attacker_tempo": self.estimate_progression_speed(observations)
+          }
+          
+          # Update mental model for next cycle
+          self.orientation_model.update(threat_assessment)
+          return threat_assessment
+      
+      def decide(self, orientation: dict) -> dict:
+          """Generate actionable hypothesis"""
+          if orientation["attacker_tempo"] > self.response_tempo:
+              # We're being outmaneuvered - need faster decisions
+              return {
+                  "action": "automated_containment",
+                  "scope": orientation["affected_systems"][:5],  # Limit scope
+                  "reversible": True
+              }
+          else:
+              return {
+                  "action": "targeted_investigation",
+                  "focus": orientation["attack_vectors"][0],
+                  "resources": "full_team"
+              }
+      
+      def act(self, decision: dict) -> dict:
+          """Execute with measurement"""
+          start_time = datetime.now()
+          
+          if decision["action"] == "automated_containment":
+              results = self.isolate_systems(decision["scope"])
+          else:
+              results = self.deep_dive_investigation(decision["focus"])
+          
+          return {
+              "action_taken": decision["action"],
+              "results": results,
+              "execution_time": datetime.now() - start_time,
+              "new_observables": results.get("indicators", [])
+          }
+      
+      def run_cycle(self):
+          """Complete OODA loop iteration"""
+          observations = self.observe()
+          orientation = self.orient(observations)
+          decision = self.decide(orientation)
+          action_results = self.act(decision)
+          
+          # Feedback loop - results become new observations
+          self.cycle_count += 1
+          self.queue_observations(action_results["new_observables"])
+          
+          return {
+              "cycle": self.cycle_count,
+              "tempo": self.calculate_cycle_time(),
+              "effectiveness": self.measure_containment()
+          }
+  ```
+  </example_correct>
+  
+  <example_incorrect>
+  Description: Linear decision-making without feedback loops
+  ```python
+  # BAD: No continuous cycle or adaptation
+  def handle_incident():
+      # One-time observation
+      data = collect_all_data()  # Waits for "complete" picture
+      
+      # Static analysis
+      analysis = analyze_data(data)  # No model updates
+      
+      # Perfect decision attempt
+      decision = find_optimal_solution(analysis)  # Analysis paralysis
+      
+      # Fire and forget
+      execute_decision(decision)  # No measurement or feedback
+      
+      # No cycle - stops here
+      return "Complete"  # Misses ongoing adaptation needs
+  ```
+  </example_incorrect>
+
+* **Integration Notes**:
+  * Works best with: IRA framework for evidence depth in Orient phase
+  * Complements: Real-time monitoring and observability systems
+  * Performance impact: Reduces decision latency by 40-60%
+  
+* **Tempo Optimization Strategies**:
+  * [ ] Automate Observe phase with streaming data pipelines
+  * [ ] Pre-compute orientation models for common scenarios
+  * [ ] Create decision trees for high-frequency decisions
+  * [ ] Parallelize independent actions for speed
+  * [ ] Instrument all actions for automatic feedback capture
+
+* **References**:
+  * [Boyd's Patterns of Conflict](https://www.dni.gov/index.php/newsroom/reports-publications/reports-publications-2021/3567-discourse-on-winning-and-losing)
+  * [OODA Loop in Cybersecurity](https://www.securityweek.com/the-ooda-loop-the-military-model-that-speeds-up-cybersecurity-response/)
+  * Internal: `@patterns/feedback-driven-systems.mdc`
