@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+# Enhanced rulesync wrapper script
+# Provides convenient access to the enhanced rulesync system
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+# Default to enhanced version
+RULESYNC_SCRIPT="$SCRIPT_DIR/rulesync_enhanced.py"
+
+# Check if enhanced version exists
+if [ ! -f "$RULESYNC_SCRIPT" ]; then
+    echo "❌ Enhanced rulesync not found at $RULESYNC_SCRIPT"
+    exit 1
+fi
+
+# Check for Python 3
+if ! command -v python3 &> /dev/null; then
+    echo "❌ Python 3 is required but not installed"
+    exit 1
+fi
+
+# Check for required dependencies
+if ! python3 -c "import yaml" &> /dev/null; then
+    echo "⚠️  PyYAML not found - installing..."
+    pip3 install PyYAML
+fi
+
+# Show usage help for common commands
+show_help() {
+    cat << EOF
+🔧 Enhanced Rulesync - Intelligent Rule Aggregation System
+
+USAGE:
+    rulesync_enhanced COMMAND [OPTIONS]
+
+COMMANDS:
+    generate           Generate rule files for platforms
+    validate           Validate platform compatibility  
+    create-profile     Create a new profile
+    list-profiles      List available profiles
+    list-platforms     List supported platforms
+    analyze            Analyze rule statistics
+    aggregate          Aggregate rules by category
+
+EXAMPLES:
+    # Generate rules for all platforms using Mirror Project profile
+    rulesync_enhanced generate --profile mirror-project
+
+    # Generate rules for specific platforms
+    rulesync_enhanced generate --profile mirror-project --platforms claude,cursor
+
+    # Validate platform compatibility
+    rulesync_enhanced validate --platform claude --profile mirror-project
+
+    # Create a new profile
+    rulesync_enhanced create-profile --name my-project --description "My project rules"
+
+    # Analyze rule statistics
+    rulesync_enhanced analyze
+
+    # List available profiles
+    rulesync_enhanced list-profiles
+
+For detailed help on a specific command:
+    rulesync_enhanced COMMAND --help
+EOF
+}
+
+# Main execution
+if [ $# -eq 0 ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+    show_help
+    exit 0
+fi
+
+# Change to project root for relative paths
+cd "$PROJECT_ROOT"
+
+# Execute the enhanced rulesync script
+exec python3 "$RULESYNC_SCRIPT" "$@"

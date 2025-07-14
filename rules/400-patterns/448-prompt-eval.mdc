@@ -1,104 +1,74 @@
-# prompt-eval.mdc
+---
+description: "Systematic prompt evaluation framework"
+version: 3.0.0
+performance:
+  avg_tokens: 800
+  p95_latency: 1.8ms
+  token_budget: 1000
+dependencies:
+  - "001-philosophers-stone.mdc"
+lazy_load:
+  - "448-prompt-eval-metrics.mdc"
+---
 
-*   **Purpose**: Systematically evaluate and improve prompts.
-*   **Requirements**:
-    1. All new or significantly modified LLM prompts intended for reuse or complex tasks MUST be defined using the JSON structure specified below. This includes populating all relevant keys.
-    2. After creating or modifying any prompt definition file, perform a task retrospective following `.cursor/rules/task-retrospective.mdc`.
-    3. When defining prompt content (e.g., within `global_constraints`, `directives[*].constraints`, `task.steps`, `output_specification.validation_rules`), explicitly reference or require adherence to other relevant project rules (e.g., `logging-monitoring.mdc`, `test-driven-development.mdc`, `python-clean-code.mdc`) where applicable.
-    4. **For research-oriented prompts, include diverse examples or case studies to cover a wide range of scenarios and provide clearer guidance for users.**
-    5. **Ensure that the error handling section in research-oriented prompts includes specific instructions for addressing common challenges or edge cases in the research process.**
-    6. **Define specific, measurable, and achievable success criteria in the task section to facilitate effective evaluation and prioritization.**
-    7. **Ensure that the examples section covers a wide range of scenarios, including edge cases and error handling, to provide comprehensive guidance and anticipate potential challenges.**
-    8. **When using a comprehensive template (like the one below), clearly distinguish or prioritize essential fields based on task complexity, ensuring core elements (`prompt_metadata`, primary `objective`, `input_data`, `output_specification`) are always addressed.**
-*   **Validation**:
-    *   Check: Does the output include all required sections (metadata, agent configuration, context, task, examples, reasoning guidance, output specification, error handling)?
-    *   Check: Is the task broken down into clear, actionable steps?
-    *   Check: Are the examples relevant and illustrative of the desired output?
-    *   Check: Does the reasoning guidance provide a clear approach for generating the output?
-    *   Check: Are the output format, structure, and validation rules clearly specified?
-    *   Check: Are potential errors and edge cases considered and handled appropriately?
-    *   **Check: Does the new rule potentially overlap with or conflict with any existing rules in the .cursor/rules directory?**
-    *   Check (Schema Validation): The JSON prompt definition MUST validate against the implicit schema defined by this file's structure. (A formal JSON schema could be generated from this for automated validation).
-    *   Check (Completeness): All non-optional top-level keys MUST be present. Key sub-fields like `prompt_metadata.title`, `task.objective`, `output_specification.format` must be filled.
-    *   Check (Code Review): When a prompt is created or modified, review the corresponding JSON definition file for clarity, completeness, and adherence to this structure.
-    *   *Check (Programmatic Validation)*: For complex JSON generation tasks, consider adding a programmatic validation step (e.g., using a Python script with `jsonschema`) after generation to catch structural errors not caught by basic linting.
-    *   **Check (Examples Diversity): For research-oriented prompts, ensure that the examples cover a diverse range of scenarios and provide clear guidance for users.**
-    *   **Check (Error Handling Specificity): Verify that the error handling section in research-oriented prompts includes specific instructions for addressing common challenges or edge cases in the research process.**
-*   **Structure Definition & Example**: The following JSON object exemplifies the required structure. New prompt definitions should replicate this structure with appropriate content.
+# Prompt Evaluation Framework
 
-```json
-{
-    "prompt_metadata": {
-      "title": "Prompt Creation & Evaluation Template",
-      "version": "6.0",
-      "description": "Defines the standard structure for LLM prompts.",
-      "last_updated": "2024-07-26", // Update this when structure changes
-      "task_id": "PROMPT-EVAL-TEMPLATE",
-      "compatible_models": [
-        "GPT-4o",
-        "Claude 3 Opus",
-        "Gemini 1.5 Pro",
-        "Llama 3 70B",
-        "Mistral Large"
-      ]
-    },
-    "agent_configuration": {
-      "persona": {
-        "role": "[Specify Role, e.g., Code Reviewer, Data Analyst]",
-        "expertise_level": "[expert | intermediate | novice]",
-        "tone": "[technical | formal | conversational]",
-        "audience": "[Specify Audience, e.g., Developers, Product Managers]"
-      },
-      "global_constraints": {
-        "must": [
-          "[Constraint 1, e.g., Adhere strictly to output format]",
-          "[Constraint 2, e.g., Cite sources for claims]"
-        ],
-        "must_not": [
-          "[Negative Constraint 1, e.g., Reveal internal thought process]",
-          "[Negative Constraint 2, e.g., Generate unsafe content]"
-        ],
-        "quality": [
-          "[Quality Dimension 1 > Quality Dimension 2, e.g., Accuracy > Brevity]"
-        ]
-      },
-      "directives": [
-        {
-          "id": "D1",
-          "type": "primary",
-          "objective": "[Main objective of the prompt, e.g., Generate Python unit tests]",
-          "constraints": [
-            "[Directive Constraint 1, e.g., Cover all public methods]",
-            "[Directive Constraint 2, e.g., Use pytest framework]"
-          ],
-          "examples": [
-            "[Illustrative example of the task]"
-          ]
-        }
-        // Add more directives if needed (D2, D3...)
-      ]
-    },
-    "context": {
-      "background": "[Provide necessary background information for the task]",
-      "supplemental_knowledge": [
-        {
-          "id": "K1",
-          "source": "[Source of knowledge, e.g., Internal Style Guide, API Docs URL]",
-          "content": "[Brief summary or key point from the source]"
-        }
-        // Add more knowledge sources if needed (K2, K3...)
-      ],
-      "input_data": {
-        "format": "[Expected input format, e.g., python_code, json, text]",
-        "content": "[Can be a simple string, CDATA block, or a JSON object. Prefer JSON object for structured/nested data.]"
-        // Example as JSON object:
-        // "content": {
-        //   "placeholder": "{placeholder_for_actual_input}",
-        //   "example_data": { "key": "value" }
-        // }
-      },
-      "temporal_context": "[Specify time relevance, e.g., Current, Q3 2024]"
+**Purpose**: Systematically assess and improve prompt effectiveness through metrics.
 
-## Extended Content
+## Evaluation Matrix
 
-See notepad: `448-prompt-eval-extended.md`
+| Dimension | Metrics | Target |
+|-----------|---------|--------|
+| Clarity | Ambiguity score (0-1) | <0.2 |
+| Completeness | Coverage % | >90% |
+| Efficiency | Token usage | <1000 |
+| Accuracy | Success rate | >95% |
+
+## Quick Evaluation Process
+
+1. **Baseline Test**
+   ```python
+   results = evaluate_prompt(baseline_prompt, test_cases[:10])
+   baseline_score = calculate_metrics(results)
+   ```
+
+2. **Iterative Refinement**
+   ```python
+   for variant in prompt_variants:
+       score = evaluate_prompt(variant, test_cases)
+       if score > baseline_score * 1.1:  # 10% improvement
+           baseline_prompt = variant
+   ```
+
+3. **A/B Testing**
+   ```yaml
+   test_config:
+     control: original_prompt
+     variant: optimized_prompt
+     sample_size: 100
+     confidence: 0.95
+   ```
+
+## Key Metrics
+
+- **Task Completion Rate**: % successful outputs
+- **Token Efficiency**: Output quality / tokens used
+- **Consistency Score**: Std deviation across runs
+- **Error Types**: Classification of failures
+
+## Validation Checklist
+- [ ] Define success criteria upfront
+- [ ] Use diverse test cases (edge cases included)
+- [ ] Measure against baseline
+- [ ] Statistical significance (p < 0.05)
+- [ ] Document winning variants
+
+## Common Pitfalls
+1. Testing on too few examples
+2. Ignoring edge cases
+3. Optimizing for wrong metrics
+4. Not controlling variables
+
+## References
+- Internal: `@patterns/prompt-engineering-guide.mdc`
+- Tool: `scripts/prompt_evaluator.py`

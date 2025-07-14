@@ -1,0 +1,40 @@
+---
+description: "Detailed metrics and examples for prompt evaluation"
+version: 1.0.0
+parent: "448-prompt-eval.mdc"
+---
+
+# Prompt Evaluation Metrics Detail
+
+## Detailed Scoring Rubrics
+
+### Clarity Score Calculation
+```python
+def clarity_score(prompt):
+    # Factors: specificity, structure, ambiguity
+    return weighted_average([
+        specificity_score * 0.4,
+        structure_score * 0.3,
+        (1 - ambiguity_score) * 0.3
+    ])
+```
+
+### Success Rate Tracking
+```json
+{
+  "prompt_version": "v2.3",
+  "total_runs": 1000,
+  "successes": 956,
+  "failures_by_type": {
+    "timeout": 12,
+    "invalid_format": 8,
+    "incomplete": 24
+  }
+}
+```
+
+## Extended Examples
+- Complex multi-step prompts
+- Domain-specific evaluations
+- Cross-model comparisons
+- Long-term performance tracking
