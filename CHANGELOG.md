@@ -19,6 +19,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created lazy-loading pattern for detailed content, reducing initial load overhead
 
 ### Added
+- Decision-making framework rules in `100-cognitive/`:
+  - `110-ira-framework.mdc`: IRA (Investigate, Research, Act) for evidence-based decisions
+  - `111-ooda-loop.mdc`: OODA Loop (Observe, Orient, Decide, Act) for rapid adaptation
+  - `112-ira-ooda-integration.mdc`: Combined framework for strategic-tactical alignment
+- Rulesync tool (`scripts/rulesync`) for cross-platform rule synchronization:
+  - Supports 5 platforms: Gemini CLI, OpenAI Codex, Claude Code, Cursor IDE, Zed Editor
+  - Generates platform-specific formats from unified `rulesync.md`
+  - Creates compatibility symlinks for cross-tool support
+- Comprehensive research documentation:
+  - `/research/sonar/20250714-rulesync-matrix.md`: Platform integration matrix with edge cases
 - GitHub Actions CI/CD pipeline with validation and benchmarking workflows
 - Automated rule validation on all PRs with performance regression detection
 - New rule categories:

@@ -1,0 +1,137 @@
+---
+description: "IRA Framework - Systematic evidence-based decision making through Investigation, Research, and Action"
+version: 1.0.0
+author: "Hamza Amjad"
+created: "2025-07-14"
+last_modified: "2025-07-14"
+last_reviewed: "2025-07-14"
+
+# Activation Conditions
+globs: 
+  - "**/*.md"          # All markdown files for documentation
+  - "**/*.py"          # Python files for implementation
+  - "**/research/**"   # Research-focused directories
+  - "**/analysis/**"   # Analysis directories
+alwaysApply: false
+
+# Dependencies and Conflicts
+dependencies:
+  - "000-core/001-philosophers-stone.mdc"
+  - "100-cognitive/103-divergence-convergence.mdc"
+  
+conflicts:
+  - rule: "100-cognitive/102-wildcard-brainstorm.mdc"
+    resolution: "defer"  # IRA requires structured approach
+    
+# Performance Metrics
+performance:
+  avg_tokens: 450
+  p95_latency: 150ms
+  success_rate: 0%
+  token_budget: 600
+  
+# Tags for Cross-Cutting Concerns
+tags:
+  - "decision-making"
+  - "evidence-based"
+  - "systematic"
+  - "research"
+  - "problem-solving"
+---
+
+# IRA Framework: Investigate, Research, Act
+
+<!-- Version: 1.0.0 — 2025-07-14 -->
+<!-- Based on: User Experience Research and Decision Sciences -->
+
+* **Purpose**: Implement a systematic evidence-based approach to problem-solving that reduces ambiguity, integrates conflicting data, and ensures actionable outcomes through iterative validation.
+
+* **Requirements**:
+  * **Investigation Phase**:
+    - Clearly articulate the decision trigger with measurable success criteria
+    - Conduct comprehensive evidence audit of existing data and knowledge
+    - Identify and document all evidence gaps systematically
+    - Reframe vague problems into specific, researchable questions
+  * **Research Phase**:
+    - Match research methods to specific evidence gaps (generative vs evaluative)
+    - Deploy mixed methods for comprehensive understanding
+    - Synthesize findings using structured analysis (affinity mapping, thematic analysis)
+    - Prioritize insights by impact and feasibility metrics
+  * **Action Phase**:
+    - Co-create solutions with relevant stakeholders
+    - Implement controlled pilots with clear boundaries
+    - Embed measurement protocols from the start
+    - Conduct structured retrospectives for continuous improvement
+
+* **Validation**:
+  * Check: Decision trigger is documented with clear stakeholder mapping
+  * Check: Evidence gaps are explicitly identified before research begins
+  * Check: Research methods directly address identified gaps
+  * Check: Actions include embedded evaluation mechanisms
+  * Metric: Time from investigation to actionable insight < 2 weeks
+
+* **Examples**:
+  <example_correct>
+  Description: Investigating API performance degradation
+  ```python
+  # INVESTIGATE: Define the problem space
+  decision_trigger = {
+      "issue": "API response time increased 40% last week",
+      "stakeholders": ["engineering", "customer_success", "product"],
+      "success_metrics": {"p95_latency": "<200ms", "error_rate": "<0.1%"}
+  }
+  
+  evidence_audit = {
+      "available": ["APM metrics", "error logs", "deployment history"],
+      "gaps": ["user impact data", "root cause analysis", "comparative benchmarks"]
+  }
+  
+  # RESEARCH: Fill evidence gaps with targeted methods
+  research_plan = {
+      "user_impact": "Query customer support tickets + session replays",
+      "root_cause": "Distributed tracing + code profiling",
+      "benchmarks": "Load testing with previous versions"
+  }
+  
+  # ACT: Implement with measurement
+  pilot_rollout = {
+      "solution": "Implement caching layer",
+      "test_group": "10% of traffic",
+      "metrics": ["latency", "cache_hit_rate", "error_rate"],
+      "rollback_criteria": "error_rate > 0.5%"
+  }
+  ```
+  </example_correct>
+  
+  <example_incorrect>
+  Description: Jumping to solutions without investigation
+  ```python
+  # BAD: No evidence audit or gap analysis
+  def fix_performance():
+      # Assumption-based solution
+      add_more_servers()  # No investigation of actual bottleneck
+      
+      # No research phase
+      deploy_to_production()  # No pilot or measurement
+      
+      # No reflection mechanism
+      close_ticket()  # No learning captured
+  ```
+  </example_incorrect>
+
+* **Integration Notes**:
+  * Works best with: OODA loop for rapid iteration cycles
+  * May conflict with: Pure brainstorming approaches that skip evidence gathering
+  * Performance impact: Adds ~1-2 days upfront but reduces rework by 60%
+  
+* **Implementation Checklist**:
+  * [ ] Create decision proposal template with stakeholder matrix
+  * [ ] Set up evidence repository with gap tracking
+  * [ ] Define research method selection criteria
+  * [ ] Establish pilot success/failure thresholds
+  * [ ] Schedule retrospective before starting next cycle
+
+* **References**:
+  * [User Interviews Decision-Driven Research](https://www.userinterviews.com/blog/a-framework-for-decision-driven-research)
+  * [Evidence-Based Decision Making in Healthcare](https://pmc.ncbi.nlm.nih.gov/articles/PMC7953669/)
+  * Internal: `@patterns/research-synthesis-methods.mdc`
