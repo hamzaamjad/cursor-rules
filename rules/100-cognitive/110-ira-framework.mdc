@@ -135,3 +135,22 @@ tags:
   * [User Interviews Decision-Driven Research](https://www.userinterviews.com/blog/a-framework-for-decision-driven-research)
   * [Evidence-Based Decision Making in Healthcare](https://pmc.ncbi.nlm.nih.gov/articles/PMC7953669/)
   * Internal: `@patterns/research-synthesis-methods.mdc`
+
+## Performance Targets (New)
+* **Loop Velocity Benchmarks**:
+  - Investigation-to-Action cycle ≤ 14 days (p95)
+  - Evidence gap closure rate ≥ 80% within single IRA cycle
+* **Knowledge Capture Metrics**:
+  - *Tacit-to-Explicit Ratio (TER)*: Document ≥ 60% of tacit insights as testable hypotheses per cycle
+  - *Evidence Provenance Index (EPI)*: ≥ 0.9 (all evidence linked to origin + timestamp)
+* **Dynamic KPI Weighting**:
+  - Recalculate KPI weights every 10 OODA cycles or upon significant environmental shift (>2σ deviation in key metrics)
+  - Use weighted-moving average with half-life of 30 days to adjust importance scores
+
+## Orientation Bias Safeguards (New)
+* Establish **Red-Team Review Thread** for each major investigation to surface confirmation bias
+* Run **Data-Drift Detection** (KS-test p<0.05) on critical datasets before synthesis
+
+## Compliance & Ethics Hooks (New)
+* Generate **Evidence Transparency Dossier** aligning with EU AI Act Article 13 for each decision package
+* Verify no personally identifiable information (PII) leakage; automated scan compliance threshold: <0.1% PII tokens

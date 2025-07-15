@@ -208,3 +208,28 @@ tags:
   * [Strategic-Tactical Integration in Military Doctrine](https://www.armyupress.army.mil/Journals/Military-Review/)
   * [Adaptive Enterprise Architecture](https://www.opengroup.org/togaf)
   * Internal: `@patterns/multi-timescale-systems.mdc`
+
+## Synchronization Service-Level Agreements (New)
+* **Tactical→Strategic Insight Propagation**: OODA loops must publish structured insight packets to IRA knowledge base within **4 hours** (p95).
+* **Strategic→Tactical Cascade**: IRA strategic updates must be ingested by all active OODA loops within **24 hours**.
+
+## Integrated Performance Dashboard (New)
+| Metric | Target | Source |
+|--------|--------|--------|
+| Strategic Coherence Score | ≥ 85 % | IRA audits |
+| Loop Velocity (avg cycles/h) | ≥ 12 | OODA telemetry |
+| Tacit-to-Explicit Ratio | ≥ 60 % | IRA knowledge analytics |
+| MTTR (incidents) | -60 % vs baseline | OODA metrics |
+
+## Dynamic KPI Weighting Algorithm (Cross-Layer)
+* Ingest environmental volatility index (EVI) daily
+* Adjust KPI weights via WMA (half-life 30 days) when EVI > 1.5 σ
+* Propagate new weights to OODA loops in next sync window
+
+## AI-Augmented Knowledge Fusion (New)
+* Use graph-based embedding store to merge tactical logs and strategic research; cosine similarity threshold 0.8 to flag emergent patterns
+* Reinforcement learning agent tunes orientation parameters to maximize coherence score
+
+## Compliance & Ethics Alignment (New)
+* Maintain "Dual Dossier": tactical action logs + strategic evidence packages, exportable for EU AI Act Article 13 audits
+* Privacy guardrails: PII token leakage <0.1 %, automated scan before dossier publication

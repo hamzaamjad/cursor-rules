@@ -199,3 +199,25 @@ tags:
   * [Boyd's Patterns of Conflict](https://www.dni.gov/index.php/newsroom/reports-publications/reports-publications-2021/3567-discourse-on-winning-and-losing)
   * [OODA Loop in Cybersecurity](https://www.securityweek.com/the-ooda-loop-the-military-model-that-speeds-up-cybersecurity-response/)
   * Internal: `@patterns/feedback-driven-systems.mdc`
+
+## Performance Targets (New)
+* **Loop Velocity**: Target complete OODA cycle < problem evolution time and < 5 minutes for software/DevSecOps contexts (p90)
+* **Decision Latency**: Observe→Act latency ≤ 500 ms for real-time systems; ≤ 2 s for incident response
+* **MTTR Reduction**: ≥ 60 % decrease compared to baseline within 6 months of adoption
+
+## AI-Augmented Orientation (New)
+* Leverage ML anomaly detection to enrich orientation context (F1 ≥ 0.92)
+* Apply Reinforcement Learning agents to optimize decision policies, retrain every 1000 cycles or weekly, whichever first
+
+## Failure-Mode Validation Checklist (New)
+1. **Sensor-Fusion Drift**: Validate timestamp alignment; drift < 50 ms
+2. **Orientation Bias**: Run adversarial reasoning thread; detect confirmation bias via hypothesis diversity score (> 0.7)
+3. **Decision Hysteresis**: Monitor repeated declines of valid actions; hysteresis rate < 5 %
+4. **Action Rollback Efficacy**: Rollback success rate ≥ 98 %
+
+## Loop Monitoring Metrics (New)
+| Metric | Definition | Target |
+|--------|------------|--------|
+| Cycles per Hour | Total distinct OODA completions / h | ≥ 12 (DevSecOps) |
+| False-Positive Rate | Incorrect threat identifications / total alerts | < 0.3 % |
+| Orientation Fidelity | Correct context extractions / sample | ≥ 95 % |

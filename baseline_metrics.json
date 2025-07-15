@@ -9,314 +9,341 @@
     "memory_usage_mb": 0.00439453125
   },
   "702-self-modifying-rules": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 0.03,
-    "validation_time_ms": 0.22,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
     "token_count": 559,
     "line_count": 91,
     "file_size_bytes": 2239,
     "memory_usage_mb": 0.0059765625
   },
   "701-rule-adaptation-tracking": {
-    "load_time_ms": 0.23,
-    "parse_time_ms": 1.66,
-    "validation_time_ms": 1.89,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.75,
+    "validation_time_ms": 1.77,
     "token_count": 397,
     "line_count": 63,
     "file_size_bytes": 1589,
-    "memory_usage_mb": 0.0098046875
+    "memory_usage_mb": 0.009638671875
   },
   "201-no-version-bloat": {
-    "load_time_ms": 0.21,
-    "parse_time_ms": 2.05,
-    "validation_time_ms": 2.26,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.97,
+    "validation_time_ms": 2.0,
     "token_count": 1468,
     "line_count": 111,
     "file_size_bytes": 5959,
-    "memory_usage_mb": 0.016259765625
+    "memory_usage_mb": 0.0160546875
   },
   "202-database-selection": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.8,
-    "validation_time_ms": 1.99,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.91,
+    "validation_time_ms": 1.94,
     "token_count": 717,
     "line_count": 61,
     "file_size_bytes": 2890,
-    "memory_usage_mb": 0.0102734375
+    "memory_usage_mb": 0.01048828125
   },
-  "302-cursor-agent-integration": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.69,
-    "validation_time_ms": 1.88,
-    "token_count": 2145,
-    "line_count": 55,
-    "file_size_bytes": 8582,
-    "memory_usage_mb": 0.012822265625
+  "302-agent-advanced-patterns": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 294,
+    "line_count": 52,
+    "file_size_bytes": 1179,
+    "memory_usage_mb": 0.002822265625
   },
-  "301-available-tooling-guide": {
-    "load_time_ms": 0.2,
-    "parse_time_ms": 1.52,
-    "validation_time_ms": 1.72,
-    "token_count": 2847,
-    "line_count": 59,
-    "file_size_bytes": 11390,
-    "memory_usage_mb": 0.015205078125
+  "302-agent-error-recovery": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 321,
+    "line_count": 44,
+    "file_size_bytes": 1296,
+    "memory_usage_mb": 0.004091796875
   },
-  "available-tooling-guide": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.56,
-    "validation_time_ms": 1.75,
-    "token_count": 2847,
-    "line_count": 59,
-    "file_size_bytes": 11390,
-    "memory_usage_mb": 0.015166015625
+  "301-tooling-api-reference": {
+    "load_time_ms": 0.02,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.04,
+    "token_count": 238,
+    "line_count": 46,
+    "file_size_bytes": 952,
+    "memory_usage_mb": 0.0025
   },
   "perplexity-research-framework": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.78,
-    "validation_time_ms": 1.96,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.05,
+    "validation_time_ms": 2.0799999999999996,
     "token_count": 1396,
     "line_count": 82,
     "file_size_bytes": 5586,
-    "memory_usage_mb": 0.01015625
+    "memory_usage_mb": 0.010185546875
+  },
+  "302-cursor-agent-core": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 270,
+    "line_count": 46,
+    "file_size_bytes": 1096,
+    "memory_usage_mb": 0.00380859375
   },
   "multi-model-tool-integration": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.91,
-    "validation_time_ms": 2.09,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 2.0,
+    "validation_time_ms": 2.02,
     "token_count": 1154,
     "line_count": 57,
     "file_size_bytes": 4616,
-    "memory_usage_mb": 0.009130859375
+    "memory_usage_mb": 0.009248046875
   },
   "304-perplexity-research-framework": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.8,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.96,
     "validation_time_ms": 1.99,
     "token_count": 1396,
     "line_count": 82,
     "file_size_bytes": 5586,
-    "memory_usage_mb": 0.009921875
-  },
-  "cursor-agent-integration": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.72,
-    "validation_time_ms": 1.9,
-    "token_count": 2145,
-    "line_count": 55,
-    "file_size_bytes": 8582,
-    "memory_usage_mb": 0.01271484375
+    "memory_usage_mb": 0.009931640625
   },
   "303-multi-model-tool-integration": {
-    "load_time_ms": 0.08,
-    "parse_time_ms": 1.82,
-    "validation_time_ms": 1.9000000000000001,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.94,
+    "validation_time_ms": 1.97,
     "token_count": 1154,
     "line_count": 57,
     "file_size_bytes": 4616,
-    "memory_usage_mb": 0.009140625
+    "memory_usage_mb": 0.0091796875
+  },
+  "301-tooling-mcp-reference": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 244,
+    "line_count": 43,
+    "file_size_bytes": 977,
+    "memory_usage_mb": 0.002431640625
+  },
+  "301-available-tooling-core": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 270,
+    "line_count": 38,
+    "file_size_bytes": 1083,
+    "memory_usage_mb": 0.002705078125
+  },
+  "107-sparring-partner-mode-v2": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 702,
+    "line_count": 105,
+    "file_size_bytes": 2815,
+    "memory_usage_mb": 0.006953125
+  },
+  "302-cursor-agent-integration-v2": {
+    "load_time_ms": 0.02,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.04,
+    "token_count": 648,
+    "line_count": 98,
+    "file_size_bytes": 2599,
+    "memory_usage_mb": 0.006484375
+  },
+  "301-available-tooling-guide-v2": {
+    "load_time_ms": 0.02,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.04,
+    "token_count": 530,
+    "line_count": 73,
+    "file_size_bytes": 2130,
+    "memory_usage_mb": 0.00556640625
   },
   "003-stepwise-autonomy": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 2.82,
-    "validation_time_ms": 2.9899999999999998,
-    "token_count": 1269,
-    "line_count": 68,
-    "file_size_bytes": 5079,
-    "memory_usage_mb": 0.010732421875
+    "load_time_ms": 0.02,
+    "parse_time_ms": 3.1,
+    "validation_time_ms": 3.12,
+    "token_count": 2546,
+    "line_count": 139,
+    "file_size_bytes": 10185,
+    "memory_usage_mb": 0.01572265625
   },
   "001-philosophers-stone": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.64,
-    "validation_time_ms": 1.8299999999999998,
-    "token_count": 1144,
-    "line_count": 111,
-    "file_size_bytes": 4593,
-    "memory_usage_mb": 0.013154296875
+    "load_time_ms": 0.05,
+    "parse_time_ms": 1.78,
+    "validation_time_ms": 1.83,
+    "token_count": 668,
+    "line_count": 75,
+    "file_size_bytes": 2677,
+    "memory_usage_mb": 0.009677734375
   },
   "002-pareto-prioritization": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.81,
-    "validation_time_ms": 1.98,
-    "token_count": 829,
-    "line_count": 28,
-    "file_size_bytes": 3321,
-    "memory_usage_mb": 0.007744140625
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.85,
+    "validation_time_ms": 1.8800000000000001,
+    "token_count": 1665,
+    "line_count": 59,
+    "file_size_bytes": 6669,
+    "memory_usage_mb": 0.010927734375
   },
   "004-risk-checkpoint": {
-    "load_time_ms": 0.21,
-    "parse_time_ms": 2.1,
-    "validation_time_ms": 2.31,
-    "token_count": 1404,
-    "line_count": 131,
-    "file_size_bytes": 5660,
-    "memory_usage_mb": 0.0156640625
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.14,
+    "validation_time_ms": 2.17,
+    "token_count": 959,
+    "line_count": 137,
+    "file_size_bytes": 3850,
+    "memory_usage_mb": 0.019599609375
   },
   "603-swarm-intelligence": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 0.03,
-    "validation_time_ms": 0.21,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
     "token_count": 514,
     "line_count": 83,
     "file_size_bytes": 2056,
     "memory_usage_mb": 0.00349609375
   },
   "602-quantum-superposition": {
-    "load_time_ms": 0.23,
+    "load_time_ms": 0.03,
     "parse_time_ms": 0.02,
-    "validation_time_ms": 0.25,
+    "validation_time_ms": 0.05,
     "token_count": 702,
     "line_count": 92,
     "file_size_bytes": 2811,
-    "memory_usage_mb": 0.0043359375
+    "memory_usage_mb": 0.004189453125
   },
   "452-sdk-development-checklist": {
-    "load_time_ms": 0.22,
-    "parse_time_ms": 1.93,
-    "validation_time_ms": 2.15,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.99,
+    "validation_time_ms": 2.02,
     "token_count": 483,
     "line_count": 33,
     "file_size_bytes": 1936,
-    "memory_usage_mb": 0.00861328125
+    "memory_usage_mb": 0.008759765625
   },
   "441-example-library-integrity": {
-    "load_time_ms": 0.25,
-    "parse_time_ms": 1.79,
-    "validation_time_ms": 2.04,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.99,
+    "validation_time_ms": 2.02,
     "token_count": 1199,
     "line_count": 59,
     "file_size_bytes": 4796,
     "memory_usage_mb": 0.009169921875
   },
   "448-prompt-eval": {
-    "load_time_ms": 0.2,
-    "parse_time_ms": 1.77,
-    "validation_time_ms": 1.97,
-    "token_count": 1650,
-    "line_count": 104,
-    "file_size_bytes": 6601,
-    "memory_usage_mb": 0.010869140625
-  },
-  "code-generation-patterns": {
-    "load_time_ms": 0.22,
-    "parse_time_ms": 3.11,
-    "validation_time_ms": 3.33,
-    "token_count": 1559,
-    "line_count": 61,
-    "file_size_bytes": 6236,
-    "memory_usage_mb": 0.011826171875
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.88,
+    "validation_time_ms": 1.91,
+    "token_count": 462,
+    "line_count": 75,
+    "file_size_bytes": 1848,
+    "memory_usage_mb": 0.006337890625
   },
   "434-bash-safety": {
-    "load_time_ms": 0.33,
-    "parse_time_ms": 1.8,
-    "validation_time_ms": 2.13,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.81,
+    "validation_time_ms": 1.84,
     "token_count": 968,
     "line_count": 63,
     "file_size_bytes": 3874,
-    "memory_usage_mb": 0.00841796875
+    "memory_usage_mb": 0.008271484375
   },
   "442-logging-monitoring": {
-    "load_time_ms": 0.14,
+    "load_time_ms": 0.03,
     "parse_time_ms": 2.35,
-    "validation_time_ms": 2.49,
+    "validation_time_ms": 2.38,
     "token_count": 1118,
     "line_count": 58,
     "file_size_bytes": 4477,
-    "memory_usage_mb": 0.013681640625
-  },
-  "model-selection": {
-    "load_time_ms": 2.61,
-    "parse_time_ms": 1.75,
-    "validation_time_ms": 4.359999999999999,
-    "token_count": 1248,
-    "line_count": 45,
-    "file_size_bytes": 4995,
-    "memory_usage_mb": 0.00916015625
+    "memory_usage_mb": 0.013740234375
   },
   "435-ci-cd-testing-gatekeeper": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.49,
-    "validation_time_ms": 1.68,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.63,
+    "validation_time_ms": 1.66,
     "token_count": 132,
     "line_count": 10,
     "file_size_bytes": 531,
-    "memory_usage_mb": 0.005283203125
+    "memory_usage_mb": 0.005439453125
   },
   "sdk-development-checklist": {
-    "load_time_ms": 0.27,
-    "parse_time_ms": 1.81,
-    "validation_time_ms": 2.08,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.02,
+    "validation_time_ms": 2.05,
     "token_count": 483,
     "line_count": 33,
     "file_size_bytes": 1936,
     "memory_usage_mb": 0.008505859375
   },
   "440-document-analysis": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.94,
-    "validation_time_ms": 2.11,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.14,
+    "validation_time_ms": 2.17,
     "token_count": 784,
     "line_count": 62,
     "file_size_bytes": 3138,
-    "memory_usage_mb": 0.011015625
+    "memory_usage_mb": 0.010869140625
   },
   "444-notebook-best-practices": {
-    "load_time_ms": 0.2,
-    "parse_time_ms": 1.74,
-    "validation_time_ms": 1.94,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.87,
+    "validation_time_ms": 1.9000000000000001,
     "token_count": 1024,
     "line_count": 66,
     "file_size_bytes": 4099,
     "memory_usage_mb": 0.008505859375
   },
   "logging-monitoring": {
-    "load_time_ms": 0.15,
-    "parse_time_ms": 2.3,
-    "validation_time_ms": 2.4499999999999997,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 2.42,
+    "validation_time_ms": 2.44,
     "token_count": 1118,
     "line_count": 58,
     "file_size_bytes": 4477,
     "memory_usage_mb": 0.013720703125
   },
   "structured-data-embedding-best-practices": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.68,
-    "validation_time_ms": 1.8699999999999999,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.71,
+    "validation_time_ms": 1.74,
     "token_count": 1255,
     "line_count": 61,
     "file_size_bytes": 5023,
-    "memory_usage_mb": 0.0092578125
+    "memory_usage_mb": 0.009404296875
   },
   "test-driven-development": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 2.26,
-    "validation_time_ms": 2.4499999999999997,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 2.35,
+    "validation_time_ms": 2.37,
     "token_count": 381,
     "line_count": 37,
     "file_size_bytes": 1528,
     "memory_usage_mb": 0.00810546875
   },
   "431-api-design-guidelines": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.49,
-    "validation_time_ms": 1.67,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.59,
+    "validation_time_ms": 1.61,
     "token_count": 88,
     "line_count": 8,
     "file_size_bytes": 355,
-    "memory_usage_mb": 0.0046875
+    "memory_usage_mb": 0.00453125
   },
   "430-80-20-prioritization-data-analytics": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.71,
-    "validation_time_ms": 1.89,
-    "token_count": 1644,
-    "line_count": 137,
-    "file_size_bytes": 6584,
-    "memory_usage_mb": 0.010888671875
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.85,
+    "validation_time_ms": 1.8800000000000001,
+    "token_count": 716,
+    "line_count": 110,
+    "file_size_bytes": 2883,
+    "memory_usage_mb": 0.015498046875
   },
   "455-task-retrospective": {
-    "load_time_ms": 0.15,
-    "parse_time_ms": 1.55,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.67,
     "validation_time_ms": 1.7,
     "token_count": 701,
     "line_count": 26,
@@ -324,687 +351,759 @@
     "memory_usage_mb": 0.007041015625
   },
   "document-analysis": {
-    "load_time_ms": 0.15,
-    "parse_time_ms": 1.95,
-    "validation_time_ms": 2.1,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.17,
+    "validation_time_ms": 2.1999999999999997,
     "token_count": 784,
     "line_count": 62,
     "file_size_bytes": 3138,
-    "memory_usage_mb": 0.010859375
+    "memory_usage_mb": 0.011005859375
   },
   "443-model-selection": {
-    "load_time_ms": 0.14,
-    "parse_time_ms": 1.64,
-    "validation_time_ms": 1.7799999999999998,
-    "token_count": 1248,
-    "line_count": 45,
-    "file_size_bytes": 4995,
-    "memory_usage_mb": 0.009169921875
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.8,
+    "validation_time_ms": 1.83,
+    "token_count": 429,
+    "line_count": 72,
+    "file_size_bytes": 1730,
+    "memory_usage_mb": 0.0076953125
+  },
+  "448-prompt-eval-metrics": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 197,
+    "line_count": 41,
+    "file_size_bytes": 789,
+    "memory_usage_mb": 0.00220703125
   },
   "research-prompt-guidelines": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.8,
-    "validation_time_ms": 1.99,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.81,
+    "validation_time_ms": 1.83,
     "token_count": 1092,
     "line_count": 27,
     "file_size_bytes": 4370,
-    "memory_usage_mb": 0.00884765625
+    "memory_usage_mb": 0.00875
   },
   "450-rule-security": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.81,
-    "validation_time_ms": 1.99,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.85,
+    "validation_time_ms": 1.8800000000000001,
     "token_count": 693,
     "line_count": 38,
     "file_size_bytes": 2775,
     "memory_usage_mb": 0.007216796875
   },
   "439-deployment-config": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 2.96,
-    "validation_time_ms": 3.15,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.71,
+    "validation_time_ms": 1.74,
     "token_count": 702,
     "line_count": 60,
     "file_size_bytes": 2821,
-    "memory_usage_mb": 0.0151953125
+    "memory_usage_mb": 0.0153515625
   },
   "427-stigmergic-workflows": {
-    "load_time_ms": 0.21,
-    "parse_time_ms": 4.19,
-    "validation_time_ms": 4.4,
-    "token_count": 1243,
-    "line_count": 39,
-    "file_size_bytes": 4972,
-    "memory_usage_mb": 0.012509765625
+    "load_time_ms": 0.02,
+    "parse_time_ms": 4.64,
+    "validation_time_ms": 4.659999999999999,
+    "token_count": 308,
+    "line_count": 55,
+    "file_size_bytes": 1243,
+    "memory_usage_mb": 0.01013671875
   },
   "80-20-prioritization-data-analytics": {
-    "load_time_ms": 0.28,
-    "parse_time_ms": 1.7,
-    "validation_time_ms": 1.98,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.82,
+    "validation_time_ms": 1.85,
     "token_count": 1644,
     "line_count": 137,
     "file_size_bytes": 6584,
     "memory_usage_mb": 0.01087890625
   },
   "453-stepwise-autonomy-data-pipeline": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 2.64,
-    "validation_time_ms": 2.8200000000000003,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 3.03,
+    "validation_time_ms": 3.0599999999999996,
     "token_count": 1311,
     "line_count": 49,
     "file_size_bytes": 5244,
-    "memory_usage_mb": 0.0106640625
+    "memory_usage_mb": 0.01056640625
   },
   "example-library-integrity": {
-    "load_time_ms": 0.21,
-    "parse_time_ms": 1.83,
-    "validation_time_ms": 2.04,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.88,
+    "validation_time_ms": 1.91,
     "token_count": 1199,
     "line_count": 59,
     "file_size_bytes": 4796,
     "memory_usage_mb": 0.00916015625
   },
   "context-integration": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.69,
-    "validation_time_ms": 1.8499999999999999,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.89,
+    "validation_time_ms": 1.92,
     "token_count": 297,
     "line_count": 14,
     "file_size_bytes": 1189,
-    "memory_usage_mb": 0.00560546875
+    "memory_usage_mb": 0.00576171875
   },
   "445-notepad-best-practices": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.79,
-    "validation_time_ms": 1.96,
+    "load_time_ms": 0.04,
+    "parse_time_ms": 1.87,
+    "validation_time_ms": 1.9100000000000001,
     "token_count": 838,
     "line_count": 71,
     "file_size_bytes": 3355,
     "memory_usage_mb": 0.0078515625
   },
   "deployment-config": {
-    "load_time_ms": 0.3,
-    "parse_time_ms": 1.74,
-    "validation_time_ms": 2.04,
+    "load_time_ms": 0.05,
+    "parse_time_ms": 1.77,
+    "validation_time_ms": 1.82,
     "token_count": 702,
     "line_count": 60,
     "file_size_bytes": 2821,
     "memory_usage_mb": 0.015185546875
   },
   "backend-security": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.86,
-    "validation_time_ms": 2.0500000000000003,
+    "load_time_ms": 0.04,
+    "parse_time_ms": 2.02,
+    "validation_time_ms": 2.06,
     "token_count": 1192,
     "line_count": 58,
     "file_size_bytes": 4770,
-    "memory_usage_mb": 0.00939453125
+    "memory_usage_mb": 0.009248046875
   },
   "prompt-eval-data-analytics": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.75,
-    "validation_time_ms": 1.92,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.8,
+    "validation_time_ms": 1.83,
     "token_count": 1212,
     "line_count": 104,
     "file_size_bytes": 4851,
     "memory_usage_mb": 0.01392578125
   },
   "436-code-generation-patterns": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 3.23,
-    "validation_time_ms": 3.4,
-    "token_count": 1559,
-    "line_count": 61,
-    "file_size_bytes": 6236,
-    "memory_usage_mb": 0.011845703125
+    "load_time_ms": 0.03,
+    "parse_time_ms": 3.43,
+    "validation_time_ms": 3.46,
+    "token_count": 447,
+    "line_count": 88,
+    "file_size_bytes": 1798,
+    "memory_usage_mb": 0.009482421875
   },
   "bash-safety": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.72,
-    "validation_time_ms": 1.91,
+    "load_time_ms": 0.04,
+    "parse_time_ms": 1.83,
+    "validation_time_ms": 1.87,
     "token_count": 968,
     "line_count": 63,
     "file_size_bytes": 3874,
-    "memory_usage_mb": 0.008203125
+    "memory_usage_mb": 0.00826171875
   },
   "notepad-best-practices": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.77,
-    "validation_time_ms": 1.93,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.89,
+    "validation_time_ms": 1.92,
     "token_count": 838,
     "line_count": 71,
     "file_size_bytes": 3355,
     "memory_usage_mb": 0.007841796875
   },
   "ci-cd-testing-gatekeeper": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.59,
-    "validation_time_ms": 1.77,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.56,
+    "validation_time_ms": 1.59,
     "token_count": 132,
     "line_count": 10,
     "file_size_bytes": 531,
-    "memory_usage_mb": 0.005419921875
+    "memory_usage_mb": 0.0052734375
   },
   "437-context-integration": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.8,
-    "validation_time_ms": 1.98,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.81,
+    "validation_time_ms": 1.84,
     "token_count": 297,
     "line_count": 14,
     "file_size_bytes": 1189,
     "memory_usage_mb": 0.005615234375
   },
   "433-backend-security": {
-    "load_time_ms": 0.13,
-    "parse_time_ms": 1.75,
-    "validation_time_ms": 1.88,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.89,
+    "validation_time_ms": 1.91,
     "token_count": 1192,
     "line_count": 58,
     "file_size_bytes": 4770,
-    "memory_usage_mb": 0.0092578125
+    "memory_usage_mb": 0.009404296875
   },
   "notebook-best-practices": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.66,
-    "validation_time_ms": 1.8299999999999998,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.88,
+    "validation_time_ms": 1.9,
     "token_count": 1024,
     "line_count": 66,
     "file_size_bytes": 4099,
     "memory_usage_mb": 0.00849609375
   },
   "449-research-prompt-guidelines": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.71,
-    "validation_time_ms": 1.8699999999999999,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.78,
+    "validation_time_ms": 1.81,
     "token_count": 1092,
     "line_count": 27,
     "file_size_bytes": 4370,
     "memory_usage_mb": 0.008701171875
   },
   "447-prompt-eval-data-analytics": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.76,
-    "validation_time_ms": 1.92,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.91,
+    "validation_time_ms": 1.94,
     "token_count": 1213,
     "line_count": 104,
     "file_size_bytes": 4855,
-    "memory_usage_mb": 0.0141015625
+    "memory_usage_mb": 0.0139453125
   },
   "prompt-coding-standards": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.69,
-    "validation_time_ms": 1.8699999999999999,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.77,
+    "validation_time_ms": 1.79,
     "token_count": 679,
     "line_count": 29,
     "file_size_bytes": 2718,
     "memory_usage_mb": 0.007021484375
   },
   "454-structured-data-embedding-best-practices": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.6,
-    "validation_time_ms": 1.78,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.65,
+    "validation_time_ms": 1.68,
     "token_count": 1255,
     "line_count": 61,
     "file_size_bytes": 5023,
-    "memory_usage_mb": 0.009267578125
+    "memory_usage_mb": 0.0094140625
   },
   "api-webhook-discrepancy-documentation": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.69,
-    "validation_time_ms": 1.88,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.67,
+    "validation_time_ms": 1.7,
     "token_count": 1247,
     "line_count": 120,
     "file_size_bytes": 4990,
     "memory_usage_mb": 0.01400390625
   },
+  "427-stigmergic-workflows-optimized": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 395,
+    "line_count": 55,
+    "file_size_bytes": 1586,
+    "memory_usage_mb": 0.004541015625
+  },
   "428-pre-task-rule-review": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.75,
-    "validation_time_ms": 1.93,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.73,
+    "validation_time_ms": 1.76,
     "token_count": 995,
     "line_count": 69,
     "file_size_bytes": 3992,
-    "memory_usage_mb": 0.012099609375
+    "memory_usage_mb": 0.0121484375
   },
   "432-api-webhook-discrepancy-documentation": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.49,
-    "validation_time_ms": 1.66,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.65,
+    "validation_time_ms": 1.68,
     "token_count": 1247,
     "line_count": 120,
     "file_size_bytes": 4990,
-    "memory_usage_mb": 0.014052734375
+    "memory_usage_mb": 0.013955078125
   },
   "438-dependency-management": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 2.09,
-    "validation_time_ms": 2.25,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 2.4,
+    "validation_time_ms": 2.42,
     "token_count": 87,
     "line_count": 8,
     "file_size_bytes": 348,
-    "memory_usage_mb": 0.0053515625
+    "memory_usage_mb": 0.00556640625
+  },
+  "457-ouroboros-optimization": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.77,
+    "validation_time_ms": 2.8,
+    "token_count": 1672,
+    "line_count": 128,
+    "file_size_bytes": 6721,
+    "memory_usage_mb": 0.018037109375
   },
   "safir-scroll-output": {
-    "load_time_ms": 0.15,
-    "parse_time_ms": 1.97,
-    "validation_time_ms": 2.12,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.26,
+    "validation_time_ms": 2.2899999999999996,
     "token_count": 543,
     "line_count": 72,
     "file_size_bytes": 2210,
     "memory_usage_mb": 0.013330078125
   },
   "446-prompt-coding-standards": {
-    "load_time_ms": 0.15,
-    "parse_time_ms": 1.63,
-    "validation_time_ms": 1.7799999999999998,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.68,
+    "validation_time_ms": 1.7,
     "token_count": 679,
     "line_count": 29,
     "file_size_bytes": 2718,
     "memory_usage_mb": 0.00703125
   },
   "api-design-guidelines": {
-    "load_time_ms": 0.18,
+    "load_time_ms": 0.03,
     "parse_time_ms": 1.54,
-    "validation_time_ms": 1.72,
+    "validation_time_ms": 1.57,
     "token_count": 88,
     "line_count": 8,
     "file_size_bytes": 355,
     "memory_usage_mb": 0.004521484375
   },
   "rule-security": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.73,
-    "validation_time_ms": 1.89,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.83,
+    "validation_time_ms": 1.85,
     "token_count": 693,
     "line_count": 38,
     "file_size_bytes": 2775,
     "memory_usage_mb": 0.007353515625
   },
   "dependency-management": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 2.21,
-    "validation_time_ms": 2.37,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 2.33,
+    "validation_time_ms": 2.35,
     "token_count": 87,
     "line_count": 8,
     "file_size_bytes": 348,
     "memory_usage_mb": 0.005400390625
   },
   "456-test-driven-development": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 2.23,
-    "validation_time_ms": 2.4,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.44,
+    "validation_time_ms": 2.4699999999999998,
     "token_count": 381,
     "line_count": 37,
     "file_size_bytes": 1528,
     "memory_usage_mb": 0.008125
   },
   "task-retrospective": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.58,
-    "validation_time_ms": 1.74,
+    "load_time_ms": 0.04,
+    "parse_time_ms": 1.68,
+    "validation_time_ms": 1.72,
     "token_count": 701,
     "line_count": 26,
     "file_size_bytes": 2805,
     "memory_usage_mb": 0.00703125
   },
   "451-safir-scroll-output": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 2.05,
-    "validation_time_ms": 2.21,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.17,
+    "validation_time_ms": 2.1999999999999997,
     "token_count": 543,
     "line_count": 72,
     "file_size_bytes": 2210,
     "memory_usage_mb": 0.01333984375
   },
   "stepwise-autonomy-data-pipeline": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 2.61,
-    "validation_time_ms": 2.77,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.91,
+    "validation_time_ms": 2.94,
     "token_count": 1311,
     "line_count": 49,
     "file_size_bytes": 5244,
     "memory_usage_mb": 0.010673828125
   },
   "prompt-eval": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.82,
-    "validation_time_ms": 1.99,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.86,
+    "validation_time_ms": 1.8900000000000001,
     "token_count": 1649,
     "line_count": 104,
     "file_size_bytes": 6597,
-    "memory_usage_mb": 0.01080078125
+    "memory_usage_mb": 0.010859375
   },
   "503-output-sanitization": {
-    "load_time_ms": 0.2,
-    "parse_time_ms": 0.04,
-    "validation_time_ms": 0.24000000000000002,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
     "token_count": 471,
     "line_count": 69,
     "file_size_bytes": 1886,
     "memory_usage_mb": 0.003330078125
   },
   "501-input-validation": {
-    "load_time_ms": 0.14,
-    "parse_time_ms": 1.58,
-    "validation_time_ms": 1.7200000000000002,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.64,
+    "validation_time_ms": 1.66,
     "token_count": 396,
     "line_count": 67,
     "file_size_bytes": 1587,
     "memory_usage_mb": 0.005703125
   },
   "502-prompt-injection-defense": {
-    "load_time_ms": 0.2,
+    "load_time_ms": 0.03,
     "parse_time_ms": 0.02,
-    "validation_time_ms": 0.22,
+    "validation_time_ms": 0.05,
     "token_count": 527,
     "line_count": 75,
     "file_size_bytes": 2110,
     "memory_usage_mb": 0.003486328125
   },
   "dbt-mcp-server": {
-    "load_time_ms": 0.24,
-    "parse_time_ms": 1.81,
-    "validation_time_ms": 2.05,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.93,
+    "validation_time_ms": 1.96,
     "token_count": 472,
     "line_count": 26,
     "file_size_bytes": 1891,
     "memory_usage_mb": 0.006708984375
   },
   "204-analytics-storytelling": {
-    "load_time_ms": 0.18,
+    "load_time_ms": 0.03,
     "parse_time_ms": 1.58,
-    "validation_time_ms": 1.76,
+    "validation_time_ms": 1.61,
     "token_count": 128,
     "line_count": 8,
     "file_size_bytes": 522,
     "memory_usage_mb": 0.00529296875
   },
   "205-datascience-repro": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.72,
-    "validation_time_ms": 1.89,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.89,
+    "validation_time_ms": 1.91,
     "token_count": 1011,
     "line_count": 85,
     "file_size_bytes": 4046,
     "memory_usage_mb": 0.008515625
   },
   "207-dbt-incremental-loading-patterns": {
-    "load_time_ms": 0.28,
-    "parse_time_ms": 1.5,
-    "validation_time_ms": 1.78,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.56,
+    "validation_time_ms": 1.58,
     "token_count": 312,
     "line_count": 33,
     "file_size_bytes": 1250,
     "memory_usage_mb": 0.005517578125
   },
   "analytics-engineering": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.78,
-    "validation_time_ms": 1.94,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.96,
+    "validation_time_ms": 1.99,
     "token_count": 401,
     "line_count": 24,
     "file_size_bytes": 1609,
     "memory_usage_mb": 0.00783203125
   },
   "datascience-repro": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.66,
-    "validation_time_ms": 1.8199999999999998,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.93,
+    "validation_time_ms": 1.96,
     "token_count": 1011,
     "line_count": 85,
     "file_size_bytes": 4046,
     "memory_usage_mb": 0.008662109375
   },
   "dbt-semantic-modeling": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.78,
-    "validation_time_ms": 1.94,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.9,
+    "validation_time_ms": 1.92,
     "token_count": 590,
     "line_count": 45,
     "file_size_bytes": 2367,
     "memory_usage_mb": 0.009228515625
   },
   "210-dbt-semantic-modeling": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.79,
-    "validation_time_ms": 1.97,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.97,
+    "validation_time_ms": 1.99,
     "token_count": 590,
     "line_count": 45,
     "file_size_bytes": 2367,
     "memory_usage_mb": 0.00923828125
   },
   "analytics-storytelling": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.53,
-    "validation_time_ms": 1.7,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.58,
+    "validation_time_ms": 1.6,
     "token_count": 128,
     "line_count": 8,
     "file_size_bytes": 522,
     "memory_usage_mb": 0.005283203125
   },
   "dbt-model-quality": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.72,
-    "validation_time_ms": 1.9,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.75,
+    "validation_time_ms": 1.77,
     "token_count": 85,
     "line_count": 8,
     "file_size_bytes": 342,
     "memory_usage_mb": 0.00478515625
   },
   "python-clean-code": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.75,
-    "validation_time_ms": 1.93,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.81,
+    "validation_time_ms": 1.84,
     "token_count": 1335,
     "line_count": 104,
     "file_size_bytes": 5342,
     "memory_usage_mb": 0.014912109375
   },
   "dbt-analytics-engineering": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.71,
-    "validation_time_ms": 1.88,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.84,
+    "validation_time_ms": 1.87,
     "token_count": 649,
     "line_count": 53,
     "file_size_bytes": 2598,
     "memory_usage_mb": 0.007001953125
   },
   "209-dbt-model-quality": {
-    "load_time_ms": 0.15,
-    "parse_time_ms": 1.55,
-    "validation_time_ms": 1.7,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.73,
+    "validation_time_ms": 1.76,
     "token_count": 85,
     "line_count": 8,
     "file_size_bytes": 342,
     "memory_usage_mb": 0.004794921875
   },
   "213-sql-performance": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.63,
-    "validation_time_ms": 1.7899999999999998,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.87,
+    "validation_time_ms": 1.9000000000000001,
     "token_count": 389,
     "line_count": 37,
     "file_size_bytes": 1559,
     "memory_usage_mb": 0.007529296875
   },
   "sql-performance": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.67,
-    "validation_time_ms": 1.8399999999999999,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.81,
+    "validation_time_ms": 1.84,
     "token_count": 389,
     "line_count": 37,
     "file_size_bytes": 1559,
     "memory_usage_mb": 0.00751953125
   },
   "dbt-incremental-loading-patterns": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.58,
-    "validation_time_ms": 1.76,
+    "load_time_ms": 0.04,
+    "parse_time_ms": 1.59,
+    "validation_time_ms": 1.6300000000000001,
     "token_count": 312,
     "line_count": 33,
     "file_size_bytes": 1250,
     "memory_usage_mb": 0.005654296875
   },
   "208-dbt-mcp-server": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 1.84,
-    "validation_time_ms": 2.02,
+    "load_time_ms": 0.04,
+    "parse_time_ms": 2.09,
+    "validation_time_ms": 2.13,
     "token_count": 472,
     "line_count": 26,
     "file_size_bytes": 1891,
     "memory_usage_mb": 0.00646484375
   },
   "203-analytics-engineering": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.88,
-    "validation_time_ms": 2.04,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.97,
+    "validation_time_ms": 2.0,
     "token_count": 401,
     "line_count": 24,
     "file_size_bytes": 1609,
     "memory_usage_mb": 0.007841796875
   },
   "211-python-clean-code": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.72,
-    "validation_time_ms": 1.89,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.81,
+    "validation_time_ms": 1.84,
     "token_count": 1335,
     "line_count": 104,
     "file_size_bytes": 5342,
-    "memory_usage_mb": 0.014765625
+    "memory_usage_mb": 0.014716796875
   },
   "206-dbt-analytics-engineering": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.78,
-    "validation_time_ms": 1.94,
+    "load_time_ms": 0.02,
+    "parse_time_ms": 1.89,
+    "validation_time_ms": 1.91,
     "token_count": 649,
     "line_count": 53,
     "file_size_bytes": 2598,
     "memory_usage_mb": 0.00701171875
   },
   "212-sql-correctness": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.79,
-    "validation_time_ms": 1.95,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.86,
+    "validation_time_ms": 1.8900000000000001,
     "token_count": 945,
     "line_count": 40,
     "file_size_bytes": 3781,
     "memory_usage_mb": 0.00833984375
   },
   "sql-correctness": {
-    "load_time_ms": 0.16,
-    "parse_time_ms": 1.76,
-    "validation_time_ms": 1.92,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.04,
+    "validation_time_ms": 2.07,
     "token_count": 945,
     "line_count": 40,
     "file_size_bytes": 3781,
     "memory_usage_mb": 0.008173828125
   },
   "302-snmp-monitoring-patterns": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 2.47,
-    "validation_time_ms": 2.64,
+    "load_time_ms": 0.07,
+    "parse_time_ms": 1.84,
+    "validation_time_ms": 1.9100000000000001,
     "token_count": 1039,
     "line_count": 54,
     "file_size_bytes": 4163,
     "memory_usage_mb": 0.012373046875
   },
   "301-constraint-optimization": {
-    "load_time_ms": 0.21,
-    "parse_time_ms": 1.71,
-    "validation_time_ms": 1.92,
+    "load_time_ms": 0.05,
+    "parse_time_ms": 1.94,
+    "validation_time_ms": 1.99,
     "token_count": 1006,
     "line_count": 112,
     "file_size_bytes": 4025,
     "memory_usage_mb": 0.01212890625
   },
   "constraint-optimization": {
-    "load_time_ms": 0.17,
-    "parse_time_ms": 1.68,
-    "validation_time_ms": 1.8499999999999999,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.65,
+    "validation_time_ms": 1.68,
     "token_count": 1006,
     "line_count": 112,
     "file_size_bytes": 4025,
     "memory_usage_mb": 0.012119140625
   },
   "109-chain-of-code": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 2.73,
-    "validation_time_ms": 2.92,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.77,
+    "validation_time_ms": 2.8,
     "token_count": 969,
     "line_count": 43,
     "file_size_bytes": 3877,
     "memory_usage_mb": 0.009423828125
   },
   "106-concise-comms": {
-    "load_time_ms": 0.3,
-    "parse_time_ms": 2.05,
-    "validation_time_ms": 2.3499999999999996,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.16,
+    "validation_time_ms": 2.19,
     "token_count": 1114,
     "line_count": 62,
     "file_size_bytes": 4462,
     "memory_usage_mb": 0.01345703125
   },
+  "110-ira-framework": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 1671,
+    "line_count": 156,
+    "file_size_bytes": 6695,
+    "memory_usage_mb": 0.014228515625
+  },
+  "112-ira-ooda-integration": {
+    "load_time_ms": 0.04,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.06,
+    "token_count": 2564,
+    "line_count": 235,
+    "file_size_bytes": 10269,
+    "memory_usage_mb": 0.021064453125
+  },
   "105-context-trim": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 2.04,
-    "validation_time_ms": 2.23,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.08,
+    "validation_time_ms": 2.11,
     "token_count": 1342,
     "line_count": 120,
     "file_size_bytes": 5393,
-    "memory_usage_mb": 0.01517578125
+    "memory_usage_mb": 0.015283203125
   },
   "101-ultrathink-prompting": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.4,
-    "validation_time_ms": 1.5899999999999999,
-    "token_count": 1208,
-    "line_count": 24,
-    "file_size_bytes": 4931,
-    "memory_usage_mb": 0.012958984375
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.33,
+    "validation_time_ms": 1.36,
+    "token_count": 2424,
+    "line_count": 51,
+    "file_size_bytes": 9889,
+    "memory_usage_mb": 0.0223828125
+  },
+  "107-sparring-partner-core": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 335,
+    "line_count": 52,
+    "file_size_bytes": 1343,
+    "memory_usage_mb": 0.002744140625
   },
   "108-cognitive-load-balancing": {
-    "load_time_ms": 0.21,
-    "parse_time_ms": 2.11,
-    "validation_time_ms": 2.32,
-    "token_count": 929,
-    "line_count": 104,
-    "file_size_bytes": 3758,
-    "memory_usage_mb": 0.011748046875
+    "load_time_ms": 0.03,
+    "parse_time_ms": 1.97,
+    "validation_time_ms": 2.0,
+    "token_count": 1865,
+    "line_count": 211,
+    "file_size_bytes": 7543,
+    "memory_usage_mb": 0.01896484375
   },
   "102-wildcard-brainstorm": {
-    "load_time_ms": 0.18,
-    "parse_time_ms": 2.11,
-    "validation_time_ms": 2.29,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.18,
+    "validation_time_ms": 2.21,
     "token_count": 967,
     "line_count": 45,
     "file_size_bytes": 3872,
-    "memory_usage_mb": 0.012529296875
+    "memory_usage_mb": 0.012373046875
+  },
+  "111-ooda-loop": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 2362,
+    "line_count": 223,
+    "file_size_bytes": 9466,
+    "memory_usage_mb": 0.0194921875
   },
   "104-analogy-transfer": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.98,
-    "validation_time_ms": 2.17,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.06,
+    "validation_time_ms": 2.09,
     "token_count": 1307,
     "line_count": 97,
     "file_size_bytes": 5267,
-    "memory_usage_mb": 0.014853515625
+    "memory_usage_mb": 0.01505859375
+  },
+  "107-sparring-techniques": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 354,
+    "line_count": 53,
+    "file_size_bytes": 1419,
+    "memory_usage_mb": 0.00283203125
+  },
+  "107-sparring-examples": {
+    "load_time_ms": 0.03,
+    "parse_time_ms": 0.02,
+    "validation_time_ms": 0.05,
+    "token_count": 376,
+    "line_count": 55,
+    "file_size_bytes": 1505,
+    "memory_usage_mb": 0.00291015625
   },
   "103-divergence-convergence": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 2.12,
-    "validation_time_ms": 2.31,
+    "load_time_ms": 0.03,
+    "parse_time_ms": 2.22,
+    "validation_time_ms": 2.25,
     "token_count": 1199,
     "line_count": 89,
     "file_size_bytes": 4800,
-    "memory_usage_mb": 0.014150390625
-  },
-  "107-sparring-partner-mode": {
-    "load_time_ms": 0.19,
-    "parse_time_ms": 1.81,
-    "validation_time_ms": 2.0,
-    "token_count": 1385,
-    "line_count": 141,
-    "file_size_bytes": 5549,
-    "memory_usage_mb": 0.01525390625
+    "memory_usage_mb": 0.0142578125
   }
 }
