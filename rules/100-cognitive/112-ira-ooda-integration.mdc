@@ -233,37 +233,3 @@ tags:
 ## Compliance & Ethics Alignment (New)
 * Maintain "Dual Dossier": tactical action logs + strategic evidence packages, exportable for EU AI Act Article 13 audits
 * Privacy guardrails: PII token leakage <0.1 %, automated scan before dossier publication
-  Description: Conflicting frameworks without integration
-  ```python
-  # BAD: Separate systems that don't communicate
-  def run_ira():
-      # Slow strategic planning in isolation
-      yearly_plan = create_annual_strategy()
-      return yearly_plan  # Never updated based on reality
-  
-  def run_ooda():
-      # Rapid tactics without strategic context
-      while True:
-          react_to_immediate_crisis()  # No long-term vision
-  
-  # No knowledge sharing or synchronization
-  # Strategic plans become obsolete
-  # Tactical actions drift from goals
-  ```
-  </example_incorrect>
-
-* **Integration Patterns**:
-  * **Cascading Context**: Strategic decisions become OODA orientation constraints
-  * **Bubbling Insights**: Tactical patterns trigger strategic investigations
-  * **Shared Learning**: Both layers contribute to organizational knowledge
-  * **Temporal Harmony**: Different cycle times that remain synchronized
-  
-* **When to Use Each**:
-  * **Pure IRA**: Major pivots, annual planning, new market entry
-  * **Pure OODA**: Crisis response, competitive moves, daily operations
-  * **Integrated**: Product development, market expansion, digital transformation
-
-* **References**:
-  * [Strategic-Tactical Integration in Military Doctrine](https://www.armyupress.army.mil/Journals/Military-Review/)
-  * [Adaptive Enterprise Architecture](https://www.opengroup.org/togaf)
-  * Internal: `@patterns/multi-timescale-systems.mdc`

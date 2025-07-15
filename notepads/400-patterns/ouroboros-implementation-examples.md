@@ -3,6 +3,8 @@
 ## Repository Consolidation Implementation
 
 ```python
+from datetime import datetime
+
 class OuroborosOptimizer:
     def __init__(self):
         self.cycle_count = 0
