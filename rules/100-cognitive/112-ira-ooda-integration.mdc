@@ -1,3 +1,37 @@
+---
+description: "Combined IRA-OODA Integration - Strategic depth with tactical agility for complex decision-making"
+version: 1.0.0
+author: "Hamza Amjad"
+created: "2025-07-14"
+last_modified: "2025-07-14"
+last_reviewed: "2025-07-14"
+
+# Activation Conditions
+globs: 
+  - "**/strategic-ops/**"     # Strategic operations
+  - "**/complex-systems/**"   # Complex system management
+  - "**/adaptive/**"          # Adaptive strategies
+alwaysApply: false
+
+# Dependencies and Conflicts
+dependencies:
+  - "100-cognitive/110-ira-framework.mdc"
+  - "100-cognitive/111-ooda-loop.mdc"
+  
+# Performance Metrics
+performance:
+  avg_tokens: 380
+  p95_latency: 100ms
+  success_rate: 0%
+  token_budget: 500
+  
+# Tags for Cross-Cutting Concerns
+tags:
+  - "decision-making"
+  - "hybrid-framework"
+  - "strategic-tactical"
+  - "adaptive-systems"
+---
 
 # IRA-OODA Integration: Strategic Depth with Tactical Agility
 
