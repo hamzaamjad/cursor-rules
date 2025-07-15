@@ -1,37 +1,3 @@
----
-description: "Combined IRA-OODA Integration - Strategic depth with tactical agility for complex decision-making"
-version: 1.0.0
-author: "Hamza Amjad"
-created: "2025-07-14"
-last_modified: "2025-07-14"
-last_reviewed: "2025-07-14"
-
-# Activation Conditions
-globs: 
-  - "**/strategic-ops/**"     # Strategic operations
-  - "**/complex-systems/**"   # Complex system management
-  - "**/adaptive/**"          # Adaptive strategies
-alwaysApply: false
-
-# Dependencies and Conflicts
-dependencies:
-  - "100-cognitive/110-ira-framework.mdc"
-  - "100-cognitive/111-ooda-loop.mdc"
-  
-# Performance Metrics
-performance:
-  avg_tokens: 380
-  p95_latency: 100ms
-  success_rate: 0%
-  token_budget: 500
-  
-# Tags for Cross-Cutting Concerns
-tags:
-  - "decision-making"
-  - "hybrid-framework"
-  - "strategic-tactical"
-  - "adaptive-systems"
----
 
 # IRA-OODA Integration: Strategic Depth with Tactical Agility
 
@@ -174,6 +140,65 @@ tags:
   </example_correct>
   
   <example_incorrect>
+  Description: Conflicting frameworks without integration
+  ```python
+  # BAD: Separate systems that don't communicate
+  def run_ira():
+      # Slow strategic planning in isolation
+      yearly_plan = create_annual_strategy()
+      return yearly_plan  # Never updated based on reality
+  
+  def run_ooda():
+      # Rapid tactics without strategic context
+      while True:
+          react_to_immediate_crisis()  # No long-term vision
+  
+  # No knowledge sharing or synchronization
+  # Strategic plans become obsolete
+  # Tactical actions drift from goals
+  ```
+  </example_incorrect>
+
+* **Integration Patterns**:
+  * **Cascading Context**: Strategic decisions become OODA orientation constraints
+  * **Bubbling Insights**: Tactical patterns trigger strategic investigations
+  * **Shared Learning**: Both layers contribute to organizational knowledge
+  * **Temporal Harmony**: Different cycle times that remain synchronized
+  
+* **When to Use Each**:
+  * **Pure IRA**: Major pivots, annual planning, new market entry
+  * **Pure OODA**: Crisis response, competitive moves, daily operations
+  * **Integrated**: Product development, market expansion, digital transformation
+
+* **References**:
+  * [Strategic-Tactical Integration in Military Doctrine](https://www.armyupress.army.mil/Journals/Military-Review/)
+  * [Adaptive Enterprise Architecture](https://www.opengroup.org/togaf)
+  * Internal: `@patterns/multi-timescale-systems.mdc`
+
+## Synchronization Service-Level Agreements (New)
+* **Tactical→Strategic Insight Propagation**: OODA loops must publish structured insight packets to IRA knowledge base within **4 hours** (p95).
+* **Strategic→Tactical Cascade**: IRA strategic updates must be ingested by all active OODA loops within **24 hours**.
+
+## Integrated Performance Dashboard (New)
+| Metric | Target | Source |
+|--------|--------|--------|
+| Strategic Coherence Score | ≥ 85 % | IRA audits |
+| Loop Velocity (avg cycles/h) | ≥ 12 | OODA telemetry |
+| Tacit-to-Explicit Ratio | ≥ 60 % | IRA knowledge analytics |
+| MTTR (incidents) | -60 % vs baseline | OODA metrics |
+
+## Dynamic KPI Weighting Algorithm (Cross-Layer)
+* Ingest environmental volatility index (EVI) daily
+* Adjust KPI weights via WMA (half-life 30 days) when EVI > 1.5 σ
+* Propagate new weights to OODA loops in next sync window
+
+## AI-Augmented Knowledge Fusion (New)
+* Use graph-based embedding store to merge tactical logs and strategic research; cosine similarity threshold 0.8 to flag emergent patterns
+* Reinforcement learning agent tunes orientation parameters to maximize coherence score
+
+## Compliance & Ethics Alignment (New)
+* Maintain "Dual Dossier": tactical action logs + strategic evidence packages, exportable for EU AI Act Article 13 audits
+* Privacy guardrails: PII token leakage <0.1 %, automated scan before dossier publication
   Description: Conflicting frameworks without integration
   ```python
   # BAD: Separate systems that don't communicate
