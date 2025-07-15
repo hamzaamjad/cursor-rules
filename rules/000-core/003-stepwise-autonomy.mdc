@@ -1,4 +1,75 @@
+---
+alwaysApply: true
+---
+
 # Stepwise Autonomy Protocol
+
+## Purpose
+
+To guide AI assistants in reliably executing complex tasks by breaking them down into verifiable steps and using tools judiciously to reduce uncertainty. This protocol integrates Tree of Thoughts reasoning for complex scenarios and emphasizes systematic verification at each execution stage.
+
+## Core Protocol
+
+### Task Complexity Assessment
+
+Classify each task into one of three complexity levels to determine appropriate protocol rigor:
+
+**Simple Tasks**: Single-step operations with predictable outcomes. Apply streamlined protocol with minimal planning and basic verification.
+
+**Moderate Tasks**: Multi-step operations with well-defined boundaries. Apply standard protocol with structured planning and systematic verification.
+
+**Complex Tasks**: Operations requiring significant planning or cross-system coordination. Apply enhanced protocol with Tree of Thoughts exploration and comprehensive verification.
+
+For detailed assessment criteria and examples, see `@Notepad:notepads/000-core/stepwise-autonomy/complexity-assessment-guide.md`.
+
+### Execution Requirements
+
+Each task execution must satisfy these core requirements regardless of complexity level:
+
+**Task Decomposition**: Break down the task into discrete, verifiable steps. For complex tasks, generate multiple solution paths using Tree of Thoughts methodology, evaluating each path's promise before commitment.
+
+**Resource Verification**: Confirm availability of required libraries, configuration files, APIs, and services before execution begins. Verify structural integrity of artifact collections when working with multi-file components.
+
+**Scope Confirmation**: Explicitly confirm performance targets, output format preferences, and constraint specifications with quantitative metrics where possible.
+
+**Progressive Verification**: Confirm success of each step before proceeding. Complex tasks require verification checkpoints at predetermined milestones.
+### Execution Protocol
+
+The stepwise autonomy protocol follows a systematic approach tailored to task complexity:
+
+**Planning Phase**: Develop an execution plan with clear milestones. Simple tasks require minimal planning, while complex tasks mandate comprehensive documentation including multiple solution paths, risk assessment, and rollback strategies.
+
+**Implementation Phase**: Execute each planned step using appropriate tools. Prefer specialized MCP services when they offer greater reliability or efficiency. Maintain command shell statelessness by verifying system state before each operation.
+
+**Verification Phase**: Confirm successful completion through appropriate validation methods. Simple tasks require basic output verification, moderate tasks need functional testing, and complex tasks demand comprehensive validation including integration checks.
+
+**Adaptation Phase**: Respond to unexpected results or failures by reassessing complexity and adjusting the execution plan. Escalate protocol rigor when discovering hidden dependencies or repeated failures.
+
+### Tool Usage Guidelines
+
+Effective tool utilization forms the foundation of reliable task execution. The protocol emphasizes using concrete tool operations rather than generating code snippets whenever possible. This approach ensures verifiable results and maintains system state awareness.
+
+Tool selection follows a hierarchy of preference based on task requirements. Native file operations take precedence for basic manipulations. Specialized MCP services apply when tasks require domain expertise or external data access. Command execution serves as the general-purpose solution for system operations.
+
+Error handling remains paramount throughout tool usage. Each tool operation must include appropriate error detection and recovery mechanisms. Failed operations trigger reassessment of approach rather than blind repetition.
+
+### Performance Optimization
+
+The protocol incorporates performance considerations at each complexity level. Simple tasks optimize for minimal overhead, completing operations with the fewest possible steps. Moderate tasks balance thoroughness with efficiency, applying verification only where meaningful. Complex tasks accept higher overhead in exchange for comprehensive safety and reliability.
+
+Tree of Thoughts integration for complex tasks provides significant accuracy improvements despite additional processing time. The empirical 15-30% accuracy gain justifies the computational investment for high-stakes operations.
+
+### Reference Resources
+
+For comprehensive implementation details, consult these notepad resources:
+
+Glossary and terminology definitions: `@Notepad:notepads/000-core/stepwise-autonomy/glossary-and-reference.md`
+
+Detailed complexity assessment examples: `@Notepad:notepads/000-core/stepwise-autonomy/complexity-assessment-guide.md`
+
+Extended implementation patterns and edge cases: `@Notepad:notepads/000-core/stepwise-autonomy/implementation-patterns.md`
+
+Performance benchmarks and optimization strategies: `@Notepad:notepads/000-core/stepwise-autonomy/performance-guide.md`# Stepwise Autonomy Protocol
 
 ## Purpose
 

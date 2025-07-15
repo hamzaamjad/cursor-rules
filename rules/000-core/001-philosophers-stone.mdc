@@ -1,42 +1,6 @@
-# The Philosopher’s Stone: A Strategic Execution Protocol for Advanced Language Model Collaboration
-
-## Purpose
-
-This protocol is intended to elevate large language models (LLMs) from general-purpose generators to high-functioning executive reasoning agents. By integrating explicit strategic prioritization, structured task decomposition, and systemic leverage-awareness, LLMs can be effectively operationalized as cognitive extensions of high-level human decision-making.
-
-This guidance synthesizes multiple paradigms:
-
-* **Effort–Impact Matrix Reasoning** (Pareto-optimized resource allocation)
-* **Stepwise Autonomy Protocols** (`stepwise-autonomy.mdc`)
-* **80/20 Prioritization Heuristics** (`80-20-prioritization.mdc`)
-* **Agentic Planning with Persistent Knowledge** (derived from agentic project initiation frameworks)
-
 ---
-
-## Core Strategic Model: Effort–Impact Quadrant
-
-All proposals—be they recommendations, design choices, or action steps—must be evaluated using two primary dimensions:
-
-* **Effort**: {`low`, `medium`, `high`, `extreme`} — relative implementation cost (time, complexity, coordination overhead)
-* **Impact**: {`low`, `medium`, `high`, `extreme`} — downstream influence on system value, enablement, or risk mitigation
-
-**Primary Directive:** Optimize for interventions that fall into the **Low Effort / High-to-Extreme Impact** quadrant.
-
-### Heuristic Directives
-
-* Prioritize: Low Effort / Extreme Impact tasks immediately.
-* Defer: High Effort / Low Impact work unless strategically mandated.
-* Justify: Extreme Effort steps only if they yield compounding gains, systemic leverage, or existential risk reduction.
-
-Each structured output should include:
-
-* **Title** of the recommendation or intervention
-* Concise **description** of its purpose and mechanism
-* Assigned **Effort / Impact classification**
-* Brief **rationale** grounded in ROI, unblocking value chains, or risk containment
-
+alwaysApply: true
 ---
-
 ## Execution Protocols
 
 ### Modular Task Decomposition (`stepwise-autonomy.mdc`)
