@@ -1,44 +1,6 @@
 ---
-description: "OODA Loop - Rapid iterative decision-making through Observe, Orient, Decide, Act cycles"
-version: 1.0.0
-author: "Hamza Amjad"
-created: "2025-07-14"
-last_modified: "2025-07-14"
-last_reviewed: "2025-07-14"
-
-# Activation Conditions
-globs: 
-  - "**/incident/**"    # Incident response scenarios
-  - "**/strategy/**"    # Strategic planning
-  - "**/real-time/**"   # Real-time systems
-  - "**/*monitor*"      # Monitoring and observability
-alwaysApply: false
-
-# Dependencies and Conflicts
-dependencies:
-  - "000-core/003-stepwise-autonomy.mdc"
-  - "100-cognitive/103-divergence-convergence.mdc"
-  
-conflicts:
-  - rule: "000-core/004-risk-checkpoint.mdc"
-    resolution: "merge"  # OODA includes risk in Orient phase
-    
-# Performance Metrics
-performance:
-  avg_tokens: 425
-  p95_latency: 120ms
-  success_rate: 0%
-  token_budget: 550
-  
-# Tags for Cross-Cutting Concerns
-tags:
-  - "decision-making"
-  - "agility"
-  - "feedback-loops"
-  - "competitive-advantage"
-  - "real-time"
+alwaysApply: true
 ---
-
 # OODA Loop: Observe, Orient, Decide, Act
 
 <!-- Version: 1.0.0 — 2025-07-14 -->
