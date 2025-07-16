@@ -1,4 +1,49 @@
+---
+alwaysApply: true
+---
 # Chain of Code (CoC) Reasoning
+
+## Purpose
+
+Chain of Code improves reasoning accuracy by generating and executing code for verification, calculation, and logical validation. This approach achieves 17.9% improvement on arithmetic tasks and 11% on commonsense reasoning by treating problems as executable programs rather than abstract reasoning tasks.
+
+## Core Principles
+
+Chain of Code transforms ambiguous reasoning into precise, verifiable computation. Rather than attempting mental calculations or logical deductions, the pattern generates executable code that demonstrates correctness through execution. This approach eliminates calculation errors, ensures logical consistency, and provides transparent verification of results.
+
+The pattern applies to any problem involving arithmetic operations, logical reasoning, data transformations, pattern matching, or state-based workflows. By converting these problems into code, the reasoning process becomes reproducible, testable, and unambiguous.
+
+## Implementation Requirements
+
+Effective Chain of Code implementation requires systematic translation of problems into executable formats. Begin with clear problem decomposition, identifying calculable components and logical relationships. Generate code that explicitly represents each reasoning step, including intermediate calculations and state transitions.
+
+The code must include comprehensive test cases that verify correctness across edge conditions. These tests serve as both validation mechanisms and documentation of expected behavior. Each code block should execute within defined safety constraints, avoiding operations that could impact system state or consume excessive resources.
+
+Language selection follows problem domain requirements. Python serves well for data analysis and general computation. JavaScript handles web-related logic and asynchronous operations effectively. SQL excels at set operations and data queries. Regular expressions provide powerful pattern matching capabilities. The choice depends on which language most naturally expresses the problem solution.
+
+## Safety and Performance Guidelines
+
+Chain of Code operates within strict safety boundaries to prevent unintended system impacts. All code execution occurs in sandboxed environments without file system or network access. Memory consumption limits prevent resource exhaustion, while execution timeouts ensure responsive operation.
+
+Performance optimization focuses on code clarity rather than computational efficiency. The primary goal remains reasoning accuracy, not execution speed. Clear variable names, explicit computation steps, and comprehensive comments enhance understanding and verification.
+
+## Verification Protocol
+
+Each Chain of Code implementation undergoes systematic verification to ensure correctness. The problem must translate completely into executable code without ambiguous components. Test cases must cover both typical scenarios and edge conditions. Code execution must confirm the reasoning conclusions through concrete results.
+
+The generated code should remain readable and well-documented, serving as both solution and explanation. Comments explain reasoning steps, not just implementation details. Output formatting clearly presents results and intermediate calculations for human verification.
+
+## Reference Resources
+
+For detailed implementation patterns and examples across various problem domains, consult:
+
+Code examples by problem type: `@Notepad:notepads/100-cognitive/chain-of-code/code-examples.md`
+
+Safety constraints and sandboxing guidelines: `@Notepad:notepads/100-cognitive/chain-of-code/safety-guidelines.md`
+
+Language selection criteria and patterns: `@Notepad:notepads/100-cognitive/chain-of-code/language-patterns.md`
+
+Performance benchmarks and optimization strategies: `@Notepad:notepads/100-cognitive/chain-of-code/performance-guide.md`# Chain of Code (CoC) Reasoning
 
 ## Purpose
 

@@ -1,46 +1,6 @@
 ---
-description: "OUROBOROS Methodology - Recursive self-improvement through systematic transparency and measurable optimization"
-version: 1.0.0
-author: "Hamza Amjad"
-created: "2025-01-14"
-last_modified: "2025-01-14"
-last_reviewed: "2025-01-14"
-
-# Activation Conditions
-globs: 
-  - "**/optimization/**"
-  - "**/consolidation/**"
-  - "**/repository/**"
-  - "**/process-improvement/**"
-alwaysApply: false
-
-# Dependencies and Conflicts
-dependencies:
-  - "100-cognitive/110-ira-framework.mdc"
-  - "100-cognitive/111-ooda-loop.mdc"
-  - "100-cognitive/112-ira-ooda-integration.mdc"
-  - "100-cognitive/108-cognitive-load-balancing.mdc"
-  
-conflicts:
-  - rule: "100-cognitive/102-wildcard-brainstorm.mdc"
-    resolution: "defer"  # OUROBOROS requires systematic approach
-    
-# Performance Metrics
-performance:
-  avg_tokens: 650
-  p95_latency: 180ms
-  success_rate: 92%
-  token_budget: 800
-  
-# Tags for Cross-Cutting Concerns
-tags:
-  - "recursive-optimization"
-  - "process-improvement"  
-  - "systematic-transparency"
-  - "measurable-outcomes"
-  - "self-improvement"
+alwaysApply: true
 ---
-
 # OUROBOROS Methodology: Recursive Self-Improvement Process
 
 <!-- Version: 1.0.0 — 2025-01-14 -->

@@ -1,13 +1,6 @@
 ---
-description: "Sparring techniques and strategies - lazy loaded"
-version: 1.0.0
-performance:
-  avg_tokens: 350
-  p95_latency: 1.0ms
-dependencies:
-  - "107-sparring-partner-core.mdc"
+alwaysApply: true
 ---
-
 # Sparring Techniques
 
 ## Socratic Method
