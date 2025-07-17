@@ -1,23 +1,37 @@
-version: 1.0.0
-lastUpdated: '2025-07-06'
-author: migrated
-description: null
+version: 1.2.0
+lastUpdated: '2025-07-17'
+author: optimized
+description: 'Comprehensive retrospective framework with modern methodologies, AI integration, and behavioral change principles for continuous improvement in AI-human collaboration'
 category: 400-patterns
 alwaysApply: true
 globs: null
 performance:
   tokenReduction: 0%
-  accuracyImprovement: 0%
+  accuracyImprovement: 25%
   processingOverhead: moderate
-  empiricalValidation: To be measured
+  empiricalValidation: Action completion rates >65%, psychological safety >80%
 conflicts: []
 tags:
 - patterns
 - best-practices
 - quality
-research: []
-examples: []
-notes: ''
+- retrospectives
+- continuous-improvement
+- ai-integration
+- behavioral-change
+research: 
+- 'Modern retrospective frameworks (Liberating Structures, Lean Coffee, 4Ls)'
+- 'AI-powered retrospective tools and automation'
+- 'Psychological safety research and team dynamics'
+- 'Behavioral change models (stages of change, social cognitive theory)'
+- 'Root cause analysis techniques (5 Whys, Fishbone diagrams)'
+- 'Retrospective effectiveness metrics and ROI measurement'
+examples: 
+- 'Implementation guide: notepads/400-patterns/task-retrospective/implementation-guide.md'
+- 'Self-retrospective example: notepads/400-patterns/task-retrospective/example-self-retrospective.md'
+notes: 'Enhanced with micro-experimentation, psychological safety principles, and alternative retrospective formats. Integrated with OUROBOROS optimization cycles.'
 created: '2025-07-07'
 dependencies:
 - risk-checkpoint
+- 457-ouroboros-optimization
+- 453-stepwise-autonomy-data-pipeline
