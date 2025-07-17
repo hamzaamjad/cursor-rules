@@ -1,4 +1,11 @@
-# rule-security.mdc
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# rule-security.mdc
 
 *   **Purpose**: To address security considerations specifically related to Cursor Rules (`.cursor/rules/*.mdc` files) and mitigate risks like the Rules File Backdoor exploit.
 *   **Requirements**:

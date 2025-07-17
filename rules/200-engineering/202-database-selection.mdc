@@ -1,4 +1,12 @@
-# Database Selection Checklist
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+  - 100-cognitive/102-wildcard-brainstorm.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# Database Selection Checklist
 
 * **Purpose**: To ensure appropriate database technology selection based on access patterns, concurrency requirements, and existing infrastructure. **Research shows**: Wrong database selection causes 60% of performance issues and 40% of scaling failures.
 

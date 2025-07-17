@@ -21,6 +21,9 @@ tags:
   - "genetic-algorithm"
   - "rule-combination"
   - "crossover"
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+  - 600-experimental/901-emergence-tracker.mdc
 ---
 
 # Evolution: Rule Combination Learning

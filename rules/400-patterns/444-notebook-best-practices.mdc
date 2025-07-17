@@ -1,4 +1,11 @@
-# notebook-best-practices.mdc
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# notebook-best-practices.mdc
 
 *   **Purpose**: To establish consistent standards and best practices for creating and using Cursor Notebooks (implemented as `.py` files with `#%%` cell markers or `.md` files with fenced code blocks) for data analysis, exploration, visualization, and interactive documentation.
 *   **Requirements**:

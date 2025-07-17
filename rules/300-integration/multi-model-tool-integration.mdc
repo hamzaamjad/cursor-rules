@@ -1,4 +1,8 @@
-# multi-model-tool-integration.mdc
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# multi-model-tool-integration.mdc
 
 *   **Purpose**: To guide the effective design and implementation of workflows involving multiple LLMs and external tools (APIs, functions), ensuring robustness, appropriate model selection, and reliable orchestration.
 

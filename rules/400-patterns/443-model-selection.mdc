@@ -6,6 +6,10 @@ performance:
   validation_target: 2ms
 references:
   - https://docs.cursor.com/settings/models
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
 ---
 
 # Model Selection

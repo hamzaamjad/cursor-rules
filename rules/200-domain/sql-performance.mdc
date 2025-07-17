@@ -1,4 +1,8 @@
-# sql-performance
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# sql-performance
 
 *Purpose*: Ensure efficient, maintainable SQL queries. **Research shows**: Query optimization can reduce execution time by 10-100x and resource consumption by 50-90% (Ioannidis, 1996).
 

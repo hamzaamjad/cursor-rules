@@ -1,4 +1,11 @@
-# Context Integration
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# Context Integration
 
 * **Purpose**: To ensure that new agents explicitly integrate their capabilities with the broader context and interactions of other agents during the emergence process.
 * **Requirements**:

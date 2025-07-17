@@ -1,4 +1,11 @@
-*   **Purpose**: To establish standards for application logging and basic monitoring, enabling effective debugging, performance analysis, and operational awareness (observability).
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---*   **Purpose**: To establish standards for application logging and basic monitoring, enabling effective debugging, performance analysis, and operational awareness (observability).
 *   **Requirements**:
     1.  **Structured Logging**: Use structured logging formats (preferably JSON) for all application logs.
     2.  **Log Levels**: Use appropriate log levels consistently:

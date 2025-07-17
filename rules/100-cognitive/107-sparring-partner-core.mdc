@@ -10,6 +10,10 @@ lazy_load:
   - "107-sparring-techniques.mdc"
   - "107-sparring-examples.mdc"
 tags: ["cognitive", "challenge", "verification"]
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
 ---
 
 # Sparring Partner Core

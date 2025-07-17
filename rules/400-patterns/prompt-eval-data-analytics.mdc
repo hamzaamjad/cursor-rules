@@ -1,4 +1,11 @@
-# prompt-eval-data-analytics.mdc
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# prompt-eval-data-analytics.mdc
 
 *   **Purpose**: Extend the `prompt-eval.mdc` rule with specific patterns and validation criteria for data analytics prompts, ensuring they are well-structured, business-focused, and actionable.
 

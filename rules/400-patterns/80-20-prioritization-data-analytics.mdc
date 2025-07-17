@@ -1,4 +1,11 @@
-# 80-20-prioritization-data-analytics.mdc
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# 80-20-prioritization-data-analytics.mdc
 
 *   **Purpose**: Extend the core `80-20-prioritization.mdc` rule with specific metrics and frameworks for prioritizing data analytics tasks, ensuring focus on high-impact analysis, models, and data pipelines.
 

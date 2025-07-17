@@ -2,6 +2,10 @@
 description: "Detailed metrics and examples for prompt evaluation"
 version: 1.0.0
 parent: "448-prompt-eval.mdc"
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
 ---
 
 # Prompt Evaluation Metrics Detail

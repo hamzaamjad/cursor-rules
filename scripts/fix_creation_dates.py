@@ -19,7 +19,7 @@ def get_file_creation_date(file_path: str) -> str:
             # Convert to YYYY-MM-DD format
             dt = datetime.fromisoformat(first_date.replace('Z', '+00:00'))
             return dt.strftime('%Y-%m-%d')
-    except:
+    except subprocess.CalledProcessError:
         pass
     
     # Fallback to current date

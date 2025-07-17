@@ -26,6 +26,9 @@ tags:
   - "evolution"
   - "metrics"
   - "adaptation"
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+  - 600-experimental/901-emergence-tracker.mdc
 ---
 
 # Rule Adaptation & Performance Tracking

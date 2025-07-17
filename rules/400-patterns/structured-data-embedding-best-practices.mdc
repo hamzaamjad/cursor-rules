@@ -1,4 +1,11 @@
-# Structured Data Embedding Best Practices
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# Structured Data Embedding Best Practices
 
 * **Purpose**: To guide AI assistants and developers in reliably embedding or referencing complex structured data (e.g., JSON, XML, YAML objects) within other structured files, particularly AI prompts or configuration files.
 * **Trigger**: This rule should be considered when a task involves an AI generating or modifying a file that will contain another substantial, structured data object as one of its values.

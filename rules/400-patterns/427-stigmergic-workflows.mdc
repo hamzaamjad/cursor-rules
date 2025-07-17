@@ -5,6 +5,10 @@ performance:
   avg_tokens: 750
   p95_latency: 1.8ms
   validation_target: 2ms
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
 ---
 
 # Stigmergic Workflow Patterns

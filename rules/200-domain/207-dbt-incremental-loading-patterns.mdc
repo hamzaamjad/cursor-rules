@@ -1,4 +1,8 @@
-# dbt-incremental-loading-patterns
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# dbt-incremental-loading-patterns
 
 *Purpose*: Ensure reliable and performant incremental loads in dbt models.
 

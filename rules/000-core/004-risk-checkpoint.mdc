@@ -8,6 +8,7 @@ performance:
 references:
   - ISO31000:2018
   - OWASP_Risk_Rating
+created: 2025-07-17
 ---
 
 # Risk Checkpoint

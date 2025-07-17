@@ -1,4 +1,8 @@
-# dbt MCP Server Integration
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# dbt MCP Server Integration
 
 - **Purpose:** Enable LLMs and agents to access dbt project metadata and semantic layer via the dbt MCP server. Ensure integration with the latest MCP server features and any recent updates in dbt.
 - **Startup:** Managed by `start_digital_twin.sh` with dependency checks and logging. Configured in `config.json` under `mcpServers.dbt_mcp`.

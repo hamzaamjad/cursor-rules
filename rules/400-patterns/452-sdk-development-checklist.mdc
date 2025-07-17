@@ -1,4 +1,11 @@
-# sdk-development-checklist.mdc
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# sdk-development-checklist.mdc
 
 <!-- Version: 1.0.0 — Based on Mercury SDK experience -->
 

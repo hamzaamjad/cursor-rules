@@ -8,6 +8,7 @@ performance:
 lazy_load:
   - "302-agent-error-recovery.mdc"
   - "302-agent-advanced-patterns.mdc"
+created: 2025-07-17
 ---
 
 # Cursor Agent Core

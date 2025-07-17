@@ -8,6 +8,10 @@ performance:
     cognitive_load_reduction: 32%
   token_budget: 750
   validation_target: 2ms
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
 ---
 
 # Stigmergic Workflow Patterns

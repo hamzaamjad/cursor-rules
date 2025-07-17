@@ -4,18 +4,17 @@ Rule Performance Benchmarking System
 Measures timing, memory, and token metrics for all rules
 """
 
-import os
 import json
 import time
 import psutil
 import tracemalloc
+import logging
 from pathlib import Path
 from typing import Dict, List, Any
 from dataclasses import dataclass, asdict
 from datetime import datetime
 import yaml
 import argparse
-import subprocess
 
 @dataclass
 class BenchmarkResult:
@@ -95,7 +94,7 @@ class RuleBenchmarker:
         """Benchmark all rules in directory"""
         rule_files = list(self.rules_dir.rglob("*.mdc"))
         
-        print(f"Benchmarking {len(rule_files)} rules...")
+        logging.info(f"Benchmarking {len(rule_files)} rules...")
         
         for i, rule_path in enumerate(rule_files, 1):
             try:
@@ -104,10 +103,10 @@ class RuleBenchmarker:
                 
                 # Progress indicator
                 if i % 10 == 0:
-                    print(f"  Processed {i}/{len(rule_files)} rules...")
+                    logging.info(f"  Processed {i}/{len(rule_files)} rules...")
                     
             except Exception as e:
-                print(f"  Error benchmarking {rule_path.name}: {e}")
+                logging.error(f"  Error benchmarking {rule_path.name}: {e}")
     
     def generate_report(self) -> Dict[str, Any]:
         """Generate comprehensive benchmark report"""
@@ -166,8 +165,8 @@ class RuleBenchmarker:
         with open(report_path, 'w') as f:
             json.dump(report, f, indent=2)
         
-        print(f"\nBaseline saved to: {output_path}")
-        print(f"Full report saved to: {report_path}")
+        logging.info(f"\nBaseline saved to: {output_path}")
+        logging.info(f"Full report saved to: {report_path}")
 
 def main():
     parser = argparse.ArgumentParser(description="Benchmark cursor rules performance")
@@ -185,13 +184,13 @@ def main():
     
     # Print summary
     report = benchmarker.generate_report()
-    print(f"\n=== Benchmark Summary ===")
-    print(f"Total rules: {report['summary']['total_rules']}")
-    print(f"Total tokens: {report['summary']['total_tokens']:,}")
-    print(f"Average load time: {report['summary']['avg_load_time_ms']:.2f}ms")
-    print(f"\nLargest rule (tokens): {report['outliers']['largest_by_tokens']['rule_name']} "
+    logging.info(f"\n=== Benchmark Summary ===")
+    logging.info(f"Total rules: {report['summary']['total_rules']}")
+    logging.info(f"Total tokens: {report['summary']['total_tokens']:,}")
+    logging.info(f"Average load time: {report['summary']['avg_load_time_ms']:.2f}ms")
+    logging.info(f"\nLargest rule (tokens): {report['outliers']['largest_by_tokens']['rule_name']} "
           f"({report['outliers']['largest_by_tokens']['token_count']} tokens)")
-    print(f"Slowest rule: {report['outliers']['slowest_load']['rule_name']} "
+    logging.info(f"Slowest rule: {report['outliers']['slowest_load']['rule_name']} "
           f"({report['outliers']['slowest_load']['load_time_ms']:.2f}ms)")
 
 if __name__ == '__main__':

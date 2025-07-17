@@ -21,6 +21,8 @@ tags:
   - "swarm-intelligence"
   - "distributed"
   - "emergent"
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
 ---
 
 # Experimental: Swarm Intelligence Patterns

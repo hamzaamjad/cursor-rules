@@ -1,4 +1,11 @@
-# example-library-integrity.mdc
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# example-library-integrity.mdc
 
 **Version:** 1.0
 **Date:** 2025-05-10

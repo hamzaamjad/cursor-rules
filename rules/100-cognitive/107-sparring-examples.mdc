@@ -6,6 +6,10 @@ performance:
   p95_latency: 1.0ms
 dependencies:
   - "107-sparring-partner-core.mdc"
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
 ---
 
 # Sparring Examples

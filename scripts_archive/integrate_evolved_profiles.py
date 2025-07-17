@@ -30,8 +30,10 @@ class EvolvedProfileIntegrator:
                             'data': data,
                             'category': yaml_file.parent.parent.name
                         }
+            except yaml.YAMLError as e:
+                pass  # Skip invalid YAML files
             except Exception as e:
-                print(f"Skipping {yaml_file}: {e}")
+                pass  # Skip other errors
                 
         return profiles
     
@@ -56,8 +58,10 @@ class EvolvedProfileIntegrator:
                     if data and 'performance' in data:
                         success_rate = data['performance'].get('success_rate', 0)
                         fitness_scores.append(success_rate)
-            except:
-                pass
+            except yaml.YAMLError:
+                pass  # Skip invalid YAML files
+            except Exception:
+                pass  # Skip other errors
                 
         if fitness_scores:
             metrics['avg_fitness'] = sum(fitness_scores) / len(fitness_scores)

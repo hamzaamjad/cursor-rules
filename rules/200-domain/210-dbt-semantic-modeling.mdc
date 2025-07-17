@@ -1,4 +1,8 @@
-# dbt-semantic-modeling
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# dbt-semantic-modeling
 
 *Purpose*: Build a consistent, governed, and reusable semantic layer using dbt's native semantic models.
 

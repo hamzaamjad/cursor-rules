@@ -1,4 +1,11 @@
-*   **Purpose**: To promote the creation of safe, robust, and maintainable Bash scripts by enforcing strict modes, safe variable handling, and dependency checks.
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---*   **Purpose**: To promote the creation of safe, robust, and maintainable Bash scripts by enforcing strict modes, safe variable handling, and dependency checks.
 *   **Requirements**:
     *   Start all scripts with `set -euo pipefail`.
         *   `set -e`: Exit immediately if a command exits with a non-zero status.

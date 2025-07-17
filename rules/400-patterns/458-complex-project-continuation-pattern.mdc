@@ -1,4 +1,11 @@
-# complex-project-continuation-pattern.mdc
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# complex-project-continuation-pattern.mdc
 
 <!-- Version: 1.1.0 — 2025-01-15 -->
 <!-- Enhanced with Phase 12 retrospective findings -->

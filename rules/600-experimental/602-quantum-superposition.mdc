@@ -25,6 +25,8 @@ tags:
   - "quantum-inspired"
   - "multi-hypothesis"
   - "probabilistic"
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
 ---
 
 # Experimental: Quantum Superposition Reasoning

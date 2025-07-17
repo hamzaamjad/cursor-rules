@@ -1,4 +1,11 @@
-# test-driven-development
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# test-driven-development
 
 *Purpose*: Ensure high-quality, maintainable code via tests. **Research shows**: TDD reduces bug density by 40-80% (IEEE study, 2024) and improves design quality by 25%.
 

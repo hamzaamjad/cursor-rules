@@ -1,4 +1,8 @@
-# sql-correctness.mdc
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# sql-correctness.mdc
 
 *   **Purpose**: To guide AI assistants and developers in writing correct and robust SQL queries, paying attention to dialect specifics and common pitfalls.
 *   **Requirements**:

@@ -1,4 +1,11 @@
-# Task Retrospective
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# Task Retrospective
 
 * **Purpose**: To facilitate continuous improvement in AI-human collaboration by systematically reviewing completed tasks and identifying actionable insights.
 * **Trigger**: Should be considered or explicitly invoked by the user upon completion of a significant task, multi-step process, or interaction segment where reflection would be valuable.

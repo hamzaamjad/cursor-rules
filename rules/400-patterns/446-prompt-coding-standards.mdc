@@ -1,4 +1,11 @@
-# prompt-coding-standards.mdc
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# prompt-coding-standards.mdc
 
 *   **Purpose**: To provide guidance on incorporating coding standards and best practices into prompt output specifications. **Research shows**: Well-structured prompts reduce cognitive load by 42% and improve output quality by 35%.
 *   **Requirements**:

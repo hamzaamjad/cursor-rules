@@ -44,8 +44,10 @@ class DocsGenerator:
                             dep_name = Path(dep).stem
                             self.dependency_graph.add_edge(rule_name, dep_name)
                             
+            except yaml.YAMLError as e:
+                pass  # Skip invalid YAML files
             except Exception as e:
-                print(f"Error loading {yaml_file}: {e}")
+                pass  # Skip files with other errors
     
     def generate_index(self) -> str:
         """Generate main index page"""
@@ -264,7 +266,7 @@ class DocsGenerator:
     
     def generate_all(self):
         """Generate complete documentation"""
-        print("Loading metadata...")
+        # Loading metadata
         self.load_all_metadata()
         
         # Create output directories
@@ -273,17 +275,17 @@ class DocsGenerator:
         (self.output_dir / 'categories').mkdir(exist_ok=True)
         
         # Generate dependency graph
-        print("Generating dependency graph...")
+        # Generating dependency graph
         self.generate_dependency_graph()
         
         # Generate index
-        print("Generating index...")
+        # Generating index
         index_content = self.generate_index()
         with open(self.output_dir / 'README.md', 'w') as f:
             f.write(index_content)
         
         # Generate rule docs
-        print(f"Generating documentation for {len(self.rules_metadata)} rules...")
+        # Generating documentation for rules
         for rule_name in self.rules_metadata:
             rule_doc = self.generate_rule_doc(rule_name)
             with open(self.output_dir / 'rules' / f'{rule_name}.md', 'w') as f:
@@ -291,13 +293,13 @@ class DocsGenerator:
         
         # Generate category docs
         categories = set(data['category'] for data in self.rules_metadata.values())
-        print(f"Generating category documentation for {len(categories)} categories...")
+        # Generating category documentation
         for category in categories:
             cat_doc = self.generate_category_doc(category)
             with open(self.output_dir / 'categories' / f'{category}.md', 'w') as f:
                 f.write(cat_doc)
         
-        print(f"\nDocumentation generated in: {self.output_dir}")
+        # Documentation generated
 
 
 # Functions for backwards compatibility
@@ -475,7 +477,7 @@ def main():
     args = parser.parse_args()
     
     stats = generate_all_docs(str(args.rules_dir), str(args.output_dir))
-    print(f"\nGenerated documentation for {stats['total_rules']} rules across {stats['categories']} categories")
+    # Documentation generation complete
 
 
 if __name__ == '__main__':

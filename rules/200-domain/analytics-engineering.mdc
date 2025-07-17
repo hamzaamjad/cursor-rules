@@ -1,4 +1,8 @@
-# analytics-engineering.mdc
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# analytics-engineering.mdc
 
 * **Purpose**: Guide development of Mirror's analytics engineering layer using dbt+DuckDB for transforming raw personal data into AI-consumable information.
 * **Requirements**:

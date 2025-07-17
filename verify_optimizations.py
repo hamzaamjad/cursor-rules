@@ -2,8 +2,8 @@
 """Verify metadata parsing optimizations"""
 
 import yaml
-import json
 import time
+import logging
 from pathlib import Path
 
 def benchmark_yaml_parse(file_path):
@@ -49,12 +49,12 @@ def main():
                 'parse_time_ms': round(parse_time, 2),
                 'has_metadata': metadata is not None
             })
-            print(f"{rule_path.split('/')[-1]}: {parse_time:.2f}ms")
+            logging.info(f"{rule_path.split('/')[-1]}: {parse_time:.2f}ms")
     
     # Compare with baseline
-    print("\nOptimization Results:")
-    print("Rule                          | Before | After | Improvement")
-    print("-" * 60)
+    logging.info("\nOptimization Results:")
+    logging.info("Rule                          | Before | After | Improvement")
+    logging.info("-" * 60)
     
     baselines = {
         '427-stigmergic-workflows.mdc': 4.19,
@@ -74,11 +74,11 @@ def main():
         total_before += before
         total_after += after
         
-        print(f"{rule:<30} | {before:5.2f} | {after:5.2f} | {improvement:+6.1f}%")
+        logging.info(f"{rule:<30} | {before:5.2f} | {after:5.2f} | {improvement:+6.1f}%")
     
-    print("-" * 60)
+    logging.info("-" * 60)
     total_improvement = ((total_before - total_after) / total_before * 100) if total_before > 0 else 0
-    print(f"{'TOTAL':<30} | {total_before:5.2f} | {total_after:5.2f} | {total_improvement:+6.1f}%")
+    logging.info(f"{'TOTAL':<30} | {total_before:5.2f} | {total_after:5.2f} | {total_improvement:+6.1f}%")
 
 if __name__ == '__main__':
     main()

@@ -1,5 +1,11 @@
 ---
 alwaysApply: true
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+  - 100-cognitive/102-wildcard-brainstorm.mdc
+
+created: 2025-07-17
+version: 1.0.0
 ---
 
 # No Version Bloat Rule

@@ -1,4 +1,11 @@
-# notepad-best-practices.mdc
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# notepad-best-practices.mdc
 
 *   **Purpose**: To define standards for creating and using Cursor Notepads (`.cursor/notepads/*.md` or other formats) for storing reusable templates, parameters, research notes, or dynamic content referenced in prompts or rules.
 *   **Requirements**:

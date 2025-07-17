@@ -1,4 +1,8 @@
-# dbt-analytics-engineering
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# dbt-analytics-engineering
 
 *Purpose*: Establish a robust, scalable, and maintainable analytics engineering workflow using dbt.
 

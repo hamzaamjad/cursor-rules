@@ -9,6 +9,10 @@ dependencies:
   - "001-philosophers-stone.mdc"
 lazy_load:
   - "448-prompt-eval-metrics.mdc"
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
 ---
 
 # Prompt Evaluation Framework

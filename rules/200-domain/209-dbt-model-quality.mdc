@@ -1,4 +1,8 @@
-# dbt-model-quality
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# dbt-model-quality
 
 *Purpose*: Maintain high standards for dbt models.
 

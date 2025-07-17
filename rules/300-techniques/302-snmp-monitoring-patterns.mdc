@@ -1,4 +1,8 @@
-# snmp-monitoring-patterns.mdc
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# snmp-monitoring-patterns.mdc
 
 * **Purpose**: Standardize SNMP network monitoring implementation patterns to prevent common pitfalls and ensure reliable monitoring setup.
 * **Requirements**:

@@ -2,6 +2,7 @@
 """Debug version - check MDC files"""
 
 import re
+import logging
 from pathlib import Path
 
 rules_dir = Path('./rules')
@@ -17,9 +18,9 @@ for mdc_file in rules_dir.rglob("*.mdc"):
     else:
         files_without.append(mdc_file)
 
-print(f"Files WITH frontmatter: {len(files_with_frontmatter)}")
+logging.info(f"Files WITH frontmatter: {len(files_with_frontmatter)}")
 for f in sorted(files_with_frontmatter)[:10]:
-    print(f"  - {f.relative_to(rules_dir)}")
+    logging.info(f"  - {f.relative_to(rules_dir)}")
 
-print(f"\nFiles WITHOUT frontmatter: {len(files_without)}")
-print(f"\nTOTAL MDC files: {len(files_with_frontmatter) + len(files_without)}")
+logging.info(f"\nFiles WITHOUT frontmatter: {len(files_without)}")
+logging.info(f"\nTOTAL MDC files: {len(files_with_frontmatter) + len(files_without)}")

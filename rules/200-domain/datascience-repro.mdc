@@ -1,4 +1,8 @@
-# Reproducibility Checklist
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# Reproducibility Checklist
 - **Environment**  
   - Pin all library versions (`requirements.txt`, `environment.yml`, `poetry.lock`).  
   - Record Python version (`python --version`) and OS info in `README.md`. Use virtual environments.

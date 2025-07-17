@@ -4,7 +4,6 @@ Enhanced Rule Validation Script
 Validates rule structure, dependencies, and interactions
 """
 
-import os
 import yaml
 import re
 from pathlib import Path
@@ -102,8 +101,8 @@ class RuleValidator:
             if cycles:
                 for cycle in cycles:
                     self.errors.append(f"Circular dependency detected: {' -> '.join(cycle)}")
-        except:
-            pass
+        except nx.NetworkXError:
+            pass  # Skip if graph analysis fails
         
         # Check for missing dependencies
         for node in self.dependency_graph.nodes():
@@ -252,7 +251,7 @@ def main():
     with open(report_path, 'w') as f:
         f.write(report)
     
-    print(f"Validation complete. Report written to: {report_path}")
+    # Validation complete
     
     # Exit with error code if errors found
     if validator.errors:

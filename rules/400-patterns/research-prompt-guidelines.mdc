@@ -1,4 +1,11 @@
-# research-prompt-guidelines.mdc
+---
+
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
+version: 1.0.0
+---# research-prompt-guidelines.mdc
 
 *   **Purpose**: To provide a framework for creating effective prompts for research tasks, incorporating best practices and lessons learned from previous research-oriented prompts.
 *   **Requirements**:

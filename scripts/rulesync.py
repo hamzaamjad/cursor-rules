@@ -16,7 +16,6 @@ import shutil
 import argparse
 from pathlib import Path
 from datetime import datetime
-import json
 
 class RuleSync:
     def __init__(self, source_file='rulesync.md', project_root='.'):

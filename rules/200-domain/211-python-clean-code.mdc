@@ -1,4 +1,8 @@
-# python-clean-code.mdc
+---
+
+created: 2025-07-17
+version: 1.0.0
+---# python-clean-code.mdc
 
 *   **Purpose**: Ensure maintainable, consistent, and robust Python code, with special emphasis on data analytics workflows. **Research shows**: Clean code practices reduce maintenance time by 40-60% and bug density by 15-50% (Martin, 2008).
 

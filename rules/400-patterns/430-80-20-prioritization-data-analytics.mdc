@@ -4,6 +4,10 @@ version: 2.0.0
 performance:
   token_budget: 600
   validation_target: 2ms
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
 ---
 
 # 80-20 Data Analytics Prioritization

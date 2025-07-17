@@ -5,6 +5,10 @@ performance:
   avg_tokens: 600
   p95_latency: 1.5ms
   token_budget: 700
+dependencies:
+  - 000-core/001-philosophers-stone.mdc
+
+created: 2025-07-17
 ---
 
 # Code Generation Patterns

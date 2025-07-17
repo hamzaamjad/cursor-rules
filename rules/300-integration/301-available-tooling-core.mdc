@@ -8,6 +8,7 @@ performance:
 lazy_load:
   - "301-tooling-mcp-reference.mdc"
   - "301-tooling-api-reference.mdc"
+created: 2025-07-17
 ---
 
 # Tool Selection Core
